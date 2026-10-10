@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-10-10T19:42:13.437Z",
+  "baseURL": "http://127.0.0.1:4174",
+  "browser": "Local Google Chrome, Playwright, headless",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "v22.22.3",
+    "browserVersion": "154.0.8037.98"
+  },
+  "assertions": [
+    {
+      "name": "Skip link uses stable code hash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Skip link transfers focus into accessible content",
+      "pass": true,
+      "detail": {
+        "active": "<article data-chapter=\"1\" tabindex=\"-1\" aria-hidden=\"false\" class=\"chapter chapter--code is-active\" aria-labelledby=\"title-code\" style=\"--chapter-distance: 0;\"><div class=\"chapter-heading\"><span class=\"overline\"><span cl",
+        "targetInert": false,
+        "targetVisibility": "visible",
+        "focusedChapter": "1"
+      }
+    },
+    {
+      "name": "Skip link also focuses an already active code chapter",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Focus regression has no JavaScript exceptions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Focus regression has no console errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "screenshots": [],
+  "chapterMeasurements": [],
+  "responsiveMeasurements": [],
+  "mobileChapterMeasurements": [],
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "assets": {},
+  "performance": {},
+  "video": null,
+  "limitations": [
+    "Performance describes this local headless Chrome session; it is not a universal frame-rate claim.",
+    "Social destinations are verified by DOM mapping and intercepted popup navigation, without logging into third-party profiles.",
+    "Automated layout checks do not replace visual review of every resting scene and transition screenshot."
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "screenshots": 0
+  }
+}

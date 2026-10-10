@@ -1,0 +1,49 @@
+[
+  {
+    "path": "/assets/ali-bhatti-portrait.png",
+    "originalWorkspacePath": "/Users/ali_bhatti/workspace/My_PORTFOLIO/public/assets/ali-bhatti-portrait.png",
+    "verifiedUpstreamPath": "/Users/ali_bhatti/workspace/ALI BHATTI — BEYOND THE SCREEN/public/images/ali-bhatti-portrait.png",
+    "sha256": "25c5be07be587d76634108cc15af984b842195e56a1041318c443ec14f7c4a96",
+    "bytes": 614179,
+    "dimensions": "1105 × 1105",
+    "format": "PNG, RGBA; actual alpha range 0–255"
+  },
+  {
+    "path": "/assets/Resume_Ali_ejaz.pdf",
+    "originalWorkspacePath": "/Users/ali_bhatti/workspace/My_PORTFOLIO/public/assets/Resume_Ali_ejaz.pdf",
+    "verifiedUpstreamPath": "/Users/ali_bhatti/workspace/ALI BHATTI — BEYOND THE SCREEN/public/Resume_Ali_ejaz.pdf",
+    "sha256": "9a3380db4e5f862befcd56b05359502c1a2538b73a19e207eca4a71edf702c1d",
+    "bytes": 246568,
+    "dimensions": "1 page",
+    "format": "Original PDF, no modifications"
+  },
+  {
+    "path": "/assets/RCS-Logo.png",
+    "originalWorkspacePath": "/Users/ali_bhatti/workspace/My_PORTFOLIO/public/assets/rcs-logo.png",
+    "verifiedUpstreamPath": "/Users/ali_bhatti/workspace/ALI BHATTI — THE CODEVERSE/public/images/projects/rcs-logo.png",
+    "sha256": "bf91b750b786634f5fb96da5d11d06bf2c71434735b756ab9c2a0978342cdfa3",
+    "bytes": 76217,
+    "dimensions": "512 × 512",
+    "format": "PNG with alpha",
+    "preservedWorkspaceOriginalPath": "/Users/ali_bhatti/workspace/My_PORTFOLIO/public/assets/originals/rcs-logo.png",
+    "caseMigration": "Case-only rename via unique temporary filename; lowercase original bytes preserved under public/assets/originals/rcs-logo.png and verified backup."
+  },
+  {
+    "path": "/assets/GOLDADAN_LOGO.jpg",
+    "originalWorkspacePath": "/Users/ali_bhatti/workspace/My_PORTFOLIO/public/assets/goldadan-logo.jpg",
+    "verifiedUpstreamPath": "/Users/ali_bhatti/workspace/GOLDADAN/Frontend/public/assets/goldadan-logo-original.jpg",
+    "sha256": "03adb9bec6020f4e11b846a17a840c6244a59eca25e8cd613d3a8a7cb9e41f18",
+    "bytes": 46842,
+    "dimensions": "1254 × 1254",
+    "format": "JPEG, opaque black background"
+  },
+  {
+    "path": "/assets/BHABHI THULLA.png",
+    "originalWorkspacePath": "/Users/ali_bhatti/workspace/My_PORTFOLIO/public/assets/bhabhi-thulla.png",
+    "verifiedUpstreamPath": "/Users/ali_bhatti/workspace/ALI BHATTI — THE CODEVERSE/public/images/projects/BHABHI THULLA.png",
+    "sha256": "734d285e9017520058fcce349607f4614d80bc6f97e928136a4650f4fa841727",
+    "bytes": 2210590,
+    "dimensions": "1254 × 1254",
+    "format": "PNG with alpha"
+  }
+]

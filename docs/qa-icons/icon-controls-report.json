@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-10-10T20:15:49.189Z",
+  "baseURL": "http://127.0.0.1:4174",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "v22.22.3"
+  },
+  "assertions": [
+    {
+      "name": "Focused icon QA completed",
+      "pass": false,
+      "detail": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/5p/4kysqn8j1gd9mrdqp34zdv9h0000gn/T/playwright_chromiumdev_profile-F6dNcB --remote-debugging-pipe --no-startup-window\n<launched> pid=70772\nCall log:\n\u001b[2m  - <launching> /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/5p/4kysqn8j1gd9mrdqp34zdv9h0000gn/T/playwright_chromiumdev_profile-F6dNcB --remote-debugging-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=70772\u001b[22m\n\u001b[2m  - [pid=70772] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=70772] <kill>\u001b[22m\n\u001b[2m  - [pid=70772] <will force kill>\u001b[22m\n\u001b[2m  - [pid=70772] exception while trying to kill process: Error: kill EPERM\u001b[22m\n\u001b[2m  - [pid=70772] <process did exit: exitCode=null, signal=SIGABRT>\u001b[22m\n\u001b[2m  - [pid=70772] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=70772] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=70772] <gracefully close end>\u001b[22m\n\n    at /Users/ali_bhatti/workspace/My_PORTFOLIO/scripts/icon-controls-qa.mjs:191:28"
+    }
+  ],
+  "screenshots": [],
+  "motionSamples": [],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "limitations": [
+    "Local headless Google Chrome with desktop and mobile viewport sizes; physical touch devices are not covered.",
+    "Animation is verified from sampled SVG geometry and computed transforms, not inferred solely from event handlers."
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 1,
+    "screenshots": 0
+  }
+}

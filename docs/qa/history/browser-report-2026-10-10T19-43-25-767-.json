@@ -1,0 +1,5027 @@
+{
+  "timestamp": "2026-10-10T19:43:25.767Z",
+  "baseURL": "http://127.0.0.1:4174",
+  "browser": "Local Google Chrome, Playwright, headless",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "v22.22.3",
+    "browserVersion": "154.0.8037.98"
+  },
+  "assertions": [
+    {
+      "name": "13 chapters defined in source",
+      "pass": true,
+      "detail": [
+        "human",
+        "code",
+        "languages",
+        "frontend",
+        "backend",
+        "data",
+        "workflow",
+        "rcs-cargo",
+        "goldadan",
+        "bhabhi-thulla",
+        "experience",
+        "education",
+        "connect"
+      ]
+    },
+    {
+      "name": "1440×900 human: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 53,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 human: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 human: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "human: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "human → code: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 1,
+        "progress": 0.5000000000000001,
+        "drawCalls": 15,
+        "triangles": 3232,
+        "points": 6200,
+        "fps": 53,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 code: chapter 1 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 1,
+        "progress": 1,
+        "drawCalls": 10,
+        "triangles": 878,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 code: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 code: active semantic chapter 1",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "1",
+          "text": "01 EVERY EXPERIENCE STARTS SOMEWHEREA first line.A new world.Before the interface. Before the application. An idea takes its first shape in code.IN THE ARCHITECTUREconst idea = { human: true };build(i",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "code: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "code → languages: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 2,
+        "progress": 1.5,
+        "drawCalls": 31,
+        "triangles": 6194,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 languages: chapter 2 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 2,
+        "progress": 2,
+        "drawCalls": 25,
+        "triangles": 6182,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 languages: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 languages: active semantic chapter 2",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "2",
+          "text": "02 THE LANGUAGE OF POSSIBILITYIdeas needa language.JavaScript brings behavior. TypeScript brings structure. Python opens another way to solve the problem.IN THE ARCHITECTUREJavaScript (ES6+)TypeScript",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "languages: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "languages → frontend: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 3,
+        "progress": 2.5,
+        "drawCalls": 69,
+        "triangles": 16234,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 frontend: chapter 3 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 3,
+        "progress": 3,
+        "drawCalls": 48,
+        "triangles": 10918,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 frontend: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 frontend: active semantic chapter 3",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "3",
+          "text": "03 FRONTEND ENGINEERINGA world youcan touch.Structure becomes a surface. Style gives it character. Components turn the pieces into a responsive interface.IN THE ARCHITECTUREHTML5CSS3JavaScript (ES6+)T",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "frontend: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "frontend → backend: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 4,
+        "progress": 3.5,
+        "drawCalls": 82,
+        "triangles": 15446,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 backend: chapter 4 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 4,
+        "progress": 4,
+        "drawCalls": 37,
+        "triangles": 5394,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 backend: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 backend: active semantic chapter 4",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "4",
+          "text": "04 BACKEND ENGINEERINGBehind the surface,a system.Every interaction begins a journey: route the request, authenticate it, run the logic, return a response.IN THE ARCHITECTURENode.jsNestJSREST APIsJWT ",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "backend: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "backend → data: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 4,
+        "progress": 4.499999999999999,
+        "drawCalls": 79,
+        "triangles": 9566,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 data: chapter 5 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 5,
+        "progress": 5,
+        "drawCalls": 45,
+        "triangles": 5038,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 data: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 data: active semantic chapter 5",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "5",
+          "text": "05 THE DATA ARCHITECTUREA place forevery connection.Useful applications remember. Structured records and deliberate relationships give their data a lasting home.IN THE ARCHITECTUREPostgreSQLPrisma ORM",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "data: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "data → workflow: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 5,
+        "progress": 5.499999999999999,
+        "drawCalls": 74,
+        "triangles": 13286,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 workflow: chapter 6 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 6,
+        "progress": 6,
+        "drawCalls": 32,
+        "triangles": 9114,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 workflow: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 workflow: active semantic chapter 6",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "6",
+          "text": "06 FROM AN IDEA TO A WORKING APPLICATIONBuild. Refine.Move forward.Version each decision. Collaborate around the code. Test how the system responds.IN THE ARCHITECTUREGitGitHubPostman",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "workflow: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "workflow → rcs-cargo: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 6,
+        "progress": 6.499999999999999,
+        "drawCalls": 75,
+        "triangles": 31898,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 rcs-cargo: chapter 7 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 7,
+        "progress": 7,
+        "drawCalls": 46,
+        "triangles": 23650,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 rcs-cargo: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 rcs-cargo: active semantic chapter 7",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "7",
+          "text": "07 SELECTED WORK / 01Everything,in motion.RCS CARGO — a web project for a connected logistics world.THE PROJECTRCS CARGOLogisticsWeb applicationTrace the route↻ Project link unavailable",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "rcs-cargo: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "rcs-cargo → goldadan: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 7,
+        "progress": 7.499999999999999,
+        "drawCalls": 54,
+        "triangles": 26010,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 goldadan: chapter 8 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 8,
+        "progress": 8,
+        "drawCalls": 11,
+        "triangles": 3226,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 goldadan: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 goldadan: active semantic chapter 8",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "8",
+          "text": "08 SELECTED WORK / 02Technology,with purpose.GOLDADAN — a company website for security, software, hardware, and enterprise technology.THE PROJECTGOLDADANCompany websiteTechnology servicesTurn the pavi",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "goldadan: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "goldadan → bhabhi-thulla: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 9,
+        "progress": 8.500000000000002,
+        "drawCalls": 63,
+        "triangles": 9190,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 bhabhi-thulla: chapter 9 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 9,
+        "progress": 9,
+        "drawCalls": 55,
+        "triangles": 6830,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 bhabhi-thulla: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 bhabhi-thulla: active semantic chapter 9",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "9",
+          "text": "09 SELECTED WORK / 03A little logic.A little play.BHABHI THULLA — a card-game project with a world of its own.THE PROJECTBHABHI THULLACard gameInteractive experienceDeal a card↻ Project link unavailab",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "bhabhi-thulla: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "bhabhi-thulla → experience: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 10,
+        "progress": 9.500000000000002,
+        "drawCalls": 74,
+        "triangles": 9498,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 experience: chapter 10 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 10,
+        "progress": 10,
+        "drawCalls": 22,
+        "triangles": 3534,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 experience: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 experience: active semantic chapter 10",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "10",
+          "text": "10 PROFESSIONAL EXPERIENCEBuilt with people.Built to work.Freelance Full Stack Web Developer on Upwork and Fiverr — September 2025–June 2026 on both platforms.React and Next.js applications, responsiv",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "experience: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "experience → education: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 11,
+        "progress": 10.500000000000002,
+        "drawCalls": 40,
+        "triangles": 7086,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 education: chapter 11 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 11,
+        "progress": 11,
+        "drawCalls": 21,
+        "triangles": 4418,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 education: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 education: active semantic chapter 11",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "11",
+          "text": "11 THE FOUNDATIONSCuriosity,with a foundation.Punjab University — Bachelor in Computer Science, 2021–2025.Hawk College — Intermediate in Computer Science (ICS), 2018–2020.IN THE ARCHITECTUREPunjab Uni",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "education: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "education → connect: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 11.500000000000002,
+        "drawCalls": 31,
+        "triangles": 10298,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440×900 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440×900 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "connect: canvas spans viewport",
+      "pass": true,
+      "detail": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      }
+    },
+    {
+      "name": "Social profiles visible in requested order",
+      "pass": true,
+      "detail": [
+        {
+          "href": "https://www.linkedin.com/in/muhammad-ali-ejaz-bhatti-629676442/",
+          "text": "LinkedIn↗",
+          "label": "LinkedIn profile (opens in a new tab)",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "images": [
+            "/assets/brands/linkedin.svg"
+          ]
+        },
+        {
+          "href": "https://www.freelancer.com/u/Devalibhatti?sb=t@Devalibhatti%27s",
+          "text": "Freelancer↗",
+          "label": "Freelancer profile (opens in a new tab)",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "images": [
+            "/assets/brands/freelancer.svg"
+          ]
+        },
+        {
+          "href": "https://github.com/Alibhatti514",
+          "text": "GitHub↗",
+          "label": "GitHub profile (opens in a new tab)",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "images": [
+            "/assets/brands/github.svg"
+          ]
+        },
+        {
+          "href": "https://www.fiverr.com/dev_alibhatti?public_mode=true",
+          "text": "Fiverr↗",
+          "label": "Fiverr profile (opens in a new tab)",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "images": [
+            "/assets/brands/fiverr.svg"
+          ]
+        },
+        {
+          "href": "https://www.upwork.com/freelancers/~01d8521e683ca03553?companyReference=1966580391923811613&mp_source=share",
+          "text": "Upwork↗",
+          "label": "Upwork profile (opens in a new tab)",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "images": [
+            "/assets/brands/upwork.svg"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LinkedIn: authentic accessible logo and exact URL",
+      "pass": true,
+      "detail": {
+        "href": "https://www.linkedin.com/in/muhammad-ali-ejaz-bhatti-629676442/",
+        "text": "LinkedIn↗",
+        "label": "LinkedIn profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/linkedin.svg"
+        ]
+      }
+    },
+    {
+      "name": "LinkedIn: safe external target",
+      "pass": true,
+      "detail": {
+        "href": "https://www.linkedin.com/in/muhammad-ali-ejaz-bhatti-629676442/",
+        "text": "LinkedIn↗",
+        "label": "LinkedIn profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/linkedin.svg"
+        ]
+      }
+    },
+    {
+      "name": "LinkedIn: clickable profile opens correct popup",
+      "pass": true,
+      "detail": "https://www.linkedin.com/in/muhammad-ali-ejaz-bhatti-629676442/"
+    },
+    {
+      "name": "Freelancer: authentic accessible logo and exact URL",
+      "pass": true,
+      "detail": {
+        "href": "https://www.freelancer.com/u/Devalibhatti?sb=t@Devalibhatti%27s",
+        "text": "Freelancer↗",
+        "label": "Freelancer profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/freelancer.svg"
+        ]
+      }
+    },
+    {
+      "name": "Freelancer: safe external target",
+      "pass": true,
+      "detail": {
+        "href": "https://www.freelancer.com/u/Devalibhatti?sb=t@Devalibhatti%27s",
+        "text": "Freelancer↗",
+        "label": "Freelancer profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/freelancer.svg"
+        ]
+      }
+    },
+    {
+      "name": "Freelancer: clickable profile opens correct popup",
+      "pass": true,
+      "detail": "https://www.freelancer.com/u/Devalibhatti?sb=t@Devalibhatti%27s"
+    },
+    {
+      "name": "GitHub: authentic accessible logo and exact URL",
+      "pass": true,
+      "detail": {
+        "href": "https://github.com/Alibhatti514",
+        "text": "GitHub↗",
+        "label": "GitHub profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/github.svg"
+        ]
+      }
+    },
+    {
+      "name": "GitHub: safe external target",
+      "pass": true,
+      "detail": {
+        "href": "https://github.com/Alibhatti514",
+        "text": "GitHub↗",
+        "label": "GitHub profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/github.svg"
+        ]
+      }
+    },
+    {
+      "name": "GitHub: clickable profile opens correct popup",
+      "pass": true,
+      "detail": "https://github.com/Alibhatti514"
+    },
+    {
+      "name": "Fiverr: authentic accessible logo and exact URL",
+      "pass": true,
+      "detail": {
+        "href": "https://www.fiverr.com/dev_alibhatti?public_mode=true",
+        "text": "Fiverr↗",
+        "label": "Fiverr profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/fiverr.svg"
+        ]
+      }
+    },
+    {
+      "name": "Fiverr: safe external target",
+      "pass": true,
+      "detail": {
+        "href": "https://www.fiverr.com/dev_alibhatti?public_mode=true",
+        "text": "Fiverr↗",
+        "label": "Fiverr profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/fiverr.svg"
+        ]
+      }
+    },
+    {
+      "name": "Fiverr: clickable profile opens correct popup",
+      "pass": true,
+      "detail": "https://www.fiverr.com/dev_alibhatti?public_mode=true"
+    },
+    {
+      "name": "Upwork: authentic accessible logo and exact URL",
+      "pass": true,
+      "detail": {
+        "href": "https://www.upwork.com/freelancers/~01d8521e683ca03553?companyReference=1966580391923811613&mp_source=share",
+        "text": "Upwork↗",
+        "label": "Upwork profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/upwork.svg"
+        ]
+      }
+    },
+    {
+      "name": "Upwork: safe external target",
+      "pass": true,
+      "detail": {
+        "href": "https://www.upwork.com/freelancers/~01d8521e683ca03553?companyReference=1966580391923811613&mp_source=share",
+        "text": "Upwork↗",
+        "label": "Upwork profile (opens in a new tab)",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "images": [
+          "/assets/brands/upwork.svg"
+        ]
+      }
+    },
+    {
+      "name": "Upwork: clickable profile opens correct popup",
+      "pass": true,
+      "detail": "https://www.upwork.com/freelancers/~01d8521e683ca03553?companyReference=1966580391923811613&mp_source=share"
+    },
+    {
+      "name": "Original résumé asset content preserved",
+      "pass": true,
+      "detail": {
+        "bytes": 246568,
+        "sha256": "9a3380db4e5f862befcd56b05359502c1a2538b73a19e207eca4a71edf702c1d",
+        "source": "/Users/ali_bhatti/workspace/ALI BHATTI — BEYOND THE SCREEN/public/Resume_Ali_ejaz.pdf"
+      }
+    },
+    {
+      "name": "Visible résumé download link",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Downloaded résumé bytes match original PDF",
+      "pass": true,
+      "detail": {
+        "bytes": 246568,
+        "sha256": "9a3380db4e5f862befcd56b05359502c1a2538b73a19e207eca4a71edf702c1d",
+        "suggestedFilename": "Resume_Ali_ejaz.pdf"
+      }
+    },
+    {
+      "name": "Working email link",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Working telephone link",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Chapter menu navigates to frontend hash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Chapter menu navigates to project hash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Browser back restores previous chapter",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Refreshing hash restores chapter",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Direct chapter hash is reachable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Manual scroll updates current chapter hash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Reload after manual scroll: chapter 8 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 8,
+        "progress": 8,
+        "drawCalls": 11,
+        "triangles": 3226,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "Reload after manual scroll: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "Reload after manual scroll: active semantic chapter 8",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "8",
+          "text": "08 SELECTED WORK / 02Technology,with purpose.GOLDADAN — a company website for security, software, hardware, and enterprise technology.THE PROJECTGOLDADANCompany websiteTechnology servicesTurn the pavi",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Returning from reading view synchronizes HTML and WebGL",
+      "pass": true,
+      "detail": {
+        "debug": {
+          "chapter": 9,
+          "progress": 9,
+          "drawCalls": 55,
+          "triangles": 6830,
+          "points": 0,
+          "fps": 60,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1
+        },
+        "scrollY": 10125,
+        "documentWidth": 1440,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "9",
+            "text": "09 SELECTED WORK / 03A little logic.A little play.BHABHI THULLA — a card-game project with a world of its own.THE PROJECTBHABHI THULLACard gameInteractive experienceDeal a card↻ Project link unavailab",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900,
+              "top": 0,
+              "right": 1440,
+              "bottom": 900,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#bhabhi-thulla"
+      }
+    },
+    {
+      "name": "Returning from reading view restores a valid chapter hash",
+      "pass": true,
+      "detail": "#bhabhi-thulla"
+    },
+    {
+      "name": "Resize preserves fractional cinematic progress",
+      "pass": true,
+      "detail": {
+        "before": 4.499999999999999,
+        "after": 4.500919117186941
+      }
+    },
+    {
+      "name": "Skip link uses stable code hash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Skip link transfers focus into accessible content",
+      "pass": true,
+      "detail": {
+        "active": "<article data-chapter=\"1\" tabindex=\"-1\" aria-hidden=\"false\" class=\"chapter chapter--code is-active\" aria-labelledby=\"title-code\" style=\"--chapter-distance: 0;\"><div class=\"chapter-heading\"><span class=\"overline\"><span cl",
+        "targetInert": false,
+        "targetVisibility": "visible",
+        "focusedChapter": "1"
+      }
+    },
+    {
+      "name": "Skip link also focuses an already active code chapter",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Trace the route: clickable without browser errors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Turn the pavilion: clickable without browser errors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Deal a card: clickable without browser errors",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Fast, reverse, and incremental scrolling remain synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 5,
+        "progress": 5,
+        "drawCalls": 45,
+        "triangles": 5038,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1920x1080 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1920x1080 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 1920
+    },
+    {
+      "name": "1920x1080 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1920x1080 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 54,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1920x1080 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 1920
+    },
+    {
+      "name": "1920x1080 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1920x1080: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1440x900 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 58,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440x900 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440x900 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1440x900 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 57,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440x900 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440x900 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1440x900: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1366x768 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1366x768 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 1366
+    },
+    {
+      "name": "1366x768 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1366x768 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1366x768 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 1366
+    },
+    {
+      "name": "1366x768 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1366x768: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "768x1024 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 58,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "768x1024 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 768
+    },
+    {
+      "name": "768x1024 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "768x1024 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "768x1024 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 768
+    },
+    {
+      "name": "768x1024 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "768x1024: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390x844 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 58,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390x844 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390x844 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390x844 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390x844 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390x844 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390x844: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "375x812 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 59,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "375x812 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 375
+    },
+    {
+      "name": "375x812 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 375,
+            "height": 812,
+            "top": 0,
+            "right": 375,
+            "bottom": 812,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "375x812 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "375x812 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 375
+    },
+    {
+      "name": "375x812 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 375,
+            "height": 812,
+            "top": 0,
+            "right": 375,
+            "bottom": 812,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "375x812: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390×844 human: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 human: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 human: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 code: chapter 1 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 1,
+        "progress": 1,
+        "drawCalls": 10,
+        "triangles": 878,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 code: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 code: active semantic chapter 1",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "1",
+          "text": "01 EVERY EXPERIENCE STARTS SOMEWHEREA first line.A new world.Before the interface. Before the application. An idea takes its first shape in code.IN THE ARCHITECTUREconst idea = { human: true };build(i",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 languages: chapter 2 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 2,
+        "progress": 2,
+        "drawCalls": 25,
+        "triangles": 6182,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 languages: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 languages: active semantic chapter 2",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "2",
+          "text": "02 THE LANGUAGE OF POSSIBILITYIdeas needa language.JavaScript brings behavior. TypeScript brings structure. Python opens another way to solve the problem.IN THE ARCHITECTUREJavaScript (ES6+)TypeScript",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 frontend: chapter 3 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 3,
+        "progress": 3,
+        "drawCalls": 48,
+        "triangles": 10918,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 frontend: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 frontend: active semantic chapter 3",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "3",
+          "text": "03 FRONTEND ENGINEERINGA world youcan touch.Structure becomes a surface. Style gives it character. Components turn the pieces into a responsive interface.IN THE ARCHITECTUREHTML5CSS3JavaScript (ES6+)T",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 backend: chapter 4 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 4,
+        "progress": 4,
+        "drawCalls": 37,
+        "triangles": 5394,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 backend: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 backend: active semantic chapter 4",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "4",
+          "text": "04 BACKEND ENGINEERINGBehind the surface,a system.Every interaction begins a journey: route the request, authenticate it, run the logic, return a response.IN THE ARCHITECTURENode.jsNestJSREST APIsJWT ",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 data: chapter 5 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 5,
+        "progress": 5,
+        "drawCalls": 45,
+        "triangles": 5038,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 data: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 data: active semantic chapter 5",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "5",
+          "text": "05 THE DATA ARCHITECTUREA place forevery connection.Useful applications remember. Structured records and deliberate relationships give their data a lasting home.IN THE ARCHITECTUREPostgreSQLPrisma ORM",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 workflow: chapter 6 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 6,
+        "progress": 6,
+        "drawCalls": 32,
+        "triangles": 9114,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 workflow: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 workflow: active semantic chapter 6",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "6",
+          "text": "06 FROM AN IDEA TO A WORKING APPLICATIONBuild. Refine.Move forward.Version each decision. Collaborate around the code. Test how the system responds.IN THE ARCHITECTUREGitGitHubPostman",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 rcs-cargo: chapter 7 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 7,
+        "progress": 7,
+        "drawCalls": 46,
+        "triangles": 23650,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 rcs-cargo: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 rcs-cargo: active semantic chapter 7",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "7",
+          "text": "07 SELECTED WORK / 01Everything,in motion.RCS CARGO — a web project for a connected logistics world.THE PROJECTRCS CARGOLogisticsWeb applicationTrace the route↻ Project link unavailable",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 goldadan: chapter 8 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 8,
+        "progress": 8,
+        "drawCalls": 11,
+        "triangles": 3226,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 goldadan: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 goldadan: active semantic chapter 8",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "8",
+          "text": "08 SELECTED WORK / 02Technology,with purpose.GOLDADAN — a company website for security, software, hardware, and enterprise technology.THE PROJECTGOLDADANCompany websiteTechnology servicesTurn the pavi",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 bhabhi-thulla: chapter 9 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 9,
+        "progress": 9,
+        "drawCalls": 55,
+        "triangles": 6830,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 bhabhi-thulla: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 bhabhi-thulla: active semantic chapter 9",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "9",
+          "text": "09 SELECTED WORK / 03A little logic.A little play.BHABHI THULLA — a card-game project with a world of its own.THE PROJECTBHABHI THULLACard gameInteractive experienceDeal a card↻ Project link unavailab",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 experience: chapter 10 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 10,
+        "progress": 10,
+        "drawCalls": 20,
+        "triangles": 3530,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 experience: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 experience: active semantic chapter 10",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "10",
+          "text": "10 PROFESSIONAL EXPERIENCEBuilt with people.Built to work.Freelance Full Stack Web Developer on Upwork and Fiverr — September 2025–June 2026 on both platforms.React and Next.js applications, responsiv",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 education: chapter 11 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 11,
+        "progress": 11,
+        "drawCalls": 21,
+        "triangles": 4418,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 education: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 education: active semantic chapter 11",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "11",
+          "text": "11 THE FOUNDATIONSCuriosity,with a foundation.Punjab University — Bachelor in Computer Science, 2021–2025.Hawk College — Intermediate in Computer Science (ICS), 2018–2020.IN THE ARCHITECTUREPunjab Uni",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390×844 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390×844 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390×844 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chapter navigation supports keyboard focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Mobile keyboard navigation opens selected chapter",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Loading Tab sequence avoids hidden hero actions",
+      "pass": true,
+      "detail": [
+        {
+          "tag": "A",
+          "name": "Skip to portfolio content",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "ALI BHATTI",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "A",
+          "name": "Download résumé ↓",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "INDEX",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "Read the portfolio instead ↗",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "01 / 13The human+",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "The human",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "First line",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "Languages",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "The interface",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "The system",
+          "hiddenCinematicControl": false
+        },
+        {
+          "tag": "BUTTON",
+          "name": "The data",
+          "hiddenCinematicControl": false
+        }
+      ]
+    },
+    {
+      "name": "fallback-reading: essential portfolio content available",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "fallback-reading: all social destinations present",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fallback-reading: no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fallback-webgl-off: essential portfolio content available",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "fallback-webgl-off: all social destinations present",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "fallback-webgl-off: no horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Real WebGL creation failure exposes essential portfolio content",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Real WebGL creation failure does not leave an unusable canvas",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Real WebGL creation failure is caught without uncaught exception",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Reduced-motion media preference applied",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Reduced motion settles to a chapter pose",
+      "pass": true,
+      "detail": {
+        "chapter": 4,
+        "progress": 4,
+        "drawCalls": 37,
+        "triangles": 5394,
+        "points": 0,
+        "fps": 56,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "Full-scroll walkthrough recorded",
+      "pass": true,
+      "detail": "walkthrough.webm"
+    },
+    {
+      "name": "Application loaded required asset: /assets/ali-bhatti-portrait.png",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/ali-bhatti-portrait.png"
+      }
+    },
+    {
+      "name": "Served asset matches source: /assets/ali-bhatti-portrait.png",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "bytes": 614179,
+        "sha256": "25c5be07be587d76634108cc15af984b842195e56a1041318c443ec14f7c4a96"
+      }
+    },
+    {
+      "name": "Application loaded required asset: /assets/Resume_Ali_ejaz.pdf",
+      "pass": true,
+      "detail": {
+        "downloaded": true,
+        "bytes": 246568,
+        "sha256": "9a3380db4e5f862befcd56b05359502c1a2538b73a19e207eca4a71edf702c1d"
+      }
+    },
+    {
+      "name": "Served asset matches source: /assets/Resume_Ali_ejaz.pdf",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "bytes": 246568,
+        "sha256": "9a3380db4e5f862befcd56b05359502c1a2538b73a19e207eca4a71edf702c1d"
+      }
+    },
+    {
+      "name": "Application loaded required asset: /assets/RCS-Logo.png",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/RCS-Logo.png"
+      }
+    },
+    {
+      "name": "Served asset matches source: /assets/RCS-Logo.png",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "bytes": 76217,
+        "sha256": "bf91b750b786634f5fb96da5d11d06bf2c71434735b756ab9c2a0978342cdfa3"
+      }
+    },
+    {
+      "name": "Application loaded required asset: /assets/GOLDADAN_LOGO.jpg",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/GOLDADAN_LOGO.jpg"
+      }
+    },
+    {
+      "name": "Served asset matches source: /assets/GOLDADAN_LOGO.jpg",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "bytes": 46842,
+        "sha256": "03adb9bec6020f4e11b846a17a840c6244a59eca25e8cd613d3a8a7cb9e41f18"
+      }
+    },
+    {
+      "name": "Application loaded required asset: /assets/BHABHI THULLA.png",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/BHABHI%20THULLA.png"
+      }
+    },
+    {
+      "name": "Served asset matches source: /assets/BHABHI THULLA.png",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "bytes": 2210590,
+        "sha256": "734d285e9017520058fcce349607f4614d80bc6f97e928136a4650f4fa841727"
+      }
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No browser console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No failed browser resource requests",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "screenshots": [
+    "screenshots/desktop-00-human.png",
+    "screenshots/transition-00-human-to-code.png",
+    "screenshots/desktop-01-code.png",
+    "screenshots/transition-01-code-to-languages.png",
+    "screenshots/desktop-02-languages.png",
+    "screenshots/transition-02-languages-to-frontend.png",
+    "screenshots/desktop-03-frontend.png",
+    "screenshots/transition-03-frontend-to-backend.png",
+    "screenshots/desktop-04-backend.png",
+    "screenshots/transition-04-backend-to-data.png",
+    "screenshots/desktop-05-data.png",
+    "screenshots/transition-05-data-to-workflow.png",
+    "screenshots/desktop-06-workflow.png",
+    "screenshots/transition-06-workflow-to-rcs-cargo.png",
+    "screenshots/desktop-07-rcs-cargo.png",
+    "screenshots/transition-07-rcs-cargo-to-goldadan.png",
+    "screenshots/desktop-08-goldadan.png",
+    "screenshots/transition-08-goldadan-to-bhabhi-thulla.png",
+    "screenshots/desktop-09-bhabhi-thulla.png",
+    "screenshots/transition-09-bhabhi-thulla-to-experience.png",
+    "screenshots/desktop-10-experience.png",
+    "screenshots/transition-10-experience-to-education.png",
+    "screenshots/desktop-11-education.png",
+    "screenshots/transition-11-education-to-connect.png",
+    "screenshots/desktop-12-connect.png",
+    "screenshots/interaction-rcs-cargo.png",
+    "screenshots/interaction-goldadan.png",
+    "screenshots/interaction-bhabhi-thulla.png",
+    "screenshots/responsive-1920x1080-hero.png",
+    "screenshots/responsive-1920x1080-connect.png",
+    "screenshots/responsive-1440x900-hero.png",
+    "screenshots/responsive-1440x900-connect.png",
+    "screenshots/responsive-1366x768-hero.png",
+    "screenshots/responsive-1366x768-connect.png",
+    "screenshots/responsive-768x1024-hero.png",
+    "screenshots/responsive-768x1024-connect.png",
+    "screenshots/responsive-390x844-hero.png",
+    "screenshots/responsive-390x844-connect.png",
+    "screenshots/responsive-375x812-hero.png",
+    "screenshots/responsive-375x812-connect.png",
+    "screenshots/mobile-00-human.png",
+    "screenshots/mobile-01-code.png",
+    "screenshots/mobile-02-languages.png",
+    "screenshots/mobile-03-frontend.png",
+    "screenshots/mobile-04-backend.png",
+    "screenshots/mobile-05-data.png",
+    "screenshots/mobile-06-workflow.png",
+    "screenshots/mobile-07-rcs-cargo.png",
+    "screenshots/mobile-08-goldadan.png",
+    "screenshots/mobile-09-bhabhi-thulla.png",
+    "screenshots/mobile-10-experience.png",
+    "screenshots/mobile-11-education.png",
+    "screenshots/mobile-12-connect.png",
+    "screenshots/mobile-keyboard-navigation.png",
+    "screenshots/fallback-reading.png",
+    "screenshots/fallback-webgl-off.png",
+    "screenshots/fallback-real-webgl-failure.png",
+    "screenshots/reduced-motion.png"
+  ],
+  "chapterMeasurements": [
+    {
+      "index": 0,
+      "id": "human",
+      "debug": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 53,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 0,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": ""
+    },
+    {
+      "index": 1,
+      "id": "code",
+      "debug": {
+        "chapter": 1,
+        "progress": 1,
+        "drawCalls": 10,
+        "triangles": 878,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 1125,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "1",
+          "text": "01 EVERY EXPERIENCE STARTS SOMEWHEREA first line.A new world.Before the interface. Before the application. An idea takes its first shape in code.IN THE ARCHITECTUREconst idea = { human: true };build(i",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#code"
+    },
+    {
+      "index": 2,
+      "id": "languages",
+      "debug": {
+        "chapter": 2,
+        "progress": 2,
+        "drawCalls": 25,
+        "triangles": 6182,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 2250,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "2",
+          "text": "02 THE LANGUAGE OF POSSIBILITYIdeas needa language.JavaScript brings behavior. TypeScript brings structure. Python opens another way to solve the problem.IN THE ARCHITECTUREJavaScript (ES6+)TypeScript",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#languages"
+    },
+    {
+      "index": 3,
+      "id": "frontend",
+      "debug": {
+        "chapter": 3,
+        "progress": 3,
+        "drawCalls": 48,
+        "triangles": 10918,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 3375,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "3",
+          "text": "03 FRONTEND ENGINEERINGA world youcan touch.Structure becomes a surface. Style gives it character. Components turn the pieces into a responsive interface.IN THE ARCHITECTUREHTML5CSS3JavaScript (ES6+)T",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#frontend"
+    },
+    {
+      "index": 4,
+      "id": "backend",
+      "debug": {
+        "chapter": 4,
+        "progress": 4,
+        "drawCalls": 37,
+        "triangles": 5394,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 4500,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "4",
+          "text": "04 BACKEND ENGINEERINGBehind the surface,a system.Every interaction begins a journey: route the request, authenticate it, run the logic, return a response.IN THE ARCHITECTURENode.jsNestJSREST APIsJWT ",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#backend"
+    },
+    {
+      "index": 5,
+      "id": "data",
+      "debug": {
+        "chapter": 5,
+        "progress": 5,
+        "drawCalls": 45,
+        "triangles": 5038,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 5625,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "5",
+          "text": "05 THE DATA ARCHITECTUREA place forevery connection.Useful applications remember. Structured records and deliberate relationships give their data a lasting home.IN THE ARCHITECTUREPostgreSQLPrisma ORM",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#data"
+    },
+    {
+      "index": 6,
+      "id": "workflow",
+      "debug": {
+        "chapter": 6,
+        "progress": 6,
+        "drawCalls": 32,
+        "triangles": 9114,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 6750,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "6",
+          "text": "06 FROM AN IDEA TO A WORKING APPLICATIONBuild. Refine.Move forward.Version each decision. Collaborate around the code. Test how the system responds.IN THE ARCHITECTUREGitGitHubPostman",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#workflow"
+    },
+    {
+      "index": 7,
+      "id": "rcs-cargo",
+      "debug": {
+        "chapter": 7,
+        "progress": 7,
+        "drawCalls": 46,
+        "triangles": 23650,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 7875,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "7",
+          "text": "07 SELECTED WORK / 01Everything,in motion.RCS CARGO — a web project for a connected logistics world.THE PROJECTRCS CARGOLogisticsWeb applicationTrace the route↻ Project link unavailable",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#rcs-cargo"
+    },
+    {
+      "index": 8,
+      "id": "goldadan",
+      "debug": {
+        "chapter": 8,
+        "progress": 8,
+        "drawCalls": 11,
+        "triangles": 3226,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 9000,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "8",
+          "text": "08 SELECTED WORK / 02Technology,with purpose.GOLDADAN — a company website for security, software, hardware, and enterprise technology.THE PROJECTGOLDADANCompany websiteTechnology servicesTurn the pavi",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#goldadan"
+    },
+    {
+      "index": 9,
+      "id": "bhabhi-thulla",
+      "debug": {
+        "chapter": 9,
+        "progress": 9,
+        "drawCalls": 55,
+        "triangles": 6830,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 10125,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "9",
+          "text": "09 SELECTED WORK / 03A little logic.A little play.BHABHI THULLA — a card-game project with a world of its own.THE PROJECTBHABHI THULLACard gameInteractive experienceDeal a card↻ Project link unavailab",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#bhabhi-thulla"
+    },
+    {
+      "index": 10,
+      "id": "experience",
+      "debug": {
+        "chapter": 10,
+        "progress": 10,
+        "drawCalls": 22,
+        "triangles": 3534,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 11250,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "10",
+          "text": "10 PROFESSIONAL EXPERIENCEBuilt with people.Built to work.Freelance Full Stack Web Developer on Upwork and Fiverr — September 2025–June 2026 on both platforms.React and Next.js applications, responsiv",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#experience"
+    },
+    {
+      "index": 11,
+      "id": "education",
+      "debug": {
+        "chapter": 11,
+        "progress": 11,
+        "drawCalls": 21,
+        "triangles": 4418,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 12375,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "11",
+          "text": "11 THE FOUNDATIONSCuriosity,with a foundation.Punjab University — Bachelor in Computer Science, 2021–2025.Hawk College — Intermediate in Computer Science (ICS), 2018–2020.IN THE ARCHITECTUREPunjab Uni",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#education"
+    },
+    {
+      "index": 12,
+      "id": "connect",
+      "debug": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "high"
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "dpr": 1
+      },
+      "scrollY": 13500,
+      "documentWidth": 1440,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#connect"
+    }
+  ],
+  "responsiveMeasurements": [
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 60,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1920,
+          "height": 1080,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 1920,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1920,
+              "height": 1080,
+              "top": 0,
+              "right": 1920,
+              "bottom": 1080,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1920,
+          "height": 1080,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#human"
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 54,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1920,
+          "height": 1080,
+          "dpr": 1
+        },
+        "scrollY": 16200,
+        "documentWidth": 1920,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1920,
+              "height": 1080,
+              "top": 0,
+              "right": 1920,
+              "bottom": 1080,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1920,
+          "height": 1080,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#connect"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 58,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 1440,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900,
+              "top": 0,
+              "right": 1440,
+              "bottom": 900,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#human"
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 57,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1
+        },
+        "scrollY": 13500,
+        "documentWidth": 1440,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900,
+              "top": 0,
+              "right": 1440,
+              "bottom": 900,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#connect"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 60,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1366,
+          "height": 768,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 1366,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1366,
+              "height": 768,
+              "top": 0,
+              "right": 1366,
+              "bottom": 768,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1366,
+          "height": 768,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#human"
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 60,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1366,
+          "height": 768,
+          "dpr": 1
+        },
+        "scrollY": 11520,
+        "documentWidth": 1366,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1366,
+              "height": 768,
+              "top": 0,
+              "right": 1366,
+              "bottom": 768,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1366,
+          "height": 768,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#connect"
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 58,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 768,
+          "height": 1024,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 768,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 1024,
+              "top": 0,
+              "right": 768,
+              "bottom": 1024,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 768,
+          "height": 1024,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#human"
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 60,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 768,
+          "height": 1024,
+          "dpr": 1
+        },
+        "scrollY": 15360,
+        "documentWidth": 768,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 1024,
+              "top": 0,
+              "right": 768,
+              "bottom": 1024,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 768,
+          "height": 1024,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#connect"
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 58,
+          "ready": true,
+          "quality": "mobile"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 390,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 844,
+              "top": 0,
+              "right": 390,
+              "bottom": 844,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#human"
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 60,
+          "ready": true,
+          "quality": "mobile"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "scrollY": 12660,
+        "documentWidth": 390,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 844,
+              "top": 0,
+              "right": 390,
+              "bottom": 844,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#connect"
+      }
+    },
+    {
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 59,
+          "ready": true,
+          "quality": "mobile"
+        },
+        "viewport": {
+          "width": 375,
+          "height": 812,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 375,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 375,
+              "height": 812,
+              "top": 0,
+              "right": 375,
+              "bottom": 812,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 375,
+          "height": 812,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#human"
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 60,
+          "ready": true,
+          "quality": "mobile"
+        },
+        "viewport": {
+          "width": 375,
+          "height": 812,
+          "dpr": 1
+        },
+        "scrollY": 12180,
+        "documentWidth": 375,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 375,
+              "height": 812,
+              "top": 0,
+              "right": 375,
+              "bottom": 812,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 375,
+          "height": 812,
+          "top": 0,
+          "left": 0
+        },
+        "hash": "#connect"
+      }
+    }
+  ],
+  "mobileChapterMeasurements": [
+    {
+      "index": 0,
+      "id": "human",
+      "debug": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 0,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#human",
+      "textBounds": [
+        {
+          "className": "hero-name",
+          "bounds": {
+            "x": 27.296875,
+            "y": 168.796875,
+            "width": 317.421875,
+            "height": 98.046875,
+            "top": 168.796875,
+            "right": 344.71875,
+            "bottom": 266.84375,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "hero-profession",
+          "bounds": {
+            "x": 27.296875,
+            "y": 537.234375,
+            "width": 132.390625,
+            "height": 116.875,
+            "top": 537.234375,
+            "right": 159.6875,
+            "bottom": 654.109375,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "id": "code",
+      "debug": {
+        "chapter": 1,
+        "progress": 1,
+        "drawCalls": 10,
+        "triangles": 878,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 1055,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "1",
+          "text": "01 EVERY EXPERIENCE STARTS SOMEWHEREA first line.A new world.Before the interface. Before the application. An idea takes its first shape in code.IN THE ARCHITECTUREconst idea = { human: true };build(i",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#code",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 654.25,
+            "width": 335.40625,
+            "height": 46.28125,
+            "top": 654.25,
+            "right": 362.703125,
+            "bottom": 700.53125,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 734.296875,
+            "width": 335.40625,
+            "height": 13.5,
+            "top": 734.296875,
+            "right": 362.703125,
+            "bottom": 747.796875,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "id": "languages",
+      "debug": {
+        "chapter": 2,
+        "progress": 2,
+        "drawCalls": 25,
+        "triangles": 6182,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 2110,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "2",
+          "text": "02 THE LANGUAGE OF POSSIBILITYIdeas needa language.JavaScript brings behavior. TypeScript brings structure. Python opens another way to solve the problem.IN THE ARCHITECTUREJavaScript (ES6+)TypeScript",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#languages",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 654.25,
+            "width": 335.40625,
+            "height": 46.28125,
+            "top": 654.25,
+            "right": 362.703125,
+            "bottom": 700.53125,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 734.296875,
+            "width": 335.40625,
+            "height": 13.5,
+            "top": 734.296875,
+            "right": 362.703125,
+            "bottom": 747.796875,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "id": "frontend",
+      "debug": {
+        "chapter": 3,
+        "progress": 3,
+        "drawCalls": 48,
+        "triangles": 10918,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 3165,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "3",
+          "text": "03 FRONTEND ENGINEERINGA world youcan touch.Structure becomes a surface. Style gives it character. Components turn the pieces into a responsive interface.IN THE ARCHITECTUREHTML5CSS3JavaScript (ES6+)T",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#frontend",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 654.25,
+            "width": 335.40625,
+            "height": 46.28125,
+            "top": 654.25,
+            "right": 362.703125,
+            "bottom": 700.53125,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 718.796875,
+            "width": 335.40625,
+            "height": 29,
+            "top": 718.796875,
+            "right": 362.703125,
+            "bottom": 747.796875,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "id": "backend",
+      "debug": {
+        "chapter": 4,
+        "progress": 4,
+        "drawCalls": 37,
+        "triangles": 5394,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 4220,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "4",
+          "text": "04 BACKEND ENGINEERINGBehind the surface,a system.Every interaction begins a journey: route the request, authenticate it, run the logic, return a response.IN THE ARCHITECTURENode.jsNestJSREST APIsJWT ",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#backend",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 654.25,
+            "width": 335.40625,
+            "height": 46.28125,
+            "top": 654.25,
+            "right": 362.703125,
+            "bottom": 700.53125,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 734.296875,
+            "width": 335.40625,
+            "height": 13.5,
+            "top": 734.296875,
+            "right": 362.703125,
+            "bottom": 747.796875,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "id": "data",
+      "debug": {
+        "chapter": 5,
+        "progress": 5,
+        "drawCalls": 45,
+        "triangles": 5038,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 5275,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "5",
+          "text": "05 THE DATA ARCHITECTUREA place forevery connection.Useful applications remember. Structured records and deliberate relationships give their data a lasting home.IN THE ARCHITECTUREPostgreSQLPrisma ORM",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#data",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 654.25,
+            "width": 335.40625,
+            "height": 46.28125,
+            "top": 654.25,
+            "right": 362.703125,
+            "bottom": 700.53125,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 734.296875,
+            "width": 335.40625,
+            "height": 13.5,
+            "top": 734.296875,
+            "right": 362.703125,
+            "bottom": 747.796875,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "id": "workflow",
+      "debug": {
+        "chapter": 6,
+        "progress": 6,
+        "drawCalls": 32,
+        "triangles": 9114,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 6330,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "6",
+          "text": "06 FROM AN IDEA TO A WORKING APPLICATIONBuild. Refine.Move forward.Version each decision. Collaborate around the code. Test how the system responds.IN THE ARCHITECTUREGitGitHubPostman",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#workflow",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 654.25,
+            "width": 335.40625,
+            "height": 46.28125,
+            "top": 654.25,
+            "right": 362.703125,
+            "bottom": 700.53125,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 734.296875,
+            "width": 335.40625,
+            "height": 13.5,
+            "top": 734.296875,
+            "right": 362.703125,
+            "bottom": 747.796875,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "id": "rcs-cargo",
+      "debug": {
+        "chapter": 7,
+        "progress": 7,
+        "drawCalls": 46,
+        "triangles": 23650,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 7385,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "7",
+          "text": "07 SELECTED WORK / 01Everything,in motion.RCS CARGO — a web project for a connected logistics world.THE PROJECTRCS CARGOLogisticsWeb applicationTrace the route↻ Project link unavailable",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#rcs-cargo",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 651.28125,
+            "width": 335.40625,
+            "height": 28.140625,
+            "top": 651.28125,
+            "right": 362.703125,
+            "bottom": 679.421875,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 704.828125,
+            "width": 335.40625,
+            "height": 45.5,
+            "top": 704.828125,
+            "right": 362.703125,
+            "bottom": 750.328125,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "id": "goldadan",
+      "debug": {
+        "chapter": 8,
+        "progress": 8,
+        "drawCalls": 11,
+        "triangles": 3226,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 8440,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "8",
+          "text": "08 SELECTED WORK / 02Technology,with purpose.GOLDADAN — a company website for security, software, hardware, and enterprise technology.THE PROJECTGOLDADANCompany websiteTechnology servicesTurn the pavi",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#goldadan",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 633.140625,
+            "width": 335.40625,
+            "height": 46.28125,
+            "top": 633.140625,
+            "right": 362.703125,
+            "bottom": 679.421875,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 704.828125,
+            "width": 335.40625,
+            "height": 45.5,
+            "top": 704.828125,
+            "right": 362.703125,
+            "bottom": 750.328125,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "id": "bhabhi-thulla",
+      "debug": {
+        "chapter": 9,
+        "progress": 9,
+        "drawCalls": 55,
+        "triangles": 6830,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 9495,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "9",
+          "text": "09 SELECTED WORK / 03A little logic.A little play.BHABHI THULLA — a card-game project with a world of its own.THE PROJECTBHABHI THULLACard gameInteractive experienceDeal a card↻ Project link unavailab",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#bhabhi-thulla",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 651.28125,
+            "width": 335.40625,
+            "height": 28.140625,
+            "top": 651.28125,
+            "right": 362.703125,
+            "bottom": 679.421875,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 704.828125,
+            "width": 335.40625,
+            "height": 45.5,
+            "top": 704.828125,
+            "right": 362.703125,
+            "bottom": 750.328125,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "id": "experience",
+      "debug": {
+        "chapter": 10,
+        "progress": 10,
+        "drawCalls": 20,
+        "triangles": 3530,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 10550,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "10",
+          "text": "10 PROFESSIONAL EXPERIENCEBuilt with people.Built to work.Freelance Full Stack Web Developer on Upwork and Fiverr — September 2025–June 2026 on both platforms.React and Next.js applications, responsiv",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#experience",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 587.1875,
+            "width": 335.40625,
+            "height": 96.453125,
+            "top": 587.1875,
+            "right": 362.703125,
+            "bottom": 683.640625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 733.453125,
+            "width": 335.40625,
+            "height": 13.5,
+            "top": 733.453125,
+            "right": 362.703125,
+            "bottom": 746.953125,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "id": "education",
+      "debug": {
+        "chapter": 11,
+        "progress": 11,
+        "drawCalls": 21,
+        "triangles": 4418,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 11605,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "11",
+          "text": "11 THE FOUNDATIONSCuriosity,with a foundation.Punjab University — Bachelor in Computer Science, 2021–2025.Hawk College — Intermediate in Computer Science (ICS), 2018–2020.IN THE ARCHITECTUREPunjab Uni",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#education",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 121.53125,
+            "width": 339.3125,
+            "height": 120.53125,
+            "top": 121.53125,
+            "right": 366.609375,
+            "bottom": 242.0625,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-caption",
+          "bounds": {
+            "x": 27.296875,
+            "y": 651,
+            "width": 335.40625,
+            "height": 49.53125,
+            "top": 651,
+            "right": 362.703125,
+            "bottom": 700.53125,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "chapter-aside",
+          "bounds": {
+            "x": 27.296875,
+            "y": 734.296875,
+            "width": 335.40625,
+            "height": 13.5,
+            "top": 734.296875,
+            "right": 362.703125,
+            "bottom": 747.796875,
+            "left": 27.296875
+          },
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "id": "connect",
+      "debug": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "scrollY": 12660,
+      "documentWidth": 390,
+      "horizontalOverflow": false,
+      "activeArticles": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ],
+      "canvas": {
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "left": 0
+      },
+      "hash": "#connect",
+      "textBounds": [
+        {
+          "className": "chapter-heading",
+          "bounds": {
+            "x": 27.296875,
+            "y": 122.375,
+            "width": 339.3125,
+            "height": 149.4375,
+            "top": 122.375,
+            "right": 366.609375,
+            "bottom": 271.8125,
+            "left": 27.296875
+          },
+          "display": "block"
+        },
+        {
+          "className": "contact-bottom",
+          "bounds": {
+            "x": 27.296875,
+            "y": 648.65625,
+            "width": 335.40625,
+            "height": 89,
+            "top": 648.65625,
+            "right": 362.703125,
+            "bottom": 737.65625,
+            "left": 27.296875
+          },
+          "display": "grid"
+        }
+      ]
+    }
+  ],
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "assets": {
+    "observedInApplication": {
+      "/assets/index-BPvzasjb.css": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/index-BPvzasjb.css"
+      },
+      "/assets/index-BcwR7jYA.js": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/index-BcwR7jYA.js"
+      },
+      "/assets/brands/linkedin.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/linkedin.svg"
+      },
+      "/assets/brands/freelancer.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/freelancer.svg"
+      },
+      "/assets/brands/github.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/github.svg"
+      },
+      "/assets/brands/fiverr.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/fiverr.svg"
+      },
+      "/assets/brands/upwork.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/upwork.svg"
+      },
+      "/assets/manrope-latin-400-normal-PaqtzbVb.woff2": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/manrope-latin-400-normal-PaqtzbVb.woff2"
+      },
+      "/assets/space-grotesk-latin-600-normal-DjKNqYRj.woff2": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/space-grotesk-latin-600-normal-DjKNqYRj.woff2"
+      },
+      "/assets/ibm-plex-mono-latin-400-normal-DMJ8VG8y.woff2": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/ibm-plex-mono-latin-400-normal-DMJ8VG8y.woff2"
+      },
+      "/assets/World-CdpFBjOv.js": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/World-CdpFBjOv.js"
+      },
+      "/assets/space-grotesk-latin-400-normal-CJ-V5oYT.woff2": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/space-grotesk-latin-400-normal-CJ-V5oYT.woff2"
+      },
+      "/assets/space-grotesk-latin-500-normal-lFbtlQH6.woff2": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/space-grotesk-latin-500-normal-lFbtlQH6.woff2"
+      },
+      "/assets/three--q06Lw8y.js": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/three--q06Lw8y.js"
+      },
+      "/assets/ali-bhatti-portrait.png": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/ali-bhatti-portrait.png"
+      },
+      "/assets/brands/javascript.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/javascript.svg"
+      },
+      "/assets/brands/typescript.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/typescript.svg"
+      },
+      "/assets/brands/python.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/python.svg"
+      },
+      "/assets/brands/html5.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/html5.svg"
+      },
+      "/assets/brands/css3.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/css3.svg"
+      },
+      "/assets/brands/nextdotjs.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/nextdotjs.svg"
+      },
+      "/assets/brands/react.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/react.svg"
+      },
+      "/assets/brands/nodedotjs.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/nodedotjs.svg"
+      },
+      "/assets/brands/nestjs.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/nestjs.svg"
+      },
+      "/assets/brands/prisma.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/prisma.svg"
+      },
+      "/assets/brands/postgresql.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/postgresql.svg"
+      },
+      "/assets/brands/git.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/git.svg"
+      },
+      "/assets/brands/postman.svg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/brands/postman.svg"
+      },
+      "/assets/RCS-Logo.png": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/RCS-Logo.png"
+      },
+      "/assets/GOLDADAN_LOGO.jpg": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/GOLDADAN_LOGO.jpg"
+      },
+      "/assets/BHABHI THULLA.png": {
+        "status": 200,
+        "url": "http://127.0.0.1:4174/assets/BHABHI%20THULLA.png"
+      },
+      "/assets/Resume_Ali_ejaz.pdf": {
+        "downloaded": true,
+        "bytes": 246568,
+        "sha256": "9a3380db4e5f862befcd56b05359502c1a2538b73a19e207eca4a71edf702c1d"
+      }
+    }
+  },
+  "performance": {
+    "sampledAt": "data chapter, 1440×900, device scale factor 1",
+    "sampleDurationMs": 2201.4999999761585,
+    "frames": 131,
+    "meanFrameMs": 16.666412213740465,
+    "estimatedRAFps": 60.00091604451974,
+    "p50FrameMs": 16.69999999999891,
+    "p95FrameMs": 16.799999999999272,
+    "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)",
+    "renderer": {
+      "chapter": 5,
+      "progress": 5,
+      "drawCalls": 45,
+      "triangles": 5038,
+      "points": 0,
+      "fps": 60,
+      "ready": true,
+      "quality": "high"
+    }
+  },
+  "video": "walkthrough.webm",
+  "limitations": [
+    "Performance describes this local headless Chrome session; it is not a universal frame-rate claim.",
+    "Social destinations are verified by DOM mapping and intercepted popup navigation, without logging into third-party profiles.",
+    "Automated layout checks do not replace visual review of every resting scene and transition screenshot."
+  ],
+  "actualWebglFailure": {
+    "method": "Canvas WebGL context creation returns null",
+    "expectedRendererConsole": [
+      "THREE.WebGLRenderer: Error creating WebGL context."
+    ],
+    "pageErrors": []
+  },
+  "summary": {
+    "passed": 214,
+    "failed": 0,
+    "screenshots": 58
+  }
+}

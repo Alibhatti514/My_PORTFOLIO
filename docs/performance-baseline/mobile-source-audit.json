@@ -1,0 +1,1770 @@
+{
+  "kind": "source-only mathematical mobile layout audit",
+  "generatedAt": "2026-10-10T20:37:16.747Z",
+  "command": "node --import tsx scripts/audit-mobile-layout.ts",
+  "evidenceBoundary": {
+    "browserLaunched": false,
+    "domMeasured": false,
+    "screenshotsReviewed": false,
+    "gpuMeasured": false,
+    "fpsMeasured": false,
+    "realDeviceMeasured": false,
+    "statement": "These results are numerical source measurements. They do not constitute browser visual QA, accessible-name auditing, actual safe-area behavior, real-device testing, or GPU performance measurements."
+  },
+  "sources": [
+    {
+      "path": "src/engine/World.ts",
+      "sha256": "71c7a78b58857d7d5a01fd121df64333371b97fe7b50b91039485987e2990f01"
+    },
+    {
+      "path": "src/engine/scroll.ts",
+      "sha256": "8cdbe60382c98832036b2d8e0597d6afff403c24a435d0c5051fea9dbf5d0eba"
+    },
+    {
+      "path": "src/scene/poses.ts",
+      "sha256": "c00262da18172cee1c31fd0d925bf1e005d6c64b40f521b8169d940c2c833e79"
+    },
+    {
+      "path": "src/scene/installations.ts",
+      "sha256": "30cc4b61e54c237b350ec3ac07f859509e97f7f547e7e60fdadf11536570340d"
+    },
+    {
+      "path": "src/styles.css",
+      "sha256": "86d0e77fdb2a895fa1c4017b8d674c54e2c95cc65bdbb9d3b6d604326452e4bb"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "d805e988f4b07c3affacfd909b649ee7a4f3eac196b5ea79d5e1c50f3c098f71"
+    },
+    {
+      "path": "index.html",
+      "sha256": "e65c651f8628a8068c6c55b986b2d81e0c27363e3a88b66196333d642269e382"
+    }
+  ],
+  "model": {
+    "cameraFovDegrees": 40,
+    "cameraRestPose": [
+      0,
+      1.25,
+      13.3
+    ],
+    "mobileExpression": "innerWidth<700",
+    "tabletExpression": "!this.mobile&&innerWidth/innerHeight<1.15",
+    "stageScaleExpressions": [
+      "this.mobile?.49:tablet?.72:1",
+      "this.mobile?.75:tablet?.88:1",
+      "this.mobile?.85:1"
+    ],
+    "stageYExpression": "this.mobile?-.48:0",
+    "cameraAdjustmentSource": "if(!this.mobile&&!this.reduced)this.camera.position.z-=Math.sin(t*Math.PI)*(a===0?1.65:.42);\n    if(this.mobile){this.camera.position.x*=.15;this.camera.position.y=.7;this.camera.position.z=13.6;}\n    if(this.reduced){this.camera.position.set(0,this.mobile?.7:1.4,this.mobile?13.6:13);}\n    else{this.camera.position.x+=this.pointer.x*.18;this.camera.position.y-=this.pointer.y*.08;}\n    this.camera.lookAt(0,this.mobile?-.2:-.25,0);",
+    "finPositionExpressions": [
+      "(i-2)*1.80",
+      "-.42",
+      "0"
+    ],
+    "projectedPointExpressions": [
+      "0",
+      ".05",
+      ".27"
+    ],
+    "scrollStepExpression": "Math.max(window.innerHeight, 560) * 1.25",
+    "knownLimits": [
+      "CSS parser supports the current width/height/aspect-ratio queries and rejects unsupported conditions.",
+      "Pure Three.js projection uses the stable Connect pose, neutral pointer, and no hover.",
+      "CSS font metrics and line wrapping require a browser and are not simulated.",
+      "Source files may change after this baseline; hashes identify exactly which contents were modeled."
+    ]
+  },
+  "measurements": [
+    {
+      "viewport": "320x568",
+      "width": 320,
+      "height": 568,
+      "matrixGroup": "requested portrait",
+      "selectedSceneProfile": "mobile",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 57.57,
+            "y": 317.18
+          },
+          {
+            "x": 108.78,
+            "y": 317.18
+          },
+          {
+            "x": 160,
+            "y": 317.18
+          },
+          {
+            "x": 211.22,
+            "y": 317.18
+          },
+          {
+            "x": 262.43,
+            "y": 317.18
+          }
+        ],
+        "cssHitWidthPx": 70,
+        "centerSeparationPx": [
+          51.21,
+          51.22,
+          51.22,
+          51.21
+        ],
+        "adjacentHitGapPx": [
+          -18.79,
+          -18.78,
+          -18.78,
+          -18.79
+        ],
+        "hasOverlappingHitRectangles": true,
+        "outerBoundsX": [
+          22.57,
+          297.43
+        ],
+        "stageScale": [
+          0.49,
+          0.75,
+          0.85
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.65,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 281.6,
+        "currentControlMinWidthPx": 135,
+        "previousAndNextMinimumWidthPx": 93,
+        "trackAvailableWidthUpperBoundPx": 33.6,
+        "trackInternalGapsPx": 36,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 0,
+        "fixedGapsAloneExceedTrackSpace": true,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 77,
+        "chapterHeadingTopPx": 81.79,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 76.11,
+        "heroEyebrowStartsInsideHeader": true,
+        "footerHeightPx": 65,
+        "projectAsideBottomPx": 63.05,
+        "projectAsideFooterIntrusionPx": 1.95,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "360x800",
+      "width": 360,
+      "height": 800,
+      "matrixGroup": "requested portrait",
+      "selectedSceneProfile": "mobile",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 35.73,
+            "y": 446.74
+          },
+          {
+            "x": 107.87,
+            "y": 446.74
+          },
+          {
+            "x": 180,
+            "y": 446.74
+          },
+          {
+            "x": 252.13,
+            "y": 446.74
+          },
+          {
+            "x": 324.27,
+            "y": 446.74
+          }
+        ],
+        "cssHitWidthPx": 70,
+        "centerSeparationPx": [
+          72.14,
+          72.13,
+          72.13,
+          72.14
+        ],
+        "adjacentHitGapPx": [
+          2.14,
+          2.13,
+          2.13,
+          2.14
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          0.73,
+          359.27
+        ],
+        "stageScale": [
+          0.49,
+          0.75,
+          0.85
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.65,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 316.8,
+        "currentControlMinWidthPx": 135,
+        "previousAndNextMinimumWidthPx": 93,
+        "trackAvailableWidthUpperBoundPx": 68.8,
+        "trackInternalGapsPx": 36,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 2.52,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 77,
+        "chapterHeadingTopPx": 115.2,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 107.2,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 73,
+        "projectAsideBottomPx": 88.8,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "375x812",
+      "width": 375,
+      "height": 812,
+      "matrixGroup": "requested portrait",
+      "selectedSceneProfile": "mobile",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 41.07,
+            "y": 453.44
+          },
+          {
+            "x": 114.28,
+            "y": 453.44
+          },
+          {
+            "x": 187.5,
+            "y": 453.44
+          },
+          {
+            "x": 260.72,
+            "y": 453.44
+          },
+          {
+            "x": 333.93,
+            "y": 453.44
+          }
+        ],
+        "cssHitWidthPx": 70,
+        "centerSeparationPx": [
+          73.21,
+          73.22,
+          73.22,
+          73.21
+        ],
+        "adjacentHitGapPx": [
+          3.21,
+          3.22,
+          3.22,
+          3.21
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          6.07,
+          368.93
+        ],
+        "stageScale": [
+          0.49,
+          0.75,
+          0.85
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.65,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 330,
+        "currentControlMinWidthPx": 135,
+        "previousAndNextMinimumWidthPx": 93,
+        "trackAvailableWidthUpperBoundPx": 82,
+        "trackInternalGapsPx": 36,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 3.54,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 77,
+        "chapterHeadingTopPx": 116.93,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 108.81,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 73,
+        "projectAsideBottomPx": 90.13,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "390x844",
+      "width": 390,
+      "height": 844,
+      "matrixGroup": "requested portrait",
+      "selectedSceneProfile": "mobile",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 42.8,
+            "y": 471.31
+          },
+          {
+            "x": 118.9,
+            "y": 471.31
+          },
+          {
+            "x": 195,
+            "y": 471.31
+          },
+          {
+            "x": 271.1,
+            "y": 471.31
+          },
+          {
+            "x": 347.2,
+            "y": 471.31
+          }
+        ],
+        "cssHitWidthPx": 70,
+        "centerSeparationPx": [
+          76.1,
+          76.1,
+          76.1,
+          76.1
+        ],
+        "adjacentHitGapPx": [
+          6.1,
+          6.1,
+          6.1,
+          6.1
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          7.8,
+          382.2
+        ],
+        "stageScale": [
+          0.49,
+          0.75,
+          0.85
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.65,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 343.2,
+        "currentControlMinWidthPx": 135,
+        "previousAndNextMinimumWidthPx": 93,
+        "trackAvailableWidthUpperBoundPx": 95.2,
+        "trackInternalGapsPx": 36,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 4.55,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 77,
+        "chapterHeadingTopPx": 121.54,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 113.1,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 73,
+        "projectAsideBottomPx": 93.68,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "414x896",
+      "width": 414,
+      "height": 896,
+      "matrixGroup": "requested portrait",
+      "selectedSceneProfile": "mobile",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 45.42,
+            "y": 500.34
+          },
+          {
+            "x": 126.21,
+            "y": 500.34
+          },
+          {
+            "x": 207,
+            "y": 500.34
+          },
+          {
+            "x": 287.79,
+            "y": 500.34
+          },
+          {
+            "x": 368.58,
+            "y": 500.34
+          }
+        ],
+        "cssHitWidthPx": 70,
+        "centerSeparationPx": [
+          80.79,
+          80.79,
+          80.79,
+          80.79
+        ],
+        "adjacentHitGapPx": [
+          10.79,
+          10.79,
+          10.79,
+          10.79
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          10.42,
+          403.58
+        ],
+        "stageScale": [
+          0.49,
+          0.75,
+          0.85
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.65,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 364.32,
+        "currentControlMinWidthPx": 135,
+        "previousAndNextMinimumWidthPx": 93,
+        "trackAvailableWidthUpperBoundPx": 116.32,
+        "trackInternalGapsPx": 36,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 6.18,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 77,
+        "chapterHeadingTopPx": 129.02,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 120.06,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 73,
+        "projectAsideBottomPx": 99.46,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "430x932",
+      "width": 430,
+      "height": 932,
+      "matrixGroup": "requested portrait",
+      "selectedSceneProfile": "mobile",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 46.93,
+            "y": 520.45
+          },
+          {
+            "x": 130.96,
+            "y": 520.45
+          },
+          {
+            "x": 215,
+            "y": 520.45
+          },
+          {
+            "x": 299.04,
+            "y": 520.45
+          },
+          {
+            "x": 383.07,
+            "y": 520.45
+          }
+        ],
+        "cssHitWidthPx": 70,
+        "centerSeparationPx": [
+          84.03,
+          84.04,
+          84.04,
+          84.03
+        ],
+        "adjacentHitGapPx": [
+          14.03,
+          14.04,
+          14.04,
+          14.03
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          11.93,
+          418.07
+        ],
+        "stageScale": [
+          0.49,
+          0.75,
+          0.85
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.65,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 378.4,
+        "currentControlMinWidthPx": 135,
+        "previousAndNextMinimumWidthPx": 93,
+        "trackAvailableWidthUpperBoundPx": 130.4,
+        "trackInternalGapsPx": 36,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 7.26,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 77,
+        "chapterHeadingTopPx": 134.21,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 124.89,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 73,
+        "projectAsideBottomPx": 103.45,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "matrixGroup": "requested portrait",
+      "selectedSceneProfile": "tablet",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 106.18,
+            "y": 523.3
+          },
+          {
+            "x": 245.09,
+            "y": 523.3
+          },
+          {
+            "x": 384,
+            "y": 523.3
+          },
+          {
+            "x": 522.91,
+            "y": 523.3
+          },
+          {
+            "x": 661.82,
+            "y": 523.3
+          }
+        ],
+        "cssHitWidthPx": 95,
+        "centerSeparationPx": [
+          138.91,
+          138.91,
+          138.91,
+          138.91
+        ],
+        "adjacentHitGapPx": [
+          43.91,
+          43.91,
+          43.91,
+          43.91
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          58.68,
+          709.32
+        ],
+        "stageScale": [
+          0.72,
+          0.88,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.82,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 703.49,
+        "currentControlMinWidthPx": 170,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 393.49,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 26.58,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 88,
+        "chapterHeadingTopPx": 153.6,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 153.6,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 133.12,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "568x320",
+      "width": 568,
+      "height": 320,
+      "matrixGroup": "rotated requested viewport",
+      "selectedSceneProfile": "mobile",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 226.29,
+            "y": 178.69
+          },
+          {
+            "x": 255.15,
+            "y": 178.69
+          },
+          {
+            "x": 284,
+            "y": 178.69
+          },
+          {
+            "x": 312.85,
+            "y": 178.69
+          },
+          {
+            "x": 341.71,
+            "y": 178.69
+          }
+        ],
+        "cssHitWidthPx": 70,
+        "centerSeparationPx": [
+          28.86,
+          28.85,
+          28.85,
+          28.86
+        ],
+        "adjacentHitGapPx": [
+          -41.14,
+          -41.15,
+          -41.15,
+          -41.14
+        ],
+        "hasOverlappingHitRectangles": true,
+        "outerBoundsX": [
+          191.29,
+          376.71
+        ],
+        "stageScale": [
+          0.49,
+          0.75,
+          0.85
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.65,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 499.84,
+        "currentControlMinWidthPx": 135,
+        "previousAndNextMinimumWidthPx": 93,
+        "trackAvailableWidthUpperBoundPx": 251.84,
+        "trackInternalGapsPx": 36,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 16.6,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 77,
+        "chapterHeadingTopPx": 46.08,
+        "chapterHeadingStartsInsideHeader": true,
+        "heroEyebrowTopPx": 42.88,
+        "heroEyebrowStartsInsideHeader": true,
+        "footerHeightPx": 65,
+        "projectAsideBottomPx": 35.52,
+        "projectAsideFooterIntrusionPx": 29.48,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "800x360",
+      "width": 800,
+      "height": 360,
+      "matrixGroup": "rotated requested viewport",
+      "selectedSceneProfile": "desktop",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 264.4,
+            "y": 185.63
+          },
+          {
+            "x": 332.2,
+            "y": 185.63
+          },
+          {
+            "x": 400,
+            "y": 185.63
+          },
+          {
+            "x": 467.8,
+            "y": 185.63
+          },
+          {
+            "x": 535.6,
+            "y": 185.63
+          }
+        ],
+        "cssHitWidthPx": 95,
+        "centerSeparationPx": [
+          67.8,
+          67.8,
+          67.8,
+          67.8
+        ],
+        "adjacentHitGapPx": [
+          -27.2,
+          -27.2,
+          -27.2,
+          -27.2
+        ],
+        "hasOverlappingHitRectangles": true,
+        "outerBoundsX": [
+          216.9,
+          583.1
+        ],
+        "stageScale": [
+          1,
+          1,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 1,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 732.8,
+        "currentControlMinWidthPx": 170,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 422.8,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 28.83,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 88,
+        "chapterHeadingTopPx": 57.6,
+        "chapterHeadingStartsInsideHeader": true,
+        "heroEyebrowTopPx": 65.16,
+        "heroEyebrowStartsInsideHeader": true,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 54.72,
+        "projectAsideFooterIntrusionPx": 31.28,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "812x375",
+      "width": 812,
+      "height": 375,
+      "matrixGroup": "rotated requested viewport",
+      "selectedSceneProfile": "desktop",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 264.75,
+            "y": 193.37
+          },
+          {
+            "x": 335.37,
+            "y": 193.37
+          },
+          {
+            "x": 406,
+            "y": 193.37
+          },
+          {
+            "x": 476.63,
+            "y": 193.37
+          },
+          {
+            "x": 547.25,
+            "y": 193.37
+          }
+        ],
+        "cssHitWidthPx": 95,
+        "centerSeparationPx": [
+          70.62,
+          70.63,
+          70.63,
+          70.62
+        ],
+        "adjacentHitGapPx": [
+          -24.38,
+          -24.37,
+          -24.37,
+          -24.38
+        ],
+        "hasOverlappingHitRectangles": true,
+        "outerBoundsX": [
+          217.25,
+          594.75
+        ],
+        "stageScale": [
+          1,
+          1,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 1,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 743.79,
+        "currentControlMinWidthPx": 170,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 433.79,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 29.68,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 88,
+        "chapterHeadingTopPx": 60,
+        "chapterHeadingStartsInsideHeader": true,
+        "heroEyebrowTopPx": 67.88,
+        "heroEyebrowStartsInsideHeader": true,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 57,
+        "projectAsideFooterIntrusionPx": 29,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "844x390",
+      "width": 844,
+      "height": 390,
+      "matrixGroup": "rotated requested viewport",
+      "selectedSceneProfile": "desktop",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 275.1,
+            "y": 201.1
+          },
+          {
+            "x": 348.55,
+            "y": 201.1
+          },
+          {
+            "x": 422,
+            "y": 201.1
+          },
+          {
+            "x": 495.45,
+            "y": 201.1
+          },
+          {
+            "x": 568.9,
+            "y": 201.1
+          }
+        ],
+        "cssHitWidthPx": 95,
+        "centerSeparationPx": [
+          73.45,
+          73.45,
+          73.45,
+          73.45
+        ],
+        "adjacentHitGapPx": [
+          -21.55,
+          -21.55,
+          -21.55,
+          -21.55
+        ],
+        "hasOverlappingHitRectangles": true,
+        "outerBoundsX": [
+          227.6,
+          616.4
+        ],
+        "stageScale": [
+          1,
+          1,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 1,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 773.1,
+        "currentControlMinWidthPx": 170,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 463.1,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 31.93,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 88,
+        "chapterHeadingTopPx": 62.4,
+        "chapterHeadingStartsInsideHeader": true,
+        "heroEyebrowTopPx": 70.59,
+        "heroEyebrowStartsInsideHeader": true,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 59.28,
+        "projectAsideFooterIntrusionPx": 26.72,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "896x414",
+      "width": 896,
+      "height": 414,
+      "matrixGroup": "rotated requested viewport",
+      "selectedSceneProfile": "desktop",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 292.06,
+            "y": 213.48
+          },
+          {
+            "x": 370.03,
+            "y": 213.48
+          },
+          {
+            "x": 448,
+            "y": 213.48
+          },
+          {
+            "x": 525.97,
+            "y": 213.48
+          },
+          {
+            "x": 603.94,
+            "y": 213.48
+          }
+        ],
+        "cssHitWidthPx": 95,
+        "centerSeparationPx": [
+          77.97,
+          77.97,
+          77.97,
+          77.97
+        ],
+        "adjacentHitGapPx": [
+          -17.03,
+          -17.03,
+          -17.03,
+          -17.03
+        ],
+        "hasOverlappingHitRectangles": true,
+        "outerBoundsX": [
+          244.56,
+          651.44
+        ],
+        "stageScale": [
+          1,
+          1,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 1,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 820.74,
+        "currentControlMinWidthPx": 170,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 510.74,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 35.6,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 88,
+        "chapterHeadingTopPx": 66.24,
+        "chapterHeadingStartsInsideHeader": true,
+        "heroEyebrowTopPx": 74.93,
+        "heroEyebrowStartsInsideHeader": true,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 62.93,
+        "projectAsideFooterIntrusionPx": 23.07,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "932x430",
+      "width": 932,
+      "height": 430,
+      "matrixGroup": "rotated requested viewport",
+      "selectedSceneProfile": "desktop",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 304.03,
+            "y": 221.73
+          },
+          {
+            "x": 385.02,
+            "y": 221.73
+          },
+          {
+            "x": 466,
+            "y": 221.73
+          },
+          {
+            "x": 546.98,
+            "y": 221.73
+          },
+          {
+            "x": 627.97,
+            "y": 221.73
+          }
+        ],
+        "cssHitWidthPx": 95,
+        "centerSeparationPx": [
+          80.99,
+          80.98,
+          80.98,
+          80.99
+        ],
+        "adjacentHitGapPx": [
+          -14.01,
+          -14.02,
+          -14.02,
+          -14.01
+        ],
+        "hasOverlappingHitRectangles": true,
+        "outerBoundsX": [
+          256.53,
+          675.47
+        ],
+        "stageScale": [
+          1,
+          1,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 1,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 853.71,
+        "currentControlMinWidthPx": 170,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 543.71,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 38.13,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 88,
+        "chapterHeadingTopPx": 68.8,
+        "chapterHeadingStartsInsideHeader": true,
+        "heroEyebrowTopPx": 77.83,
+        "heroEyebrowStartsInsideHeader": true,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 65.36,
+        "projectAsideFooterIntrusionPx": 20.64,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "1024x768",
+      "width": 1024,
+      "height": 768,
+      "matrixGroup": "rotated requested viewport",
+      "selectedSceneProfile": "desktop",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 222.72,
+            "y": 396.01
+          },
+          {
+            "x": 367.36,
+            "y": 396.01
+          },
+          {
+            "x": 512,
+            "y": 396.01
+          },
+          {
+            "x": 656.64,
+            "y": 396.01
+          },
+          {
+            "x": 801.28,
+            "y": 396.01
+          }
+        ],
+        "cssHitWidthPx": 95,
+        "centerSeparationPx": [
+          144.64,
+          144.64,
+          144.64,
+          144.64
+        ],
+        "adjacentHitGapPx": [
+          49.64,
+          49.64,
+          49.64,
+          49.64
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          175.22,
+          848.78
+        ],
+        "stageScale": [
+          1,
+          1,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 1,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 937.98,
+        "currentControlMinWidthPx": 170,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 627.98,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 44.61,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 88,
+        "chapterHeadingTopPx": 122.88,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 139.01,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 116.74,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "matrixGroup": "additional coverage",
+      "selectedSceneProfile": "desktop",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 553.2,
+            "y": 556.89
+          },
+          {
+            "x": 756.6,
+            "y": 556.89
+          },
+          {
+            "x": 960,
+            "y": 556.89
+          },
+          {
+            "x": 1163.4,
+            "y": 556.89
+          },
+          {
+            "x": 1366.8,
+            "y": 556.89
+          }
+        ],
+        "cssHitWidthPx": 115,
+        "centerSeparationPx": [
+          203.4,
+          203.4,
+          203.4,
+          203.4
+        ],
+        "adjacentHitGapPx": [
+          88.4,
+          88.4,
+          88.4,
+          88.4
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          495.7,
+          1424.3
+        ],
+        "stageScale": [
+          1,
+          1,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 1,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 1758.72,
+        "currentControlMinWidthPx": 210,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 1376.72,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 102.21,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 110,
+        "chapterHeadingTopPx": 193.32,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 195.48,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 164.16,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "matrixGroup": "additional coverage",
+      "selectedSceneProfile": "desktop",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 381,
+            "y": 464.08
+          },
+          {
+            "x": 550.5,
+            "y": 464.08
+          },
+          {
+            "x": 720,
+            "y": 464.08
+          },
+          {
+            "x": 889.5,
+            "y": 464.08
+          },
+          {
+            "x": 1059,
+            "y": 464.08
+          }
+        ],
+        "cssHitWidthPx": 115,
+        "centerSeparationPx": [
+          169.5,
+          169.5,
+          169.5,
+          169.5
+        ],
+        "adjacentHitGapPx": [
+          54.5,
+          54.5,
+          54.5,
+          54.5
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          323.5,
+          1116.5
+        ],
+        "stageScale": [
+          1,
+          1,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 1,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 1319.04,
+        "currentControlMinWidthPx": 210,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 937.04,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 68.39,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 110,
+        "chapterHeadingTopPx": 161.1,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 162.9,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 136.8,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "1366x768",
+      "width": 1366,
+      "height": 768,
+      "matrixGroup": "additional coverage",
+      "selectedSceneProfile": "desktop",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 393.72,
+            "y": 396.01
+          },
+          {
+            "x": 538.36,
+            "y": 396.01
+          },
+          {
+            "x": 683,
+            "y": 396.01
+          },
+          {
+            "x": 827.64,
+            "y": 396.01
+          },
+          {
+            "x": 972.28,
+            "y": 396.01
+          }
+        ],
+        "cssHitWidthPx": 115,
+        "centerSeparationPx": [
+          144.64,
+          144.64,
+          144.64,
+          144.64
+        ],
+        "adjacentHitGapPx": [
+          29.64,
+          29.64,
+          29.64,
+          29.64
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          336.22,
+          1029.78
+        ],
+        "stageScale": [
+          1,
+          1,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 1,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 1251.26,
+        "currentControlMinWidthPx": 210,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 869.26,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 63.17,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 110,
+        "chapterHeadingTopPx": 137.47,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 139.01,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 116.74,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "360x640",
+      "width": 360,
+      "height": 640,
+      "matrixGroup": "additional coverage",
+      "selectedSceneProfile": "mobile",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 64.59,
+            "y": 357.39
+          },
+          {
+            "x": 122.29,
+            "y": 357.39
+          },
+          {
+            "x": 180,
+            "y": 357.39
+          },
+          {
+            "x": 237.71,
+            "y": 357.39
+          },
+          {
+            "x": 295.41,
+            "y": 357.39
+          }
+        ],
+        "cssHitWidthPx": 70,
+        "centerSeparationPx": [
+          57.7,
+          57.71,
+          57.71,
+          57.7
+        ],
+        "adjacentHitGapPx": [
+          -12.3,
+          -12.29,
+          -12.29,
+          -12.3
+        ],
+        "hasOverlappingHitRectangles": true,
+        "outerBoundsX": [
+          29.59,
+          330.41
+        ],
+        "stageScale": [
+          0.49,
+          0.75,
+          0.85
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.65,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 316.8,
+        "currentControlMinWidthPx": 135,
+        "previousAndNextMinimumWidthPx": 93,
+        "trackAvailableWidthUpperBoundPx": 68.8,
+        "trackInternalGapsPx": 36,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 2.52,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 77,
+        "chapterHeadingTopPx": 92.16,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 85.76,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 65,
+        "projectAsideBottomPx": 71.04,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "375x667",
+      "width": 375,
+      "height": 667,
+      "matrixGroup": "additional coverage",
+      "selectedSceneProfile": "mobile",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 67.22,
+            "y": 372.47
+          },
+          {
+            "x": 127.36,
+            "y": 372.47
+          },
+          {
+            "x": 187.5,
+            "y": 372.47
+          },
+          {
+            "x": 247.64,
+            "y": 372.47
+          },
+          {
+            "x": 307.78,
+            "y": 372.47
+          }
+        ],
+        "cssHitWidthPx": 70,
+        "centerSeparationPx": [
+          60.14,
+          60.14,
+          60.14,
+          60.14
+        ],
+        "adjacentHitGapPx": [
+          -9.86,
+          -9.86,
+          -9.86,
+          -9.86
+        ],
+        "hasOverlappingHitRectangles": true,
+        "outerBoundsX": [
+          32.22,
+          342.78
+        ],
+        "stageScale": [
+          0.49,
+          0.75,
+          0.85
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.65,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 330,
+        "currentControlMinWidthPx": 135,
+        "previousAndNextMinimumWidthPx": 93,
+        "trackAvailableWidthUpperBoundPx": 82,
+        "trackInternalGapsPx": 36,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 3.54,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 77,
+        "chapterHeadingTopPx": 96.05,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 89.38,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 65,
+        "projectAsideBottomPx": 74.04,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    },
+    {
+      "viewport": "820x1180",
+      "width": 820,
+      "height": 1180,
+      "matrixGroup": "additional coverage",
+      "selectedSceneProfile": "tablet",
+      "social": {
+        "chapter": "connect",
+        "pointer": "neutral",
+        "motion": "full",
+        "centers": [
+          {
+            "x": 89.86,
+            "y": 603.02
+          },
+          {
+            "x": 249.93,
+            "y": 603.02
+          },
+          {
+            "x": 410,
+            "y": 603.02
+          },
+          {
+            "x": 570.07,
+            "y": 603.02
+          },
+          {
+            "x": 730.14,
+            "y": 603.02
+          }
+        ],
+        "cssHitWidthPx": 95,
+        "centerSeparationPx": [
+          160.07,
+          160.07,
+          160.07,
+          160.07
+        ],
+        "adjacentHitGapPx": [
+          65.07,
+          65.07,
+          65.07,
+          65.07
+        ],
+        "hasOverlappingHitRectangles": false,
+        "outerBoundsX": [
+          42.36,
+          777.64
+        ],
+        "stageScale": [
+          0.72,
+          0.88,
+          1
+        ],
+        "brandPlaneWidthToHeightScaleRatio": 0.82,
+        "note": "Projected from actual rest-pose camera expressions and fin anchors; CSS rectangle width is source-derived. Font shaping, hover, DOM layout, and actual rendering are not measured."
+      },
+      "footer": {
+        "availableWidthPx": 751.12,
+        "currentControlMinWidthPx": 170,
+        "previousAndNextMinimumWidthPx": 100,
+        "trackAvailableWidthUpperBoundPx": 441.12,
+        "trackInternalGapsPx": 48,
+        "eachOf13TrackButtonsWidthUpperBoundPx": 30.24,
+        "fixedGapsAloneExceedTrackSpace": false,
+        "note": "Conservative upper bound: text intrinsic sizing can only reduce track room. A desktop next-label intrinsic width is not measured."
+      },
+      "verticalReservations": {
+        "headerHeightPx": 88,
+        "chapterHeadingTopPx": 177,
+        "chapterHeadingStartsInsideHeader": false,
+        "heroEyebrowTopPx": 177,
+        "heroEyebrowStartsInsideHeader": false,
+        "footerHeightPx": 86,
+        "projectAsideBottomPx": 153.4,
+        "projectAsideFooterIntrusionPx": 0,
+        "note": "Compares declared containing-block coordinates only; no rendered ink rectangles or browser toolbar dimensions are inferred."
+      }
+    }
+  ],
+  "resizeExamples": [
+    {
+      "fromHeight": 844,
+      "toHeight": 744,
+      "before": {
+        "raw": 10,
+        "progress": 10,
+        "activeChapter": 10
+      },
+      "oldStep": 1055,
+      "newStep": 930,
+      "scrollY": 10550,
+      "beforeDelayedCompensation": {
+        "raw": 11.34,
+        "progress": 11.09,
+        "activeChapter": 11
+      },
+      "intendedAfterCompensation": {
+        "raw": 10,
+        "progress": 10,
+        "activeChapter": 10
+      },
+      "sourceDebounceMs": 80,
+      "note": "Arithmetic for the resize gap before App.tsx delayed scroll compensation, not an observed browser trace."
+    },
+    {
+      "fromHeight": 744,
+      "toHeight": 844,
+      "before": {
+        "raw": 10,
+        "progress": 10,
+        "activeChapter": 10
+      },
+      "oldStep": 930,
+      "newStep": 1055,
+      "scrollY": 9300,
+      "beforeDelayedCompensation": {
+        "raw": 8.82,
+        "progress": 8.96,
+        "activeChapter": 9
+      },
+      "intendedAfterCompensation": {
+        "raw": 10,
+        "progress": 10,
+        "activeChapter": 10
+      },
+      "sourceDebounceMs": 80,
+      "note": "Arithmetic for the resize gap before App.tsx delayed scroll compensation, not an observed browser trace."
+    }
+  ],
+  "sourceFindings": [
+    {
+      "id": "safe-area",
+      "evidence": {
+        "cssHasSafeAreaInsets": false,
+        "viewportFitCover": false,
+        "visualViewportListener": false
+      },
+      "conclusion": "No explicit safe-area reservation or visual-viewport handling exists in the audited sources. Actual notch/home-indicator occlusion has not been observed."
+    },
+    {
+      "id": "resize-progress",
+      "source": "src/App.tsx resize handler; src/engine/scroll.ts chapterStep/getScrollState",
+      "conclusion": "Scroll progress reads the new innerHeight immediately, while position compensation is delayed 80 ms. Examples above demonstrate the possible intermediate chapter change. Scroll events during that delay also update lastRaw against the new step."
+    },
+    {
+      "id": "reading-anchor",
+      "source": "src/App.tsx go(); src/styles.css .reading-view section and .site-header",
+      "conclusion": "Reading navigation uses scrollIntoView without scroll-margin-top. Section top padding is 35 px mobile / 55 px desktop, less than the 77 px / 110 px fixed header; the aligned section overline can start beneath the header."
+    },
+    {
+      "id": "remaining-hit-targets",
+      "source": "src/styles.css .project-action, .hero-profession .text-link, .contact-meta a, .reading-socials a, .menu-bottom button",
+      "conclusion": "These controls have no 44 px minimum hit height; their declared font/padding/icon sizes are smaller. Existing AnimatedControls already preserve 44 px résumé/previous/next hit boxes. Exact font-dependent rectangles are not measured."
+    },
+    {
+      "id": "landscape-profile",
+      "source": "src/engine/World.ts mobile width predicate; src/styles.css media rules",
+      "conclusion": "A phone rotated wider than 699 px selects desktop geometry/CSS even when height is360–430px. The numerical header and social overlap results quantify consequences."
+    }
+  ],
+  "suggestedMinimalStrategy": [
+    "Separate stable logical chapter-step height from current visual-stage height. Resize the canvas immediately; preserve narrative progress on committed width/orientation changes rather than every toolbar resize.",
+    "Add shared header/footer/safe-area reservations and one compact landscape profile; use them for overlay and camera fitting.",
+    "Keep existing animated icons and 44 px controls. On narrow screens make the 13-segment track a noninteractive progress indicator, with chapter access through the existing Index and previous/next controls.",
+    "Fit social centers to viewport width and enforce nonoverlapping 44 px minimum targets; use a separate wide, shallow landscape spread while keeping the five platform order unchanged.",
+    "Use per-chapter compact positions: centered hero; three closer language/workflow stations; two rows for six frontend anchors; 2×2 backend stations; compact data tables; centered project logos; staggered career/education markers. Preserve assets and the shared continuous beam architecture.",
+    "Use uniform scale for logo planes or inverse compensation so mobile fitting does not deform authentic marks. Keep small 3D secondary labels supported by readable semantic tags.",
+    "Set reading-section scroll margin to header plus safe-top and spacing. Add hit-area padding to remaining compact links without replacing artwork."
+  ]
+}

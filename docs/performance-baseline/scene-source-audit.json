@@ -1,0 +1,1701 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-10T20:36:01.985Z",
+  "command": "node --import tsx scripts/audit-scene-resources.ts",
+  "runtime": {
+    "node": "v22.22.3",
+    "platform": "darwin",
+    "arch": "arm64",
+    "threeRevision": "180"
+  },
+  "method": {
+    "actualFactory": "src/scene/installations.ts:createInstallations",
+    "canvasShim": "Records dimensions and fillText calls only; fillRect is a no-op. No pixel backing stores or font rasterization.",
+    "browserUsed": false,
+    "networkUsed": false,
+    "webglContextCreated": false,
+    "measurements": "Object/resource counts and existing geometry TypedArray byte lengths from the actual installation objects.",
+    "estimates": "RGBA8 texel storage uses width × height × 4; the full mip-chain estimate sums successively halved dimensions down to 1 × 1.",
+    "limitations": [
+      "No browser loading, rasterization, compilation, frame timing, CPU heap, GPU residency, or GPU-memory measurement is performed.",
+      "Texture estimates exclude canvas backing-store implementation, decoded images, duplicate copies, allocation alignment, driver overhead, and render targets.",
+      "Only createInstallations() is instantiated. Portrait, shared 72-beam mesh, lights, floor, grid, shadow map, environment/PMREM, and HTML are excluded.",
+      "Image planes remain deferred without calling prepareTextures(); their image bytes, decoded pixels, and future textures are excluded.",
+      "Unique resources are deduplicated by identity within each chapter and across totals; summing chapter resource counts/bytes can double-count resources shared across chapters.",
+      "trianglesAcrossMeshReferences assumes each installation mesh geometry is drawn once, without visibility, camera/frustum/occlusion, shadow passes, or material grouping. It is not an observed frame triangle or draw-call count.",
+      "Canvas textures are constructed eagerly by this factory, but browser GPU upload normally occurs when rendered. Allocated source canvases do not establish simultaneous GPU residency.",
+      "No CPU microbenchmark is included because the shim omits real canvas work and would not establish a rendering bottleneck."
+    ]
+  },
+  "sourceInputs": [
+    {
+      "path": "src/scene/installations.ts",
+      "sha256": "30cc4b61e54c237b350ec3ac07f859509e97f7f547e7e60fdadf11536570340d"
+    },
+    {
+      "path": "src/scene/primitives.ts",
+      "sha256": "1776b57bf23ff4f5bcdaa8d773d1e171bd23ec9fc9f689dc10e3a813bcbe54bc"
+    },
+    {
+      "path": "src/data/chapters.ts",
+      "sha256": "1b74be0f4e8dcbef41076c1e9ddf43810e95f113cf94bd600ea5a6beb2bbcf0f"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "178cc24c493f42cdde9a4cd912cdc2421285643dc3141ee7b03fbfac39234140"
+    },
+    {
+      "path": "scripts/audit-scene-resources.ts",
+      "sha256": "1d55944881eb60e3ad5d568db5e92d6e7e17ba8c9a66817df4ded74ae0320c3f"
+    }
+  ],
+  "totals": {
+    "objectsIncludingGroup": 268,
+    "meshes": 233,
+    "shadowCastingMeshes": 128,
+    "shadowReceivingMeshes": 128,
+    "uniqueGeometries": 106,
+    "uniqueMaterials": 110,
+    "uniqueTexturesAlreadyConstructed": 77,
+    "geometryTypedArrayBytes": 126792,
+    "trianglesAcrossMeshReferences": 77692,
+    "labelCanvasCount": 77,
+    "estimatedLabelBaseRgbaBytes": 140738560,
+    "estimatedLabelFullMipChainRgbaBytes": 187631460,
+    "deferredImagePlaneCount": 21,
+    "deferredUniqueImagePaths": [
+      "/assets/brands/javascript.svg",
+      "/assets/brands/typescript.svg",
+      "/assets/brands/python.svg",
+      "/assets/brands/html5.svg",
+      "/assets/brands/css3.svg",
+      "/assets/brands/react.svg",
+      "/assets/brands/nextdotjs.svg",
+      "/assets/brands/nodedotjs.svg",
+      "/assets/brands/nestjs.svg",
+      "/assets/brands/postgresql.svg",
+      "/assets/brands/prisma.svg",
+      "/assets/brands/git.svg",
+      "/assets/brands/github.svg",
+      "/assets/brands/postman.svg",
+      "/assets/RCS-Logo.png",
+      "/assets/GOLDADAN_LOGO.jpg",
+      "/assets/BHABHI THULLA.png",
+      "/assets/brands/upwork.svg",
+      "/assets/brands/fiverr.svg"
+    ]
+  },
+  "perChapter": [
+    {
+      "index": 0,
+      "id": "human",
+      "objectsIncludingGroup": 5,
+      "meshes": 4,
+      "shadowCastingMeshes": 4,
+      "shadowReceivingMeshes": 4,
+      "uniqueGeometries": 1,
+      "uniqueMaterials": 1,
+      "uniqueTexturesAlreadyConstructed": 0,
+      "geometryTypedArrayBytes": 56448,
+      "trianglesAcrossMeshReferences": 2352,
+      "labelCanvasCount": 0,
+      "estimatedLabelBaseRgbaBytes": 0,
+      "estimatedLabelFullMipChainRgbaBytes": 0,
+      "deferredImagePlaneCount": 0,
+      "deferredUniqueImagePaths": [],
+      "labels": []
+    },
+    {
+      "index": 1,
+      "id": "code",
+      "objectsIncludingGroup": 4,
+      "meshes": 3,
+      "shadowCastingMeshes": 0,
+      "shadowReceivingMeshes": 0,
+      "uniqueGeometries": 3,
+      "uniqueMaterials": 3,
+      "uniqueTexturesAlreadyConstructed": 3,
+      "geometryTypedArrayBytes": 420,
+      "trianglesAcrossMeshReferences": 6,
+      "labelCanvasCount": 3,
+      "estimatedLabelBaseRgbaBytes": 3145728,
+      "estimatedLabelFullMipChainRgbaBytes": 4194324,
+      "deferredImagePlaneCount": 0,
+      "deferredUniqueImagePaths": [],
+      "labels": [
+        {
+          "text": "<",
+          "draws": [
+            {
+              "text": "<",
+              "font": "300 170px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "/>",
+          "draws": [
+            {
+              "text": "/>",
+              "font": "300 140px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "01 / A HUMAN IDEA, EXPRESSED IN CODE",
+          "draws": [
+            {
+              "text": "01 / A HUMAN IDEA, EXPRESSED IN CODE",
+              "font": "400 36px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "id": "languages",
+      "objectsIncludingGroup": 19,
+      "meshes": 15,
+      "shadowCastingMeshes": 9,
+      "shadowReceivingMeshes": 9,
+      "uniqueGeometries": 7,
+      "uniqueMaterials": 10,
+      "uniqueTexturesAlreadyConstructed": 3,
+      "geometryTypedArrayBytes": 57288,
+      "trianglesAcrossMeshReferences": 5304,
+      "labelCanvasCount": 3,
+      "estimatedLabelBaseRgbaBytes": 3145728,
+      "estimatedLabelFullMipChainRgbaBytes": 4194324,
+      "deferredImagePlaneCount": 3,
+      "deferredUniqueImagePaths": [
+        "/assets/brands/javascript.svg",
+        "/assets/brands/typescript.svg",
+        "/assets/brands/python.svg"
+      ],
+      "labels": [
+        {
+          "text": "JavaScript / ES6+",
+          "draws": [
+            {
+              "text": "JavaScript / ES6+",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "TypeScript",
+          "draws": [
+            {
+              "text": "TypeScript",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Python",
+          "draws": [
+            {
+              "text": "Python",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "id": "frontend",
+      "objectsIncludingGroup": 33,
+      "meshes": 31,
+      "shadowCastingMeshes": 17,
+      "shadowReceivingMeshes": 17,
+      "uniqueGeometries": 15,
+      "uniqueMaterials": 18,
+      "uniqueTexturesAlreadyConstructed": 8,
+      "geometryTypedArrayBytes": 58408,
+      "trianglesAcrossMeshReferences": 10024,
+      "labelCanvasCount": 8,
+      "estimatedLabelBaseRgbaBytes": 8388608,
+      "estimatedLabelFullMipChainRgbaBytes": 11184864,
+      "deferredImagePlaneCount": 6,
+      "deferredUniqueImagePaths": [
+        "/assets/brands/html5.svg",
+        "/assets/brands/css3.svg",
+        "/assets/brands/javascript.svg",
+        "/assets/brands/typescript.svg",
+        "/assets/brands/react.svg",
+        "/assets/brands/nextdotjs.svg"
+      ],
+      "labels": [
+        {
+          "text": "Hello, world.",
+          "draws": [
+            {
+              "text": "Hello, world.",
+              "font": "600 90px \"Space Grotesk\"",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Let’s build",
+          "draws": [
+            {
+              "text": "Let’s build",
+              "font": "500 64px sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "HTML5",
+          "draws": [
+            {
+              "text": "HTML5",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "CSS3",
+          "draws": [
+            {
+              "text": "CSS3",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "JavaScript",
+          "draws": [
+            {
+              "text": "JavaScript",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "TypeScript",
+          "draws": [
+            {
+              "text": "TypeScript",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "React.js",
+          "draws": [
+            {
+              "text": "React.js",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Next.js",
+          "draws": [
+            {
+              "text": "Next.js",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "id": "backend",
+      "objectsIncludingGroup": 24,
+      "meshes": 21,
+      "shadowCastingMeshes": 7,
+      "shadowReceivingMeshes": 7,
+      "uniqueGeometries": 15,
+      "uniqueMaterials": 19,
+      "uniqueTexturesAlreadyConstructed": 11,
+      "geometryTypedArrayBytes": 67372,
+      "trianglesAcrossMeshReferences": 4502,
+      "labelCanvasCount": 11,
+      "estimatedLabelBaseRgbaBytes": 11534336,
+      "estimatedLabelFullMipChainRgbaBytes": 15379188,
+      "deferredImagePlaneCount": 2,
+      "deferredUniqueImagePaths": [
+        "/assets/brands/nodedotjs.svg",
+        "/assets/brands/nestjs.svg"
+      ],
+      "labels": [
+        {
+          "text": "{ ↔ }",
+          "draws": [
+            {
+              "text": "{ ↔ }",
+              "font": "500 130px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "REST API",
+          "draws": [
+            {
+              "text": "REST API",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "01 REQUEST",
+          "draws": [
+            {
+              "text": "01 REQUEST",
+              "font": "500 42px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Node.js",
+          "draws": [
+            {
+              "text": "Node.js",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "02 ROUTE",
+          "draws": [
+            {
+              "text": "02 ROUTE",
+              "font": "500 42px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "H · P · S",
+          "draws": [
+            {
+              "text": "H · P · S",
+              "font": "500 130px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "JWT AUTH",
+          "draws": [
+            {
+              "text": "JWT AUTH",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "03 VERIFY",
+          "draws": [
+            {
+              "text": "03 VERIFY",
+              "font": "500 42px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "NestJS",
+          "draws": [
+            {
+              "text": "NestJS",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "04 SERVICE",
+          "draws": [
+            {
+              "text": "04 SERVICE",
+              "font": "500 42px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "CLIENT → ROUTER → AUTH → SERVICE",
+          "draws": [
+            {
+              "text": "CLIENT → ROUTER → AUTH → SERVICE",
+              "font": "400 40px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "id": "data",
+      "objectsIncludingGroup": 26,
+      "meshes": 25,
+      "shadowCastingMeshes": 6,
+      "shadowReceivingMeshes": 6,
+      "uniqueGeometries": 20,
+      "uniqueMaterials": 21,
+      "uniqueTexturesAlreadyConstructed": 15,
+      "geometryTypedArrayBytes": 73484,
+      "trianglesAcrossMeshReferences": 4138,
+      "labelCanvasCount": 15,
+      "estimatedLabelBaseRgbaBytes": 15728640,
+      "estimatedLabelFullMipChainRgbaBytes": 20971620,
+      "deferredImagePlaneCount": 2,
+      "deferredUniqueImagePaths": [
+        "/assets/brands/postgresql.svg",
+        "/assets/brands/prisma.svg"
+      ],
+      "labels": [
+        {
+          "text": "User",
+          "draws": [
+            {
+              "text": "User",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "id",
+          "draws": [
+            {
+              "text": "id",
+              "font": "400 58px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "name",
+          "draws": [
+            {
+              "text": "name",
+              "font": "400 58px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "email",
+          "draws": [
+            {
+              "text": "email",
+              "font": "400 58px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Project",
+          "draws": [
+            {
+              "text": "Project",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "id",
+          "draws": [
+            {
+              "text": "id",
+              "font": "400 58px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "userId",
+          "draws": [
+            {
+              "text": "userId",
+              "font": "400 58px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "title",
+          "draws": [
+            {
+              "text": "title",
+              "font": "400 58px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Record",
+          "draws": [
+            {
+              "text": "Record",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "id",
+          "draws": [
+            {
+              "text": "id",
+              "font": "400 58px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "projectId",
+          "draws": [
+            {
+              "text": "projectId",
+              "font": "400 58px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "state",
+          "draws": [
+            {
+              "text": "state",
+              "font": "400 58px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "PostgreSQL",
+          "draws": [
+            {
+              "text": "PostgreSQL",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Prisma ORM",
+          "draws": [
+            {
+              "text": "Prisma ORM",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "User.id → Project.userId   /   Project.id → Record.projectId",
+          "draws": [
+            {
+              "text": "User.id → Project.userId   /   Project.id → Record.projectId",
+              "font": "400 32px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "id": "workflow",
+      "objectsIncludingGroup": 26,
+      "meshes": 22,
+      "shadowCastingMeshes": 13,
+      "shadowReceivingMeshes": 13,
+      "uniqueGeometries": 10,
+      "uniqueMaterials": 14,
+      "uniqueTexturesAlreadyConstructed": 4,
+      "geometryTypedArrayBytes": 72084,
+      "trianglesAcrossMeshReferences": 8234,
+      "labelCanvasCount": 4,
+      "estimatedLabelBaseRgbaBytes": 4194304,
+      "estimatedLabelFullMipChainRgbaBytes": 5592432,
+      "deferredImagePlaneCount": 3,
+      "deferredUniqueImagePaths": [
+        "/assets/brands/git.svg",
+        "/assets/brands/github.svg",
+        "/assets/brands/postman.svg"
+      ],
+      "labels": [
+        {
+          "text": "Git",
+          "draws": [
+            {
+              "text": "Git",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "GitHub",
+          "draws": [
+            {
+              "text": "GitHub",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Postman",
+          "draws": [
+            {
+              "text": "Postman",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "BRANCH / COLLABORATE / TEST / DELIVER",
+          "draws": [
+            {
+              "text": "BRANCH / COLLABORATE / TEST / DELIVER",
+              "font": "400 38px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "id": "rcs-cargo",
+      "objectsIncludingGroup": 42,
+      "meshes": 41,
+      "shadowCastingMeshes": 38,
+      "shadowReceivingMeshes": 38,
+      "uniqueGeometries": 4,
+      "uniqueMaterials": 7,
+      "uniqueTexturesAlreadyConstructed": 1,
+      "geometryTypedArrayBytes": 67608,
+      "trianglesAcrossMeshReferences": 22780,
+      "labelCanvasCount": 1,
+      "estimatedLabelBaseRgbaBytes": 1048576,
+      "estimatedLabelFullMipChainRgbaBytes": 1398108,
+      "deferredImagePlaneCount": 1,
+      "deferredUniqueImagePaths": [
+        "/assets/RCS-Logo.png"
+      ],
+      "labels": [
+        {
+          "text": "CONNECTED LOGISTICS",
+          "draws": [
+            {
+              "text": "CONNECTED LOGISTICS",
+              "font": "400 40px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "id": "goldadan",
+      "objectsIncludingGroup": 7,
+      "meshes": 6,
+      "shadowCastingMeshes": 4,
+      "shadowReceivingMeshes": 4,
+      "uniqueGeometries": 3,
+      "uniqueMaterials": 5,
+      "uniqueTexturesAlreadyConstructed": 1,
+      "geometryTypedArrayBytes": 56728,
+      "trianglesAcrossMeshReferences": 2356,
+      "labelCanvasCount": 1,
+      "estimatedLabelBaseRgbaBytes": 1048576,
+      "estimatedLabelFullMipChainRgbaBytes": 1398108,
+      "deferredImagePlaneCount": 1,
+      "deferredUniqueImagePaths": [
+        "/assets/GOLDADAN_LOGO.jpg"
+      ],
+      "labels": [
+        {
+          "text": "SECURITY / SOFTWARE / HARDWARE",
+          "draws": [
+            {
+              "text": "SECURITY / SOFTWARE / HARDWARE",
+              "font": "400 39px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "id": "bhabhi-thulla",
+      "objectsIncludingGroup": 37,
+      "meshes": 31,
+      "shadowCastingMeshes": 10,
+      "shadowReceivingMeshes": 10,
+      "uniqueGeometries": 22,
+      "uniqueMaterials": 23,
+      "uniqueTexturesAlreadyConstructed": 20,
+      "geometryTypedArrayBytes": 59388,
+      "trianglesAcrossMeshReferences": 5922,
+      "labelCanvasCount": 20,
+      "estimatedLabelBaseRgbaBytes": 80568320,
+      "estimatedLabelFullMipChainRgbaBytes": 107407080,
+      "deferredImagePlaneCount": 1,
+      "deferredUniqueImagePaths": [
+        "/assets/BHABHI THULLA.png"
+      ],
+      "labels": [
+        {
+          "text": "A",
+          "draws": [
+            {
+              "text": "A",
+              "font": "600 840px serif",
+              "x": 512,
+              "y": 528.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1057,
+          "estimatedBaseRgbaBytes": 4329472,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 5771220
+        },
+        {
+          "text": "♠",
+          "draws": [
+            {
+              "text": "♠",
+              "font": "600 850px serif",
+              "x": 512,
+              "y": 556.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1113,
+          "estimatedBaseRgbaBytes": 4558848,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6076820
+        },
+        {
+          "text": "♠",
+          "draws": [
+            {
+              "text": "♠",
+              "font": "500 920px serif",
+              "x": 512,
+              "y": 626,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1252,
+          "estimatedBaseRgbaBytes": 5128192,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6837172
+        },
+        {
+          "text": "A♠",
+          "draws": [
+            {
+              "text": "A♠",
+              "font": "600 410px serif",
+              "x": 512,
+              "y": 256,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 512,
+          "estimatedBaseRgbaBytes": 2097152,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 2796204
+        },
+        {
+          "text": "K",
+          "draws": [
+            {
+              "text": "K",
+              "font": "600 840px serif",
+              "x": 512,
+              "y": 528.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1057,
+          "estimatedBaseRgbaBytes": 4329472,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 5771220
+        },
+        {
+          "text": "♥",
+          "draws": [
+            {
+              "text": "♥",
+              "font": "600 850px serif",
+              "x": 512,
+              "y": 556.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1113,
+          "estimatedBaseRgbaBytes": 4558848,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6076820
+        },
+        {
+          "text": "♥",
+          "draws": [
+            {
+              "text": "♥",
+              "font": "500 920px serif",
+              "x": 512,
+              "y": 626,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1252,
+          "estimatedBaseRgbaBytes": 5128192,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6837172
+        },
+        {
+          "text": "K♥",
+          "draws": [
+            {
+              "text": "K♥",
+              "font": "600 410px serif",
+              "x": 512,
+              "y": 256,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 512,
+          "estimatedBaseRgbaBytes": 2097152,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 2796204
+        },
+        {
+          "text": "Q",
+          "draws": [
+            {
+              "text": "Q",
+              "font": "600 840px serif",
+              "x": 512,
+              "y": 528.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1057,
+          "estimatedBaseRgbaBytes": 4329472,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 5771220
+        },
+        {
+          "text": "♣",
+          "draws": [
+            {
+              "text": "♣",
+              "font": "600 850px serif",
+              "x": 512,
+              "y": 556.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1113,
+          "estimatedBaseRgbaBytes": 4558848,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6076820
+        },
+        {
+          "text": "♣",
+          "draws": [
+            {
+              "text": "♣",
+              "font": "500 920px serif",
+              "x": 512,
+              "y": 626,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1252,
+          "estimatedBaseRgbaBytes": 5128192,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6837172
+        },
+        {
+          "text": "Q♣",
+          "draws": [
+            {
+              "text": "Q♣",
+              "font": "600 410px serif",
+              "x": 512,
+              "y": 256,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 512,
+          "estimatedBaseRgbaBytes": 2097152,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 2796204
+        },
+        {
+          "text": "J",
+          "draws": [
+            {
+              "text": "J",
+              "font": "600 840px serif",
+              "x": 512,
+              "y": 528.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1057,
+          "estimatedBaseRgbaBytes": 4329472,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 5771220
+        },
+        {
+          "text": "♦",
+          "draws": [
+            {
+              "text": "♦",
+              "font": "600 850px serif",
+              "x": 512,
+              "y": 556.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1113,
+          "estimatedBaseRgbaBytes": 4558848,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6076820
+        },
+        {
+          "text": "♦",
+          "draws": [
+            {
+              "text": "♦",
+              "font": "500 920px serif",
+              "x": 512,
+              "y": 626,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1252,
+          "estimatedBaseRgbaBytes": 5128192,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6837172
+        },
+        {
+          "text": "J♦",
+          "draws": [
+            {
+              "text": "J♦",
+              "font": "600 410px serif",
+              "x": 512,
+              "y": 256,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 512,
+          "estimatedBaseRgbaBytes": 2097152,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 2796204
+        },
+        {
+          "text": "10",
+          "draws": [
+            {
+              "text": "10",
+              "font": "600 840px serif",
+              "x": 512,
+              "y": 528.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1057,
+          "estimatedBaseRgbaBytes": 4329472,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 5771220
+        },
+        {
+          "text": "♠",
+          "draws": [
+            {
+              "text": "♠",
+              "font": "600 850px serif",
+              "x": 512,
+              "y": 556.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1113,
+          "estimatedBaseRgbaBytes": 4558848,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6076820
+        },
+        {
+          "text": "♠",
+          "draws": [
+            {
+              "text": "♠",
+              "font": "500 920px serif",
+              "x": 512,
+              "y": 626,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 1252,
+          "estimatedBaseRgbaBytes": 5128192,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 6837172
+        },
+        {
+          "text": "10♠",
+          "draws": [
+            {
+              "text": "10♠",
+              "font": "600 410px serif",
+              "x": 512,
+              "y": 256,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 512,
+          "estimatedBaseRgbaBytes": 2097152,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 2796204
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "id": "experience",
+      "objectsIncludingGroup": 15,
+      "meshes": 12,
+      "shadowCastingMeshes": 4,
+      "shadowReceivingMeshes": 4,
+      "uniqueGeometries": 9,
+      "uniqueMaterials": 11,
+      "uniqueTexturesAlreadyConstructed": 5,
+      "geometryTypedArrayBytes": 64756,
+      "trianglesAcrossMeshReferences": 2654,
+      "labelCanvasCount": 5,
+      "estimatedLabelBaseRgbaBytes": 5242880,
+      "estimatedLabelFullMipChainRgbaBytes": 6990540,
+      "deferredImagePlaneCount": 2,
+      "deferredUniqueImagePaths": [
+        "/assets/brands/upwork.svg",
+        "/assets/brands/fiverr.svg"
+      ],
+      "labels": [
+        {
+          "text": "Upwork",
+          "draws": [
+            {
+              "text": "Upwork",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Fiverr",
+          "draws": [
+            {
+              "text": "Fiverr",
+              "font": "500 72px \"Space Grotesk\", sans-serif",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "SEP 2025 — JUN 2026",
+          "draws": [
+            {
+              "text": "SEP 2025 — JUN 2026",
+              "font": "500 40px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "SEP 2025 — JUN 2026",
+          "draws": [
+            {
+              "text": "SEP 2025 — JUN 2026",
+              "font": "500 40px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "FREELANCE FULL STACK WEB DEVELOPER",
+          "draws": [
+            {
+              "text": "FREELANCE FULL STACK WEB DEVELOPER",
+              "font": "400 38px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "id": "education",
+      "objectsIncludingGroup": 13,
+      "meshes": 12,
+      "shadowCastingMeshes": 6,
+      "shadowReceivingMeshes": 6,
+      "uniqueGeometries": 7,
+      "uniqueMaterials": 8,
+      "uniqueTexturesAlreadyConstructed": 6,
+      "geometryTypedArrayBytes": 57288,
+      "trianglesAcrossMeshReferences": 3540,
+      "labelCanvasCount": 6,
+      "estimatedLabelBaseRgbaBytes": 6692864,
+      "estimatedLabelFullMipChainRgbaBytes": 8920872,
+      "deferredImagePlaneCount": 0,
+      "deferredUniqueImagePaths": [],
+      "labels": [
+        {
+          "text": "Hawk College",
+          "draws": [
+            {
+              "text": "Hawk College",
+              "font": "500 72px \"Space Grotesk\"",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Intermediate in\nComputer Science",
+          "draws": [
+            {
+              "text": "Intermediate in",
+              "font": "400 54px sans-serif",
+              "x": 512,
+              "y": 106.5,
+              "maxWidth": 960
+            },
+            {
+              "text": "Computer Science",
+              "font": "400 54px sans-serif",
+              "x": 512,
+              "y": 198.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 305,
+          "estimatedBaseRgbaBytes": 1249280,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1664220
+        },
+        {
+          "text": "2018–2020",
+          "draws": [
+            {
+              "text": "2018–2020",
+              "font": "400 60px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Punjab University",
+          "draws": [
+            {
+              "text": "Punjab University",
+              "font": "500 72px \"Space Grotesk\"",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        },
+        {
+          "text": "Bachelor in\nComputer Science",
+          "draws": [
+            {
+              "text": "Bachelor in",
+              "font": "400 54px sans-serif",
+              "x": 512,
+              "y": 106.5,
+              "maxWidth": 960
+            },
+            {
+              "text": "Computer Science",
+              "font": "400 54px sans-serif",
+              "x": 512,
+              "y": 198.5,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 305,
+          "estimatedBaseRgbaBytes": 1249280,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1664220
+        },
+        {
+          "text": "2021–2025",
+          "draws": [
+            {
+              "text": "2021–2025",
+              "font": "400 60px monospace",
+              "x": 512,
+              "y": 128,
+              "maxWidth": 960
+            }
+          ],
+          "width": 1024,
+          "height": 256,
+          "estimatedBaseRgbaBytes": 1048576,
+          "generateMipmaps": true,
+          "estimatedFullMipChainRgbaBytes": 1398108
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "id": "connect",
+      "objectsIncludingGroup": 16,
+      "meshes": 10,
+      "shadowCastingMeshes": 10,
+      "shadowReceivingMeshes": 10,
+      "uniqueGeometries": 1,
+      "uniqueMaterials": 3,
+      "uniqueTexturesAlreadyConstructed": 0,
+      "geometryTypedArrayBytes": 56448,
+      "trianglesAcrossMeshReferences": 5880,
+      "labelCanvasCount": 0,
+      "estimatedLabelBaseRgbaBytes": 0,
+      "estimatedLabelFullMipChainRgbaBytes": 0,
+      "deferredImagePlaneCount": 0,
+      "deferredUniqueImagePaths": [],
+      "labels": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-10-10T19:40:59.495Z",
+  "baseURL": "http://127.0.0.1:4174",
+  "browser": "Local Google Chrome, Playwright, headless",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "v22.22.3",
+    "browserVersion": "154.0.8037.98"
+  },
+  "assertions": [
+    {
+      "name": "QA runner completed",
+      "pass": false,
+      "detail": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/\", waiting until \"networkidle\"\u001b[22m\n\n    at /Users/ali_bhatti/workspace/My_PORTFOLIO/scripts/browser-qa.mjs:288:14"
+    }
+  ],
+  "screenshots": [],
+  "chapterMeasurements": [],
+  "responsiveMeasurements": [],
+  "mobileChapterMeasurements": [],
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "pageErrors": [],
+  "requestFailures": [
+    {
+      "url": "http://127.0.0.1:4174/",
+      "error": "net::ERR_CONNECTION_REFUSED"
+    }
+  ],
+  "assets": {},
+  "performance": {},
+  "video": null,
+  "limitations": [
+    "Performance describes this local headless Chrome session; it is not a universal frame-rate claim.",
+    "Social destinations are verified by DOM mapping and intercepted popup navigation, without logging into third-party profiles.",
+    "Automated layout checks do not replace visual review of every resting scene and transition screenshot."
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 1,
+    "screenshots": 0
+  }
+}

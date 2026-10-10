@@ -1,0 +1,1106 @@
+{
+  "timestamp": "2026-10-10T19:32:10.402Z",
+  "baseURL": "http://127.0.0.1:4173",
+  "browser": "Local Google Chrome, Playwright, headless",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "v22.22.3",
+    "browserVersion": "154.0.8037.98"
+  },
+  "assertions": [
+    {
+      "name": "1920x1080 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1920x1080 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 1920
+    },
+    {
+      "name": "1920x1080 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1920x1080 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 55,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1920x1080 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 1920
+    },
+    {
+      "name": "1920x1080 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1080,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1920x1080: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1440x900 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 58,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440x900 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440x900 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1440x900 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 0,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1440x900 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "1440x900 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "right": 1440,
+            "bottom": 900,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1440x900: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1366x768 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 27,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1366x768 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 1366
+    },
+    {
+      "name": "1366x768 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1366x768 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 58,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "1366x768 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 1366
+    },
+    {
+      "name": "1366x768 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1366,
+            "height": 768,
+            "top": 0,
+            "right": 1366,
+            "bottom": 768,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "1366x768: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "768x1024 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 55,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "768x1024 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 768
+    },
+    {
+      "name": "768x1024 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "768x1024 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 57,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "768x1024 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 768
+    },
+    {
+      "name": "768x1024 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "768x1024: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390x844 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390x844 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390x844 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390x844 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 60,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "390x844 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "390x844 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "390x844: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "375x812 hero: chapter 0 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 0,
+        "progress": 0,
+        "drawCalls": 9,
+        "triangles": 3220,
+        "points": 6200,
+        "fps": 59,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "375x812 hero: no horizontal overflow",
+      "pass": true,
+      "detail": 375
+    },
+    {
+      "name": "375x812 hero: active semantic chapter 0",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "0",
+          "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 375,
+            "height": 812,
+            "top": 0,
+            "right": 375,
+            "bottom": 812,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "375x812 connect: chapter 12 synchronized",
+      "pass": true,
+      "detail": {
+        "chapter": 12,
+        "progress": 12,
+        "drawCalls": 13,
+        "triangles": 6746,
+        "points": 0,
+        "fps": 59,
+        "ready": true,
+        "quality": "mobile"
+      }
+    },
+    {
+      "name": "375x812 connect: no horizontal overflow",
+      "pass": true,
+      "detail": 375
+    },
+    {
+      "name": "375x812 connect: active semantic chapter 12",
+      "pass": true,
+      "detail": [
+        {
+          "chapter": "12",
+          "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 375,
+            "height": 812,
+            "top": 0,
+            "right": 375,
+            "bottom": 812,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "375x812: all 5 social controls visible",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "screenshots": [
+    "screenshots/responsive-1920x1080-hero.png",
+    "screenshots/responsive-1920x1080-connect.png",
+    "screenshots/responsive-1440x900-hero.png",
+    "screenshots/responsive-1440x900-connect.png",
+    "screenshots/responsive-1366x768-hero.png",
+    "screenshots/responsive-1366x768-connect.png",
+    "screenshots/responsive-768x1024-hero.png",
+    "screenshots/responsive-768x1024-connect.png",
+    "screenshots/responsive-390x844-hero.png",
+    "screenshots/responsive-390x844-connect.png",
+    "screenshots/responsive-375x812-hero.png",
+    "screenshots/responsive-375x812-connect.png"
+  ],
+  "chapterMeasurements": [],
+  "responsiveMeasurements": [
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 60,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1920,
+          "height": 1080,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 1920,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1920,
+              "height": 1080,
+              "top": 0,
+              "right": 1920,
+              "bottom": 1080,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1920,
+          "height": 1080,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 55,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1920,
+          "height": 1080,
+          "dpr": 1
+        },
+        "scrollY": 16200,
+        "documentWidth": 1920,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1920,
+              "height": 1080,
+              "top": 0,
+              "right": 1920,
+              "bottom": 1080,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1920,
+          "height": 1080,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 58,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 1440,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900,
+              "top": 0,
+              "right": 1440,
+              "bottom": 900,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 0,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "dpr": 1
+        },
+        "scrollY": 13500,
+        "documentWidth": 1440,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900,
+              "top": 0,
+              "right": 1440,
+              "bottom": 900,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1440,
+          "height": 900,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      }
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 27,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1366,
+          "height": 768,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 1366,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1366,
+              "height": 768,
+              "top": 0,
+              "right": 1366,
+              "bottom": 768,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1366,
+          "height": 768,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 58,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 1366,
+          "height": 768,
+          "dpr": 1
+        },
+        "scrollY": 11520,
+        "documentWidth": 1366,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 1366,
+              "height": 768,
+              "top": 0,
+              "right": 1366,
+              "bottom": 768,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 1366,
+          "height": 768,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 55,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 768,
+          "height": 1024,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 768,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 1024,
+              "top": 0,
+              "right": 768,
+              "bottom": 1024,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 768,
+          "height": 1024,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 57,
+          "ready": true,
+          "quality": "high"
+        },
+        "viewport": {
+          "width": 768,
+          "height": 1024,
+          "dpr": 1
+        },
+        "scrollY": 15360,
+        "documentWidth": 768,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 1024,
+              "top": 0,
+              "right": 768,
+              "bottom": 1024,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 768,
+          "height": 1024,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 60,
+          "ready": true,
+          "quality": "mobile"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 390,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 844,
+              "top": 0,
+              "right": 390,
+              "bottom": 844,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 60,
+          "ready": true,
+          "quality": "mobile"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "scrollY": 12660,
+        "documentWidth": 390,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 844,
+              "top": 0,
+              "right": 390,
+              "bottom": 844,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 390,
+          "height": 844,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      }
+    },
+    {
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "hero": {
+        "debug": {
+          "chapter": 0,
+          "progress": 0,
+          "drawCalls": 9,
+          "triangles": 3220,
+          "points": 6200,
+          "fps": 59,
+          "ready": true,
+          "quality": "mobile"
+        },
+        "viewport": {
+          "width": 375,
+          "height": 812,
+          "dpr": 1
+        },
+        "scrollY": 0,
+        "documentWidth": 375,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "0",
+            "text": "+ THE INTERNET, BUILT BY ME / VOL. 01THE PERSON BEHIND THE PIXELSALIBHATTI.INDEPENDENT DEVELOPER / PAKISTAN IDEAS → EXPERIENCESFULL STACKWEB DEVELOPERI build the thingsyou interact with.Explore my wor",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 375,
+              "height": 812,
+              "top": 0,
+              "right": 375,
+              "bottom": 812,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 375,
+          "height": 812,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      },
+      "connect": {
+        "debug": {
+          "chapter": 12,
+          "progress": 12,
+          "drawCalls": 13,
+          "triangles": 6746,
+          "points": 0,
+          "fps": 59,
+          "ready": true,
+          "quality": "mobile"
+        },
+        "viewport": {
+          "width": 375,
+          "height": 812,
+          "dpr": 1
+        },
+        "scrollY": 12180,
+        "documentWidth": 375,
+        "horizontalOverflow": false,
+        "activeArticles": [
+          {
+            "chapter": "12",
+            "text": "12 THE NEXT CHAPTER IS OURSLet’s buildwhat’s next.Good things beginwith a conversation.LinkedIn↗Freelancer↗GitHub↗Fiverr↗Upwork↗dev._.ali@icloud.com↗+92 317 2003786Khanewal, PakistanDownload résumé ↓",
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 375,
+              "height": 812,
+              "top": 0,
+              "right": 375,
+              "bottom": 812,
+              "left": 0
+            }
+          }
+        ],
+        "canvas": {
+          "width": 375,
+          "height": 812,
+          "top": 0,
+          "left": 0
+        },
+        "hash": ""
+      }
+    }
+  ],
+  "consoleErrors": [],
+  "consoleWarnings": [
+    {
+      "page": "http://127.0.0.1:4173/",
+      "message": "WebGL: INVALID_OPERATION: texImage3D: FLIP_Y or PREMULTIPLY_ALPHA isn't allowed for uploading 3D textures"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "message": "WebGL: INVALID_OPERATION: texImage3D: FLIP_Y or PREMULTIPLY_ALPHA isn't allowed for uploading 3D textures"
+    }
+  ],
+  "pageErrors": [],
+  "requestFailures": [],
+  "assets": {},
+  "performance": {},
+  "video": null,
+  "limitations": [
+    "Performance describes this local headless Chrome session; it is not a universal frame-rate claim.",
+    "Social destinations are verified by DOM mapping and intercepted popup navigation, without logging into third-party profiles.",
+    "Automated layout checks do not replace visual review of every resting scene and transition screenshot."
+  ],
+  "summary": {
+    "passed": 42,
+    "failed": 0,
+    "screenshots": 12
+  }
+}

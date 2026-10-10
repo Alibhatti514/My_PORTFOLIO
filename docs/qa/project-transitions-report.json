@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-10-10T19:46:07.394Z",
+  "baseURL": "http://127.0.0.1:4174",
+  "browser": "Local Google Chrome, Playwright, headless",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "v22.22.3",
+    "browserVersion": "154.0.8037.98"
+  },
+  "assertions": [
+    {
+      "name": "Project transition 7: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 7,
+        "progress": 7.499999999999999,
+        "drawCalls": 54,
+        "triangles": 26010,
+        "points": 0,
+        "fps": 54,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "Project transition 8: continuous midpoint",
+      "pass": true,
+      "detail": {
+        "chapter": 9,
+        "progress": 8.500000000000002,
+        "drawCalls": 63,
+        "triangles": 9190,
+        "points": 0,
+        "fps": 54,
+        "ready": true,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "Project transition recapture has no JavaScript exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "screenshots": [
+    "screenshots/transition-07-rcs-cargo-to-goldadan.png",
+    "screenshots/transition-08-goldadan-to-bhabhi-thulla.png"
+  ],
+  "chapterMeasurements": [],
+  "responsiveMeasurements": [],
+  "mobileChapterMeasurements": [],
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "assets": {},
+  "performance": {},
+  "video": null,
+  "limitations": [
+    "Performance describes this local headless Chrome session; it is not a universal frame-rate claim.",
+    "Social destinations are verified by DOM mapping and intercepted popup navigation, without logging into third-party profiles.",
+    "Automated layout checks do not replace visual review of every resting scene and transition screenshot."
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0,
+    "screenshots": 2
+  }
+}

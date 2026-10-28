@@ -1,0 +1,26 @@
+3 Courses
+Foundations of C# 12 and .NET 8
+Programming
+Advanced C# Techniques and Data
+Management with .NET 8
+Modern Web Development with ASP.NET
+Core and Blazor
+Oct 27, 2026
+Muhammad Ali Ejaz Bhatti
+has successfully completed the online Specialization
+C# 12 and .NET 8 Cross-
+Platform Development
+Fundamentals
+Congratulations on successfully completing the C# 12 and .NET 8 -
+Modern Cross-Platform Development Fundamentals specialization.
+You demonstrated proficiency in C# 12 and .NET 8 by implementing
+core programming concepts, applying advanced techniques, and
+building web applications using ASP.NET Core and Blazor. You
+developed the ability to design and maintain scalable, cross-platform
+solutions that meet modern development standards.
+This certificate attests to the learner’s completion of an online program delivered via Coursera. It does not constitute
+formal enrollment at any university or entity and does not itself grant academic credit, grades, or a degree. Institutions
+or organizations may, at their discretion, recognize this learning toward their own programs or credentials.
+Verify this certificate at:
+https://coursera.org/verify/specializ
+ation/1SS6TXZP8HAX

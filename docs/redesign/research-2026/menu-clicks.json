@@ -1,0 +1,60 @@
+[
+  {
+    "name": "majd-portfolio",
+    "action": "Clicked visually observed mobile menu",
+    "point": {
+      "x": 333,
+      "y": 60
+    },
+    "textChanged": true
+  },
+  {
+    "name": "devsync",
+    "action": "Clicked visually observed mobile menu",
+    "point": {
+      "x": 307,
+      "y": 38
+    },
+    "textChanged": true
+  },
+  {
+    "name": "reoporto",
+    "action": "Clicked visually observed mobile menu",
+    "point": {
+      "x": 354,
+      "y": 36
+    },
+    "textChanged": true
+  },
+  {
+    "name": "nightlytemplate",
+    "action": "Clicked visually observed mobile menu",
+    "point": {
+      "x": 351,
+      "y": 32
+    },
+    "textChanged": true
+  },
+  {
+    "name": "reserved-nonogon-623534",
+    "action": "Clicked visually observed mobile menu",
+    "point": {
+      "x": 359,
+      "y": 61
+    },
+    "textChanged": true
+  },
+  {
+    "name": "portox",
+    "action": "Clicked visually observed mobile menu",
+    "point": {
+      "x": 354,
+      "y": 36
+    },
+    "textChanged": false
+  },
+  {
+    "name": "michael-gr8r",
+    "error": "locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'About', exact: true }).first()\u001b[22m\n"
+  }
+]

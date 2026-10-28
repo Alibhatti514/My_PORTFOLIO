@@ -1,75 +1,89 @@
-# Ali Bhatti — The internet, built by me
+# Ali Bhatti — Ideas into interfaces. And beyond.
 
-A new, independent React / TypeScript portfolio built around a persistent, full-viewport Three.js world. Thirteen scroll-directed chapters connect an authentic portrait to code, software architecture, projects, career, education, and contact.
+An original developer portfolio with an exploded 3D system, editorial project presentations, verified-content career and education sections, a complete certificate library, and two downloadable résumé formats.
 
-Project: `/Users/ali_bhatti/workspace/My_PORTFOLIO`
+## Local development
 
-Latest update: [itshover button and navigation upgrade](docs/ICON-UPGRADE.md), including installed components, changed files, and current verification status.
-
-## Run locally
-
-Use Node.js `^20.19.0 || >=22.12.0` with npm, matching the installed Vite version’s declared requirement.
+Node.js 22.12+ and npm. This is the existing React / TypeScript / Vite checkout; no new application or hosting account was created.
 
 ```sh
-cd /Users/ali_bhatti/workspace/My_PORTFOLIO
-npm install
+npm ci
 npm run dev -- --port 4173
-```
-
-Open [http://127.0.0.1:4173](http://127.0.0.1:4173). Scroll, use **Continue**, or open **Index** to jump to any chapter. Chapter hashes can be bookmarked, such as `/#languages`, `/#rcs-cargo`, and `/#connect`.
-
-**Index** also offers reduced motion and the complete reading view. The app respects the system reduced-motion preference and automatically presents readable content if WebGL fails. Direct alternatives:
-
-- [Reading view](http://127.0.0.1:4173/?view=reading)
-- [WebGL-off fallback](http://127.0.0.1:4173/?webgl=off)
-
-## Build and verify
-
-```sh
 npm run typecheck
 npm test
 npm run build
-npm run preview -- --port 4173
+npm run preview -- --port 4174
+QA_URL=http://127.0.0.1:4174 npm run test:browser
 ```
 
-With the dev server or production preview running in another terminal:
+Browser QA and résumé generation use locally installed Google Chrome via Playwright. Install Chrome or change the `channel` in those scripts for another supported browser. `npm run test:browser:legacy` preserves the previous chapter-experience harness for historical reference; it does not test the new page.
+
+## Features and design
+
+Dark graphite, warm ivory, chartreuse, and locally bundled Space Grotesk / Manrope / Plex Mono. Native section anchors and normal document scrolling. Three.js is dynamically imported; pointer response and scroll separate a procedural interface / logic / data stack. Rendering is capped near 30fps and pauses offscreen or when the document is hidden. DPR is capped. GPU resources, observers and listeners are disposed on cleanup. Mobile starts with a small scene poster and offers **Explore in 3D**. Reduced motion and `?webgl=off` retain all content with a static scene. Motion can also be changed in the footer.
+
+Three original project identities, details dialogs, experience, education, skill layers, seven featured program credentials, searchable/filterable archive of 40 documents, native certificate preview dialogs, premium and ATS downloads, contact links and safe external social links. HTML contains all important information independently of the scene. No accounts, messages, contact submissions or analytics are involved.
+
+## Source map
+
+| File | Responsibility |
+| --- | --- |
+| `src/App.tsx` | Semantic sections, project dialog, navigation, preference state |
+| `src/styles.css` | Design tokens, desktop/mobile layout and motion styles |
+| `src/components/SystemScene.tsx` | Progressive scene loading, mobile opt-in and fallback |
+| `src/scene/system.ts` | Procedural Three.js architecture, scroll state and cleanup |
+| `src/components/Credentials.tsx` | Featured credentials, archive, filters, native preview modal |
+| `src/data/certificates.json` | PDF-derived metadata and downloadable asset mappings |
+| `src/data/portfolio.ts`, `socials.ts`, `chapters.ts` | Preserved factual content and original destinations |
+| `public/assets/optimized/` | WebP derivatives; original assets remain intact |
+| `public/assets/resume/` | Premium and ATS PDFs |
+| `docs/redesign/` | Project audit, reference research, design, certificate inventory, QA and sources |
+
+Earlier world/scene modules, Story and animated controls are retained for provenance but are no longer in the main application bundle. Legacy source-data tests remain useful factual and asset-preservation checks; the new Playwright suite exercises the current interface.
+
+## Certificates
+
+All PDF-signature files below `public/assets/Certificates` are included, including the extensionless .NET course. Finder metadata is excluded. The inventory is derived from actual PDF text and records title, issuer, type, completion date, source, file hash, issuer verification link, thumbnail and featured status. Three Microsoft professional certificates and four specializations are featured. Two Duke documents are guided projects. Packt specialization attribution is corroborated by its constituent course PDFs; those program PDFs omit issuer text. Local completion evidence does not independently authenticate issuer records.
 
 ```sh
-QA_URL=http://127.0.0.1:4173 npm run test:browser
+# Requires Python 3 + pypdf, and Poppler pdftotext / pdftoppm
+npm run audit:certificates
+npm test
 ```
 
-Browser QA uses Playwright with a locally installed Google Chrome. It writes measurements and screenshots under `docs/qa/`; recording additionally requires Playwright's video support. The automated checks complement visual inspection. Final observed results and test limitations are recorded in [docs/QA.md](docs/QA.md).
+The audit makes byte-identical aliases at `public/assets/credentials/credential-NN.pdf`. These avoid encoded `#`, spaces, punctuation and extensionless MIME behavior across static hosts. Original source files are never renamed or edited. Preview images are lazily loaded when a dialog opens. The automated test independently scans every source PDF, checks complete coverage, uniqueness, source/alias hashes, previews and featured program status. Browser tests also fetch and hash every alias through the production server.
 
-## Edit the project
+## Résumé sources and generation
 
-| File / folder | Responsibility |
-| --- | --- |
-| `src/data/chapters.ts` | Chapter copy, order, and shareable hashes |
-| `src/data/portfolio.ts` | Contact details, résumé path, and project metadata |
-| `src/data/socials.ts` | Exact social profile URLs and visual order |
-| `src/engine/scroll.ts` | Single native-scroll story state |
-| `src/engine/World.ts` | Renderer, camera, stage interpolation, quality, disposal |
-| `src/scene/poses.ts` | Persistent architecture and camera poses |
-| `src/scene/Portrait.ts` | Original-image plane, shader reveal, sampled particle morph |
-| `src/scene/installations.ts` | Technology, project, career, education, and social installations |
-| `src/scene/primitives.ts` | Shared materials, geometry, labels, texture helpers |
-| `src/components/Story.tsx` | Semantic chapter overlays, links, and reading view |
-| `src/App.tsx` | Loading, navigation, history, motion preference, fallback |
-| `src/styles.css` | Responsive composition, typography, and accessible focus states |
-| `public/assets/` | Preserved photographs, project logos, résumé, bundled brand SVGs |
+```sh
+npm run resume
+# Visual review after regenerating:
+pdftoppm -scale-to 1400 -png public/assets/resume/Resume-Premium.pdf /tmp/resume-premium
+pdftoppm -scale-to 1400 -png public/assets/resume/Resume-ATS.pdf /tmp/resume-ats
+```
 
-React handles accessible content and controls; direct Three.js handles the scene. The renderer is loaded separately from the reading experience. Fonts are bundled locally through Fontsource; brand SVGs are local files. No font or logo CDN is needed at runtime.
+`scripts/generate-resumes.mjs` owns the content and print template, embeds local fonts, checks page overflow and writes HTML sources under `docs/redesign/resume-source/`. Both outputs are two-page, selectable-text PDFs with clickable contact/profile and credential links. The premium version uses a coordinated restrained layout; ATS uses a single column. The original `public/assets/Resume_Ali_ejaz.pdf` is unchanged. Re-run the PDF visual QA whenever content changes. Experience/education dates come from that original, without invented job history or outcomes.
 
-## Delivery documents
+## Production deployment and SEO
 
-- [Delivery report](docs/DELIVERY.md): direction, palette, chapter chain, architecture, mappings, limitations, and commands.
-- [Storyboard](docs/STORYBOARD.md): pre-implementation shot list and transition contract.
-- [Original asset inventory](docs/ASSETS.md) and [machine-readable hashes](docs/asset-manifest.json).
-- [Brand sources and licenses](docs/BRAND-SOURCES.md).
-- [QA report](docs/QA.md): browser observations, screenshot analysis, performance, and artifacts.
-- [Visual gallery](docs/qa/gallery.html): all 58 screenshots and the recorded walkthrough.
-- [Walkthrough video](docs/qa/walkthrough.webm): the complete forward journey in the production build.
+`npm run build` creates `dist/`, suitable for static hosting at the domain root. Upload the complete output, including `assets/`, certificate aliases, original PDFs, résumés, robots and sharing assets. There are no runtime environment variables, API keys or backend requirements. No deployment was requested or performed.
 
-The portrait is an honest 2.5D photograph and image-derived particle treatment. The three project launch URLs are intentionally unavailable until real destinations are provided. Their scenes remain interactive. Social, email, phone, and résumé links are configured.
+For a verified public hostname, set `SITE_URL` during the build. `scripts/seo-output.mjs` then emits the canonical URL, absolute Open Graph/Twitter image URLs, sitemap and robots sitemap reference. With no known public origin, domain-specific metadata is intentionally omitted. Do not invent a domain. Standard metadata, Person JSON-LD and a local social sharing image are already present. The single page uses anchors; no route rewrites are needed.
 
-Previous portfolio projects were not modified or used as design references. Original workspace files were backed up and verified before implementation. This delivery is local source and a production build; no public hosting has been deployed.
+```sh
+# After configuring SITE_URL in your hosting environment:
+npm run build
+```
+
+## Quality checks and performance
+
+`tests/certificates.test.ts` adds inventory and alias integrity checks. `scripts/redesign-qa.mjs` covers nine viewport widths from 320 to 1920, sections, filters, dialogs, downloads, PDF responses, hash integrity, navigation, reduced motion, WebGL fallback and axe WCAG AA checks. Reports and reviewed screenshots are in `docs/redesign/qa/`. PDF renders and extracted text are in `docs/redesign/audit/`.
+
+```sh
+npx lighthouse http://127.0.0.1:4174 --chrome-flags='--headless --no-sandbox' --output=json --output-path=/tmp/lighthouse-mobile.json
+npx lighthouse http://127.0.0.1:4174 --chrome-flags='--headless --no-sandbox' --preset=desktop --output=json --output-path=/tmp/lighthouse-desktop.json
+```
+
+No extra production dependencies were added. Axe and Lighthouse are development tools. Local test results are evidence for this machine and build; hosted network/GPU performance will vary. Actual scores, visual review notes and limitations are in `docs/redesign/IMPLEMENTATION.md`.
+
+Image derivatives can be regenerated with `node scripts/optimize-assets.mjs` (requires `cwebp`). With the local site running, `node scripts/capture-system-poster.mjs` regenerates the scene poster. `node scripts/motion-qa.mjs` checks scroll/return appearance within a documented pixel tolerance and exercises both browser résumé downloads.

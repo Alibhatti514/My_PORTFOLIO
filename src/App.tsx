@@ -1,76 +1,644 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { chapters } from './data/chapters';
-import { Story, ReadingView, Arrow } from './components/Story';
-import { ChapterButton, IconMotionContext, ResumeLink } from './components/AnimatedControls';
-import { chapterStep, scrollToChapter } from './engine/scroll';
-import type { World } from './engine/World';
-
-export default function App(){
-  const [active,setActive]=useState(0),[ready,setReady]=useState(false),[menu,setMenu]=useState(false);
-  const [reduced,setReduced]=useState(()=>matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const [reading,setReading]=useState(()=>new URLSearchParams(location.search).get('view')==='reading'||new URLSearchParams(location.search).get('webgl')==='off');
-  const [failed,setFailed]=useState(()=>new URLSearchParams(location.search).get('webgl')==='off');
-  const canvas=useRef<HTMLCanvasElement>(null),world=useRef<World|null>(null),dialog=useRef<HTMLDialogElement>(null),progressBar=useRef<HTMLDivElement>(null),scrollLength=useRef<HTMLDivElement>(null),activeRef=useRef(0),motionRef=useRef(reduced),skipFocus=useRef(false);
-  const fail=useCallback(()=>{setFailed(true);setReading(true);},[]);
-  useEffect(()=>{
-    const media=matchMedia('(prefers-reduced-motion: reduce)');const update=(e:MediaQueryListEvent)=>setReduced(e.matches);media.addEventListener('change',update);return()=>media.removeEventListener('change',update);
-  },[]);
-  useEffect(()=>{motionRef.current=reduced;world.current?.setReduced(reduced);},[reduced]);
-  useEffect(()=>{
-    if(reading||!canvas.current)return;
-    let cancelled=false;setReady(false);
-    import('./engine/World').then(({World})=>{
-      if(cancelled||!canvas.current)return;
-      try{world.current=new World(canvas.current,(chapter,progress)=>{
-        if(chapter!==activeRef.current){activeRef.current=chapter;setActive(chapter);if(location.hash!==`#${chapters[chapter].id}`)history.replaceState(null,'',`#${chapters[chapter].id}`);}
-        document.querySelector<HTMLElement>(`[data-chapter="${chapter}"]`)?.style.setProperty('--chapter-distance',String(progress-chapter));
-        if(progressBar.current)progressBar.current.style.transform=`scaleX(${progress/12})`;
-        document.documentElement.style.setProperty('--story-progress',`${progress}`);
-      },()=>setReady(true),fail);world.current.setReduced(motionRef.current);}catch{fail();}
-    }).catch(fail);
-    return()=>{cancelled=true;world.current?.dispose();world.current=null;};
-  },[reading,fail]);
-  useEffect(()=>{
-    if(active!==1||!ready||!skipFocus.current)return;
-    let frame=0;
-    const transferFocus=()=>{
-      const target=document.querySelector<HTMLElement>('[data-chapter="1"]');
-      if(target&&!target.inert&&getComputedStyle(target).visibility==='visible'){
-        target.focus({preventScroll:true});
-        if(document.activeElement===target){skipFocus.current=false;return;}
-      }
-      frame=requestAnimationFrame(transferFocus);
+import { useEffect, useRef, useState } from "react";
+import { profile, projects } from "./data/portfolio";
+import { socials } from "./data/socials";
+import { chapters } from "./data/chapters";
+import SystemScene from "./components/SystemScene";
+import Credentials from "./components/Credentials";
+const nav = [
+  ["work", "Work"],
+  ["about", "About"],
+  ["credentials", "Credentials"],
+  ["contact", "Contact"],
+];
+const stack = [
+  {
+    name: "The interface",
+    number: "01",
+    text: "Responsive, considered experiences. From semantic structure to the final interaction.",
+    items: [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+    ],
+    icons: ["html5", "css3", "javascript", "typescript", "react", "nextdotjs"],
+  },
+  {
+    name: "The system",
+    number: "02",
+    text: "Business logic, secure endpoints, and the connections that make an application work.",
+    items: ["Node.js", "NestJS", "REST APIs", "JWT Authentication"],
+    icons: ["nodedotjs", "nestjs"],
+  },
+  {
+    name: "The foundation",
+    number: "03",
+    text: "Structured data and a deliberate workflow. Built to be understood and maintained.",
+    items: ["PostgreSQL", "Prisma ORM", "Python", "Git", "GitHub", "Postman"],
+    icons: ["postgresql", "prisma", "python", "git", "github", "postman"],
+  },
+];
+export default function App() {
+  const [menu, setMenu] = useState(false),
+    [active, setActive] = useState("work"),
+    [reduced, setReduced] = useState(
+      () => matchMedia("(prefers-reduced-motion: reduce)").matches,
+    ),
+    [project, setProject] = useState<number | null>(null);
+  const menuDialog = useRef<HTMLDialogElement>(null),
+    projectDialog = useRef<HTMLDialogElement>(null),
+    menuButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const m = matchMedia("(prefers-reduced-motion: reduce)");
+    const f = () => setReduced(m.matches);
+    m.addEventListener("change", f);
+    return () => m.removeEventListener("change", f);
+  }, []);
+  useEffect(() => {
+    document.documentElement.classList.toggle("reduce-motion", reduced);
+    return () => document.documentElement.classList.remove("reduce-motion");
+  }, [reduced]);
+  useEffect(() => {
+    if (menu) menuDialog.current?.showModal();
+    else menuDialog.current?.close();
+  }, [menu]);
+  useEffect(() => {
+    if (project !== null) projectDialog.current?.showModal();
+    else projectDialog.current?.close();
+  }, [project]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        }),
+      { rootMargin: "-20% 0px -55% 0px" },
+    );
+    nav.forEach(([id]) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    const aliases: Record<string, string> = {
+      human: "home",
+      code: "skills",
+      languages: "skills",
+      frontend: "skills",
+      backend: "skills",
+      data: "skills",
+      workflow: "skills",
+      connect: "contact",
+      education: "experience",
+      "rcs-cargo": "work",
+      goldadan: "work",
+      "bhabhi-thulla": "work",
     };
-    frame=requestAnimationFrame(transferFocus);
-    return()=>cancelAnimationFrame(frame);
-  },[active,ready]);
-  useEffect(()=>{
-    if(reading)return;
-    let timer:ReturnType<typeof setTimeout>,previousStep=chapterStep(),lastRaw=window.scrollY/previousStep;
-    const restore=()=>{const index=chapters.findIndex(c=>`#${c.id}`===location.hash);if(index>=0)scrollToChapter(index,true);};
-    const resize=()=>{if(scrollLength.current)scrollLength.current.style.height=`${chapterStep()*12+innerHeight}px`;};
-    const onScroll=()=>{lastRaw=window.scrollY/previousStep;};
-    const onResize=()=>{const raw=lastRaw;resize();previousStep=chapterStep();clearTimeout(timer);timer=setTimeout(()=>{window.scrollTo({top:raw*previousStep,behavior:'instant'});lastRaw=raw;},80);};
-    resize();restore();window.addEventListener('popstate',restore);window.addEventListener('hashchange',restore);window.addEventListener('resize',onResize);window.addEventListener('scroll',onScroll,{passive:true});
-    return()=>{clearTimeout(timer);window.removeEventListener('popstate',restore);window.removeEventListener('hashchange',restore);window.removeEventListener('resize',onResize);window.removeEventListener('scroll',onScroll);};
-  },[reading]);
-  useEffect(()=>{
-    if(menu){dialog.current?.showModal();document.body.style.overflow='hidden';}
-    else{dialog.current?.close();document.body.style.overflow='';}
-    return()=>{document.body.style.overflow='';};
-  },[menu]);
-  const go=useCallback((index:number)=>{setMenu(false);if(reading){document.getElementById(`read-${chapters[index].id}`)?.scrollIntoView({behavior:reduced?'instant':'smooth'});return;}scrollToChapter(index,reduced,chapters[index].id);},[reading,reduced]);
-  const toggleReading=()=>{setMenu(false);setReading(v=>!v);window.scrollTo({top:0,behavior:'instant'});};
-  return <IconMotionContext.Provider value={reduced}><div className={`${reading?'is-reading':''} ${reduced?'reduced-motion':''}`}>
-    <a className="skip-link" href={reading?'#read-code':'#story'} onClick={event=>{if(!reading){event.preventDefault();if(activeRef.current===1)document.querySelector<HTMLElement>('[data-chapter="1"]')?.focus({preventScroll:true});else skipFocus.current=true;go(1);}}}>Skip to portfolio content</a>
-    <header className="site-header"><button className="wordmark" aria-label="Ali Bhatti, go to introduction" data-goto="0" onClick={()=>go(0)}><span className="brand-symbol" aria-hidden="true"><i/><i/></span><span>ALI BHATTI</span></button><span className="header-meta">FULL STACK DEVELOPER<span>KHANEWAL, PAKISTAN</span></span><div className="header-actions"><ResumeLink className="header-resume"/><button className={`menu-button ${menu?'open':''}`} aria-label={menu?'Close chapters':'Open chapters'} aria-expanded={menu} aria-controls="chapter-menu" onClick={()=>setMenu(!menu)}><span>INDEX</span><i/><i/></button></div></header>
-    {reading?<ReadingView onReturn={()=>{setFailed(false);setReading(false);history.replaceState(null,'',location.pathname+location.hash);window.scrollTo(0,0);}} fallback={failed}/>:<>
-      <div className="world-shell" aria-hidden="true"><div className="world-atmosphere"/><canvas ref={canvas} data-world/><div className="world-vignette"/></div>
-      {!ready&&<div className="loading-state" role="status"><span className="loading-mark">//</span><span>BUILDING A WORLD<span className="loading-dots">...</span></span><small>Good things take a first line.</small><button onClick={toggleReading}>Read the portfolio instead <Arrow/></button></div>}
-      <div className={`experience ${ready?'experience-ready':''}`} inert={!ready} aria-hidden={!ready}><Story active={active} go={go} hover={id=>world.current?.setHover(id)} interact={index=>world.current?.interact(index)}/><div className="side-annotation" aria-hidden="true">HUMAN · CODE · EXPERIENCE</div></div>
-      <div className="scroll-length" ref={scrollLength} aria-hidden="true"/>
-      <footer className="story-footer"><button className="chapter-current" onClick={()=>setMenu(true)} aria-label="Open chapter index"><span>{String(active+1).padStart(2,'0')} <small>/ 13</small></span><span>{chapters[active].shortLabel}</span><span className="index-plus">+</span></button><nav className="chapter-track" aria-label="Story chapters">{chapters.map((c,i)=><button key={c.id} data-goto={i} aria-label={`Chapter ${i+1}: ${c.shortLabel}`} aria-current={active===i?'step':undefined} onClick={()=>go(i)}><span>{c.shortLabel}</span><i/></button>)}<div className="chapter-track-progress" ref={progressBar}/></nav><div className="chapter-actions"><ChapterButton className="previous-chapter" direction="up" disabled={active===0} data-goto={Math.max(0,active-1)} onClick={()=>go(Math.max(0,active-1))} aria-label="Previous chapter" title="Previous chapter"/><ChapterButton className="next-chapter" direction={active===12?'up':'down'} data-goto={active===12?0:active+1} onClick={()=>go(active===12?0:active+1)} aria-label={active===12?'Return to the beginning':'Next chapter'}>{active===12?'BACK TO START':'CONTINUE'}</ChapterButton></div></footer>
-    </>}
-    <dialog ref={dialog} id="chapter-menu" className="chapter-menu" onCancel={()=>setMenu(false)} onClick={e=>{if(e.target===e.currentTarget)setMenu(false);}}><div className="menu-top"><span className="overline">THE INTERNET, BUILT BY ME</span><button className="close-button" aria-label="Close chapters" onClick={()=>setMenu(false)}>CLOSE <span>×</span></button></div><h2>Every part.<br/><span>One story.</span></h2><nav aria-label="Chapter index">{chapters.map((c,i)=><button data-goto={i} key={c.id} onClick={()=>go(i)} aria-current={active===i?'step':undefined}><span className="menu-number">{String(i).padStart(2,'0')}</span><span>{c.shortLabel}</span><Arrow/></button>)}</nav><div className="menu-bottom"><button onClick={toggleReading}>{reading?'Enter the 3D story':'Read the complete portfolio'}<Arrow/></button><button aria-pressed={reduced} onClick={()=>setReduced(v=>!v)}>Motion: {reduced?'reduced':'full'}<span className={`toggle ${reduced?'enabled':''}`}><i/></span></button><span>Made with intention, by Ali.</span></div></dialog>
-  </div></IconMotionContext.Provider>;
+    const target = aliases[location.hash.slice(1)];
+    if (target) document.getElementById(target)?.scrollIntoView();
+  }, []);
+  return (
+    <>
+      <a className="skip-link" href="#main">
+        Skip to portfolio content
+      </a>
+      <header className="site-header">
+        <a href="#home" className="wordmark" aria-label="Ali Bhatti home">
+          <span className="brand-symbol">
+            a<span>b</span>
+          </span>
+          <span>
+            ALI BHATTI<span className="wordmark-sub">DEVELOPER / PAKISTAN</span>
+          </span>
+        </a>
+        <nav aria-label="Main navigation">
+          {nav.map(([id, label]) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              aria-current={active === id ? "location" : undefined}
+            >
+              {label}
+              <span className="nav-dot" />
+            </a>
+          ))}
+        </nav>
+        <div className="header-actions">
+          <a
+            className="header-resume"
+            href="/assets/resume/Resume-Premium.pdf"
+            download
+          >
+            Résumé <span aria-hidden="true">↓</span>
+          </a>
+          <button
+            ref={menuButton}
+            className="menu-button"
+            aria-label="Open navigation"
+            aria-expanded={menu}
+            aria-controls="mobile-menu"
+            onClick={() => setMenu(true)}
+          >
+            Menu <span aria-hidden="true">☰</span>
+          </button>
+        </div>
+      </header>
+      <main id="main">
+        <section className="hero section" id="home">
+          <div className="hero-top">
+            <span className="eyebrow">
+              <i className="status-dot" /> FULL STACK WEB DEVELOPER
+            </span>
+            <span className="mono">
+              BASED IN KHANEWAL, PAKISTAN <span className="accent">↗</span>
+            </span>
+          </div>
+          <div className="hero-composition">
+            <div className="hero-copy">
+              <span className="intro-note">
+                A little curiosity. A lot of code.
+              </span>
+              <h1>
+                Ideas into
+                <br />
+                interfaces.
+                <br />
+                <span>And beyond</span>
+                <b>.</b>
+              </h1>
+              <p>
+                I’m Ali Bhatti. I connect thoughtful frontends
+                <br className="desktop-break" /> with the systems that bring
+                them to life.
+              </p>
+              <div className="hero-actions">
+                <a className="button" href="#work">
+                  Explore my work <span aria-hidden="true">↘</span>
+                </a>
+                <a className="hero-contact" href={`mailto:${profile.email}`}>
+                  Let’s talk <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+            <SystemScene reduced={reduced} />
+          </div>
+          <div className="hero-foot">
+            <span className="mono">INTERFACE → LOGIC → DATA</span>
+            <a className="scroll-cue" href="#work">
+              SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
+            </a>
+            <span className="mono">CRAFTED WITH INTENTION / 2026</span>
+          </div>
+        </section>
+        <div className="identity-strip" aria-hidden="true">
+          <span>ALI BHATTI</span>
+          <span className="asterisk">✳</span>
+          <span>FULL STACK</span>
+          <span className="asterisk">✳</span>
+        </div>
+        <section id="work" className="section work-section">
+          <div className="section-top">
+            <span className="eyebrow">01 / SELECTED WORK</span>
+            <span className="mono">
+              THREE PROJECTS. DIFFERENT POSSIBILITIES.
+            </span>
+          </div>
+          <div className="section-heading">
+            <h2>
+              From a first line.
+              <br />
+              <em>To something real.</em>
+            </h2>
+            <p>
+              Logistics, enterprise technology, and a little play. A selection
+              from my development journey.
+            </p>
+          </div>
+          <div className="project-list">
+            {projects.map((p, i) => (
+              <article className={`project project-${i}`} key={p.id}>
+                <button
+                  className="project-art"
+                  onClick={() => setProject(i)}
+                  aria-label={`Explore ${p.name}: ${["Connected routes / logistics", "Digital presence / technology", "Logic meets play / card game"][i]}. Original project identity`}
+                >
+                  <span className="art-caption mono">
+                    {
+                      [
+                        "CONNECTED ROUTES / LOGISTICS",
+                        "DIGITAL PRESENCE / TECHNOLOGY",
+                        "LOGIC MEETS PLAY / CARD GAME",
+                      ][i]
+                    }
+                  </span>
+                  {i === 0 ? (
+                    <div className="route-art">
+                      <div className="route-orbit orbit-one" />
+                      <div className="route-orbit orbit-two" />
+                      <div className="route-orbit orbit-three" />
+                      <span className="route-point point-one" />
+                      <span className="route-point point-two" />
+                      <span className="route-point point-three" />
+                      <div className="project-logo">
+                        <img
+                          src={
+                            [
+                              `/assets/optimized/rcs.webp`,
+                              `/assets/optimized/goldadan.webp`,
+                              `/assets/optimized/bhabhi.webp`,
+                            ][i]
+                          }
+                          alt="RCS Cargo original logo"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  ) : i === 1 ? (
+                    <div className="enterprise-art">
+                      <i />
+                      <i />
+                      <i />
+                      <div className="project-logo">
+                        <img
+                          src={
+                            [
+                              `/assets/optimized/rcs.webp`,
+                              `/assets/optimized/goldadan.webp`,
+                              `/assets/optimized/bhabhi.webp`,
+                            ][i]
+                          }
+                          alt="Goldadan original logo"
+                          loading="lazy"
+                        />
+                      </div>
+                      <span className="enterprise-cross">+</span>
+                    </div>
+                  ) : (
+                    <div className="game-art">
+                      <i>♠</i>
+                      <i>♦</i>
+                      <div className="project-logo">
+                        <img
+                          src={
+                            [
+                              `/assets/optimized/rcs.webp`,
+                              `/assets/optimized/goldadan.webp`,
+                              `/assets/optimized/bhabhi.webp`,
+                            ][i]
+                          }
+                          alt="Bhabhi Thulla original logo"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  )}
+                  <span className="art-bottom mono">
+                    ORIGINAL PROJECT IDENTITY{" "}
+                    <span className="art-arrow">↗</span>
+                  </span>
+                </button>
+                <div className="project-copy">
+                  <span className="eyebrow">PROJECT / 0{i + 1}</span>
+                  <h3>{p.name}</h3>
+                  <p>{p.description}</p>
+                  <span className="project-category">
+                    {
+                      [
+                        "Logistics web project",
+                        "Company website",
+                        "Card-game project",
+                      ][i]
+                    }
+                  </span>
+                  <button className="text-link" onClick={() => setProject(i)}>
+                    Inside the project <span aria-hidden="true">↗</span>
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section id="about" className="section about-section">
+          <div className="section-top">
+            <span className="eyebrow">02 / THE PERSON BEHIND THE CODE</span>
+            <span className="mono">HUMAN FIRST. DEVELOPER ALWAYS.</span>
+          </div>
+          <div className="about-layout">
+            <div className="portrait-frame">
+              <span className="portrait-label mono">
+                MUHAMMAD ALI EJAZ / ALI BHATTI
+              </span>
+              <div className="portrait-grid" />
+              <img
+                src="/assets/optimized/portrait.webp"
+                alt="Ali Bhatti, full stack web developer"
+                loading="lazy"
+                width="1105"
+                height="1105"
+              />
+              <span className="portrait-footer mono">
+                KHANEWAL, PK <span>FULL STACK DEVELOPER</span>
+              </span>
+            </div>
+            <div className="about-copy">
+              <h2>
+                Thoughtful on the
+                <br />
+                surface.
+                <br />
+                <em>Deliberate underneath.</em>
+              </h2>
+              <p className="large-copy">
+                I build web applications that connect responsive interfaces,
+                secure backend services, and structured data.
+              </p>
+              <p>
+                My work spans React and Next.js frontends, Node.js and NestJS
+                APIs, and PostgreSQL databases with Prisma. I value clear
+                communication, maintainable code, and the small decisions that
+                make an experience feel right.
+              </p>
+              <p>
+                Learning is part of the process. My completed programs cover
+                full stack development, Node.js, C# and .NET, and SvelteKit.
+              </p>
+              <a className="text-link" href="#experience">
+                The journey so far <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section id="skills" className="section skills-section">
+          <div className="section-top">
+            <span className="eyebrow">03 / THE TOOLKIT</span>
+            <span className="mono">ONE CONNECTED APPROACH.</span>
+          </div>
+          <div className="section-heading">
+            <h2>
+              Every layer.
+              <br />
+              <em>Considered.</em>
+            </h2>
+            <p>
+              From what you see to how it works.
+              <br />
+              The tools I use to connect the two.
+            </p>
+          </div>
+          <div className="stack-grid">
+            {stack.map((s) => (
+              <article className="stack-layer" key={s.name}>
+                <div className="stack-number">
+                  {s.number}
+                  <span aria-hidden="true">↘</span>
+                </div>
+                <div className="stack-icons">
+                  {s.icons.map((icon) => (
+                    <img
+                      key={icon}
+                      src={`/assets/brands/${icon}.svg`}
+                      alt=""
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+                <h3>{s.name}</h3>
+                <p>{s.text}</p>
+                <ul>
+                  {s.items.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+          <p className="learning-note">
+            <span className="accent">↳</span> Further completed study: C# 12 ·
+            .NET 8 · ASP.NET Core · Blazor · Svelte 5 · SvelteKit.{" "}
+            <a href="#credentials">See credentials ↗</a>
+          </p>
+        </section>
+        <section id="experience" className="section journey-section">
+          <div className="section-top">
+            <span className="eyebrow">04 / EXPERIENCE & FOUNDATIONS</span>
+            <span className="mono">BUILD. LEARN. REPEAT.</span>
+          </div>
+          <div className="journey-layout">
+            <h2>
+              A foundation.
+              <br />
+              <em>A way forward.</em>
+            </h2>
+            <div className="timeline">
+              <span className="timeline-label mono">
+                PROFESSIONAL EXPERIENCE
+              </span>
+              {["Upwork", "Fiverr"].map((platform) => (
+                <article className="timeline-row" key={platform}>
+                  <span className="mono">SEP 2025 — JUN 2026</span>
+                  <h3>Freelance Full Stack Web Developer</h3>
+                  <span className="timeline-org">
+                    {platform} · Lahore, Pakistan
+                  </span>
+                  <p>
+                    {platform === "Upwork"
+                      ? "Developed responsive React and Next.js applications, Node.js and NestJS REST APIs, and PostgreSQL / Prisma integrations. Implemented JWT authentication and role-based access control."
+                      : "Built custom interfaces and backend services around client requirements. Integrated third-party services, managed business logic, and incorporated client feedback into maintainable applications."}
+                  </p>
+                </article>
+              ))}
+              <span className="timeline-label mono">EDUCATION</span>
+              <article className="timeline-row">
+                <span className="mono">2021 — 2025</span>
+                <h3>Bachelor in Computer Science</h3>
+                <p>Punjab University · Lahore, Pakistan</p>
+              </article>
+              <article className="timeline-row">
+                <span className="mono">2018 — 2020</span>
+                <h3>Intermediate in Computer Science (ICS)</h3>
+                <p>Hawk College · Khanewal, Pakistan</p>
+              </article>
+            </div>
+          </div>
+        </section>
+        <Credentials />
+        <section id="resume" className="section resume-section">
+          <div>
+            <span className="eyebrow">THE STORY, ON PAPER</span>
+            <h2>
+              Take it
+              <br />
+              <em>with you.</em>
+            </h2>
+            <p>
+              Experience, projects, education, and selected credentials.
+              <br />
+              Two formats, ready for your next conversation.
+            </p>
+          </div>
+          <div className="resume-options">
+            <a href="/assets/resume/Resume-Premium.pdf" download>
+              <span className="resume-file">PDF / 01</span>
+              <h3>Designed résumé</h3>
+              <p>A considered layout. The complete professional picture.</p>
+              <span className="download-label">
+                DOWNLOAD PREMIUM <b aria-hidden="true">↓</b>
+              </span>
+            </a>
+            <a href="/assets/resume/Resume-ATS.pdf" download>
+              <span className="resume-file">PDF / 02</span>
+              <h3>ATS-friendly résumé</h3>
+              <p>A simple, single-column format for applications.</p>
+              <span className="download-label">
+                DOWNLOAD ATS <b aria-hidden="true">↓</b>
+              </span>
+            </a>
+          </div>
+        </section>
+        <section id="contact" className="section contact-section">
+          <div className="section-top">
+            <span className="eyebrow">06 / THE NEXT CHAPTER</span>
+            <span className="mono">GOOD THINGS BEGIN WITH A CONVERSATION.</span>
+          </div>
+          <div className="contact-heading">
+            <h2>
+              Let’s make
+              <br />
+              <em>something matter.</em>
+            </h2>
+            <a
+              className="contact-orb"
+              href={`mailto:${profile.email}`}
+              aria-label="Email Ali Bhatti"
+            >
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div className="contact-details">
+            <a className="email-link" href={`mailto:${profile.email}`}>
+              {profile.email} <span aria-hidden="true">↗</span>
+            </a>
+            <div>
+              <a href={profile.phoneHref}>{profile.phone}</a>
+              <span>{profile.location}</span>
+            </div>
+          </div>
+          <div className="social-links">
+            {socials.map((s) => (
+              <a
+                key={s.id}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={s.icon} alt="" loading="lazy" />
+                {s.label}
+                <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      </main>
+      <footer className="site-footer">
+        <a href="#home" className="footer-name">
+          ALI BHATTI<span>↗</span>
+        </a>
+        <div className="footer-bottom">
+          <span className="mono">© 2026 ALI BHATTI. BUILT WITH INTENTION.</span>
+          <button aria-pressed={reduced} onClick={() => setReduced(!reduced)}>
+            Motion: {reduced ? "reduced" : "full"}{" "}
+            <span aria-hidden="true">{reduced ? "○" : "◉"}</span>
+          </button>
+          <a href="#home">Back to top ↑</a>
+        </div>
+      </footer>
+      <dialog
+        ref={menuDialog}
+        id="mobile-menu"
+        className="mobile-menu"
+        aria-labelledby="menu-title"
+        onCancel={() => setMenu(false)}
+      >
+        <div className="dialog-heading">
+          <h2 id="menu-title">Explore.</h2>
+          <button
+            className="close-dialog"
+            onClick={() => setMenu(false)}
+            aria-label="Close navigation"
+          >
+            ×
+          </button>
+        </div>
+        <nav aria-label="Mobile navigation">
+          {[
+            ...nav,
+            ["skills", "Toolkit"],
+            ["experience", "Experience"],
+            ["archive", "Certificate archive"],
+            ["resume", "Résumé"],
+          ].map(([id, label], i) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={() => {
+                setMenu(false);
+                setTimeout(
+                  () => document.getElementById(id)?.scrollIntoView(),
+                  0,
+                );
+              }}
+            >
+              <span className="mono">0{i + 1}</span>
+              {label}
+              <span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </nav>
+      </dialog>
+      <dialog
+        ref={projectDialog}
+        className="project-dialog"
+        aria-labelledby="project-title"
+        onCancel={() => setProject(null)}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) setProject(null);
+        }}
+      >
+        {project !== null && (
+          <>
+            <div className="dialog-heading">
+              <span className="eyebrow">SELECTED WORK / 0{project + 1}</span>
+              <button
+                className="close-dialog"
+                onClick={() => setProject(null)}
+                aria-label="Close project details"
+              >
+                ×
+              </button>
+            </div>
+            <h2 id="project-title">{projects[project].name}</h2>
+            <img
+              src={projects[project].logo}
+              alt={`${projects[project].name} original identity`}
+            />
+            <p>{projects[project].description}</p>
+            <p>{chapters[project + 7].detail}</p>
+            <div className="project-evidence">
+              <span className="mono">PUBLIC DEMO & REPOSITORY</span>
+              <p>Project links are not currently available.</p>
+            </div>
+            <a
+              className="button"
+              href={`mailto:${profile.email}?subject=${encodeURIComponent(`Tell me about ${projects[project].name}`)}`}
+            >
+              Ask about this project ↗
+            </a>
+          </>
+        )}
+      </dialog>
+    </>
+  );
 }

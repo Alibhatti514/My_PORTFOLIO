@@ -1,0 +1,39 @@
+12 Courses
+Microsoft
+Foundations of Coding Full-Stack
+Introduction to Programming With
+C#
+Introduction to Web Development
+Blazor for Front-End Development
+Back-End Development with .NET
+Database Integration and
+Management
+Full-Stack Integration
+Security and Authentication
+Performance Optimization and
+Scalability
+Data Structures and Algorithms
+Deployment and DevOps
+Full-Stack Developer Capstone
+Project
+Oct 26, 2026
+Muhammad Ali Ejaz Bhatti
+has successfully completed the online Professional Certificate
+Microsoft Full-Stack
+Developer
+Those who have earned this professional certificate have
+demonstrated their job readiness through hands-on experience and
+practical application in full-stack development. They have built
+expertise in both front-end and back-end technologies, including
+creating responsive user interfaces, managing relational and non-
+relational databases, implementing security protocols, and deploying
+web applications. Proficiency in modern frameworks like .NET, as well
+as in using tools like Microsoft Copilot for coding and debugging,
+showcases their ability to develop, optimize, and maintain robust,
+scalable full-stack applications.
+This certificate attests to the learner’s completion of an online program delivered via Coursera. It does not constitute
+formal enrollment at any university or entity and does not itself grant academic credit, grades, or a degree. Institutions
+or organizations may, at their discretion, recognize this learning toward their own programs or credentials.
+Verify this certificate at:
+https://coursera.org/verify/professio
+nal-cert/PNCHQB9SL2GX

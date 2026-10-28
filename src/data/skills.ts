@@ -42,7 +42,7 @@ export const skills: Skill[] = [
       "Original résumé — full stack web applications and responsive interfaces.",
   },
   {
-    name: "HTML5 / CSS3",
+    name: "HTML5",
     icon: "html5",
     category: "Frontend",
     evidence:
@@ -82,7 +82,7 @@ export const skills: Skill[] = [
     evidence: "Original résumé — PostgreSQL integration and efficient queries.",
   },
   {
-    name: "Git / GitHub",
+    name: "Git",
     icon: "git",
     category: "Tools",
     evidence: "Original résumé — development tools and version control.",
@@ -94,14 +94,16 @@ export const skills: Skill[] = [
     evidence: "Original résumé — API development tools.",
   },
   {
-    name: "C# / .NET 8",
+    name: "C# 12",
+    icon: "csharp",
     category: "Completed study",
     study: true,
     evidence:
       "Packt C# 12 and .NET 8 specialization; Microsoft backend program. Includes ASP.NET Core and Blazor.",
   },
   {
-    name: "Svelte / SvelteKit",
+    name: "Svelte 5",
+    icon: "svelte",
     category: "Completed study",
     study: true,
     evidence:
@@ -109,10 +111,78 @@ export const skills: Skill[] = [
   },
   {
     name: "Express",
+    icon: "express",
     category: "Completed study",
     study: true,
     evidence:
       "Packt — Master Express Framework: Beginner to Advanced with Node.js course.",
+  },
+  {
+    name: "CSS3",
+    icon: "css3",
+    category: "Frontend",
+    evidence:
+      "Original r\u00e9sum\u00e9 \u2014 responsive interfaces and accessible layouts.",
+  },
+  {
+    name: "GitHub",
+    icon: "github",
+    category: "Tools",
+    evidence:
+      "Original r\u00e9sum\u00e9 \u2014 version control and development workflow.",
+  },
+  {
+    name: ".NET 8",
+    icon: "dotnet",
+    category: "Completed study",
+    evidence:
+      "Packt C# 12 and .NET 8 specialization; Microsoft backend program.",
+    study: true,
+  },
+  {
+    name: "ASP.NET Core",
+    icon: "dotnet",
+    category: "Completed study",
+    evidence: "C# 12 and .NET 8 specialization; web development and APIs.",
+    study: true,
+  },
+  {
+    name: "Blazor",
+    icon: "blazor",
+    category: "Completed study",
+    evidence: "Microsoft \u2014 Blazor for Front-End Development.",
+    study: true,
+  },
+  {
+    name: "SvelteKit",
+    icon: "sveltekit",
+    category: "Completed study",
+    evidence: "Packt Svelte 5 & SvelteKit specialization.",
+    study: true,
+  },
+  {
+    name: "Supabase",
+    icon: "supabase",
+    category: "Completed study",
+    evidence:
+      "Packt \u2014 Full-Stack Web Development with SvelteKit & Supabase.",
+    study: true,
+  },
+  {
+    name: "Sanity CMS",
+    icon: "sanity",
+    category: "Completed study",
+    evidence:
+      "Packt \u2014 Build a Developer Portfolio with SvelteKit & Sanity CMS.",
+    study: true,
+  },
+  {
+    name: "Stripe integration",
+    icon: "stripe",
+    category: "Completed study",
+    evidence:
+      "Packt \u2014 Build a Product Landing Page with Stripe Integration.",
+    study: true,
   },
 ];
 export const additionalStudy = [

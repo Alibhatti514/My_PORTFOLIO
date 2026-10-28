@@ -1,56 +1,53 @@
-# Ali Bhatti — a continuous 3D portfolio
+# Ali Bhatti / Burgundy & cream / Portfolio V3
 
-The new experience is on `redesign/continuous-world-2026`. The rejected, previously uncommitted implementation is preserved at `archive/rejected-design-checkpoint-20261029` (`f66ac7f`); the original branch reference is untouched.
+Implemented on `redesign/burgundy-cream-world-2026`, starting from the clean `redesign/continuous-world-2026` branch (`f81cf61`). Earlier implementations, original assets and Git history remain preserved. Nothing is pushed or deployed automatically.
 
-A persistent Three.js world connects a portrait-led opening, professional introduction, interactive technology constellation, three moving project displays, a seven-program credential orbit and a portrait-led finale. Native scrolling controls one reversible camera/object timeline. Accessible HTML supplies text, controls and downloads. Mobile keeps WebGL with adaptive framing, DPR and geometry; reduced motion, reading mode and WebGL loss provide complete semantic content.
+One native-scroll coordinate drives a persistent Three.js world and an editorial page moving through perspective. A monotonic vertical camera, continuous open ribbon and fourteen transforming folios connect the centered real portrait, About, technology field, three frameless project compositions, dimensional certificate stack and finale. Reduced motion, reading mode and unavailable WebGL provide the complete stationary portfolio.
 
-## Run locally
+## Run
 
 ```sh
 npm install
 npm run dev
 ```
 
-Production output:
-
 ```sh
 npm run build
 npm run preview -- --port 4174
 ```
 
-No backend, credentials or environment variables are needed. `SITE_URL` is optional for a real deployment origin; it enables canonical URLs and a sitemap. No public deployment URL is invented.
+No backend or credentials are required. Optional `SITE_URL` supplies a real canonical origin and sitemap during production builds.
 
-## Review the actual experience
+## Review
 
-- [Browser recording](docs/continuous-world/qa/journey-desktop.webm)
-- [Visual proof gallery](docs/continuous-world/PROOF.html)
-- [Seven-reference research report](docs/continuous-world/RESEARCH.md)
-- [Audit and source limitations](docs/continuous-world/AUDIT.md)
-- [Implementation and verification](docs/continuous-world/DELIVERY.md)
-- [Premium résumé](output/pdf/Resume-Premium.pdf) and [ATS résumé](output/pdf/Resume-ATS.pdf)
+- [Visual evidence gallery](docs/burgundy-cream/qa/index.html)
+- [Desktop motion recording](docs/burgundy-cream/qa/journey-desktop.webm)
+- [Mobile touch recording](docs/burgundy-cream/qa/journey-mobile.webm)
+- [Audit, architecture and content sources](docs/burgundy-cream/AUDIT.md)
+- [Implementation report](docs/burgundy-cream/DELIVERY.md)
+- [Premium résumé](output/pdf/Resume-Premium.pdf) / [ATS résumé](output/pdf/Resume-ATS.pdf)
 
-Screenshots include every waypoint, outgoing/incoming boundary pairs, 320/390/768px layouts, skill selection, credential rotation, the searchable library, reduced motion and WebGL fallback. The recording is the primary motion evidence, rather than static screenshots alone.
+## Content
 
-## Content integrity
+All 40 original certificates remain downloadable, searchable and filterable. Featured credentials comprise all three professional programs, all four specializations and both Duke University guided projects. Dates and issuers come from the actual PDF contents; verification links come from embedded PDF annotations. Local completion evidence does not independently authenticate online identity.
 
-The supplied portrait is used without face replacement or invented depth geometry. Original project names, logos and descriptions are retained. No project screenshots, per-project stacks, repository destinations or live URLs were verified in the supplied portfolio; the dimensional displays are explicitly labeled original project artwork.
+Skills separate original résumé experience from certificate-backed coursework. Authentic technology marks are bundled locally, with license notices in `public/assets/brands`. Existing GitHub, LinkedIn and other professional profile destinations remain unchanged. No proficiency percentages, invented project stacks or unverified public project links were added.
 
-All 40 original PDF certificates remain downloadable and byte-identical to their aliases. Only the three professional certificate programs and four specializations are featured in the main orbit. Search, issuer/type filters, original previews, downloads and verification links are in the complete library. Verification destinations now come from actual PDF annotations, correcting a text-extraction suffix defect affecting 33 old URLs. Program completion is supported by local PDFs; independent issuer identity authentication is not claimed.
+Projects use original artwork in explicitly labeled abstract compositions. Functional screenshots were unavailable. The original photograph and source résumé remain unchanged. Both redesigned, two-page PDFs contain selectable text, embedded fonts and hyperlinks; the premium version carries the new visual identity and actual photograph.
 
-Résumé experience, institutions and dates come from the original résumé. Certificate-backed study is labeled separately from applied experience. No proficiency percentages or unsupported spoken languages are added. The premium PDF includes the real photograph, orbital graphics, categorized technology diagrams and seven linked programs. The ATS version uses a single reading order. Both have selectable text, embedded fonts and live hyperlinks.
-
-## Verification and reproducibility
+## Validate
 
 ```sh
 npm test
 npm run build
 QA_URL=http://127.0.0.1:4174 npm run test:browser
-node scripts/journey-extra-qa.mjs
-node scripts/record-journey.mjs
+node scripts/v3-record.mjs
+node scripts/v3-performance.mjs
 npm run resume
 python3 scripts/validate-resumes.py
+npm run audit:certificates
 ```
 
-Browser/PDF scripts use installed Google Chrome through Playwright. Python checks need pypdf and Poppler (`pdftotext`, `pdftoppm`, `pdffonts`). The original content/asset tests remain alongside the new camera-continuity and PDF-link regression checks. Legacy scene tests validate retained source, while `journey-qa.mjs` tests the actual current production UI.
+Browser and PDF generation use installed Google Chrome through Playwright. Python validation uses pypdf and Poppler. The browser suite checks five viewport sizes, forward/reverse poses, seven transition triptychs, interactions, downloads, archive search/filtering, WCAG accessibility, reduced motion and unsupported WebGL. Legacy scene tests and source remain available; V3 browser checks exercise the active UI.
 
-Reflection lighting is baked once by `scripts/bake-studio-environment.mjs` (requires the Vite dev server on 4173). Visitors load the resulting CubeUV atlas; shaders compile asynchronously. Technology icon licenses are retained under `public/assets/brands/`.
+The renderer caps DPR, uses no postprocessing or baked environment texture, and skips GPU draws for unchanged progress. Resources and event listeners are disposed when leaving the cinematic view. Performance reports record the active renderer and lab configuration; they are not real-device guarantees.

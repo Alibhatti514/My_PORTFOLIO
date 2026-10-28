@@ -1,0 +1,77 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "initialStyles": [
+      "translate3d(0px, 0vh, 0px) rotateX(0deg)",
+      "translate3d(0px, 90vh, -150px) rotateX(2deg)",
+      "translate3d(0px, 180vh, -300px) rotateX(2deg)",
+      "translate3d(0px, 270vh, -450px) rotateX(2deg)",
+      "translate3d(0px, 360vh, -600px) rotateX(2deg)",
+      "translate3d(0px, 450vh, -750px) rotateX(2deg)",
+      "translate3d(0px, 540vh, -900px) rotateX(2deg)",
+      "translate3d(0px, 630vh, -1050px) rotateX(2deg)"
+    ],
+    "status": "passed"
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "initialStyles": [
+      "translate3d(0px, 0vh, 0px) rotateX(0deg)",
+      "translate3d(0px, 90vh, -150px) rotateX(2deg)",
+      "translate3d(0px, 180vh, -300px) rotateX(2deg)",
+      "translate3d(0px, 270vh, -450px) rotateX(2deg)",
+      "translate3d(0px, 360vh, -600px) rotateX(2deg)",
+      "translate3d(0px, 450vh, -750px) rotateX(2deg)",
+      "translate3d(0px, 540vh, -900px) rotateX(2deg)",
+      "translate3d(0px, 630vh, -1050px) rotateX(2deg)"
+    ],
+    "status": "passed"
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "initialStyles": [
+      "translate3d(0px, 0vh, 0px) rotateX(0deg)",
+      "translate3d(0px, 90vh, -150px) rotateX(2deg)",
+      "translate3d(0px, 180vh, -300px) rotateX(2deg)",
+      "translate3d(0px, 270vh, -450px) rotateX(2deg)",
+      "translate3d(0px, 360vh, -600px) rotateX(2deg)",
+      "translate3d(0px, 450vh, -750px) rotateX(2deg)",
+      "translate3d(0px, 540vh, -900px) rotateX(2deg)",
+      "translate3d(0px, 630vh, -1050px) rotateX(2deg)"
+    ],
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "initialStyles": [
+      "translate3d(0px, 0vh, 0px) rotateX(0deg)",
+      "translate3d(0px, 90vh, -150px) rotateX(2deg)",
+      "translate3d(0px, 180vh, -300px) rotateX(2deg)",
+      "translate3d(0px, 270vh, -450px) rotateX(2deg)",
+      "translate3d(0px, 360vh, -600px) rotateX(2deg)",
+      "translate3d(0px, 450vh, -750px) rotateX(2deg)",
+      "translate3d(0px, 540vh, -900px) rotateX(2deg)",
+      "translate3d(0px, 630vh, -1050px) rotateX(2deg)"
+    ],
+    "status": "passed"
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "initialStyles": [
+      "translate3d(0px, 0vh, 0px) rotateX(0deg)",
+      "translate3d(0px, 90vh, -150px) rotateX(2deg)",
+      "translate3d(0px, 180vh, -300px) rotateX(2deg)",
+      "translate3d(0px, 270vh, -450px) rotateX(2deg)",
+      "translate3d(0px, 360vh, -600px) rotateX(2deg)",
+      "translate3d(0px, 450vh, -750px) rotateX(2deg)",
+      "translate3d(0px, 540vh, -900px) rotateX(2deg)",
+      "translate3d(0px, 630vh, -1050px) rotateX(2deg)"
+    ],
+    "status": "passed"
+  }
+]

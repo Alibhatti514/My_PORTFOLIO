@@ -44,7 +44,7 @@ test("every PDF, including extensionless certificates, is uniquely indexed, unch
     if (["Specialization", "Professional Certificate"].includes(c.type))
       assert.equal(c.featured, true);
   }
-  assert.equal(credentials.filter((c) => c.featured).length, 7);
+  assert.equal(credentials.filter((c) => c.featured).length, 9);
   assert.equal(
     credentials.filter((c) => c.type === "Professional Certificate").length,
     3,

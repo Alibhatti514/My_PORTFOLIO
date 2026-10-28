@@ -16,7 +16,7 @@ for mode in ['Premium','ATS']:
  assert all('yes' in line for line in fonts.splitlines()[2:] if line.strip())
  assert path.read_bytes()==Path('public/assets/resume',path.name).read_bytes()
  if mode=='ATS':assert 'Freelance Full Stack Web Developer' in flat
- Path(f'docs/continuous-world/pdf-preview/{mode}-text.txt').write_text(text)
+ Path(f'docs/burgundy-cream/pdf-preview/{mode}-text.txt').write_text(text)
  results.append(dict(mode=mode,pages=2,hyperlinks=len(links),selectableCharacters=len(text),fonts=fonts))
-Path('docs/continuous-world/pdf-preview/validation.json').write_text(json.dumps(results,indent=2))
-print('Both two-page PDFs: selectable text, embedded fonts, seven linked programs, matching public downloads.')
+Path('docs/burgundy-cream/pdf-preview/validation.json').write_text(json.dumps(results,indent=2))
+print('Both two-page PDFs: selectable text, embedded fonts, nine linked credentials, matching public downloads.')

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "credential-01",
+    "title": "Object-Oriented Programming in Python",
+    "issuer": "Duke University",
+    "type": "Guided Project",
+    "date": "Oct 28, 2026",
+    "url": "https://coursera.org/verify/JS96P657OA2U",
+    "preview": "/assets/certificate-previews/01.jpg",
+    "downloadPath": "/assets/credentials/credential-01.pdf"
+  },
+  {
+    "id": "credential-02",
+    "title": "Web Scraping with Python",
+    "issuer": "Duke University",
+    "type": "Guided Project",
+    "date": "Oct 28, 2026",
+    "url": "https://coursera.org/verify/P5QIGQITCZVU",
+    "preview": "/assets/certificate-previews/02.jpg",
+    "downloadPath": "/assets/credentials/credential-02.pdf"
+  },
+  {
+    "id": "credential-31",
+    "title": "C# 12 and .NET 8 Cross-Platform Development Fundamentals",
+    "issuer": "Packt",
+    "type": "Specialization",
+    "date": "Oct 27, 2026",
+    "url": "https://coursera.org/verify/specialization/1SS6TXZP8HAX",
+    "preview": "/assets/certificate-previews/31.jpg",
+    "downloadPath": "/assets/credentials/credential-31.pdf"
+  },
+  {
+    "id": "credential-32",
+    "title": "Full-Stack Web Development",
+    "issuer": "University of London",
+    "type": "Specialization",
+    "date": "Oct 28, 2026",
+    "url": "https://coursera.org/verify/specialization/07QHDGJ0WQ7T",
+    "preview": "/assets/certificate-previews/32.jpg",
+    "downloadPath": "/assets/credentials/credential-32.pdf"
+  },
+  {
+    "id": "credential-33",
+    "title": "Mastering Node.js Web Development",
+    "issuer": "Packt",
+    "type": "Specialization",
+    "date": "Oct 23, 2026",
+    "url": "https://coursera.org/verify/specialization/G1FBMPY7J30J",
+    "preview": "/assets/certificate-previews/33.jpg",
+    "downloadPath": "/assets/credentials/credential-33.pdf"
+  },
+  {
+    "id": "credential-34",
+    "title": "Microsoft Back-End Developer",
+    "issuer": "Microsoft",
+    "type": "Professional Certificate",
+    "date": "Oct 24, 2026",
+    "url": "https://coursera.org/verify/professional-cert/74AS1URCHT9U",
+    "preview": "/assets/certificate-previews/34.jpg",
+    "downloadPath": "/assets/credentials/credential-34.pdf"
+  },
+  {
+    "id": "credential-35",
+    "title": "Microsoft Front-End Developer",
+    "issuer": "Microsoft",
+    "type": "Professional Certificate",
+    "date": "Oct 28, 2026",
+    "url": "https://coursera.org/verify/professional-cert/ZXAEPXOO1ON9",
+    "preview": "/assets/certificate-previews/35.jpg",
+    "downloadPath": "/assets/credentials/credential-35.pdf"
+  },
+  {
+    "id": "credential-36",
+    "title": "Microsoft Full-Stack Developer",
+    "issuer": "Microsoft",
+    "type": "Professional Certificate",
+    "date": "Oct 26, 2026",
+    "url": "https://coursera.org/verify/professional-cert/PNCHQB9SL2GX",
+    "preview": "/assets/certificate-previews/36.jpg",
+    "downloadPath": "/assets/credentials/credential-36.pdf"
+  },
+  {
+    "id": "credential-37",
+    "title": "Svelte 5 & SvelteKit For Hands-On Modern Web Development",
+    "issuer": "Packt",
+    "type": "Specialization",
+    "date": "Oct 27, 2026",
+    "url": "https://coursera.org/verify/specialization/XS0B6VRNGV7U",
+    "preview": "/assets/certificate-previews/37.jpg",
+    "downloadPath": "/assets/credentials/credential-37.pdf"
+  }
+]

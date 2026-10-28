@@ -36,12 +36,20 @@ print(json.dumps([[str(a.get_object().get('/A',{}).get('/URI','')) for p in PdfR
     ),
   );
   certificates.forEach((c, i) => assert.ok(embedded[i].includes(c.url), c.id));
-  assert.equal(certificates.filter((c) => c.featured).length, 7);
+  assert.equal(certificates.filter((c) => c.featured).length, 9);
   assert.ok(
     certificates
       .filter((c) => c.featured)
       .every((c) =>
-        ["Professional Certificate", "Specialization"].includes(c.type),
+        ["Professional Certificate", "Specialization"].includes(c.type) || c.issuer === "Duke University",
       ),
   );
+});
+
+test('the V3 camera travels vertically without returning to the origin', () => {
+  for (let i=1;i<cameraPath.length;i++) {
+    assert.ok(cameraPath[i][1]<cameraPath[i-1][1]);
+    assert.equal(cameraPath[i][0],0);
+  }
+  assert.equal(cameraPath[7][1],-63);
 });

@@ -1,0 +1,1056 @@
+{
+  "errors": [],
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "states": [
+        {
+          "world": {
+            "progress": 0,
+            "camera": [
+              0,
+              0,
+              15
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "1"
+        },
+        {
+          "world": {
+            "progress": 0.9999388757343236,
+            "camera": [
+              0,
+              -8.999999899127362,
+              15.399999995516772
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0.977728"
+        },
+        {
+          "world": {
+            "progress": 1.9999339026202028,
+            "camera": [
+              0,
+              -17.99999988204588,
+              15.999999992136392
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 2.9999727741131124,
+            "camera": [
+              0,
+              -26.999999979986644,
+              15.000000002223706
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 3.999929686683103,
+            "camera": [
+              0,
+              -35.99999986651927,
+              15.599999991101285
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 4.99992926100482,
+            "camera": [
+              0,
+              -44.99999986489823,
+              15.200000006004522
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 5.999937378433977,
+            "camera": [
+              0,
+              -53.99999989412498,
+              15.999999990588888
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 6.999906722153531,
+            "camera": [
+              0,
+              -62.99999976509418,
+              15.000000026100647
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        }
+      ]
+    },
+    {
+      "name": "laptop",
+      "width": 1366,
+      "height": 768,
+      "states": [
+        {
+          "world": {
+            "progress": 0,
+            "camera": [
+              0,
+              0,
+              15
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "1"
+        },
+        {
+          "world": {
+            "progress": 1.0003885899716969,
+            "camera": [
+              0,
+              -9.000004076002282,
+              15.400000271733486
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0.977491"
+        },
+        {
+          "world": {
+            "progress": 1.999715298391405,
+            "camera": [
+              0,
+              -17.999997811930214,
+              15.999999854128681
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 3.0001715215247127,
+            "camera": [
+              0,
+              -27.000000794239273,
+              15.000000052949284
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 3.999520644967571,
+            "camera": [
+              0,
+              -35.99999379788897,
+              15.59999958652593
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 4.999954560135242,
+            "camera": [
+              0,
+              -44.99999994425259,
+              15.200000002477662
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 6.000388588280655,
+            "camera": [
+              0,
+              -54.000004075966814,
+              15.999999547114799
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 6.99971530146885,
+            "camera": [
+              0,
+              -62.999997811977515,
+              15.00000024311361
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        }
+      ]
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "states": [
+        {
+          "world": {
+            "progress": 0,
+            "camera": [
+              0,
+              0,
+              15
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "1"
+        },
+        {
+          "world": {
+            "progress": 1.0000949393201142,
+            "camera": [
+              0,
+              -9.000000243348408,
+              15.400000016223228
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0.977643"
+        },
+        {
+          "world": {
+            "progress": 2.0002243784965756,
+            "camera": [
+              0,
+              -18.000001359130827,
+              15.999999848985464
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 2.999629090642371,
+            "camera": [
+              0,
+              -26.9999962864272,
+              15.0000004126192
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 3.999791824312406,
+            "camera": [
+              0,
+              -35.999998830060235,
+              15.599999922004015
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 4.999932175823835,
+            "camera": [
+              0,
+              -44.9999998758024,
+              15.200000005519893
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 6.000094935556145,
+            "camera": [
+              0,
+              -54.00000024332911,
+              15.999999972963431
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 6.999898896192677,
+            "camera": [
+              0,
+              -62.999999724025145,
+              15.000000030663873
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "states": [
+        {
+          "world": {
+            "progress": 0,
+            "camera": [
+              0,
+              0,
+              23.25
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "1"
+        },
+        {
+          "world": {
+            "progress": 1.0001049713037389,
+            "camera": [
+              0,
+              -9.000000297491495,
+              23.87000003074079
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0.977644"
+        },
+        {
+          "world": {
+            "progress": 2.0002840414905583,
+            "camera": [
+              0,
+              -18.00000217793585,
+              24.79999962491105
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 2.9995442247553306,
+            "camera": [
+              0,
+              -26.999994392965228,
+              23.25000096565599
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 3.999695675394806,
+            "camera": [
+              0,
+              -35.99999749994376,
+              24.179999741660854
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 4.999905084455896,
+            "camera": [
+              0,
+              -44.999999756773455,
+              23.560000016755605
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 6.0001027114627234,
+            "camera": [
+              0,
+              -54.0000002848209,
+              24.799999950947512
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 6.999906898700422,
+            "camera": [
+              0,
+              -62.99999976598252,
+              23.25000004030301
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        }
+      ]
+    },
+    {
+      "name": "small-mobile",
+      "width": 320,
+      "height": 568,
+      "states": [
+        {
+          "world": {
+            "progress": 0,
+            "camera": [
+              0,
+              0,
+              23.25
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "1"
+        },
+        {
+          "world": {
+            "progress": 1.0004024931930864,
+            "camera": [
+              0,
+              -9.000004372847128,
+              23.87000045186087
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0.977483"
+        },
+        {
+          "world": {
+            "progress": 1.9996055228759113,
+            "camera": [
+              0,
+              -17.9999957995755,
+              24.79999956595614
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 3.0001699450023662,
+            "camera": [
+              0,
+              -27.000000779706856,
+              23.25000008056971
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 3.999345486627836,
+            "camera": [
+              0,
+              -35.999988438577574,
+              24.17999880531968
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 4.999876509422546,
+            "camera": [
+              0,
+              -44.99999958828599,
+              23.56000002836252
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 6.00040247043956,
+            "camera": [
+              0,
+              -54.0000043723528,
+              24.799999246983685
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        },
+        {
+          "world": {
+            "progress": 6.99960566268336,
+            "camera": [
+              0,
+              -62.99999580255194,
+              23.250000722893834
+            ],
+            "drawCalls": 16,
+            "geometries": 3
+          },
+          "overflow": false,
+          "sameCanvas": true,
+          "stageScroll": 0,
+          "portrait": "0"
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "join": 0,
+      "samples": [
+        {
+          "progress": 0.48985481477505205,
+          "camera": [
+            0,
+            -4.363058794901027,
+            15.193913724217824
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 0.49993158757160183,
+          "camera": [
+            0,
+            -4.499076432222388,
+            15.199958952543218
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 0.5101389300932158,
+          "camera": [
+            0,
+            -4.636856795564793,
+            15.206082524247325
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        }
+      ]
+    },
+    {
+      "join": 1,
+      "samples": [
+        {
+          "progress": 1.489770319804013,
+          "camera": [
+            0,
+            -13.361918586331946,
+            15.69079457242213
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 1.499931017793325,
+          "camera": [
+            0,
+            -13.499068740215796,
+            15.699937916014386
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 1.5101162051521642,
+          "camera": [
+            0,
+            -13.636550134726185,
+            15.709103342315078
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        }
+      ]
+    },
+    {
+      "join": 2,
+      "samples": [
+        {
+          "progress": 2.4897703193377425,
+          "camera": [
+            0,
+            -22.361918580039926,
+            15.515342379995564
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 2.499931237211957,
+          "camera": [
+            0,
+            -22.49907170236727,
+            15.500103144181415
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 2.510116123081704,
+          "camera": [
+            0,
+            -22.636549027228508,
+            15.4848278858635
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        }
+      ]
+    },
+    {
+      "join": 3,
+      "samples": [
+        {
+          "progress": 3.489770319337771,
+          "camera": [
+            0,
+            -31.36191858004031,
+            15.290794572002687
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 3.4999310722779193,
+          "camera": [
+            0,
+            -31.499069475757807,
+            15.29993796505052
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 3.5101162049962897,
+          "camera": [
+            0,
+            -31.63655013262274,
+            15.309103342174849
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        }
+      ]
+    },
+    {
+      "join": 4,
+      "samples": [
+        {
+          "progress": 4.489770319340816,
+          "camera": [
+            0,
+            -40.3619185800814,
+            15.406136951996382
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 4.499931017790201,
+          "camera": [
+            0,
+            -40.49906874017363,
+            15.400041389325615
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 4.510116205152148,
+          "camera": [
+            0,
+            -40.636550134725965,
+            15.39393110512329
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        }
+      ]
+    },
+    {
+      "join": 5,
+      "samples": [
+        {
+          "progress": 5.48977031877189,
+          "camera": [
+            0,
+            -49.361918572404115,
+            15.58772609532481
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 5.499931017786365,
+          "camera": [
+            0,
+            -49.49906874012184,
+            15.599917221344164
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 5.510116205152125,
+          "camera": [
+            0,
+            -49.63655013472565,
+            15.61213778975339
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        }
+      ]
+    },
+    {
+      "join": 6,
+      "samples": [
+        {
+          "progress": 6.48977031877189,
+          "camera": [
+            0,
+            -58.361918572404115,
+            15.515342380843988
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 6.499931154643959,
+          "camera": [
+            0,
+            -58.49907058769932,
+            15.500103268033408
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        },
+        {
+          "progress": 6.510116205450849,
+          "camera": [
+            0,
+            -58.63655013875678,
+            15.484827762360357
+          ],
+          "drawCalls": 16,
+          "geometries": 3
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    "desktop: skill selection, keyboard focus, category filter",
+    "desktop: project navigation",
+    "desktop: certificate drag, Duke records, preview, escape, download, 40-file archive, search, issuer filter",
+    "laptop: skill selection, keyboard focus, category filter",
+    "laptop: project navigation",
+    "laptop: certificate drag, Duke records, preview, escape, download, 40-file archive, search, issuer filter",
+    "tablet: skill selection, keyboard focus, category filter",
+    "tablet: project navigation",
+    "tablet: certificate drag, Duke records, preview, escape, download, 40-file archive, search, issuer filter",
+    "mobile: skill selection, keyboard focus, category filter",
+    "mobile: project navigation",
+    "mobile: certificate drag, Duke records, preview, escape, download, 40-file archive, search, issuer filter",
+    "small-mobile: skill selection, keyboard focus, category filter",
+    "small-mobile: project navigation",
+    "small-mobile: certificate drag, Duke records, preview, escape, download, 40-file archive, search, issuer filter",
+    "Reduced motion and unsupported-WebGL reading fallbacks"
+  ],
+  "accessibility": [
+    {
+      "label": "desktop-0",
+      "violations": []
+    },
+    {
+      "label": "desktop-1",
+      "violations": []
+    },
+    {
+      "label": "desktop-2",
+      "violations": []
+    },
+    {
+      "label": "desktop-3",
+      "violations": []
+    },
+    {
+      "label": "desktop-4",
+      "violations": []
+    },
+    {
+      "label": "desktop-5",
+      "violations": []
+    },
+    {
+      "label": "desktop-6",
+      "violations": []
+    },
+    {
+      "label": "desktop-preview",
+      "violations": []
+    },
+    {
+      "label": "desktop-library",
+      "violations": []
+    },
+    {
+      "label": "desktop-7",
+      "violations": []
+    },
+    {
+      "label": "laptop-preview",
+      "violations": []
+    },
+    {
+      "label": "laptop-library",
+      "violations": []
+    },
+    {
+      "label": "tablet-preview",
+      "violations": []
+    },
+    {
+      "label": "tablet-library",
+      "violations": []
+    },
+    {
+      "label": "mobile-0",
+      "violations": []
+    },
+    {
+      "label": "mobile-1",
+      "violations": []
+    },
+    {
+      "label": "mobile-2",
+      "violations": []
+    },
+    {
+      "label": "mobile-3",
+      "violations": []
+    },
+    {
+      "label": "mobile-4",
+      "violations": []
+    },
+    {
+      "label": "mobile-5",
+      "violations": []
+    },
+    {
+      "label": "mobile-6",
+      "violations": []
+    },
+    {
+      "label": "mobile-preview",
+      "violations": []
+    },
+    {
+      "label": "mobile-library",
+      "violations": []
+    },
+    {
+      "label": "mobile-7",
+      "violations": []
+    },
+    {
+      "label": "small-mobile-preview",
+      "violations": []
+    },
+    {
+      "label": "small-mobile-library",
+      "violations": []
+    },
+    {
+      "label": "reduced-motion",
+      "violations": []
+    }
+  ],
+  "status": "passed"
+}

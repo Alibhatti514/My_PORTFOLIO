@@ -1,32 +1,51 @@
-import {
-  lazy,
-  Suspense,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { profile, projects } from "./data/portfolio";
-import { socials } from "./data/socials";
 import { skills, additionalStudy } from "./data/skills";
-import certificates from "./data/certificates.json";
-import { waypoints, clamp, smooth } from "./scene/journey";
-import CredentialLibrary, {
+import { socials } from "./data/socials";
+import { clamp, panelPose, portraitPose, waypoints } from "./scene/journey";
+import {
   CredentialPreview,
-} from "./components/CredentialLibrary";
-import type { Credential } from "./components/CredentialLibrary";
+  type Credential,
+} from "./components/CredentialPreview";
+import featuredCertificates from "./data/featuredCertificates.json";
+import inventoryStats from "./data/inventoryStats.json";
+const CredentialLibrary = lazy(() => import("./components/CredentialLibrary"));
 const JourneyWorld = lazy(() => import("./components/JourneyWorld"));
-const programs = certificates.filter((c) => c.featured);
-const sectionNames = [
-  "Origin",
-  "The human",
-  "Skills universe",
-  "Selected work",
-  "Selected work",
-  "Selected work",
-  "Credentials",
-  "Connect",
+const featured = featuredCertificates.sort(
+  (a, b) =>
+    Number(a.issuer === "Duke University") -
+    Number(b.issuer === "Duke University"),
+);
+const categories = [
+  "All",
+  "Languages",
+  "Frontend",
+  "Backend",
+  "Data",
+  "Tools",
+  "Completed study",
 ];
+function Socials({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className={`social-links ${compact ? "compact" : ""}`}>
+      {socials
+        .filter((s) => !compact || ["github", "linkedin"].includes(s.id))
+        .map((s) => (
+          <a
+            key={s.id}
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${s.label} profile (opens in a new tab)`}
+          >
+            <img src={s.icon} alt="" />
+            <span>{s.label}</span>
+            <b aria-hidden="true">↗</b>
+          </a>
+        ))}
+    </div>
+  );
+}
 export default function App() {
   const [reduced, setReduced] = useState(
       () => matchMedia("(prefers-reduced-motion: reduce)").matches,
@@ -34,134 +53,187 @@ export default function App() {
     [reading, setReading] = useState(false),
     [failed, setFailed] = useState(false),
     [ready, setReady] = useState(false),
-    [p, setP] = useState(0),
-    [skill, setSkill] = useState(3),
+    [worldEnabled, setWorldEnabled] = useState(false),
+    [active, setActive] = useState(0),
+    [menu, setMenu] = useState(false),
+    [skill, setSkill] = useState(0),
+    [category, setCategory] = useState("All"),
     [credential, setCredential] = useState(0),
     [library, setLibrary] = useState(false),
-    [preview, setPreview] = useState<Credential | null>(null),
-    [menu, setMenu] = useState(false);
+    [preview, setPreview] = useState<Credential | null>(null);
   const progress = useRef(0),
-    mode = reading || reduced || failed,
-    active = Math.round(p),
-    lastMode = useRef(mode),
-    lastCredentialBucket = useRef(0);
-  const pickCredential = useCallback(
-    (n: number) => setCredential((n + programs.length) % programs.length),
-    [],
-  );
+    root = useRef<HTMLDivElement>(null),
+    portrait = useRef<HTMLDivElement>(null),
+    panels = useRef<(HTMLElement | null)[]>([]),
+    surfaces = useRef<(HTMLDivElement | null)[]>([]),
+    mode = reduced || reading || failed,
+    selected = featured[credential];
+  const pick = (n: number) =>
+    setCredential((n + featured.length) % featured.length);
+  // Decode and paint the real portrait before loading the optional WebGL enhancement.
   useEffect(() => {
-    const bucket = clamp(Math.floor((p - 6.08) * 16), 0, 6);
-    if (p > 6.08 && p < 6.5 && bucket !== lastCredentialBucket.current) {
-      lastCredentialBucket.current = bucket;
-      setCredential(bucket);
-    }
-    if (p <= 6.08) lastCredentialBucket.current = 0;
-  }, [p]);
+    let first = 0,
+      second = 0,
+      cancelled = false;
+    const image = portrait.current?.querySelector("img");
+    (image?.decode() || Promise.resolve())
+      .catch(() => {})
+      .then(() => {
+        if (cancelled) return;
+        first = requestAnimationFrame(() => {
+          second = requestAnimationFrame(() => setWorldEnabled(true));
+        });
+      });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(first);
+      cancelAnimationFrame(second);
+    };
+  }, []);
   useEffect(() => {
-    const m = matchMedia("(prefers-reduced-motion: reduce)");
-    const f = () => setReduced(m.matches);
+    const m = matchMedia("(prefers-reduced-motion: reduce)"),
+      f = () => setReduced(m.matches);
     m.addEventListener("change", f);
     return () => m.removeEventListener("change", f);
   }, []);
   useEffect(() => {
+    if (mode) return;
     let frame = 0,
-      last = 0,
-      lastState = 0;
+      last = performance.now(),
+      current = -1,
+      rendered = -1,
+      width = 0,
+      height = 0;
     const tick = (ms: number) => {
-      const target = clamp(scrollY / (innerHeight * 1.1), 0, 7);
-      const dt = Math.min((ms - last) / 1000, 0.05);
-      last = ms;
-      if (!mode) {
-        progress.current +=
-          (target - progress.current) * (1 - Math.exp(-dt * 9));
-        if (Math.abs(target - progress.current) < 0.0001)
-          progress.current = target;
-        if (ms - lastState > 32) {
-          setP(progress.current);
-          lastState = ms;
-        }
-      }
       frame = requestAnimationFrame(tick);
+      const target = clamp(scrollY / (innerHeight * 1.2), 0, 7),
+        dt = Math.min((ms - last) / 1000, 0.05);
+      last = ms;
+      progress.current +=
+        (target - progress.current) * (1 - Math.exp(-dt * 12));
+      if (Math.abs(target - progress.current) < 0.00002)
+        progress.current = target;
+      const p = progress.current;
+      if (p === rendered && width === innerWidth && height === innerHeight)
+        return;
+      rendered = p;
+      width = innerWidth;
+      height = innerHeight;
+      const next = Math.round(p);
+      if (next !== current) {
+        current = next;
+        setActive(next);
+      }
+      root.current?.style.setProperty("--progress", String(p / 7));
+      root.current?.setAttribute("data-progress", p.toFixed(5));
+      panels.current.forEach((el, i) => {
+        if (!el) return;
+        const q = panelPose(p, i);
+        el.style.transform = `translate3d(0,${q.y}vh,${q.z}px) rotateX(${q.rotate}deg)`;
+        el.style.setProperty("--local", String(p - i));
+      });
+      surfaces.current.forEach((el, i) => {
+        if (el) el.style.transform = `translateY(${(i - p) * 108}vh)`;
+      });
+      if (portrait.current) {
+        const q = portraitPose(p, innerWidth < 760);
+        Object.assign(portrait.current.style, {
+          transform: `translate3d(${q.x}vw,${q.y}vh,0) scale(${q.scale})`,
+          opacity: String(q.opacity),
+          filter: `blur(${q.blur}px)`,
+          maskImage: `linear-gradient(to bottom,#000 0%,#000 ${Math.max(0, q.mask - 35)}%,transparent ${Math.max(1, q.mask + 2)}%)`,
+        });
+      }
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
   }, [mode]);
   useEffect(() => {
-    if (lastMode.current !== mode) {
-      lastMode.current = mode;
-      window.scrollTo({ top: 0, behavior: "instant" });
-      progress.current = 0;
-      setP(0);
-    }
-  }, [mode]);
-  useEffect(() => {
-    const close = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setMenu(false);
-      }
+    const f = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenu(false);
     };
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
+    window.addEventListener("keydown", f);
+    return () => window.removeEventListener("keydown", f);
   }, []);
-  useEffect(() => {
-    const aliases: Record<string, string> = {
-      human: "home",
-      code: "about",
-      languages: "skills",
-      frontend: "skills",
-      backend: "skills",
-      data: "skills",
-      workflow: "skills",
-      connect: "contact",
-      experience: "about",
-      education: "about",
-      "rcs-cargo": "work",
-      archive: "credentials",
-    };
-    const id = aliases[location.hash.slice(1)];
-    if (id) document.getElementById(id)?.scrollIntoView();
-  }, []);
-  const show = (i: number) =>
-    mode
-      ? {}
-      : {
-          opacity:
-            active === i ? 1 - smooth((Math.abs(p - i) - 0.08) / 0.42) : 0,
-          transform: `translateY(${(i - p) * 24}px)`,
-          visibility: active === i ? ("visible" as const) : ("hidden" as const),
-        };
-  const attrs = (i: number) => ({
-    className: `scene-panel panel-${i} ${active === i ? "active" : ""}`,
-    style: show(i),
-    "aria-hidden": mode ? undefined : active !== i,
-    inert: !mode && active !== i,
-  });
   const go = (id: string) => {
     setMenu(false);
-    document
-      .getElementById(mode ? `content-${id}` : id)
-      ?.scrollIntoView({ behavior: mode ? "instant" : "smooth" });
+    const i = waypoints.findIndex((w) => w.id === id);
+    if (mode)
+      document
+        .getElementById(`content-${id}`)
+        ?.scrollIntoView({ behavior: "instant" });
+    else {
+      history.replaceState(null, "", `#${id}`);
+      window.scrollTo({
+        top: Math.max(0, i) * innerHeight * 1.2,
+        behavior: reduced ? "instant" : "smooth",
+      });
+    }
   };
-  const next = () => go(waypoints[Math.min(7, active + 1)].id);
+  useEffect(() => {
+    const id = location.hash.slice(1);
+    if (waypoints.some((w) => w.id === id)) {
+      const i = waypoints.findIndex((w) => w.id === id);
+      if (!mode)
+        window.scrollTo({ top: i * innerHeight * 1.2, behavior: "instant" });
+    }
+  }, [mode]);
+  const attrs = (i: number) => ({
+    ref: (el: HTMLElement | null) => {
+      panels.current[i] = el;
+    },
+    className: `scene-panel panel-${i} ${i === 4 || i === 6 ? "wine-scene" : ""}`,
+    style: mode
+      ? undefined
+      : ({
+          transform: `translate3d(0,${panelPose(progress.current, i).y}vh,${panelPose(progress.current, i).z}px) rotateX(${panelPose(progress.current, i).rotate}deg)`,
+          "--local": progress.current - i,
+        } as React.CSSProperties),
+    inert: !mode && Math.abs(active - i) > 0,
+    "aria-hidden": !mode && Math.abs(active - i) > 0 ? true : undefined,
+  });
   return (
     <div
+      ref={root}
       className={`portfolio ${mode ? "reading-mode" : "cinematic-mode"} ${ready ? "world-ready" : ""}`}
     >
-      <a className="skip-link" href={mode ? "#content-about" : "#about"}>
+      <svg
+        width="0"
+        height="0"
+        aria-hidden="true"
+        style={{ position: "absolute" }}
+      >
+        <defs>
+          <filter id="identity-ink" colorInterpolationFilters="sRGB">
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 2 2 2 0 0"
+            />
+          </filter>
+        </defs>
+      </svg>
+      <a
+        className="skip-link"
+        href="#content-about"
+        onClick={(e) => {
+          e.preventDefault();
+          go("about");
+        }}
+      >
         Skip to portfolio content
       </a>
       <header className="site-header">
         <a
-          href="#home"
           className="wordmark"
+          href="#home"
           onClick={(e) => {
             e.preventDefault();
             go("home");
           }}
           aria-label="Ali Bhatti Full Stack Developer, back to beginning"
         >
-          <span className="brand-orbit" aria-hidden="true">
-            a<span>b</span>
+          <span className="monogram" aria-hidden="true">
+            ab.
           </span>
           <span>
             ALI BHATTI<small>FULL STACK DEVELOPER</small>
@@ -169,18 +241,17 @@ export default function App() {
         </a>
         <nav aria-label="Main navigation">
           {[
-            ["about", "About", 1],
-            ["skills", "Skills", 2],
-            ["work", "Work", 3],
-            ["credentials", "Credentials", 6],
-          ].map(([id, label, n]) => (
+            ["about", "About"],
+            ["skills", "Toolkit"],
+            ["work", "Work"],
+            ["credentials", "Credentials"],
+          ].map(([id, label]) => (
             <a
               key={id}
               href={`#${id}`}
-              aria-current={active == n ? "location" : undefined}
               onClick={(e) => {
                 e.preventDefault();
-                go(String(id));
+                go(id);
               }}
             >
               {label}
@@ -193,7 +264,7 @@ export default function App() {
             href="/assets/resume/Resume-Premium.pdf"
             download
           >
-            Résumé <span>↗</span>
+            Résumé <span>↓</span>
           </a>
           <button
             className="menu-toggle"
@@ -216,123 +287,132 @@ export default function App() {
                 go(w.id);
               }}
             >
-              {w.name} <span>↗</span>
+              {w.name}
+              <span>↗</span>
             </a>
           ))}
         </nav>
       )}
-      <div className="atmosphere" aria-hidden="true" />
       {!mode && (
         <>
-          <div
-            className="hero-title"
-            style={{ opacity: 1 - smooth(p / 0.65) }}
-            aria-hidden="true"
-          >
-            ALI <span>BHATTI</span>
+          <div className="world-surfaces" aria-hidden="true">
+            {waypoints.map((w, i) => (
+              <div
+                key={w.id}
+                ref={(el) => {
+                  surfaces.current[i] = el;
+                }}
+                className={`scene-surface surface-${i}`}
+                style={{ transform: `translateY(${i * 108}vh)` }}
+              />
+            ))}
           </div>
-          <Suspense fallback={null}>
-            <JourneyWorld
-              progress={progress}
-              skill={skill}
-              credential={credential}
-              paused={mode || library || !!preview}
-              onSkill={setSkill}
-              onCredential={pickCredential}
-              onInspect={() => setPreview(programs[credential])}
-              onReady={() => setReady(true)}
-              onFail={() => setFailed(true)}
-            />
-          </Suspense>
-        </>
-      )}
-      {!mode && !ready && (
-        <img
-          fetchPriority="high"
-          className="loading-portrait"
-          src="/assets/optimized/portrait.webp"
-          alt=""
-        />
-      )}
-      <main id="main" className="story-content">
-        <section id="content-home" {...attrs(0)}>
-          <h1 className="sr-only">Ali Bhatti — Full Stack Web Developer</h1>
-          {mode && (
-            <>
-              <h2 className="reading-name">
-                ALI <em>BHATTI</em>
-              </h2>
+          {worldEnabled && (
+            <Suspense fallback={null}>
+              <JourneyWorld
+                progress={progress}
+                paused={library || !!preview}
+                onReady={() => setReady(true)}
+                onFail={() => setFailed(true)}
+              />
+            </Suspense>
+          )}
+          <div className="shared-portrait" ref={portrait}>
+            <picture>
+              <source
+                media="(max-width:759px)"
+                srcSet="/assets/optimized/portrait-mobile.webp"
+              />
               <img
-                className="reading-portrait"
                 src="/assets/optimized/portrait.webp"
+                fetchPriority="high"
                 alt="Muhammad Ali Ejaz, known as Ali Bhatti"
               />
-            </>
-          )}
-          <div className="hero-kicker">
-            <span className="eyebrow">
-              <i className="signal" /> THE PERSON BEHIND THE PIXELS
+            </picture>
+            <span className="portrait-caption">
+              THE PERSON BEHIND THE PIXELS
             </span>
-            <span className="mono">KHANEWAL, PAKISTAN / 2026</span>
           </div>
+        </>
+      )}
+      <main className="story-content" id="main">
+        <section id="content-home" {...attrs(0)}>
+          <div className="hero-topline">
+            <span className="eyebrow">INDEPENDENT DEVELOPER · PAKISTAN</span>
+            <span className="eyebrow">SELECTED PORTFOLIO / 2026</span>
+          </div>
+          <h1 className="hero-name">
+            Ali <em>Bhatti.</em>
+          </h1>
+          {mode && (
+            <img
+              className="reading-portrait"
+              src="/assets/optimized/portrait.webp"
+              alt="Muhammad Ali Ejaz, known as Ali Bhatti"
+            />
+          )}
           <div className="hero-left">
-            <span className="coordinate">01 — THE ORIGIN</span>
+            <span className="eyebrow">01 / A HUMAN APPROACH</span>
             <h2>
-              Human first.
-              <br /> <em>Developer by craft.</em>
+              Thoughtful code.
+              <br />
+              <em>Lasting impressions.</em>
             </h2>
             <p>
               I’m Muhammad Ali Ejaz.
               <br />
-              You can call me Ali Bhatti.
+              Full Stack Web Developer, connecting
+              <br />
+              ideas, interfaces and the systems beneath.
             </p>
+            <Socials compact />
           </div>
           <div className="hero-right">
-            <span className="orbital-mark" aria-hidden="true">
-              ✧
+            <span className="tiny-star" aria-hidden="true">
+              ✳
             </span>
-            <h2>
-              Full stack.
-              <br />
-              From the inside out.
-            </h2>
             <p>
-              Thoughtful interfaces.
+              Built with curiosity.
               <br />
-              Connected systems.
-              <br />A curiosity that keeps moving.
+              Shaped with intention.
             </p>
             <button
-              className="round-link"
-              onClick={() => go("about")}
-              aria-label="Begin the journey"
+              className="circle-button"
+              onClick={() => go("work")}
+              aria-label="Explore selected work"
             >
-              ↘
+              ↗
             </button>
           </div>
           <div className="hero-bottom">
-            <span className="mono">INTERFACE ↔ LOGIC ↔ DATA</span>
-            <button onClick={() => go("about")} className="scroll-invitation">
-              <span className="scroll-line" /> SCROLL TO ENTER MY WORLD
+            <span className="eyebrow">INTERFACE / LOGIC / DATA</span>
+            <button onClick={() => go("about")}>
+              SCROLL TO UNFOLD <span>↓</span>
             </button>
-            <a href={`mailto:${profile.email}`}>LET’S BUILD SOMETHING ↗</a>
+            <a href={`mailto:${profile.email}`}>LET’S TALK ↗</a>
           </div>
         </section>
         <section id="content-about" {...attrs(1)}>
+          <div className="about-side">
+            <span className="big-index">01</span>
+            <span className="eyebrow">A LITTLE ABOUT ME</span>
+          </div>
           <div className="scene-copy about-copy">
-            <span className="eyebrow">02 / THE HUMAN BEHIND THE SYSTEM</span>
+            <span className="eyebrow">THE HUMAN, BEFORE THE STACK</span>
             <h2>
               Curiosity is
-              <br /> the <em>constant.</em>
+              <br />
+              the <em>constant.</em>
             </h2>
             <p className="lead">
-              I connect what people see with the systems that make it work.
+              I connect what people see with
+              <br />
+              the systems that make it work.
             </p>
             <p>
-              Full Stack Web Developer building React and Next.js interfaces,
-              Node.js and NestJS services, and PostgreSQL databases with Prisma.
-              From a client’s first idea to responsive interfaces, secure APIs,
-              and maintainable code.
+              React and Next.js interfaces. Node.js and NestJS services.
+              PostgreSQL databases with Prisma. From a client’s first idea to
+              responsive experiences, secure APIs and maintainable code.
             </p>
             <details>
               <summary>
@@ -341,13 +421,10 @@ export default function App() {
               <div className="about-history">
                 <h3>Freelance Full Stack Web Developer</h3>
                 <p>
-                  Upwork & Fiverr · Lahore
+                  Upwork & Fiverr · Lahore · Sep 2025 – Jun 2026
                   <br />
-                  Sep 2025 – Jun 2026, on both platforms
-                </p>
-                <p>
                   REST APIs, JWT authentication, role-based access, third-party
-                  services, and client collaboration.
+                  services and client collaboration.
                 </p>
                 <h3>Bachelor in Computer Science</h3>
                 <p>Punjab University · Lahore · 2021–2025</p>
@@ -360,58 +437,85 @@ export default function App() {
               href="/assets/resume/Resume-ATS.pdf"
               download
             >
-              Read the full résumé ↓
+              Read my story in full ↓
             </a>
           </div>
-          <span className="scene-annotation">
-            THE HUMAN REMAINS AT THE CENTER.
-          </span>
         </section>
         <section id="content-skills" {...attrs(2)}>
-          <div className="scene-copy skills-copy">
-            <span className="eyebrow">03 / A CONNECTED CONSTELLATION</span>
+          <div className="skills-heading">
+            <span className="eyebrow">02 / THE TOOLS BEHIND THE THOUGHT</span>
             <h2>
               Different tools.
-              <br /> <em>One system.</em>
+              <br />
+              <em>One connected system.</em>
             </h2>
-            <p>Select a technology in the orbit or explore the index.</p>
-            <div className="skill-inspector" aria-live="polite">
-              <span className="eyebrow">
-                {skills[skill].category}
-                {skills[skill].study
-                  ? " / COMPLETED STUDY"
-                  : " / RÉSUMÉ EXPERIENCE"}
-              </span>
-              <h3>{skills[skill].name}</h3>
-              <p>{skills[skill].evidence}</p>
-            </div>
-            <div
-              className="skill-index"
-              role="group"
-              aria-label="Explore technical skills"
-            >
-              {skills.map((s, i) => (
-                <button
-                  key={s.name}
-                  aria-pressed={skill === i}
-                  onClick={() => setSkill(i)}
-                  onFocus={() => setSkill(i)}
-                >
-                  {s.name}
-                </button>
-              ))}
-            </div>
-            <details className="study-details">
-              <summary>More completed study ↗</summary>
+          </div>
+          <div className="skill-category" aria-label="Filter technologies">
+            {categories.map((c) => (
+              <button
+                key={c}
+                aria-pressed={category === c}
+                onClick={() => {
+                  setCategory(c);
+                  const n = skills.findIndex(
+                    (s) => s.icon && (c === "All" || s.category === c),
+                  );
+                  if (n >= 0) setSkill(n);
+                }}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+          <div
+            className="technology-field"
+            role="group"
+            aria-label="Explore technical skills"
+          >
+            {skills.map(
+              (s, i) =>
+                s.icon && (
+                  <button
+                    key={s.name}
+                    className={`technology ${skill === i ? "selected" : ""}`}
+                    style={
+                      {
+                        "--depth": `${(i % 3) * -20}px`,
+                        "--tilt": `${((i % 3) - 1) * 5}deg`,
+                      } as React.CSSProperties
+                    }
+                    hidden={category !== "All" && s.category !== category}
+                    onClick={() => setSkill(i)}
+                    onFocus={() => setSkill(i)}
+                    aria-pressed={skill === i}
+                    aria-label={`${s.name}${s.study ? ", completed study" : ""}`}
+                  >
+                    <img
+                      src={`/assets/brands/${s.icon}.svg`}
+                      alt=""
+                      loading="lazy"
+                    />
+                    <span>{s.name}</span>
+                    {s.study && <small aria-hidden="true">STUDY</small>}
+                  </button>
+                ),
+            )}
+          </div>
+          <div className="skill-inspector" aria-live="polite">
+            <span className="eyebrow">
+              {skills[skill].category} /{" "}
+              {skills[skill].study
+                ? "COMPLETED COURSEWORK"
+                : "RÉSUMÉ EXPERIENCE"}
+            </span>
+            <h3>{skills[skill].name}</h3>
+            <p>{skills[skill].evidence}</p>
+            <details>
+              <summary>Principles & additional study ↗</summary>
+              <p>REST APIs · JWT authentication · Role-based access control</p>
               <p>{additionalStudy.join(" · ")}</p>
-              <p>
-                Course-backed learning; no proficiency scores or mastery claims.
-              </p>
             </details>
           </div>
-          <span className="scene-annotation">
-            HOVER TO DISCOVER · SELECT TO EXPLORE
-          </span>
         </section>
         {projects.map((project, i) => (
           <section
@@ -420,45 +524,47 @@ export default function App() {
             key={project.id}
           >
             <div className="scene-copy project-copy">
-              <span className="eyebrow">04 / SELECTED WORK / 0{i + 1}</span>
-              <span className="project-number" aria-hidden="true">
-                0{i + 1}
-              </span>
+              <span className="eyebrow">03 / SELECTED WORK / 0{i + 1}</span>
               <h2>
-                {project.name === "BHABHI THULLA" ? (
+                {i === 0 ? (
                   <>
-                    A little logic.
-                    <br /> <em>A little play.</em>
+                    Ideas, delivered.
+                    <br />
+                    <em>Connections, made.</em>
                   </>
-                ) : project.name === "GOLDADAN" ? (
+                ) : i === 1 ? (
                   <>
-                    Technology,
-                    <br /> <em>with purpose.</em>
+                    Technology.
+                    <br />
+                    <em>With purpose.</em>
                   </>
                 ) : (
                   <>
-                    Everything,
-                    <br /> <em>in motion.</em>
+                    A little logic.
+                    <br />
+                    <em>A little play.</em>
                   </>
                 )}
               </h2>
               <h3>{project.name}</h3>
               <p className="lead">{project.description}</p>
-              {mode && (
-                <img
-                  className="reading-project"
-                  src={project.logo}
-                  alt={`${project.name} original project artwork`}
-                />
-              )}
-              <p className="project-detail">
-                {i === 0
-                  ? "A web application for a connected logistics world, presented with its original brand identity."
-                  : i === 1
-                    ? "A digital presence shaped around security, software, hardware, and enterprise technology services."
-                    : "A card-game project with an authentic visual identity, inspired by a familiar game."}
+              <p className="artwork-note">
+                Original project identity / abstract visual study
               </p>
-              <span className="artwork-note">ORIGINAL PROJECT ARTWORK</span>
+              {project.url ? (
+                <a
+                  className="text-link"
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit project ↗
+                </a>
+              ) : (
+                <span className="project-status">
+                  Public project link unavailable
+                </span>
+              )}
               <div className="project-pagination" aria-label="Choose project">
                 {projects.map((pr, j) => (
                   <button
@@ -468,6 +574,7 @@ export default function App() {
                     aria-pressed={i === j}
                   >
                     0{j + 1}
+                    <span>{pr.name}</span>
                   </button>
                 ))}
               </div>
@@ -475,124 +582,221 @@ export default function App() {
                 className="text-link"
                 onClick={() => go(waypoints[i + 4].id)}
               >
-                {i === 2 ? "Continue to credentials" : "Next project"}{" "}
-                <span>↗</span>
+                {i === 2 ? "Continue to the collection" : "Next project"} ↗
               </button>
+            </div>
+            <div className={`project-art project-art-${i}`}>
+              <span className="project-giant" aria-hidden="true">
+                {["CONNECT", "PURPOSE", "PLAY"][i]}
+              </span>
+              <img
+                src={
+                  [
+                    "/assets/optimized/rcs.webp",
+                    "/assets/optimized/goldadan.webp",
+                    "/assets/optimized/bhabhi.webp",
+                  ][i]
+                }
+                alt={`${project.name} original project artwork`}
+                loading="lazy"
+              />
+              {i === 0 ? (
+                <div className="route-lines" aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                  <b>KHANEWAL</b>
+                  <b>CONNECTED POSSIBILITIES</b>
+                </div>
+              ) : i === 1 ? (
+                <div className="architecture-lines" aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                </div>
+              ) : (
+                <div className="playing-marks" aria-hidden="true">
+                  <span>♠</span>
+                  <span>♥</span>
+                  <span>♣</span>
+                </div>
+              )}
+              <span className="art-caption">
+                0{i + 1} —{" "}
+                {
+                  [
+                    "ROUTES / SYSTEMS / MOVEMENT",
+                    "SECURITY / SOFTWARE / ENTERPRISE",
+                    "RULES / INTERACTION / PLAY",
+                  ][i]
+                }
+              </span>
             </div>
           </section>
         ))}
         <section id="content-credentials" {...attrs(6)}>
           <div className="scene-copy credential-copy">
-            <span className="eyebrow">05 / THE CREDENTIAL ORBIT</span>
+            <span className="eyebrow">04 / A RECORD OF CURIOSITY</span>
             <h2>
               Always
-              <br /> <em>in pursuit.</em>
+              <br />
+              <em>in pursuit.</em>
             </h2>
             <p>
-              Seven completed programs.
-              <br />A commitment to keep learning.
+              Three professional programs. Four specializations.
+              <br />
+              Two Duke University guided projects.
             </p>
             <div className="active-credential" aria-live="polite">
               <span className="eyebrow">
-                {programs[credential].issuer} / {programs[credential].type}
+                {selected.issuer} / {selected.type}
               </span>
-              <h3>{programs[credential].title}</h3>
-              <time>{programs[credential].date}</time>
+              <h3>{selected.title}</h3>
+              <time>{selected.date}</time>
             </div>
-            {mode && (
-              <img
-                className="reading-certificate"
-                src={programs[credential].preview}
-                alt={programs[credential].title}
-              />
-            )}
-            <div
-              className="carousel-controls"
-              onTouchStart={(e) => {
-                e.currentTarget.dataset.x = String(e.touches[0].clientX);
-              }}
-              onTouchEnd={(e) => {
-                const dx =
-                  e.changedTouches[0].clientX -
-                  Number(e.currentTarget.dataset.x);
-                if (Math.abs(dx) > 40)
-                  pickCredential(credential + (dx < 0 ? 1 : -1));
-              }}
-            >
+            <div className="carousel-controls">
               <button
+                onClick={() => pick(credential - 1)}
                 aria-label="Previous credential"
-                onClick={() => pickCredential(credential - 1)}
               >
                 ←
               </button>
               <span className="mono">
-                0{credential + 1} <span>/ 07</span>
+                {String(credential + 1).padStart(2, "0")} /{" "}
+                {String(featured.length).padStart(2, "0")}
               </span>
               <button
+                onClick={() => pick(credential + 1)}
                 aria-label="Next credential"
-                onClick={() => pickCredential(credential + 1)}
               >
                 →
               </button>
             </div>
             <div className="credential-actions">
-              <button onClick={() => setPreview(programs[credential])}>
-                Inspect certificate ↗
-              </button>
-              <a href={programs[credential].downloadPath} download>
+              <button onClick={() => setPreview(selected)}>Inspect ↗</button>
+              <a href={selected.downloadPath} download>
                 Download ↓
               </a>
-              <a
-                href={programs[credential].url}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href={selected.url} target="_blank" rel="noopener noreferrer">
                 Verify ↗
               </a>
             </div>
             <button className="library-link" onClick={() => setLibrary(true)}>
-              Open all 40 credentials <span>↗</span>
+              Explore all {inventoryStats.count} credentials <span>↗</span>
             </button>
           </div>
-          <span className="scene-annotation">
-            DRAG OR SWIPE THE ORBIT · USE ARROWS TO ROTATE
-          </span>
+          <div
+            className="certificate-stack"
+            onClickCapture={(e) => {
+              if (e.detail > 0 && e.currentTarget.dataset.dragged === "true") {
+                e.preventDefault();
+                e.stopPropagation();
+              }
+            }}
+            aria-label="Swipe certificate sheets"
+            onPointerDown={(e) => {
+              e.currentTarget.dataset.x = String(e.clientX);
+              e.currentTarget.dataset.y = String(e.clientY);
+              e.currentTarget.dataset.dragged = "false";
+              e.currentTarget.dataset.dragging = "true";
+              e.currentTarget.dataset.inspect = String(
+                (e.target as Element).closest(".sheet-front") !== null,
+              );
+              e.currentTarget.setPointerCapture(e.pointerId);
+            }}
+            onPointerMove={(e) => {
+              if (e.currentTarget.dataset.dragging === "true")
+                e.currentTarget.style.setProperty(
+                  "--drag",
+                  String(
+                    clamp(
+                      (e.clientX - Number(e.currentTarget.dataset.x)) /
+                        e.currentTarget.clientWidth,
+                      -1,
+                      1,
+                    ),
+                  ),
+                );
+            }}
+            onPointerCancel={(e) => {
+              e.currentTarget.dataset.dragging = "false";
+              e.currentTarget.style.setProperty("--drag", "0");
+            }}
+            onPointerUp={(e) => {
+              e.currentTarget.dataset.dragging = "false";
+              e.currentTarget.style.setProperty("--drag", "0");
+              const dx = e.clientX - Number(e.currentTarget.dataset.x),
+                dy = e.clientY - Number(e.currentTarget.dataset.y);
+              if (Math.abs(dx) > 35 && Math.abs(dx) > Math.abs(dy)) {
+                e.currentTarget.dataset.dragged = "true";
+                pick(credential + (dx < 0 ? 1 : -1));
+              } else if (
+                Math.hypot(dx, dy) < 12 &&
+                e.currentTarget.dataset.inspect === "true"
+              )
+                setPreview(selected);
+              if (e.currentTarget.hasPointerCapture(e.pointerId))
+                e.currentTarget.releasePointerCapture(e.pointerId);
+            }}
+          >
+            <div className="paper-sheet sheet-back" />
+            <div className="paper-sheet sheet-mid" />
+            <button
+              key={selected.id}
+              className="paper-sheet sheet-front"
+              onClick={() => setPreview(selected)}
+              aria-label={`Inspect ${selected.title} certificate`}
+            >
+              <img
+                src={selected.preview}
+                alt={`Original ${selected.issuer} certificate: ${selected.title}`}
+                loading="lazy"
+                draggable="false"
+              />
+            </button>
+            <span className="eyebrow">
+              DRAG TO DISCOVER / {selected.issuer.toUpperCase()}
+            </span>
+          </div>
+          <div className="featured-index" aria-label="Featured credentials">
+            {featured.map((c, i) => (
+              <button
+                key={c.id}
+                onClick={() => pick(i)}
+                aria-pressed={credential === i}
+                aria-label={`Show ${c.title}, ${c.issuer}`}
+              >
+                {c.issuer === "Duke University"
+                  ? "DUKE"
+                  : String(i + 1).padStart(2, "0")}
+              </button>
+            ))}
+          </div>
         </section>
         <section id="content-contact" {...attrs(7)}>
-          <div className="finale-heading">
-            <span className="eyebrow">06 / THE NEXT CHAPTER</span>
-            <h2>
-              Good things start
-              <br />
-              with <em>a conversation.</em>
-            </h2>
-          </div>
-          <div className="finale-left">
-            <span className="eyebrow">MUHAMMAD ALI EJAZ / ALI BHATTI</span>
+          <span className="eyebrow finale-eyebrow">
+            05 / EVERY ENDING, A NEW BEGINNING
+          </span>
+          <h2 className="finale-heading">
+            Let’s make
+            <br />
+            <em>something matter.</em>
+          </h2>
+          <div className="finale-contact">
             <a className="email-link" href={`mailto:${profile.email}`}>
-              Let’s build
-              <br />
-              something <span>↗</span>
+              {profile.email} <span>↗</span>
             </a>
-            <p>{profile.location}</p>
-            <a href={profile.phoneHref}>{profile.phone}</a>
-          </div>
-          <div className="finale-right">
-            <div className="social-links">
-              {socials.map((s) => (
-                <a key={s.id} href={s.href} target="_blank" rel="noreferrer">
-                  {s.label}
-                  <span>↗</span>
-                </a>
-              ))}
-            </div>
+            <p>
+              {profile.location} <span>/</span>{" "}
+              <a href={profile.phoneHref}>{profile.phone}</a>
+            </p>
             <div className="resume-options">
               <a
                 className="button"
                 href="/assets/resume/Resume-Premium.pdf"
                 download
               >
-                Visual résumé ↓
+                Premium résumé ↓
               </a>
               <a
                 className="text-link"
@@ -603,21 +807,27 @@ export default function App() {
               </a>
             </div>
           </div>
+          <div className="finale-socials">
+            <span className="eyebrow">ELSEWHERE ON THE INTERNET</span>
+            <Socials />
+          </div>
           <div className="finale-bottom">
-            <span className="mono">CURIOSITY. CODE. CONTINUOUS MOTION.</span>
-            <button onClick={() => go("home")}>Return to the origin ↑</button>
-            <span className="mono">© 2026 ALI BHATTI</span>
+            <span>MUHAMMAD ALI EJAZ / ALI BHATTI</span>
+            <button onClick={() => go("home")}>Back to the beginning ↑</button>
           </div>
         </section>
       </main>
       {!mode && (
-        <div className="scroll-track" aria-hidden="true">
+        <div
+          className="scroll-track"
+          aria-hidden="true"
+          style={{ height: "940vh" }}
+        >
           {waypoints.map((w, i) => (
             <div
-              className="waypoint"
-              id={w.id}
               key={w.id}
-              style={i === 7 ? { height: "100vh" } : undefined}
+              id={w.id}
+              style={{ position: "absolute", top: `${i * 120}vh` }}
             />
           ))}
         </div>
@@ -625,43 +835,54 @@ export default function App() {
       <footer className="journey-controls">
         <button
           className="mode-button"
+          disabled={reduced || failed}
           onClick={() => {
             setReading(!reading);
-            if (reduced) setReduced(false);
+            progress.current = 0;
+            window.scrollTo({ top: 0, behavior: "instant" });
           }}
         >
-          {mode ? "Enter 3D journey" : "Reading view"}{" "}
-          <span aria-hidden="true">{mode ? "◈" : "☷"}</span>
+          {reduced
+            ? "Reduced motion"
+            : failed
+              ? "Reading view"
+              : mode
+                ? "3D experience ↗"
+                : "Reading view ☷"}
         </button>
-        {!mode && (
-          <>
-            <nav className="waypoint-nav" aria-label="Journey waypoints">
-              {waypoints.map((w, i) => (
-                <button
-                  key={w.id}
-                  aria-label={w.name}
-                  aria-current={active === i ? "step" : undefined}
-                  onClick={() => go(w.id)}
-                >
-                  <span />
-                </button>
-              ))}
-            </nav>
-            <span className="journey-label mono">
-              0{active < 3 ? active + 1 : active < 6 ? 4 : active - 1} /{" "}
-              {sectionNames[active]}
-            </span>
-            <button
-              className="next-scene"
-              onClick={active === 7 ? () => go("home") : next}
-              aria-label={active === 7 ? "Return to beginning" : "Next scene"}
-            >
-              {active === 7 ? "↑" : "↓"}
-            </button>
-          </>
-        )}
+        <div className="journey-line">
+          <i />
+        </div>
+        <span className="journey-label">
+          {String(active + 1).padStart(2, "0")} / {waypoints[active].name}
+        </span>
+        <button
+          className="next-scene"
+          onClick={() => go(waypoints[Math.min(7, active + 1)].id)}
+          aria-label="Next scene"
+        >
+          ↓
+        </button>
       </footer>
-      <CredentialLibrary open={library} onClose={() => setLibrary(false)} />
+      {library && (
+        <Suspense
+          fallback={
+            <div className="archive-loading" role="status">
+              Opening the credential archive…
+            </div>
+          }
+        >
+          <CredentialLibrary
+            open={library}
+            onClose={() => {
+              setLibrary(false);
+              document
+                .querySelector<HTMLButtonElement>(".library-link")
+                ?.focus({ preventScroll: true });
+            }}
+          />
+        </Suspense>
+      )}
       <CredentialPreview
         credential={preview}
         onClose={() => setPreview(null)}

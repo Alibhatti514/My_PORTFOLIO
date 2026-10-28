@@ -1,0 +1,6 @@
+{
+  "rendered": true,
+  "desktopHover": "Visible navigation link (forced pointer hover after original offscreen target failed)",
+  "mobile": "390px header inspected",
+  "note": "Original image-link hover timed out because the target was outside the viewport; retained in interactions.json."
+}

@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import fs from "node:fs/promises";
 const root = new URL("../", import.meta.url);
-const credentials = JSON.parse(
+const certificates = JSON.parse(
   await fs.readFile(new URL("src/data/certificates.json", root), "utf8"),
 );
 const esc = (s) =>
@@ -12,71 +12,170 @@ const esc = (s) =>
         c
       ],
   );
-const font = await fs.readFile(
-  new URL(
-    "node_modules/@fontsource/manrope/files/manrope-latin-400-normal.woff2",
-    root,
-  ),
+const asset = async (path, mime) =>
+  `data:${mime};base64,${(await fs.readFile(new URL(path, root))).toString("base64")}`;
+const bodyFont = await asset(
+  "node_modules/@fontsource/manrope/files/manrope-latin-400-normal.woff2",
+  "font/woff2",
 );
-const headingFont = await fs.readFile(
-  new URL(
-    "node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2",
-    root,
-  ),
+const headingFont = await asset(
+  "node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2",
+  "font/woff2",
 );
+const portrait = await asset(
+  "public/assets/ali-bhatti-portrait.png",
+  "image/png",
+);
+const icons = {};
+for (const name of [
+  "react",
+  "typescript",
+  "nodedotjs",
+  "nestjs",
+  "postgresql",
+  "prisma",
+])
+  icons[name] = await asset(
+    `public/assets/brands/${name}.svg`,
+    "image/svg+xml",
+  );
+const programs = certificates
+  .filter((c) => c.featured)
+  .sort((a, b) => a.type.localeCompare(b.type));
 const summary =
   "Full Stack Web Developer building responsive React and Next.js interfaces, Node.js and NestJS services, and PostgreSQL databases with Prisma ORM. Experienced with REST APIs, JWT authentication, client collaboration, and maintainable code.";
-const contact = `Khanewal, Pakistan · <a href="tel:+923172003786">+92 317 2003786</a> · <a href="mailto:dev._.ali@icloud.com">dev._.ali@icloud.com</a><br/><a href="https://github.com/Alibhatti514">github.com/Alibhatti514</a> · <a href="https://www.linkedin.com/in/muhammad-ali-ejaz-bhatti-629676442/">LinkedIn: Muhammad Ali Ejaz Bhatti</a>`;
-const experience = `<h2>Professional Experience</h2><article><div class="role"><h3>Freelance Full Stack Web Developer</h3><span>Sep 2025 – Jun 2026</span></div><p class="org">Upwork · Lahore, Pakistan</p><ul><li>Developed responsive web applications with React.js, Next.js, HTML5, CSS3, JavaScript, and TypeScript.</li><li>Built Node.js and NestJS REST APIs and integrated PostgreSQL databases with Prisma ORM.</li><li>Implemented JWT authentication and role-based access control; collaborated with clients on maintainable solutions.</li></ul></article><article><div class="role"><h3>Freelance Full Stack Web Developer</h3><span>Sep 2025 – Jun 2026</span></div><p class="org">Fiverr · Lahore, Pakistan</p><ul><li>Built custom full stack applications and responsive interfaces around client requirements.</li><li>Developed backend APIs, integrated third-party services, and managed business logic with NestJS and Node.js.</li><li>Managed PostgreSQL data with Prisma ORM, incorporated feedback, and maintained client communication and project documentation.</li></ul></article>`;
-const skills = `<h2>Technical Skills</h2><p><strong>Languages:</strong> JavaScript (ES6+), TypeScript, Python</p><p><strong>Frontend:</strong> HTML5, CSS3, React.js, Next.js</p><p><strong>Backend:</strong> Node.js, NestJS, REST APIs, JWT Authentication</p><p><strong>Data & tools:</strong> PostgreSQL, Prisma ORM, Git, GitHub, Postman</p><p><strong>Completed study:</strong> C# 12, .NET 8, ASP.NET Core, Blazor, Svelte 5, SvelteKit</p>`;
-const education = `<h2>Education</h2><article><div class="role"><h3>Bachelor in Computer Science</h3><span>2021 – 2025</span></div><p>Punjab University · Lahore, Pakistan</p></article><article><div class="role"><h3>Intermediate in Computer Science (ICS)</h3><span>2018 – 2020</span></div><p>Hawk College · Khanewal, Pakistan</p></article>`;
-const projects = `<h2>Selected Projects</h2><article><h3>RCS CARGO</h3><p>Logistics web project with an authentic brand identity and a focus on connected routes and movement.</p></article><article><h3>GOLDADAN</h3><p>Company website presenting security, software, hardware, and enterprise technology services.</p></article><article><h3>BHABHI THULLA</h3><p>Card-game project with a playful visual identity and interactive presentation.</p></article>`;
-const certifications = `<h2>Professional Certifications</h2><p class="section-intro">Completed programs · Coursera · October 2026</p>${credentials
-  .filter((c) => c.featured)
-  .sort((a, b) => a.type.localeCompare(b.type))
+const contact = `<a href="mailto:dev._.ali@icloud.com">dev._.ali@icloud.com</a><a href="tel:+923172003786">+92 317 2003786</a><span>Khanewal, Pakistan</span><a href="https://github.com/Alibhatti514">github.com/Alibhatti514</a><a href="https://www.linkedin.com/in/muhammad-ali-ejaz-bhatti-629676442/">LinkedIn / Muhammad Ali Ejaz Bhatti</a>`;
+const experience = `<h2><span>01</span> Professional experience</h2><article class="role"><div class="role-top"><h3>Freelance Full Stack<br/>Web Developer</h3><span>Sep 2025 - Jun 2026</span></div><p class="org">Upwork / Lahore, Pakistan</p><ul><li>Developed responsive full stack web applications using React.js, Next.js, HTML5, CSS3, JavaScript (ES6+), and TypeScript.</li><li>Built Node.js and NestJS services and REST APIs; integrated PostgreSQL databases using Prisma ORM.</li><li>Implemented JWT authentication and role-based access control, with attention to application performance.</li><li>Collaborated with clients on maintainable solutions and clear, timely delivery.</li></ul></article><article class="role"><div class="role-top"><h3>Freelance Full Stack<br/>Web Developer</h3><span>Sep 2025 - Jun 2026</span></div><p class="org">Fiverr / Lahore, Pakistan</p><ul><li>Built custom full stack applications and responsive interfaces around client requirements.</li><li>Developed backend APIs, integrated third-party services, and managed business logic with NestJS and Node.js.</li><li>Managed PostgreSQL data with Prisma ORM for secure, reliable application performance.</li><li>Incorporated client feedback and maintained project documentation and communication.</li></ul></article>`;
+const education = `<h2><span>02</span> Education</h2><article><h3>Bachelor in Computer Science</h3><p>Punjab University / Lahore, Pakistan</p><p class="date">2021 - 2025</p></article><article><h3>Intermediate in Computer Science (ICS)</h3><p>Hawk College / Khanewal, Pakistan</p><p class="date">2018 - 2020</p></article>`;
+const groups = [
+  ["Languages", "JavaScript (ES6+) · TypeScript · Python"],
+  ["Frontend", "HTML5 · CSS3 · React.js · Next.js"],
+  ["Backend", "Node.js · NestJS · REST APIs · JWT Authentication"],
+  ["Data", "PostgreSQL · Prisma ORM"],
+  ["Tools", "Git · GitHub · Postman"],
+];
+const study =
+  "C# 12, .NET 8, ASP.NET Core, Blazor, Svelte 5, SvelteKit, Express, Supabase, Sanity CMS, Stripe integration, OOP, web scraping, algorithms, deployment, security, and UI/UX accessibility.";
+const projects = [
+  [
+    "RCS CARGO",
+    "Logistics web project with an authentic brand identity and a focus on connected routes and movement.",
+  ],
+  [
+    "GOLDADAN",
+    "Company website presenting security, software, hardware, and enterprise technology services.",
+  ],
+  [
+    "BHABHI THULLA",
+    "Card-game project with an authentic, playful visual identity.",
+  ],
+];
+const footer = (page, label) =>
+  `<footer><span>MUHAMMAD ALI EJAZ / ALI BHATTI</span><span>${label} / 0${page}</span></footer>`;
+const fontCSS = `@font-face{font-family:Body;src:url('${bodyFont}')}@font-face{font-family:Heading;src:url('${headingFont}')}@page{size:A4;margin:0}*{box-sizing:border-box}body{margin:0;color:#15203c;font:11px/1.6 Body,sans-serif}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Heading,sans-serif;font-weight:500}a{color:inherit;text-decoration:none}article{break-inside:avoid}.page{width:210mm;height:297mm;position:relative;break-after:page;overflow:hidden}.page:last-child{break-after:auto}footer{position:absolute;left:13mm;right:13mm;bottom:10mm;display:flex;justify-content:space-between;border-top:1px solid #bdc4dc;padding-top:8px;font-size:7px;letter-spacing:1px;color:#5a6585}.eyebrow{font-size:8px;letter-spacing:1.8px;text-transform:uppercase}.date{color:#65708e;font-size:9px}h2{font-size:12px;letter-spacing:.9px;text-transform:uppercase;margin:0 0 17px;display:flex;align-items:center;gap:10px}h2>span{color:#855bff;font-size:9px}h3{font-size:12px}ul{margin:10px 0 0;padding-left:14px}li{padding-left:3px;margin-bottom:7px}.org{color:#596b9a;font-size:9px;margin:7px 0}.role{margin-bottom:24px}.role-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}.role-top>span{font-size:8px;color:#596b9a;white-space:nowrap}.role-top h3{line-height:1.3}.contact{display:flex;flex-direction:column;gap:8px;font-size:9px}`;
+const premiumCSS = `${fontCSS}body{background:white}.premium-header{height:78mm;position:relative;padding:14mm 13mm;overflow:hidden;background:radial-gradient(ellipse at 82% 60%,#343f89,#10152f 50%,#070b1d);color:#f5f6ff}.premium-header .eyebrow{color:#b5a4ff;margin-bottom:14px}.premium-header h1{font-size:36px;line-height:1.03;letter-spacing:-1.8px;position:relative;z-index:2}.premium-header .job-title{font-size:13px;color:#d8dcfa;margin-top:13px;letter-spacing:.4px}.header-note{position:absolute;left:13mm;bottom:10mm;color:#a9b0cb;font-size:8px;letter-spacing:1.2px}.portrait{position:absolute;right:-1mm;bottom:-8mm;width:87mm;height:87mm;object-fit:contain;z-index:1}.portrait-orbit{position:absolute;right:9mm;top:10mm;width:70mm;height:70mm;border:1px solid #b5a4ff77;border-radius:50%;transform:rotate(-30deg) scaleX(.75)}.portrait-orbit.two{transform:rotate(35deg) scaleX(.9);top:14mm;border-color:#6d8eff66}.header-dot{position:absolute;right:17mm;top:20mm;width:5px;height:5px;background:#b5a4ff;border-radius:50%;box-shadow:0 0 0 5px #b5a4ff19}.premium-grid{display:grid;grid-template-columns:61mm 1fr;gap:0;min-height:201mm}.sidebar{background:#10152f;color:#eef0ff;padding:9mm 8mm 10mm 13mm}.sidebar h2{font-size:10px;color:#c6c4ff;letter-spacing:1px;margin-bottom:14px;border-bottom:1px solid #8390c44d;padding-bottom:10px}.sidebar .contact{font-size:8px;gap:7px;overflow-wrap:anywhere}.sidebar-section{margin-top:24px}.sidebar h3{color:#b5a4ff;font:8px Body;letter-spacing:1px;text-transform:uppercase;margin:12px 0 4px}.sidebar p{font-size:9px;color:#d3d8ef;line-height:1.7}.sidebar .study-note{font-size:7px;color:#a9b0cb;margin-top:8px}.main-column{padding:9mm 13mm 5mm 10mm}.summary{font-size:11px;line-height:1.8;margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid #cbd1e5}.main-column li{font-size:10.5px;line-height:1.65;margin-bottom:6px}.main-column .role{margin-bottom:19px}.main-column h2{font-size:10px;margin-bottom:14px}.main-column h3{font-size:11px}.main-column .role-top>span{font-size:7px}.education{margin-top:20px}.education article{margin-bottom:13px}.education p{font-size:9px;margin-top:3px}.premium .page:first-child footer{left:71mm}.continuation{height:36mm;background:linear-gradient(115deg,#070b1d,#19204e);padding:11mm 13mm;color:#f5f6ff;display:flex;justify-content:space-between;align-items:center}.continuation h1{font-size:22px;line-height:1.1;letter-spacing:-.5px}.continuation .eyebrow{color:#b5a4ff;margin-bottom:8px}.folio{font-size:54px;color:#b5a4ff;line-height:1;opacity:.6}.page-two-content{padding:8mm 13mm}.section-heading{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #b6c0df;margin-bottom:18px}.section-heading h2{margin-bottom:10px}.section-heading>span{font-size:8px;color:#65708e}.skill-lanes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}.skill-lane{border:1px solid #ccd1e6;padding:13px;background:#f5f6fc;position:relative}.lane-icons{display:flex;align-items:center;gap:10px;margin-bottom:10px;position:relative}.lane-icons:before{content:'';position:absolute;left:10px;right:10px;top:50%;height:1px;background:#aebadd}.lane-icons img{width:31px;height:31px;object-fit:contain;background:#e4e8fa;padding:7px;border-radius:50%;position:relative}.skill-lane h3{font-size:10px;margin-bottom:4px}.skill-lane p{font-size:8px;color:#58627f}.program-intro{color:#596587;font-size:9px;margin-bottom:20px}.programs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:15px 22px;margin-bottom:28px}.program{min-width:0;position:relative;padding-left:14px;border-left:2px solid #855bff;min-height:65px}.program .issuer{font-size:8px;color:#546799;letter-spacing:.5px}.program h3{overflow-wrap:anywhere;font-size:11px;line-height:1.45;margin:4px 0 6px}.program p{font-size:8px;color:#64718c}.program .verify{font-size:7px;letter-spacing:1px;color:#526bc7;display:inline-block;margin-top:5px}.project-summary{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}.project-summary article{border-top:2px solid #4776ff;padding-top:12px}.project-summary .project-id{font-size:9px;color:#855bff;margin-bottom:9px}.project-summary h3{font-size:11px;margin-bottom:7px}.project-summary p{font-size:9px;line-height:1.75;color:#52607f}.closing{margin-top:18px;padding:15px;background:#eef0fb;border-left:3px solid #b5a4ff;color:#53617e;font-size:9px}.premium .page:first-child footer{color:#64708b}`;
+const atsCSS = `${fontCSS}.page{padding:15mm 17mm}.ats-header{padding-bottom:15px;border-bottom:1px solid #69738a}.ats-header h1{font-size:27px;letter-spacing:-.5px}.ats-header .job-title{font-size:13px;margin:5px 0 10px}.ats-header .contact{font-size:10px;display:block;line-height:1.8}.ats-header .contact a,.ats-header .contact span{display:inline}.ats-header .contact>*:after{content:' | '}.summary{font-size:12px;line-height:1.65;margin:17px 0}h2{font-size:11px;margin-top:20px;margin-bottom:11px;border-bottom:1px solid #b5bdce;padding-bottom:5px}h2>span{display:none}.role{margin-bottom:17px}.role-top{display:block}.role-top h3{font-size:12px}.role-top h3 br{display:none}.role-top>span{display:block;font-size:9px;margin:3px 0}.org{margin:3px 0}li{font-size:12px;line-height:1.6;margin:5px 0}.ats-skills p{font-size:11px;margin:5px 0}.education{display:block}.education article{margin-bottom:12px}.education article p{font-size:10px}.ats-continuation{border-bottom:1px solid #69738a;padding-bottom:15px;margin-bottom:22px}.ats-continuation h1{font-size:21px}.ats-continuation p{font-size:10px;margin-top:5px}.project-summary article{margin-bottom:17px}.project-summary h3{font-size:12px}.project-summary p{font-size:10px;margin-top:5px}.programs .program{margin-bottom:17px}.program h3{font-size:11px}.program p{font-size:9px;margin-top:3px}.ats-study{font-size:10px;line-height:1.7}.ats h2:first-child{margin-top:0}`;
+const sidebarSkills = groups
+  .map(([name, items]) => `<h3>${name}</h3><p>${items}</p>`)
+  .join("");
+const lanes = [
+  [
+    "Interface",
+    ["react", "typescript"],
+    "React.js / Next.js",
+    "JavaScript, TypeScript, HTML5, CSS3",
+  ],
+  [
+    "Services",
+    ["nodedotjs", "nestjs"],
+    "Node.js / NestJS",
+    "REST APIs, JWT authentication",
+  ],
+  [
+    "Data",
+    ["postgresql", "prisma"],
+    "PostgreSQL / Prisma",
+    "Relational databases, ORM integration",
+  ],
+]
+  .map(
+    ([name, marks, title, copy]) =>
+      `<div class="skill-lane"><div class="lane-icons">${marks.map((i) => `<img src="${icons[i]}" alt=""/>`).join("")}</div><h3>${name} / ${title}</h3><p>${copy}</p></div>`,
+  )
+  .join("");
+const projectHTML = projects
+  .map(
+    ([name, description], i) =>
+      `<article><p class="project-id">0${i + 1} / SELECTED WORK</p><h3>${name}</h3><p>${description}</p></article>`,
+  )
+  .join("");
+const programHTML = programs
   .map(
     (c) =>
-      `<article class="cert"><h3><a href="${c.url}">${esc(c.title)}</a></h3><p>${esc(c.issuer)} · ${c.type} · ${c.date}</p></article>`,
+      `<article class="program"><span class="issuer">${esc(c.issuer)}</span><h3><a href="${c.url}">${esc(c.title)}</a></h3><p>${c.type} / ${c.date}</p><a class="verify" href="${c.url}">VERIFY CREDENTIAL</a></article>`,
   )
-  .join("")}`;
-await fs.mkdir(new URL("public/assets/resume/", root), { recursive: true });
-await fs.mkdir(new URL("docs/redesign/resume-source/", root), {
-  recursive: true,
-});
-const browser = await chromium.launch({ channel: "chrome", headless: true });
+  .join("");
+const premium = `<section class="page"><header class="premium-header"><span class="eyebrow">ALI BHATTI / SOFTWARE DEVELOPMENT</span><h1>MUHAMMAD<br/>ALI EJAZ</h1><p class="job-title">Full Stack Web Developer</p><span class="header-note">CURIOSITY. CODE. CONNECTED SYSTEMS.</span><div class="portrait-orbit"></div><div class="portrait-orbit two"></div><i class="header-dot"></i><img class="portrait" src="${portrait}" alt="Muhammad Ali Ejaz"/></header><div class="premium-grid"><aside class="sidebar"><h2>Let’s connect</h2><div class="contact">${contact}</div><div class="sidebar-section"><h2>Technical skills</h2>${sidebarSkills}</div><div class="sidebar-section"><h2>Completed study</h2><p>C# 12 / .NET 8<br/>ASP.NET Core / Blazor<br/>Svelte 5 / SvelteKit<br/>Express / Supabase<br/>Sanity CMS / Stripe</p><p class="study-note">Course-backed learning, separate from résumé experience. Program details on page 02.</p></div></aside><div class="main-column"><p class="summary">${summary}</p>${experience}<div class="education">${education}</div></div></div>${footer(1, "EXPERIENCE & FOUNDATIONS")}</section><section class="page"><header class="continuation"><div><span class="eyebrow">ALI BHATTI / CONTINUOUS LEARNING</span><h1>Systems built.<br/>Curiosity, continued.</h1></div><span class="folio">02</span></header><div class="page-two-content"><div class="section-heading"><h2><span>03</span> The connected stack</h2><span>APPLIED TECHNOLOGIES / RÉSUMÉ</span></div><div class="skill-lanes">${lanes}</div><div class="section-heading"><h2><span>04</span> Professional programs</h2><span>OCTOBER 2026 / COURSERA</span></div><p class="program-intro">Three professional certificates and four specializations. Select a title to open its verification record.</p><div class="programs">${programHTML}</div><div class="section-heading"><h2><span>05</span> Selected projects</h2><span>LOGISTICS / ENTERPRISE / PLAY</span></div><div class="project-summary">${projectHTML}</div><p class="closing">Additional completed coursework: object-oriented programming, web scraping, data structures and algorithms, deployment and DevOps, web application security, and UI/UX accessibility.</p></div>${footer(2, "PROJECTS & CREDENTIALS")}</section>`;
+const atsPrograms = programs
+  .map(
+    (c) =>
+      `<article class="program"><h3><a href="${c.url}">${esc(c.title)}</a></h3><p>${esc(c.issuer)} | ${c.type} | ${c.date} | Coursera</p></article>`,
+  )
+  .join("");
+const ats = `<section class="page"><header class="ats-header"><h1>MUHAMMAD ALI EJAZ</h1><p class="job-title">Full Stack Web Developer / Ali Bhatti</p><div class="contact">${contact}</div></header><p class="summary">${summary}</p>${experience.replaceAll("<br/>", " ")}<div class="ats-skills"><h2>Technical skills</h2>${groups.map(([name, items]) => `<p><strong>${name}:</strong> ${items.replaceAll(" · ", ", ")}</p>`).join("")}</div><h2>Education</h2><div class="education">${education.replace(/<h2>.*?<\/h2>/, "")}</div>${footer(1, "EXPERIENCE & EDUCATION")}</section><section class="page"><header class="ats-continuation"><h1>MUHAMMAD ALI EJAZ</h1><p>Full Stack Web Developer | dev._.ali@icloud.com | github.com/Alibhatti514</p></header><h2>Selected projects</h2><div class="project-summary">${projects.map(([n, d]) => `<article><h3>${n}</h3><p>${d}</p></article>`).join("")}</div><h2>Professional certifications and specializations</h2><div class="programs">${atsPrograms}</div><h2>Additional completed study</h2><p class="ats-study">${study}</p><p class="ats-study">Completed coursework is listed separately from technologies used in professional experience.</p>${footer(2, "PROJECTS & CREDENTIALS")}</section>`;
+await fs.mkdir("output/pdf", { recursive: true });
+await fs.mkdir("docs/continuous-world/resume-source", { recursive: true });
+await fs.mkdir("public/assets/resume", { recursive: true });
+const b = await chromium.launch({ channel: "chrome", headless: true });
+const report = [];
 for (const mode of ["Premium", "ATS"]) {
-  const premium = mode === "Premium";
-  const css = `@font-face{font-family:Body;src:url(data:font/woff2;base64,${font.toString("base64")})}@font-face{font-family:Heading;src:url(data:font/woff2;base64,${headingFont.toString("base64")})}@page{size:A4;margin:0}*{box-sizing:border-box}body{margin:0;font:13px/1.5 ${premium ? "Body" : "Arial"},sans-serif;color:#20291e}a{color:inherit;text-decoration:none}p{margin:5px 0}h1,h2,h3{margin:0;font-family:${premium ? "Heading" : "Arial"},sans-serif}h1{font-size:30px;line-height:1.15;letter-spacing:-1px;font-weight:500}h2{font-size:12px;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #bdc9b3;padding-bottom:8px;margin:23px 0 13px;color:#3b5430}h3{font-size:12.5px;font-weight:600}.page{width:210mm;height:297mm;padding:17mm 18mm;position:relative;break-after:page;overflow:hidden;background:${premium ? "#fafbf7" : "white"}}.page:last-child{break-after:auto}header{padding-bottom:18px;border-bottom:2px solid #4e6537}.alias{font-size:9px;letter-spacing:2px;color:#597044;margin-bottom:12px}.title{font-size:14px;margin:8px 0 13px}.contact{font-size:10px;line-height:1.65}.summary{font-size:12px;line-height:1.65;margin-top:20px;max-width:590px}article{margin-bottom:17px;break-inside:avoid}.role{display:flex;justify-content:space-between;gap:15px;align-items:baseline}.role>span{white-space:nowrap;font-size:9px;color:#5a6652}.org{color:#4e6537;font-size:10px}ul{margin:8px 0 0;padding-left:15px}li{padding-left:3px;margin:5px 0}.footer{position:absolute;bottom:11mm;left:18mm;right:18mm;display:flex;justify-content:space-between;border-top:1px solid #ccd4c4;padding-top:9px;font-size:8px;color:#657359}.continuation{display:flex;justify-content:space-between;align-items:end;border-bottom:2px solid #4e6537;padding-bottom:16px;margin-bottom:23px}.continuation h1{font-size:21px}.continuation>span{font-size:9px}.section-intro{font-size:9px;color:#64715b;margin-bottom:15px}.cert{padding-left:${premium ? "13px" : "0"};border-left:${premium ? "2px solid #b5cc90" : "0"};margin-bottom:16px}.cert h3{font-size:12.5px}.cert p{font-size:10px;color:#5d6856}.two-col{display:grid;grid-template-columns:${premium ? "1.18fr 1fr" : "1fr"};gap:${premium ? "28px" : "0"}}.two-col h2{margin-top:20px}.page-marker{color:#73865d;font-size:35px;font-family:Heading;line-height:1}${!premium ? ".role{display:block}.role>span{display:block;margin:2px 0}.page{padding:15mm 18mm}h2{margin-top:18px}article{margin-bottom:10px}li{margin:3px 0}.summary{margin-top:15px}.two-col p{margin:3px 0}.two-col article{margin-bottom:9px}.two-col h2{margin-top:12px}.two-col p{font-size:11px}.two-col h3{font-size:11px}.cert{margin-bottom:17px}.footer{bottom:10mm}" : ""}`;
-  const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Muhammad Ali Ejaz — ${mode} Résumé</title><style>${css}</style></head><body><section class="page"><header><div class="alias">ALI BHATTI / SOFTWARE DEVELOPMENT</div><h1>MUHAMMAD ALI EJAZ</h1><p class="title">Full Stack Web Developer</p><div class="contact">${contact}</div></header><p class="summary">${summary}</p>${experience}<div class="two-col"><div>${skills}</div><div>${education}</div></div><footer class="footer"><span>MUHAMMAD ALI EJAZ · ALI BHATTI</span><span>EXPERIENCE & FOUNDATIONS / 01</span></footer></section><section class="page"><header class="continuation"><div><div class="alias">ALI BHATTI / SOFTWARE DEVELOPMENT</div><h1>MUHAMMAD ALI EJAZ</h1></div><span class="page-marker">02</span></header>${projects}${certifications}<footer class="footer"><span><a href="mailto:dev._.ali@icloud.com">dev._.ali@icloud.com</a></span><span>PROJECTS & CREDENTIALS / 02</span></footer></section></body></html>`;
+  const premiumMode = mode === "Premium";
+  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"/><title>Muhammad Ali Ejaz - ${mode} Resume</title><style>${premiumMode ? premiumCSS : atsCSS}</style></head><body class="${premiumMode ? "premium" : "ats"}">${premiumMode ? premium : ats}</body></html>`;
   await fs.writeFile(
-    new URL(`docs/redesign/resume-source/Resume-${mode}.html`, root),
+    `docs/continuous-world/resume-source/Resume-${mode}.html`,
     html,
   );
-  const page = await browser.newPage();
-  await page.setContent(html, { waitUntil: "load" });
-  await page.evaluate(() => document.fonts.ready);
-  const overflow = await page
-    .locator(".page")
-    .evaluateAll((es) =>
-      es.map((e) => ({
-        scroll: e.scrollHeight,
-        client: e.clientHeight,
-        footer: e.querySelector("footer").getBoundingClientRect().top,
-        last: e
-          .querySelector("footer")
-          .previousElementSibling.getBoundingClientRect().bottom,
-      })),
-    );
-  if (overflow.some((x) => x.scroll > x.client + 2 || x.last > x.footer - 8))
-    throw new Error(`Resume overflow ${mode}: ${JSON.stringify(overflow)}`);
-  await page.pdf({
-    path: new URL(`public/assets/resume/Resume-${mode}.pdf`, root).pathname,
+  const p = await b.newPage();
+  await p.setContent(html, { waitUntil: "load" });
+  await p.evaluate(() => document.fonts.ready);
+  const check = await p.locator(".page").evaluateAll((pages) =>
+    pages.map((page) => {
+      const footer = page.querySelector("footer");
+      const fr = footer.getBoundingClientRect();
+      const offenders = [...page.querySelectorAll("h1,h2,h3,p,li,.contact,a")]
+        .filter((e) => !footer.contains(e))
+        .filter((e) => {
+          const r = e.getBoundingClientRect();
+          return (
+            r.bottom > fr.top - 6 ||
+            r.right > page.getBoundingClientRect().right + 1
+          );
+        })
+        .map((e) => e.textContent.slice(0, 60));
+      return {
+        height: page.clientHeight,
+        scrollHeight: page.scrollHeight,
+        offenders,
+      };
+    }),
+  );
+  if (check.some((c) => c.offenders.length || c.scrollHeight > c.height + 2))
+    throw new Error(`${mode}: ${JSON.stringify(check)}`);
+  const dest = `output/pdf/Resume-${mode}.pdf`;
+  await p.pdf({
+    path: dest,
     format: "A4",
-    printBackground: true,
     preferCSSPageSize: true,
+    printBackground: true,
     tagged: true,
   });
-  console.log(mode, overflow);
-  await page.close();
+  await fs.copyFile(dest, `public/assets/resume/Resume-${mode}.pdf`);
+  report.push({ mode, pages: check });
+  await p.close();
 }
-await browser.close();
+await b.close();
+await fs.writeFile(
+  "docs/continuous-world/resume-source/layout-check.json",
+  JSON.stringify(report, null, 2),
+);
+console.log(report);

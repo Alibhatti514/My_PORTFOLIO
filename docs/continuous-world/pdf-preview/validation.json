@@ -1,0 +1,16 @@
+[
+  {
+    "mode": "Premium",
+    "pages": 2,
+    "hyperlinks": 18,
+    "selectableCharacters": 3923,
+    "fonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nAAAAAA+SpaceGroteskLight-Medium      CID TrueType      Identity-H       yes yes yes      5  0\nBAAAAA+ManropeExtraLight-Regular     CID TrueType      Identity-H       yes yes yes      6  0\n"
+  },
+  {
+    "mode": "ATS",
+    "pages": 2,
+    "hyperlinks": 15,
+    "selectableCharacters": 3313,
+    "fonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nAAAAAA+SpaceGroteskLight-Medium      CID TrueType      Identity-H       yes yes yes      4  0\nBAAAAA+ManropeExtraLight-Regular     CID TrueType      Identity-H       yes yes yes      5  0\nBAAAAA+ManropeExtraLight-Regular     Type 3            Custom           yes yes yes      6  0\n"
+  }
+]

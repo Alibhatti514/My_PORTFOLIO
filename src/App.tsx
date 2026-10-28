@@ -1,55 +1,62 @@
-import { useEffect, useRef, useState } from "react";
+import {
+  lazy,
+  Suspense,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { profile, projects } from "./data/portfolio";
 import { socials } from "./data/socials";
-import { chapters } from "./data/chapters";
-import SystemScene from "./components/SystemScene";
-import Credentials from "./components/Credentials";
-const nav = [
-  ["work", "Work"],
-  ["about", "About"],
-  ["credentials", "Credentials"],
-  ["contact", "Contact"],
-];
-const stack = [
-  {
-    name: "The interface",
-    number: "01",
-    text: "Responsive, considered experiences. From semantic structure to the final interaction.",
-    items: [
-      "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)",
-      "TypeScript",
-      "React.js",
-      "Next.js",
-    ],
-    icons: ["html5", "css3", "javascript", "typescript", "react", "nextdotjs"],
-  },
-  {
-    name: "The system",
-    number: "02",
-    text: "Business logic, secure endpoints, and the connections that make an application work.",
-    items: ["Node.js", "NestJS", "REST APIs", "JWT Authentication"],
-    icons: ["nodedotjs", "nestjs"],
-  },
-  {
-    name: "The foundation",
-    number: "03",
-    text: "Structured data and a deliberate workflow. Built to be understood and maintained.",
-    items: ["PostgreSQL", "Prisma ORM", "Python", "Git", "GitHub", "Postman"],
-    icons: ["postgresql", "prisma", "python", "git", "github", "postman"],
-  },
+import { skills, additionalStudy } from "./data/skills";
+import certificates from "./data/certificates.json";
+import { waypoints, clamp, smooth } from "./scene/journey";
+import CredentialLibrary, {
+  CredentialPreview,
+} from "./components/CredentialLibrary";
+import type { Credential } from "./components/CredentialLibrary";
+const JourneyWorld = lazy(() => import("./components/JourneyWorld"));
+const programs = certificates.filter((c) => c.featured);
+const sectionNames = [
+  "Origin",
+  "The human",
+  "Skills universe",
+  "Selected work",
+  "Selected work",
+  "Selected work",
+  "Credentials",
+  "Connect",
 ];
 export default function App() {
-  const [menu, setMenu] = useState(false),
-    [active, setActive] = useState("work"),
-    [reduced, setReduced] = useState(
+  const [reduced, setReduced] = useState(
       () => matchMedia("(prefers-reduced-motion: reduce)").matches,
     ),
-    [project, setProject] = useState<number | null>(null);
-  const menuDialog = useRef<HTMLDialogElement>(null),
-    projectDialog = useRef<HTMLDialogElement>(null),
-    menuButton = useRef<HTMLButtonElement>(null);
+    [reading, setReading] = useState(false),
+    [failed, setFailed] = useState(false),
+    [ready, setReady] = useState(false),
+    [p, setP] = useState(0),
+    [skill, setSkill] = useState(3),
+    [credential, setCredential] = useState(0),
+    [library, setLibrary] = useState(false),
+    [preview, setPreview] = useState<Credential | null>(null),
+    [menu, setMenu] = useState(false);
+  const progress = useRef(0),
+    mode = reading || reduced || failed,
+    active = Math.round(p),
+    lastMode = useRef(mode),
+    lastCredentialBucket = useRef(0);
+  const pickCredential = useCallback(
+    (n: number) => setCredential((n + programs.length) % programs.length),
+    [],
+  );
+  useEffect(() => {
+    const bucket = clamp(Math.floor((p - 6.08) * 16), 0, 6);
+    if (p > 6.08 && p < 6.5 && bucket !== lastCredentialBucket.current) {
+      lastCredentialBucket.current = bucket;
+      setCredential(bucket);
+    }
+    if (p <= 6.08) lastCredentialBucket.current = 0;
+  }, [p]);
   useEffect(() => {
     const m = matchMedia("(prefers-reduced-motion: reduce)");
     const f = () => setReduced(m.matches);
@@ -57,588 +64,608 @@ export default function App() {
     return () => m.removeEventListener("change", f);
   }, []);
   useEffect(() => {
-    document.documentElement.classList.toggle("reduce-motion", reduced);
-    return () => document.documentElement.classList.remove("reduce-motion");
-  }, [reduced]);
+    let frame = 0,
+      last = 0,
+      lastState = 0;
+    const tick = (ms: number) => {
+      const target = clamp(scrollY / (innerHeight * 1.1), 0, 7);
+      const dt = Math.min((ms - last) / 1000, 0.05);
+      last = ms;
+      if (!mode) {
+        progress.current +=
+          (target - progress.current) * (1 - Math.exp(-dt * 9));
+        if (Math.abs(target - progress.current) < 0.0001)
+          progress.current = target;
+        if (ms - lastState > 32) {
+          setP(progress.current);
+          lastState = ms;
+        }
+      }
+      frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [mode]);
   useEffect(() => {
-    if (menu) menuDialog.current?.showModal();
-    else menuDialog.current?.close();
-  }, [menu]);
+    if (lastMode.current !== mode) {
+      lastMode.current = mode;
+      window.scrollTo({ top: 0, behavior: "instant" });
+      progress.current = 0;
+      setP(0);
+    }
+  }, [mode]);
   useEffect(() => {
-    if (project !== null) projectDialog.current?.showModal();
-    else projectDialog.current?.close();
-  }, [project]);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        }),
-      { rootMargin: "-20% 0px -55% 0px" },
-    );
-    nav.forEach(([id]) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
+    const close = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMenu(false);
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
   }, []);
   useEffect(() => {
     const aliases: Record<string, string> = {
       human: "home",
-      code: "skills",
+      code: "about",
       languages: "skills",
       frontend: "skills",
       backend: "skills",
       data: "skills",
       workflow: "skills",
       connect: "contact",
-      education: "experience",
+      experience: "about",
+      education: "about",
       "rcs-cargo": "work",
-      goldadan: "work",
-      "bhabhi-thulla": "work",
+      archive: "credentials",
     };
-    const target = aliases[location.hash.slice(1)];
-    if (target) document.getElementById(target)?.scrollIntoView();
+    const id = aliases[location.hash.slice(1)];
+    if (id) document.getElementById(id)?.scrollIntoView();
   }, []);
+  const show = (i: number) =>
+    mode
+      ? {}
+      : {
+          opacity:
+            active === i ? 1 - smooth((Math.abs(p - i) - 0.08) / 0.42) : 0,
+          transform: `translateY(${(i - p) * 24}px)`,
+          visibility: active === i ? ("visible" as const) : ("hidden" as const),
+        };
+  const attrs = (i: number) => ({
+    className: `scene-panel panel-${i} ${active === i ? "active" : ""}`,
+    style: show(i),
+    "aria-hidden": mode ? undefined : active !== i,
+    inert: !mode && active !== i,
+  });
+  const go = (id: string) => {
+    setMenu(false);
+    document
+      .getElementById(mode ? `content-${id}` : id)
+      ?.scrollIntoView({ behavior: mode ? "instant" : "smooth" });
+  };
+  const next = () => go(waypoints[Math.min(7, active + 1)].id);
   return (
-    <>
-      <a className="skip-link" href="#main">
+    <div
+      className={`portfolio ${mode ? "reading-mode" : "cinematic-mode"} ${ready ? "world-ready" : ""}`}
+    >
+      <a className="skip-link" href={mode ? "#content-about" : "#about"}>
         Skip to portfolio content
       </a>
       <header className="site-header">
-        <a href="#home" className="wordmark" aria-label="Ali Bhatti home">
-          <span className="brand-symbol">
+        <a
+          href="#home"
+          className="wordmark"
+          onClick={(e) => {
+            e.preventDefault();
+            go("home");
+          }}
+          aria-label="Ali Bhatti Full Stack Developer, back to beginning"
+        >
+          <span className="brand-orbit" aria-hidden="true">
             a<span>b</span>
           </span>
           <span>
-            ALI BHATTI<span className="wordmark-sub">DEVELOPER / PAKISTAN</span>
+            ALI BHATTI<small>FULL STACK DEVELOPER</small>
           </span>
         </a>
         <nav aria-label="Main navigation">
-          {nav.map(([id, label]) => (
+          {[
+            ["about", "About", 1],
+            ["skills", "Skills", 2],
+            ["work", "Work", 3],
+            ["credentials", "Credentials", 6],
+          ].map(([id, label, n]) => (
             <a
               key={id}
               href={`#${id}`}
-              aria-current={active === id ? "location" : undefined}
+              aria-current={active == n ? "location" : undefined}
+              onClick={(e) => {
+                e.preventDefault();
+                go(String(id));
+              }}
             >
               {label}
-              <span className="nav-dot" />
             </a>
           ))}
         </nav>
         <div className="header-actions">
           <a
-            className="header-resume"
+            className="resume-link"
             href="/assets/resume/Resume-Premium.pdf"
             download
           >
-            Résumé <span aria-hidden="true">↓</span>
+            Résumé <span>↗</span>
           </a>
           <button
-            ref={menuButton}
-            className="menu-button"
-            aria-label="Open navigation"
+            className="menu-toggle"
+            onClick={() => setMenu(!menu)}
             aria-expanded={menu}
             aria-controls="mobile-menu"
-            onClick={() => setMenu(true)}
           >
-            Menu <span aria-hidden="true">☰</span>
+            {menu ? "Close" : "Menu"} <span>☰</span>
           </button>
         </div>
       </header>
-      <main id="main">
-        <section className="hero section" id="home">
-          <div className="hero-top">
-            <span className="eyebrow">
-              <i className="status-dot" /> FULL STACK WEB DEVELOPER
-            </span>
-            <span className="mono">
-              BASED IN KHANEWAL, PAKISTAN <span className="accent">↗</span>
-            </span>
-          </div>
-          <div className="hero-composition">
-            <div className="hero-copy">
-              <span className="intro-note">
-                A little curiosity. A lot of code.
-              </span>
-              <h1>
-                Ideas into
-                <br />
-                interfaces.
-                <br />
-                <span>And beyond</span>
-                <b>.</b>
-              </h1>
-              <p>
-                I’m Ali Bhatti. I connect thoughtful frontends
-                <br className="desktop-break" /> with the systems that bring
-                them to life.
-              </p>
-              <div className="hero-actions">
-                <a className="button" href="#work">
-                  Explore my work <span aria-hidden="true">↘</span>
-                </a>
-                <a className="hero-contact" href={`mailto:${profile.email}`}>
-                  Let’s talk <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-            <SystemScene reduced={reduced} />
-          </div>
-          <div className="hero-foot">
-            <span className="mono">INTERFACE → LOGIC → DATA</span>
-            <a className="scroll-cue" href="#work">
-              SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
-            </a>
-            <span className="mono">CRAFTED WITH INTENTION / 2026</span>
-          </div>
-        </section>
-        <div className="identity-strip" aria-hidden="true">
-          <span>ALI BHATTI</span>
-          <span className="asterisk">✳</span>
-          <span>FULL STACK</span>
-          <span className="asterisk">✳</span>
-        </div>
-        <section id="work" className="section work-section">
-          <div className="section-top">
-            <span className="eyebrow">01 / SELECTED WORK</span>
-            <span className="mono">
-              THREE PROJECTS. DIFFERENT POSSIBILITIES.
-            </span>
-          </div>
-          <div className="section-heading">
-            <h2>
-              From a first line.
-              <br />
-              <em>To something real.</em>
-            </h2>
-            <p>
-              Logistics, enterprise technology, and a little play. A selection
-              from my development journey.
-            </p>
-          </div>
-          <div className="project-list">
-            {projects.map((p, i) => (
-              <article className={`project project-${i}`} key={p.id}>
-                <button
-                  className="project-art"
-                  onClick={() => setProject(i)}
-                  aria-label={`Explore ${p.name}: ${["Connected routes / logistics", "Digital presence / technology", "Logic meets play / card game"][i]}. Original project identity`}
-                >
-                  <span className="art-caption mono">
-                    {
-                      [
-                        "CONNECTED ROUTES / LOGISTICS",
-                        "DIGITAL PRESENCE / TECHNOLOGY",
-                        "LOGIC MEETS PLAY / CARD GAME",
-                      ][i]
-                    }
-                  </span>
-                  {i === 0 ? (
-                    <div className="route-art">
-                      <div className="route-orbit orbit-one" />
-                      <div className="route-orbit orbit-two" />
-                      <div className="route-orbit orbit-three" />
-                      <span className="route-point point-one" />
-                      <span className="route-point point-two" />
-                      <span className="route-point point-three" />
-                      <div className="project-logo">
-                        <img
-                          src={
-                            [
-                              `/assets/optimized/rcs.webp`,
-                              `/assets/optimized/goldadan.webp`,
-                              `/assets/optimized/bhabhi.webp`,
-                            ][i]
-                          }
-                          alt="RCS Cargo original logo"
-                          loading="lazy"
-                        />
-                      </div>
-                    </div>
-                  ) : i === 1 ? (
-                    <div className="enterprise-art">
-                      <i />
-                      <i />
-                      <i />
-                      <div className="project-logo">
-                        <img
-                          src={
-                            [
-                              `/assets/optimized/rcs.webp`,
-                              `/assets/optimized/goldadan.webp`,
-                              `/assets/optimized/bhabhi.webp`,
-                            ][i]
-                          }
-                          alt="Goldadan original logo"
-                          loading="lazy"
-                        />
-                      </div>
-                      <span className="enterprise-cross">+</span>
-                    </div>
-                  ) : (
-                    <div className="game-art">
-                      <i>♠</i>
-                      <i>♦</i>
-                      <div className="project-logo">
-                        <img
-                          src={
-                            [
-                              `/assets/optimized/rcs.webp`,
-                              `/assets/optimized/goldadan.webp`,
-                              `/assets/optimized/bhabhi.webp`,
-                            ][i]
-                          }
-                          alt="Bhabhi Thulla original logo"
-                          loading="lazy"
-                        />
-                      </div>
-                    </div>
-                  )}
-                  <span className="art-bottom mono">
-                    ORIGINAL PROJECT IDENTITY{" "}
-                    <span className="art-arrow">↗</span>
-                  </span>
-                </button>
-                <div className="project-copy">
-                  <span className="eyebrow">PROJECT / 0{i + 1}</span>
-                  <h3>{p.name}</h3>
-                  <p>{p.description}</p>
-                  <span className="project-category">
-                    {
-                      [
-                        "Logistics web project",
-                        "Company website",
-                        "Card-game project",
-                      ][i]
-                    }
-                  </span>
-                  <button className="text-link" onClick={() => setProject(i)}>
-                    Inside the project <span aria-hidden="true">↗</span>
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section id="about" className="section about-section">
-          <div className="section-top">
-            <span className="eyebrow">02 / THE PERSON BEHIND THE CODE</span>
-            <span className="mono">HUMAN FIRST. DEVELOPER ALWAYS.</span>
-          </div>
-          <div className="about-layout">
-            <div className="portrait-frame">
-              <span className="portrait-label mono">
-                MUHAMMAD ALI EJAZ / ALI BHATTI
-              </span>
-              <div className="portrait-grid" />
-              <img
-                src="/assets/optimized/portrait.webp"
-                alt="Ali Bhatti, full stack web developer"
-                loading="lazy"
-                width="1105"
-                height="1105"
-              />
-              <span className="portrait-footer mono">
-                KHANEWAL, PK <span>FULL STACK DEVELOPER</span>
-              </span>
-            </div>
-            <div className="about-copy">
-              <h2>
-                Thoughtful on the
-                <br />
-                surface.
-                <br />
-                <em>Deliberate underneath.</em>
-              </h2>
-              <p className="large-copy">
-                I build web applications that connect responsive interfaces,
-                secure backend services, and structured data.
-              </p>
-              <p>
-                My work spans React and Next.js frontends, Node.js and NestJS
-                APIs, and PostgreSQL databases with Prisma. I value clear
-                communication, maintainable code, and the small decisions that
-                make an experience feel right.
-              </p>
-              <p>
-                Learning is part of the process. My completed programs cover
-                full stack development, Node.js, C# and .NET, and SvelteKit.
-              </p>
-              <a className="text-link" href="#experience">
-                The journey so far <span aria-hidden="true">↓</span>
-              </a>
-            </div>
-          </div>
-        </section>
-        <section id="skills" className="section skills-section">
-          <div className="section-top">
-            <span className="eyebrow">03 / THE TOOLKIT</span>
-            <span className="mono">ONE CONNECTED APPROACH.</span>
-          </div>
-          <div className="section-heading">
-            <h2>
-              Every layer.
-              <br />
-              <em>Considered.</em>
-            </h2>
-            <p>
-              From what you see to how it works.
-              <br />
-              The tools I use to connect the two.
-            </p>
-          </div>
-          <div className="stack-grid">
-            {stack.map((s) => (
-              <article className="stack-layer" key={s.name}>
-                <div className="stack-number">
-                  {s.number}
-                  <span aria-hidden="true">↘</span>
-                </div>
-                <div className="stack-icons">
-                  {s.icons.map((icon) => (
-                    <img
-                      key={icon}
-                      src={`/assets/brands/${icon}.svg`}
-                      alt=""
-                      loading="lazy"
-                    />
-                  ))}
-                </div>
-                <h3>{s.name}</h3>
-                <p>{s.text}</p>
-                <ul>
-                  {s.items.map((t) => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-          <p className="learning-note">
-            <span className="accent">↳</span> Further completed study: C# 12 ·
-            .NET 8 · ASP.NET Core · Blazor · Svelte 5 · SvelteKit.{" "}
-            <a href="#credentials">See credentials ↗</a>
-          </p>
-        </section>
-        <section id="experience" className="section journey-section">
-          <div className="section-top">
-            <span className="eyebrow">04 / EXPERIENCE & FOUNDATIONS</span>
-            <span className="mono">BUILD. LEARN. REPEAT.</span>
-          </div>
-          <div className="journey-layout">
-            <h2>
-              A foundation.
-              <br />
-              <em>A way forward.</em>
-            </h2>
-            <div className="timeline">
-              <span className="timeline-label mono">
-                PROFESSIONAL EXPERIENCE
-              </span>
-              {["Upwork", "Fiverr"].map((platform) => (
-                <article className="timeline-row" key={platform}>
-                  <span className="mono">SEP 2025 — JUN 2026</span>
-                  <h3>Freelance Full Stack Web Developer</h3>
-                  <span className="timeline-org">
-                    {platform} · Lahore, Pakistan
-                  </span>
-                  <p>
-                    {platform === "Upwork"
-                      ? "Developed responsive React and Next.js applications, Node.js and NestJS REST APIs, and PostgreSQL / Prisma integrations. Implemented JWT authentication and role-based access control."
-                      : "Built custom interfaces and backend services around client requirements. Integrated third-party services, managed business logic, and incorporated client feedback into maintainable applications."}
-                  </p>
-                </article>
-              ))}
-              <span className="timeline-label mono">EDUCATION</span>
-              <article className="timeline-row">
-                <span className="mono">2021 — 2025</span>
-                <h3>Bachelor in Computer Science</h3>
-                <p>Punjab University · Lahore, Pakistan</p>
-              </article>
-              <article className="timeline-row">
-                <span className="mono">2018 — 2020</span>
-                <h3>Intermediate in Computer Science (ICS)</h3>
-                <p>Hawk College · Khanewal, Pakistan</p>
-              </article>
-            </div>
-          </div>
-        </section>
-        <Credentials />
-        <section id="resume" className="section resume-section">
-          <div>
-            <span className="eyebrow">THE STORY, ON PAPER</span>
-            <h2>
-              Take it
-              <br />
-              <em>with you.</em>
-            </h2>
-            <p>
-              Experience, projects, education, and selected credentials.
-              <br />
-              Two formats, ready for your next conversation.
-            </p>
-          </div>
-          <div className="resume-options">
-            <a href="/assets/resume/Resume-Premium.pdf" download>
-              <span className="resume-file">PDF / 01</span>
-              <h3>Designed résumé</h3>
-              <p>A considered layout. The complete professional picture.</p>
-              <span className="download-label">
-                DOWNLOAD PREMIUM <b aria-hidden="true">↓</b>
-              </span>
-            </a>
-            <a href="/assets/resume/Resume-ATS.pdf" download>
-              <span className="resume-file">PDF / 02</span>
-              <h3>ATS-friendly résumé</h3>
-              <p>A simple, single-column format for applications.</p>
-              <span className="download-label">
-                DOWNLOAD ATS <b aria-hidden="true">↓</b>
-              </span>
-            </a>
-          </div>
-        </section>
-        <section id="contact" className="section contact-section">
-          <div className="section-top">
-            <span className="eyebrow">06 / THE NEXT CHAPTER</span>
-            <span className="mono">GOOD THINGS BEGIN WITH A CONVERSATION.</span>
-          </div>
-          <div className="contact-heading">
-            <h2>
-              Let’s make
-              <br />
-              <em>something matter.</em>
-            </h2>
+      {menu && (
+        <nav id="mobile-menu" aria-label="Mobile navigation">
+          {waypoints.map((w) => (
             <a
-              className="contact-orb"
-              href={`mailto:${profile.email}`}
-              aria-label="Email Ali Bhatti"
-            >
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <div className="contact-details">
-            <a className="email-link" href={`mailto:${profile.email}`}>
-              {profile.email} <span aria-hidden="true">↗</span>
-            </a>
-            <div>
-              <a href={profile.phoneHref}>{profile.phone}</a>
-              <span>{profile.location}</span>
-            </div>
-          </div>
-          <div className="social-links">
-            {socials.map((s) => (
-              <a
-                key={s.id}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={s.icon} alt="" loading="lazy" />
-                {s.label}
-                <span aria-hidden="true">↗</span>
-              </a>
-            ))}
-          </div>
-        </section>
-      </main>
-      <footer className="site-footer">
-        <a href="#home" className="footer-name">
-          ALI BHATTI<span>↗</span>
-        </a>
-        <div className="footer-bottom">
-          <span className="mono">© 2026 ALI BHATTI. BUILT WITH INTENTION.</span>
-          <button aria-pressed={reduced} onClick={() => setReduced(!reduced)}>
-            Motion: {reduced ? "reduced" : "full"}{" "}
-            <span aria-hidden="true">{reduced ? "○" : "◉"}</span>
-          </button>
-          <a href="#home">Back to top ↑</a>
-        </div>
-      </footer>
-      <dialog
-        ref={menuDialog}
-        id="mobile-menu"
-        className="mobile-menu"
-        aria-labelledby="menu-title"
-        onCancel={() => setMenu(false)}
-      >
-        <div className="dialog-heading">
-          <h2 id="menu-title">Explore.</h2>
-          <button
-            className="close-dialog"
-            onClick={() => setMenu(false)}
-            aria-label="Close navigation"
-          >
-            ×
-          </button>
-        </div>
-        <nav aria-label="Mobile navigation">
-          {[
-            ...nav,
-            ["skills", "Toolkit"],
-            ["experience", "Experience"],
-            ["archive", "Certificate archive"],
-            ["resume", "Résumé"],
-          ].map(([id, label], i) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              onClick={() => {
-                setMenu(false);
-                setTimeout(
-                  () => document.getElementById(id)?.scrollIntoView(),
-                  0,
-                );
+              key={w.id}
+              href={`#${w.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                go(w.id);
               }}
             >
-              <span className="mono">0{i + 1}</span>
-              {label}
-              <span aria-hidden="true">↗</span>
+              {w.name} <span>↗</span>
             </a>
           ))}
         </nav>
-      </dialog>
-      <dialog
-        ref={projectDialog}
-        className="project-dialog"
-        aria-labelledby="project-title"
-        onCancel={() => setProject(null)}
-        onClick={(e) => {
-          if (e.target === e.currentTarget) setProject(null);
-        }}
-      >
-        {project !== null && (
-          <>
-            <div className="dialog-heading">
-              <span className="eyebrow">SELECTED WORK / 0{project + 1}</span>
+      )}
+      <div className="atmosphere" aria-hidden="true" />
+      {!mode && (
+        <>
+          <div
+            className="hero-title"
+            style={{ opacity: 1 - smooth(p / 0.65) }}
+            aria-hidden="true"
+          >
+            ALI <span>BHATTI</span>
+          </div>
+          <Suspense fallback={null}>
+            <JourneyWorld
+              progress={progress}
+              skill={skill}
+              credential={credential}
+              paused={mode || library || !!preview}
+              onSkill={setSkill}
+              onCredential={pickCredential}
+              onInspect={() => setPreview(programs[credential])}
+              onReady={() => setReady(true)}
+              onFail={() => setFailed(true)}
+            />
+          </Suspense>
+        </>
+      )}
+      {!mode && !ready && (
+        <img
+          fetchPriority="high"
+          className="loading-portrait"
+          src="/assets/optimized/portrait.webp"
+          alt=""
+        />
+      )}
+      <main id="main" className="story-content">
+        <section id="content-home" {...attrs(0)}>
+          <h1 className="sr-only">Ali Bhatti — Full Stack Web Developer</h1>
+          {mode && (
+            <>
+              <h2 className="reading-name">
+                ALI <em>BHATTI</em>
+              </h2>
+              <img
+                className="reading-portrait"
+                src="/assets/optimized/portrait.webp"
+                alt="Muhammad Ali Ejaz, known as Ali Bhatti"
+              />
+            </>
+          )}
+          <div className="hero-kicker">
+            <span className="eyebrow">
+              <i className="signal" /> THE PERSON BEHIND THE PIXELS
+            </span>
+            <span className="mono">KHANEWAL, PAKISTAN / 2026</span>
+          </div>
+          <div className="hero-left">
+            <span className="coordinate">01 — THE ORIGIN</span>
+            <h2>
+              Human first.
+              <br /> <em>Developer by craft.</em>
+            </h2>
+            <p>
+              I’m Muhammad Ali Ejaz.
+              <br />
+              You can call me Ali Bhatti.
+            </p>
+          </div>
+          <div className="hero-right">
+            <span className="orbital-mark" aria-hidden="true">
+              ✧
+            </span>
+            <h2>
+              Full stack.
+              <br />
+              From the inside out.
+            </h2>
+            <p>
+              Thoughtful interfaces.
+              <br />
+              Connected systems.
+              <br />A curiosity that keeps moving.
+            </p>
+            <button
+              className="round-link"
+              onClick={() => go("about")}
+              aria-label="Begin the journey"
+            >
+              ↘
+            </button>
+          </div>
+          <div className="hero-bottom">
+            <span className="mono">INTERFACE ↔ LOGIC ↔ DATA</span>
+            <button onClick={() => go("about")} className="scroll-invitation">
+              <span className="scroll-line" /> SCROLL TO ENTER MY WORLD
+            </button>
+            <a href={`mailto:${profile.email}`}>LET’S BUILD SOMETHING ↗</a>
+          </div>
+        </section>
+        <section id="content-about" {...attrs(1)}>
+          <div className="scene-copy about-copy">
+            <span className="eyebrow">02 / THE HUMAN BEHIND THE SYSTEM</span>
+            <h2>
+              Curiosity is
+              <br /> the <em>constant.</em>
+            </h2>
+            <p className="lead">
+              I connect what people see with the systems that make it work.
+            </p>
+            <p>
+              Full Stack Web Developer building React and Next.js interfaces,
+              Node.js and NestJS services, and PostgreSQL databases with Prisma.
+              From a client’s first idea to responsive interfaces, secure APIs,
+              and maintainable code.
+            </p>
+            <details>
+              <summary>
+                Experience & education <span>↗</span>
+              </summary>
+              <div className="about-history">
+                <h3>Freelance Full Stack Web Developer</h3>
+                <p>
+                  Upwork & Fiverr · Lahore
+                  <br />
+                  Sep 2025 – Jun 2026, on both platforms
+                </p>
+                <p>
+                  REST APIs, JWT authentication, role-based access, third-party
+                  services, and client collaboration.
+                </p>
+                <h3>Bachelor in Computer Science</h3>
+                <p>Punjab University · Lahore · 2021–2025</p>
+                <h3>Intermediate in Computer Science (ICS)</h3>
+                <p>Hawk College · Khanewal · 2018–2020</p>
+              </div>
+            </details>
+            <a
+              className="text-link"
+              href="/assets/resume/Resume-ATS.pdf"
+              download
+            >
+              Read the full résumé ↓
+            </a>
+          </div>
+          <span className="scene-annotation">
+            THE HUMAN REMAINS AT THE CENTER.
+          </span>
+        </section>
+        <section id="content-skills" {...attrs(2)}>
+          <div className="scene-copy skills-copy">
+            <span className="eyebrow">03 / A CONNECTED CONSTELLATION</span>
+            <h2>
+              Different tools.
+              <br /> <em>One system.</em>
+            </h2>
+            <p>Select a technology in the orbit or explore the index.</p>
+            <div className="skill-inspector" aria-live="polite">
+              <span className="eyebrow">
+                {skills[skill].category}
+                {skills[skill].study
+                  ? " / COMPLETED STUDY"
+                  : " / RÉSUMÉ EXPERIENCE"}
+              </span>
+              <h3>{skills[skill].name}</h3>
+              <p>{skills[skill].evidence}</p>
+            </div>
+            <div
+              className="skill-index"
+              role="group"
+              aria-label="Explore technical skills"
+            >
+              {skills.map((s, i) => (
+                <button
+                  key={s.name}
+                  aria-pressed={skill === i}
+                  onClick={() => setSkill(i)}
+                  onFocus={() => setSkill(i)}
+                >
+                  {s.name}
+                </button>
+              ))}
+            </div>
+            <details className="study-details">
+              <summary>More completed study ↗</summary>
+              <p>{additionalStudy.join(" · ")}</p>
+              <p>
+                Course-backed learning; no proficiency scores or mastery claims.
+              </p>
+            </details>
+          </div>
+          <span className="scene-annotation">
+            HOVER TO DISCOVER · SELECT TO EXPLORE
+          </span>
+        </section>
+        {projects.map((project, i) => (
+          <section
+            id={`content-${waypoints[i + 3].id}`}
+            {...attrs(i + 3)}
+            key={project.id}
+          >
+            <div className="scene-copy project-copy">
+              <span className="eyebrow">04 / SELECTED WORK / 0{i + 1}</span>
+              <span className="project-number" aria-hidden="true">
+                0{i + 1}
+              </span>
+              <h2>
+                {project.name === "BHABHI THULLA" ? (
+                  <>
+                    A little logic.
+                    <br /> <em>A little play.</em>
+                  </>
+                ) : project.name === "GOLDADAN" ? (
+                  <>
+                    Technology,
+                    <br /> <em>with purpose.</em>
+                  </>
+                ) : (
+                  <>
+                    Everything,
+                    <br /> <em>in motion.</em>
+                  </>
+                )}
+              </h2>
+              <h3>{project.name}</h3>
+              <p className="lead">{project.description}</p>
+              {mode && (
+                <img
+                  className="reading-project"
+                  src={project.logo}
+                  alt={`${project.name} original project artwork`}
+                />
+              )}
+              <p className="project-detail">
+                {i === 0
+                  ? "A web application for a connected logistics world, presented with its original brand identity."
+                  : i === 1
+                    ? "A digital presence shaped around security, software, hardware, and enterprise technology services."
+                    : "A card-game project with an authentic visual identity, inspired by a familiar game."}
+              </p>
+              <span className="artwork-note">ORIGINAL PROJECT ARTWORK</span>
+              <div className="project-pagination" aria-label="Choose project">
+                {projects.map((pr, j) => (
+                  <button
+                    key={pr.id}
+                    onClick={() => go(waypoints[j + 3].id)}
+                    aria-label={`Show ${pr.name}`}
+                    aria-pressed={i === j}
+                  >
+                    0{j + 1}
+                  </button>
+                ))}
+              </div>
               <button
-                className="close-dialog"
-                onClick={() => setProject(null)}
-                aria-label="Close project details"
+                className="text-link"
+                onClick={() => go(waypoints[i + 4].id)}
               >
-                ×
+                {i === 2 ? "Continue to credentials" : "Next project"}{" "}
+                <span>↗</span>
               </button>
             </div>
-            <h2 id="project-title">{projects[project].name}</h2>
-            <img
-              src={projects[project].logo}
-              alt={`${projects[project].name} original identity`}
-            />
-            <p>{projects[project].description}</p>
-            <p>{chapters[project + 7].detail}</p>
-            <div className="project-evidence">
-              <span className="mono">PUBLIC DEMO & REPOSITORY</span>
-              <p>Project links are not currently available.</p>
+          </section>
+        ))}
+        <section id="content-credentials" {...attrs(6)}>
+          <div className="scene-copy credential-copy">
+            <span className="eyebrow">05 / THE CREDENTIAL ORBIT</span>
+            <h2>
+              Always
+              <br /> <em>in pursuit.</em>
+            </h2>
+            <p>
+              Seven completed programs.
+              <br />A commitment to keep learning.
+            </p>
+            <div className="active-credential" aria-live="polite">
+              <span className="eyebrow">
+                {programs[credential].issuer} / {programs[credential].type}
+              </span>
+              <h3>{programs[credential].title}</h3>
+              <time>{programs[credential].date}</time>
             </div>
-            <a
-              className="button"
-              href={`mailto:${profile.email}?subject=${encodeURIComponent(`Tell me about ${projects[project].name}`)}`}
+            {mode && (
+              <img
+                className="reading-certificate"
+                src={programs[credential].preview}
+                alt={programs[credential].title}
+              />
+            )}
+            <div
+              className="carousel-controls"
+              onTouchStart={(e) => {
+                e.currentTarget.dataset.x = String(e.touches[0].clientX);
+              }}
+              onTouchEnd={(e) => {
+                const dx =
+                  e.changedTouches[0].clientX -
+                  Number(e.currentTarget.dataset.x);
+                if (Math.abs(dx) > 40)
+                  pickCredential(credential + (dx < 0 ? 1 : -1));
+              }}
             >
-              Ask about this project ↗
+              <button
+                aria-label="Previous credential"
+                onClick={() => pickCredential(credential - 1)}
+              >
+                ←
+              </button>
+              <span className="mono">
+                0{credential + 1} <span>/ 07</span>
+              </span>
+              <button
+                aria-label="Next credential"
+                onClick={() => pickCredential(credential + 1)}
+              >
+                →
+              </button>
+            </div>
+            <div className="credential-actions">
+              <button onClick={() => setPreview(programs[credential])}>
+                Inspect certificate ↗
+              </button>
+              <a href={programs[credential].downloadPath} download>
+                Download ↓
+              </a>
+              <a
+                href={programs[credential].url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Verify ↗
+              </a>
+            </div>
+            <button className="library-link" onClick={() => setLibrary(true)}>
+              Open all 40 credentials <span>↗</span>
+            </button>
+          </div>
+          <span className="scene-annotation">
+            DRAG OR SWIPE THE ORBIT · USE ARROWS TO ROTATE
+          </span>
+        </section>
+        <section id="content-contact" {...attrs(7)}>
+          <div className="finale-heading">
+            <span className="eyebrow">06 / THE NEXT CHAPTER</span>
+            <h2>
+              Good things start
+              <br />
+              with <em>a conversation.</em>
+            </h2>
+          </div>
+          <div className="finale-left">
+            <span className="eyebrow">MUHAMMAD ALI EJAZ / ALI BHATTI</span>
+            <a className="email-link" href={`mailto:${profile.email}`}>
+              Let’s build
+              <br />
+              something <span>↗</span>
             </a>
+            <p>{profile.location}</p>
+            <a href={profile.phoneHref}>{profile.phone}</a>
+          </div>
+          <div className="finale-right">
+            <div className="social-links">
+              {socials.map((s) => (
+                <a key={s.id} href={s.href} target="_blank" rel="noreferrer">
+                  {s.label}
+                  <span>↗</span>
+                </a>
+              ))}
+            </div>
+            <div className="resume-options">
+              <a
+                className="button"
+                href="/assets/resume/Resume-Premium.pdf"
+                download
+              >
+                Visual résumé ↓
+              </a>
+              <a
+                className="text-link"
+                href="/assets/resume/Resume-ATS.pdf"
+                download
+              >
+                ATS résumé ↓
+              </a>
+            </div>
+          </div>
+          <div className="finale-bottom">
+            <span className="mono">CURIOSITY. CODE. CONTINUOUS MOTION.</span>
+            <button onClick={() => go("home")}>Return to the origin ↑</button>
+            <span className="mono">© 2026 ALI BHATTI</span>
+          </div>
+        </section>
+      </main>
+      {!mode && (
+        <div className="scroll-track" aria-hidden="true">
+          {waypoints.map((w, i) => (
+            <div
+              className="waypoint"
+              id={w.id}
+              key={w.id}
+              style={i === 7 ? { height: "100vh" } : undefined}
+            />
+          ))}
+        </div>
+      )}
+      <footer className="journey-controls">
+        <button
+          className="mode-button"
+          onClick={() => {
+            setReading(!reading);
+            if (reduced) setReduced(false);
+          }}
+        >
+          {mode ? "Enter 3D journey" : "Reading view"}{" "}
+          <span aria-hidden="true">{mode ? "◈" : "☷"}</span>
+        </button>
+        {!mode && (
+          <>
+            <nav className="waypoint-nav" aria-label="Journey waypoints">
+              {waypoints.map((w, i) => (
+                <button
+                  key={w.id}
+                  aria-label={w.name}
+                  aria-current={active === i ? "step" : undefined}
+                  onClick={() => go(w.id)}
+                >
+                  <span />
+                </button>
+              ))}
+            </nav>
+            <span className="journey-label mono">
+              0{active < 3 ? active + 1 : active < 6 ? 4 : active - 1} /{" "}
+              {sectionNames[active]}
+            </span>
+            <button
+              className="next-scene"
+              onClick={active === 7 ? () => go("home") : next}
+              aria-label={active === 7 ? "Return to beginning" : "Next scene"}
+            >
+              {active === 7 ? "↑" : "↓"}
+            </button>
           </>
         )}
-      </dialog>
-    </>
+      </footer>
+      <CredentialLibrary open={library} onClose={() => setLibrary(false)} />
+      <CredentialPreview
+        credential={preview}
+        onClose={() => setPreview(null)}
+      />
+    </div>
   );
 }

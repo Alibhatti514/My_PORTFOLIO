@@ -1,0 +1,15 @@
+{
+  "branch": "redesign/continuous-world-2026",
+  "checkpoint": "archive/rejected-design-checkpoint-20261029",
+  "unitTests": 19,
+  "productionBuild": "passed",
+  "browserReport": "qa/report.json",
+  "motionEvidence": "qa/journey-desktop.webm",
+  "originalCertificates": 40,
+  "featuredPrograms": 7,
+  "correctedVerificationLinks": 33,
+  "pdfPages": {
+    "Premium": 2,
+    "ATS": 2
+  }
+}

@@ -9,10 +9,11 @@
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
-    "test:browser": "node scripts/redesign-qa.mjs",
+    "test:browser": "node scripts/journey-qa.mjs",
     "test:browser:legacy": "node scripts/browser-qa.mjs",
     "resume": "node scripts/generate-resumes.mjs",
-    "audit:certificates": "python3 scripts/build-credential-inventory.py"
+    "audit:certificates": "python3 scripts/build-credential-inventory.py",
+    "test:motion": "node scripts/journey-qa.mjs"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.2.7",

@@ -1,0 +1,36 @@
+import { chromium } from 'playwright';
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const url=process.env.QA_URL||'http://127.0.0.1:4198', report=[];
+const b=await chromium.launch({channel:'chrome'});
+for(const viewport of [{width:1440,height:900},{width:375,height:667}]){
+ const p=await b.newPage({viewport}), errors=[], missing=[];
+ p.on('pageerror',e=>errors.push(String(e)));
+ p.on('response',r=>{if(r.url().startsWith(url)&&r.status()>=400)missing.push({url:r.url(),status:r.status()});});
+ await p.goto(url);await p.locator('.world-ready').waitFor();
+ const move=async n=>{await p.evaluate(n=>scrollTo({top:n*innerHeight*1.2,behavior:'instant'}),n);await p.waitForFunction(n=>Math.abs(Number(document.querySelector('.portfolio').dataset.progress)-n)<.003,n);await p.waitForTimeout(500);};
+ await move(1);await p.locator('.about-copy summary').click();
+ for(const fact of ['Upwork & Fiverr','Punjab University','Hawk College'])assert.ok((await p.locator('.about-history').innerText()).includes(fact));
+ await p.locator('.about-copy summary').click();
+ await move(2);await p.getByRole('button',{name:'Frontend',exact:true}).press('Enter');await p.waitForTimeout(500);
+ assert.equal(await p.getByRole('button',{name:'Frontend',exact:true}).getAttribute('aria-pressed'),'true');
+ await p.getByRole('button',{name:'Blazor',exact:true}).focus();assert.equal(await p.locator('.skill-inspector h3').innerText(),'Blazor');assert.match(await p.locator('.skill-inspector').innerText(),/COMPLETED COURSEWORK/);
+ await move(6);await p.getByRole('button',{name:'Inspect ↗',exact:true}).click();
+ await p.locator('.preview-dialog[open]').waitFor();
+ const downloadEvent=p.waitForEvent('download');await p.getByRole('link',{name:'Download PDF ↓',exact:true}).click();assert.equal(await (await downloadEvent).failure(),null);
+ await p.getByRole('button',{name:'Close certificate preview',exact:true}).click();
+ await p.getByRole('button',{name:'Explore all 40 credentials',exact:false}).click();await p.locator('.library-dialog[open]').waitFor();
+ assert.equal(await p.locator('.library-row').count(),40);
+ await p.getByRole('combobox',{name:'Issuer',exact:true}).selectOption('Duke University');assert.equal(await p.locator('.library-row').count(),2);
+ await p.getByRole('searchbox',{name:'Search credentials',exact:true}).fill('Web Scraping');assert.equal(await p.locator('.library-row').count(),1);
+ await p.screenshot({path:`docs/architectural-v7/qa/library-${viewport.width}.png`});
+ await p.getByRole('button',{name:'Close certificate library',exact:true}).focus();
+ await p.keyboard.press('Escape');await p.locator('.library-dialog[open]').waitFor({state:'hidden'});
+ await move(0);await p.getByRole('link',{name:'GitHub profile (opens in a new tab)',exact:true}).first().focus();
+ assert.equal(await p.evaluate(()=>document.activeElement.matches(':focus-visible')),true);
+ const before=await p.locator('.technology img,.social-links img').evaluateAll(es=>es.filter(e=>!e.complete||!e.naturalWidth).map(e=>e.src));assert.deepEqual(before,[]);
+ assert.deepEqual(missing,[]);assert.deepEqual(errors,[]);
+ report.push({viewport,experienceEducation:true,keyboardFilters:true,courseworkEvidence:true,previewDownload:true,library40:true,dukeGuidedProjects:2,search:true,escape:true,visibleKeyboardFocus:true,missing,errors});
+ await p.close();
+}
+await b.close();await fs.writeFile('docs/architectural-v7/qa/interactions-report.json',JSON.stringify(report,null,2));console.log('Experience, keyboard skill filtering/evidence, preview download, complete library, Duke search and focus checks passed.');

@@ -5,5 +5,8 @@ import '@fontsource/ibm-plex-mono/latin-400.css';
 import App from './App';
 import './shadcn.css';
 import './styles.css';
+import './architectural.css';
+import './components/certificate-stack.css';
+import './components/certificate-scroll.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(<App/>);

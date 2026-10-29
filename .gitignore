@@ -12,3 +12,6 @@ dist/
 !.env.example
 .vercel/
 .DS_Store
+
+playwright-report/
+playwright/.cache/

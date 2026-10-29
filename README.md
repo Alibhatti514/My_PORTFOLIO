@@ -1,53 +1,46 @@
-# Ali Bhatti / Burgundy & cream / Portfolio V3
+# Ali Bhatti / Spatial portfolio V8
 
-Implemented on `redesign/burgundy-cream-world-2026`, starting from the clean `redesign/continuous-world-2026` branch (`f81cf61`). Earlier implementations, original assets and Git history remain preserved. Nothing is pushed or deployed automatically.
+A burgundy-and-cream portfolio with native vertical scrolling through a real Three.js gallery landscape. The perspective camera travels nearly 200 world units through curved, solid plaster courts, terraced foundations and cantilevered roofs. Scroll also changes court rotation, elevation, scale, camera orientation, field of view and lighting. The folded side-wall system has been removed. The approved portrait component, animation code, timing and stylesheet remain unchanged.
 
-One native-scroll coordinate drives a persistent Three.js world and an editorial page moving through perspective. A monotonic vertical camera, continuous open ribbon and fourteen transforming folios connect the centered real portrait, About, technology field, three frameless project compositions, dimensional certificate stack and finale. Reduced motion, reading mode and unavailable WebGL provide the complete stationary portfolio.
+The professional headings and summaries are updated. All 26 verified technologies retain the six filters All, Languages, Frontend, Backend, Data and Tools; evidence distinguishes résumé experience from coursework. Three authentic project identities share a single sticky showcase with reversible depth transitions. Nine featured credentials retain University of London → Microsoft → Duke University → Packt ordering, both Duke guided projects, numbered navigation, touch/mouse gestures and keyboard controls. All 40 original downloads remain available. Both two-page résumés have been regenerated and visually checked.
 
-## Run
+## Run locally
 
 ```sh
 npm install
 npm run dev
-```
-
-```sh
 npm run build
-npm run preview -- --port 4174
+npm run preview -- --port 4198
 ```
 
-No backend or credentials are required. Optional `SITE_URL` supplies a real canonical origin and sitemap during production builds.
+No backend or credentials are required. Optional `SITE_URL` supplies the canonical origin and domain-specific sitemap. Work is on `redesign/architectural-3d-v7`, based on the approved committed baseline `c4fa246` with incoming uncommitted changes retained. Nothing is pushed, merged or deployed.
+
+The complete incoming working tree is archived at `../portfolio-incoming-v6-20261029.tar.gz`. The tracked binary patch, initial status, portrait samples and protected source copies are in `docs/architectural-v7/baseline/`. Earlier branches and QA evidence remain intact.
 
 ## Review
 
-- [Visual evidence gallery](docs/burgundy-cream/qa/index.html)
-- [Desktop motion recording](docs/burgundy-cream/qa/journey-desktop.webm)
-- [Mobile touch recording](docs/burgundy-cream/qa/journey-mobile.webm)
-- [Audit, architecture and content sources](docs/burgundy-cream/AUDIT.md)
-- [Implementation report](docs/burgundy-cream/DELIVERY.md)
+- [Current recordings and screenshot gallery](docs/spatial-v8/qa/index.html)
+- [V8 implementation and verification](docs/spatial-v8/DELIVERY.md)
+- [Previous V7 gallery](docs/architectural-v7/qa/index.html)
+- [Implementation, verification and limitations](docs/architectural-v7/DELIVERY.md)
+- [Evidence audit and architecture](docs/architectural-v7/AUDIT.md)
 - [Premium résumé](output/pdf/Resume-Premium.pdf) / [ATS résumé](output/pdf/Resume-ATS.pdf)
-
-## Content
-
-All 40 original certificates remain downloadable, searchable and filterable. Featured credentials comprise all three professional programs, all four specializations and both Duke University guided projects. Dates and issuers come from the actual PDF contents; verification links come from embedded PDF annotations. Local completion evidence does not independently authenticate online identity.
-
-Skills separate original résumé experience from certificate-backed coursework. Authentic technology marks are bundled locally, with license notices in `public/assets/brands`. Existing GitHub, LinkedIn and other professional profile destinations remain unchanged. No proficiency percentages, invented project stacks or unverified public project links were added.
-
-Projects use original artwork in explicitly labeled abstract compositions. Functional screenshots were unavailable. The original photograph and source résumé remain unchanged. Both redesigned, two-page PDFs contain selectable text, embedded fonts and hyperlinks; the premium version carries the new visual identity and actual photograph.
+- Previous evidence: [V3](docs/burgundy-cream/DELIVERY.md), [V4](docs/cinematic-v4/DELIVERY.md), [V5](docs/cinematic-v5/DELIVERY.md), [V6](docs/ultimate-4d-v6/DELIVERY.md)
 
 ## Validate
 
 ```sh
 npm test
 npm run build
-QA_URL=http://127.0.0.1:4174 npm run test:browser
-node scripts/v3-record.mjs
-node scripts/v3-performance.mjs
+npm run test:browser
+npm run test:motion
+npm run test:production
+npm run record
+npm run test:performance
 npm run resume
 python3 scripts/validate-resumes.py
-npm run audit:certificates
 ```
 
-Browser and PDF generation use installed Google Chrome through Playwright. Python validation uses pypdf and Poppler. The browser suite checks five viewport sizes, forward/reverse poses, seven transition triptychs, interactions, downloads, archive search/filtering, WCAG accessibility, reduced motion and unsupported WebGL. Legacy scene tests and source remain available; V3 browser checks exercise the active UI.
+Browser scripts use local Chrome through Playwright and default to `http://127.0.0.1:4198`; set `QA_URL` to override. Finish builds before browser testing, since rebuilding removes hashed production assets used by open tabs. Run performance measurements after other browser jobs and recordings finish.
 
-The renderer caps DPR, uses no postprocessing or baked environment texture, and skips GPU draws for unchanged progress. Resources and event listeners are disposed when leaving the cinematic view. Performance reports record the active renderer and lab configuration; they are not real-device guarantees.
+The scene uses closed extruded geometry, shared rough plaster materials with world-space grain, depth testing, fog and shadow lighting. Original project artwork is rendered on real scene surfaces, with HTML text and controls kept accessible. `galleryScroll.ts` contains the reversible scroll-to-world mapping, `gallery.ts` builds the environment, `projectArtifacts.ts` handles original artwork, and `JourneyWorld.tsx` owns rendering and disposal. DPR is capped at 1 on phones and 1.5 on desktop; phone shadows use 512px maps. Idle scroll produces no GPU draws. Reduced motion, reading mode and WebGL failure expose the full document. Geometry, materials, textures, shadow maps, renderer and context are released on exit.

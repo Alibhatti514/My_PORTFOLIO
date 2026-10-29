@@ -48,7 +48,7 @@ export default function Credentials() {
     <>
       <section id="credentials" className="section credentials-section">
         <div className="section-top">
-          <span className="eyebrow">05 / CONTINUOUS LEARNING</span>
+          <span className="eyebrow">CONTINUOUS LEARNING</span>
           <span className="mono">EVIDENCE, NOT JUST ENTHUSIASM.</span>
         </div>
         <div className="section-heading">

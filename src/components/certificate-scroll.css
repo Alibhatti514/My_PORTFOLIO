@@ -1,0 +1,40 @@
+/* V11 consumes the existing 120vh chapter slot; it adds no document spacer. */
+.certificate-section-stage,.certificate-wheel-rail,.certificate-wheel-stage {display:contents}
+.cinematic-mode #content-credentials {height:120vh;min-height:120vh}
+.cinematic-mode #content-credentials .credential-copy {top:20vh}
+.cinematic-mode .certificate-wheel-rail {display:block;position:absolute;inset:0;height:120vh;pointer-events:none}
+.cinematic-mode .certificate-wheel-stage {display:block;position:sticky;top:0;height:90vh;width:100%;pointer-events:none}
+.cinematic-mode #content-credentials .certificate-stack {top:13vh;height:62vh}
+.cinematic-mode #content-credentials .featured-index {top:auto;bottom:0}
+
+/* Bring the heading into the transition earlier, then retain its settled position. */
+.cinematic-mode #content-contact {padding-top:12vh}
+.cinematic-mode #content-contact .finale-heading {position:sticky;top:24vh;left:auto;right:auto;margin:0 0 0 2vw}
+
+@media(min-width:760px) and (max-width:1100px) {
+  .cinematic-mode .certificate-wheel-stage {height:81vh}
+  .cinematic-mode #content-credentials .certificate-stack {top:24vh;height:40vh}
+}
+@media(max-width:759px) {
+  /* Hold the complete one-column presentation together, so copy cannot cross the wheel. */
+  .cinematic-mode .certificate-section-stage {
+    display:block;position:sticky;top:0;height:100vh;
+    width:113.63636364%;margin-left:-6.81818182%;
+  }
+  .cinematic-mode .certificate-wheel-rail {height:100vh}
+  .cinematic-mode .certificate-wheel-stage {position:relative;height:100vh}
+  .cinematic-mode #content-credentials .credential-copy {top:47vh}
+  .cinematic-mode #content-credentials .certificate-stack {top:10.5vh;height:27vh}
+  .cinematic-mode #content-credentials .featured-index {top:40vh;bottom:auto}
+  .cinematic-mode #content-contact {padding-top:0}
+  .cinematic-mode #content-contact .finale-heading {margin-left:1vw}
+}
+@media(max-width:759px) and (max-height:740px) {
+  .cinematic-mode #content-credentials .credential-copy {top:46vh}
+  .cinematic-mode #content-credentials .certificate-stack {top:12vh;height:26vh}
+}
+/* display:contents wrappers preserve document flow in reading/reduced-motion mode. */
+.reading-mode #content-credentials :is(.credential-copy,.certificate-stack,.featured-index) {position:relative;inset:auto}
+.reading-mode #content-credentials,.reading-mode #content-contact {min-height:0}
+.reading-mode #content-credentials {padding-bottom:48px}
+.reading-mode #content-contact {padding-top:48px}

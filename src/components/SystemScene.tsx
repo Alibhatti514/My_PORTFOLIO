@@ -49,9 +49,9 @@ export default function SystemScene({ reduced }: { reduced: boolean }) {
           <i />
           <b>⌘</b>
         </div>
-        <span className="scene-label label-interface">01 / INTERFACE</span>
-        <span className="scene-label label-logic">02 / LOGIC</span>
-        <span className="scene-label label-data">03 / DATA</span>
+        <span className="scene-label label-interface">INTERFACE</span>
+        <span className="scene-label label-logic">LOGIC</span>
+        <span className="scene-label label-data">DATA</span>
         <span className="scene-coordinate">FIG. 01 — THE CONNECTED STACK</span>
         <span className="scene-live">
           SYSTEM / {reduced || failed || !interactive ? "STATIC" : "EXPLORABLE"}

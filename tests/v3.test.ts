@@ -13,10 +13,10 @@ test("every branded technology resolves to an authentic local SVG, including cou
       assert.match(readFileSync(path, "utf8"), /<svg/);
     }
   for (const name of [
-    "JavaScript",
+    "JavaScript (ES6+)",
     "TypeScript",
     "Python",
-    "C# 12",
+    "C#",
     ".NET 8",
     "HTML5",
     "CSS3",
@@ -27,13 +27,13 @@ test("every branded technology resolves to an authentic local SVG, including cou
     "SvelteKit",
     "Supabase",
     "Sanity CMS",
-    "Stripe integration",
+    "Stripe Integration",
   ])
     assert.ok(skills.some((s) => s.name === name));
   assert.ok(
     skills
       .filter((s) => s.study)
-      .every((s) => s.category === "Completed study"),
+      .every((s) => ["Languages","Frontend","Backend","Data","Tools"].includes(s.category)),
   );
 });
 test("portrait and page transforms have no jumps or accumulated reverse-scroll state", () => {

@@ -9,11 +9,15 @@
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/*.test.ts",
-    "test:browser": "node scripts/v3-qa.mjs",
+    "test:browser": "node scripts/v8-qa.mjs",
     "test:browser:legacy": "node scripts/browser-qa.mjs",
     "resume": "node scripts/generate-resumes.mjs",
     "audit:certificates": "python3 scripts/build-credential-inventory.py",
-    "test:motion": "node scripts/v3-qa.mjs"
+    "test:motion": "node scripts/v8-spatial-qa.mjs",
+    "record": "node scripts/v8-record.mjs",
+    "test:browser:v5": "node scripts/v5-qa.mjs",
+    "test:production": "node scripts/v8-production-qa.mjs",
+    "test:performance": "node scripts/v8-performance.mjs"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.2.7",
@@ -30,6 +34,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
     "@types/node": "^22.19.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",

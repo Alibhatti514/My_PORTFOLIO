@@ -7,7 +7,7 @@ export interface Skill {
 }
 export const skills: Skill[] = [
   {
-    name: "JavaScript",
+    name: "JavaScript (ES6+)",
     icon: "javascript",
     category: "Languages",
     evidence:
@@ -63,7 +63,7 @@ export const skills: Skill[] = [
       "Original résumé — REST APIs, business logic and third-party services.",
   },
   {
-    name: "REST / JWT",
+    name: "REST APIs",
     category: "Backend",
     evidence:
       "Original résumé — REST APIs, JWT authentication and role-based access control.",
@@ -94,9 +94,9 @@ export const skills: Skill[] = [
     evidence: "Original résumé — API development tools.",
   },
   {
-    name: "C# 12",
+    name: "C#",
     icon: "csharp",
-    category: "Completed study",
+    category: "Languages",
     study: true,
     evidence:
       "Packt C# 12 and .NET 8 specialization; Microsoft backend program. Includes ASP.NET Core and Blazor.",
@@ -104,15 +104,15 @@ export const skills: Skill[] = [
   {
     name: "Svelte 5",
     icon: "svelte",
-    category: "Completed study",
+    category: "Frontend",
     study: true,
     evidence:
       "Packt Svelte 5 & SvelteKit specialization; related Supabase, Sanity CMS and Stripe integration courses.",
   },
   {
-    name: "Express",
+    name: "Express.js",
     icon: "express",
-    category: "Completed study",
+    category: "Backend",
     study: true,
     evidence:
       "Packt — Master Express Framework: Beginner to Advanced with Node.js course.",
@@ -134,7 +134,7 @@ export const skills: Skill[] = [
   {
     name: ".NET 8",
     icon: "dotnet",
-    category: "Completed study",
+    category: "Backend",
     evidence:
       "Packt C# 12 and .NET 8 specialization; Microsoft backend program.",
     study: true,
@@ -142,28 +142,28 @@ export const skills: Skill[] = [
   {
     name: "ASP.NET Core",
     icon: "dotnet",
-    category: "Completed study",
+    category: "Backend",
     evidence: "C# 12 and .NET 8 specialization; web development and APIs.",
     study: true,
   },
   {
     name: "Blazor",
     icon: "blazor",
-    category: "Completed study",
+    category: "Frontend",
     evidence: "Microsoft \u2014 Blazor for Front-End Development.",
     study: true,
   },
   {
     name: "SvelteKit",
     icon: "sveltekit",
-    category: "Completed study",
+    category: "Frontend",
     evidence: "Packt Svelte 5 & SvelteKit specialization.",
     study: true,
   },
   {
     name: "Supabase",
     icon: "supabase",
-    category: "Completed study",
+    category: "Data",
     evidence:
       "Packt \u2014 Full-Stack Web Development with SvelteKit & Supabase.",
     study: true,
@@ -171,20 +171,21 @@ export const skills: Skill[] = [
   {
     name: "Sanity CMS",
     icon: "sanity",
-    category: "Completed study",
+    category: "Tools",
     evidence:
       "Packt \u2014 Build a Developer Portfolio with SvelteKit & Sanity CMS.",
     study: true,
   },
   {
-    name: "Stripe integration",
+    name: "Stripe Integration",
     icon: "stripe",
-    category: "Completed study",
+    category: "Tools",
     evidence:
       "Packt \u2014 Build a Product Landing Page with Stripe Integration.",
     study: true,
   },
 ];
+skills.push({ name: "JWT Authentication", category: "Backend", evidence: "Original résumé — JWT authentication and role-based access control in freelance applications." });
 export const additionalStudy = [
   "ASP.NET Core",
   "Blazor",

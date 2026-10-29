@@ -1,8 +1,12 @@
+import { CertificateSheets } from "./components/CertificateSheets";
+import { AnimatePresence, motion } from "motion/react";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { profile, projects } from "./data/portfolio";
 import { skills, additionalStudy } from "./data/skills";
 import { socials } from "./data/socials";
-import { clamp, panelPose, portraitPose, waypoints } from "./scene/journey";
+import { clamp, portraitPose, waypoints } from "./scene/journey";
+import { projectPose } from "./scene/atrium";
+import { spatialPose, credentialNumber } from "./scene/spatial";
 import {
   CredentialPreview,
   type Credential,
@@ -11,20 +15,9 @@ import featuredCertificates from "./data/featuredCertificates.json";
 import inventoryStats from "./data/inventoryStats.json";
 const CredentialLibrary = lazy(() => import("./components/CredentialLibrary"));
 const JourneyWorld = lazy(() => import("./components/JourneyWorld"));
-const featured = featuredCertificates.sort(
-  (a, b) =>
-    Number(a.issuer === "Duke University") -
-    Number(b.issuer === "Duke University"),
-);
-const categories = [
-  "All",
-  "Languages",
-  "Frontend",
-  "Backend",
-  "Data",
-  "Tools",
-  "Completed study",
-];
+const issuerOrder = ["University of London", "Microsoft", "Duke University", "Packt"];
+const featured = [...featuredCertificates].sort((a,b) => issuerOrder.indexOf(a.issuer) - issuerOrder.indexOf(b.issuer));
+const categories = ["All", "Languages", "Frontend", "Backend", "Data", "Tools"];
 function Socials({ compact = false }: { compact?: boolean }) {
   return (
     <div className={`social-links ${compact ? "compact" : ""}`}>
@@ -65,11 +58,24 @@ export default function App() {
     root = useRef<HTMLDivElement>(null),
     portrait = useRef<HTMLDivElement>(null),
     panels = useRef<(HTMLElement | null)[]>([]),
-    surfaces = useRef<(HTMLDivElement | null)[]>([]),
+    projectStage = useRef<HTMLElement>(null),
+    projectCards = useRef<(HTMLDivElement | null)[]>([]),
+    heroType = useRef<HTMLDivElement>(null),
+    toolkitField = useRef<HTMLDivElement>(null),
+    worldFrame = useRef<((p: number) => void) | null>(null),
     mode = reduced || reading || failed,
     selected = featured[credential];
   const pick = (n: number) =>
     setCredential((n + featured.length) % featured.length);
+  useEffect(() => {
+    const field = toolkitField.current;
+    if (!field) return;
+    const observer = new ResizeObserver(([entry]) => {
+      root.current?.style.setProperty('--toolkit-height', `${entry.borderBoxSize[0].blockSize}px`);
+    });
+    observer.observe(field);
+    return () => observer.disconnect();
+  }, []);
   // Decode and paint the real portrait before loading the optional WebGL enhancement.
   useEffect(() => {
     let first = 0,
@@ -126,14 +132,25 @@ export default function App() {
       }
       root.current?.style.setProperty("--progress", String(p / 7));
       root.current?.setAttribute("data-progress", p.toFixed(5));
+      const spatial = spatialPose(p, innerWidth < 760);
+      root.current?.style.setProperty('--page-perspective', `${spatial.perspective}px`);
+      worldFrame.current?.(p);
       panels.current.forEach((el, i) => {
         if (!el) return;
-        const q = panelPose(p, i);
-        el.style.transform = `translate3d(0,${q.y}vh,${q.z}px) rotateX(${q.rotate}deg)`;
+        const distance = clamp(i - p, -1, 1);
+        // Vertical travel is supplied by the document, depth by the shared material.
+        el.style.transform = `perspective(${spatial.perspective}px) translateZ(${-Math.abs(distance) * 130}px) rotateX(${distance * 5}deg) rotateY(${distance * spatial.lean * 6}deg)`;
         el.style.setProperty("--local", String(p - i));
       });
-      surfaces.current.forEach((el, i) => {
-        if (el) el.style.transform = `translateY(${(i - p) * 108}vh)`;
+      if (heroType.current) heroType.current.style.transform = `translate3d(0,${-p * 120}vh,${-p * 220}px) rotateX(${p * 3}deg)`;
+      if (projectStage.current) {
+        projectStage.current.style.setProperty("--travel", String((p - 3) / 2));
+      }
+      projectCards.current.forEach((el, i) => {
+        if (!el) return;
+        const q = projectPose(p, i, innerWidth < 760);
+        el.style.transform = `translate3d(${q.x}%,${q.y}%,${q.z}px) rotateY(${q.rotateY}deg) rotateX(${q.rotateX}deg)`;
+        el.style.opacity = String(q.opacity);
       });
       if (portrait.current) {
         const q = portraitPose(p, innerWidth < 760);
@@ -145,8 +162,12 @@ export default function App() {
         });
       }
     };
+    const resize = () => {
+      if (height > 0) window.scrollTo({ top: scrollY / height * innerHeight, behavior: 'instant' });
+    };
+    window.addEventListener('resize', resize);
     frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
+    return () => { cancelAnimationFrame(frame); window.removeEventListener('resize', resize); };
   }, [mode]);
   useEffect(() => {
     const f = (e: KeyboardEvent) => {
@@ -158,12 +179,13 @@ export default function App() {
   const go = (id: string) => {
     setMenu(false);
     const i = waypoints.findIndex((w) => w.id === id);
-    if (mode)
-      document
-        .getElementById(`content-${id}`)
-        ?.scrollIntoView({ behavior: "instant" });
+    if (mode) {
+      setActive(Math.max(0,i));
+      const element = i >= 3 && i <= 5 ? projectCards.current[i-3] : document.getElementById(`content-${id}`);
+      element?.scrollIntoView({ behavior: "instant" });
+    }
     else {
-      history.replaceState(null, "", `#${id}`);
+      history.pushState(null, "", `#${id}`);
       window.scrollTo({
         top: Math.max(0, i) * innerHeight * 1.2,
         behavior: reduced ? "instant" : "smooth",
@@ -171,26 +193,26 @@ export default function App() {
     }
   };
   useEffect(() => {
-    const id = location.hash.slice(1);
-    if (waypoints.some((w) => w.id === id)) {
-      const i = waypoints.findIndex((w) => w.id === id);
-      if (!mode)
-        window.scrollTo({ top: i * innerHeight * 1.2, behavior: "instant" });
-    }
+    const restore = () => {
+      const i = waypoints.findIndex(w => w.id === location.hash.slice(1));
+      if (i >= 0 && !mode) window.scrollTo({ top: i * innerHeight * 1.2, behavior: "instant" });
+    };
+    restore();
+    window.addEventListener('popstate', restore);
+    window.addEventListener('hashchange', restore);
+    return () => {
+      window.removeEventListener('popstate', restore);
+      window.removeEventListener('hashchange', restore);
+    };
   }, [mode]);
   const attrs = (i: number) => ({
     ref: (el: HTMLElement | null) => {
       panels.current[i] = el;
     },
-    className: `scene-panel panel-${i} ${i === 4 || i === 6 ? "wine-scene" : ""}`,
-    style: mode
-      ? undefined
-      : ({
-          transform: `translate3d(0,${panelPose(progress.current, i).y}vh,${panelPose(progress.current, i).z}px) rotateX(${panelPose(progress.current, i).rotate}deg)`,
-          "--local": progress.current - i,
-        } as React.CSSProperties),
-    inert: !mode && Math.abs(active - i) > 0,
-    "aria-hidden": !mode && Math.abs(active - i) > 0 ? true : undefined,
+    className: `scene-panel panel-${i}`,
+    style: mode ? undefined : ({ "--scene-index": i } as React.CSSProperties),
+    inert: !mode && Math.abs(active - i) > 1,
+    "aria-hidden": !mode && Math.abs(active - i) > 1 ? true : undefined,
   });
   return (
     <div
@@ -296,21 +318,13 @@ export default function App() {
       {!mode && (
         <>
           <div className="world-surfaces" aria-hidden="true">
-            {waypoints.map((w, i) => (
-              <div
-                key={w.id}
-                ref={(el) => {
-                  surfaces.current[i] = el;
-                }}
-                className={`scene-surface surface-${i}`}
-                style={{ transform: `translateY(${i * 108}vh)` }}
-              />
-            ))}
+            <div className="page-material" />
           </div>
           {worldEnabled && (
             <Suspense fallback={null}>
               <JourneyWorld
                 progress={progress}
+                renderFrame={worldFrame}
                 paused={library || !!preview}
                 onReady={() => setReady(true)}
                 onFail={() => setFailed(true)}
@@ -335,6 +349,7 @@ export default function App() {
           </div>
         </>
       )}
+      {!mode && <div className="hero-profession" ref={heroType} aria-label="I’m a Full Stack Developer"><span><small>I’M A</small>FULL<br/><em>STACK</em></span><span><small>WEB /</small>DEVELOPER.</span></div>}
       <main className="story-content" id="main">
         <section id="content-home" {...attrs(0)}>
           <div className="hero-topline">
@@ -352,18 +367,13 @@ export default function App() {
             />
           )}
           <div className="hero-left">
-            <span className="eyebrow">01 / A HUMAN APPROACH</span>
             <h2>
-              Thoughtful code.
+              Building Digital Experiences.
               <br />
-              <em>Lasting impressions.</em>
+              <em>Engineering Reliable Solutions.</em>
             </h2>
             <p>
-              I’m Muhammad Ali Ejaz.
-              <br />
-              Full Stack Web Developer, connecting
-              <br />
-              ideas, interfaces and the systems beneath.
+              Full-Stack Web Developer specializing in modern frontend applications, backend services, RESTful APIs, and database-driven solutions.
             </p>
             <Socials compact />
           </div>
@@ -372,9 +382,9 @@ export default function App() {
               ✳
             </span>
             <p>
-              Built with curiosity.
+              Frontend precision.
               <br />
-              Shaped with intention.
+              Backend reliability.
             </p>
             <button
               className="circle-button"
@@ -393,26 +403,17 @@ export default function App() {
           </div>
         </section>
         <section id="content-about" {...attrs(1)}>
-          <div className="about-side">
-            <span className="big-index">01</span>
-            <span className="eyebrow">A LITTLE ABOUT ME</span>
-          </div>
           <div className="scene-copy about-copy">
-            <span className="eyebrow">THE HUMAN, BEFORE THE STACK</span>
             <h2>
-              Curiosity is
+              Full-Stack Development.
               <br />
-              the <em>constant.</em>
+              <em>From Concept to Deployment.</em>
             </h2>
             <p className="lead">
-              I connect what people see with
-              <br />
-              the systems that make it work.
+              I develop responsive web applications by combining modern frontend technologies with reliable backend architecture.
             </p>
             <p>
-              React and Next.js interfaces. Node.js and NestJS services.
-              PostgreSQL databases with Prisma. From a client’s first idea to
-              responsive experiences, secure APIs and maintainable code.
+              My technical experience includes React, Next.js, Node.js, NestJS, PostgreSQL, and Prisma, alongside continued development in C#, ASP.NET Core, and Blazor.
             </p>
             <details>
               <summary>
@@ -443,12 +444,12 @@ export default function App() {
         </section>
         <section id="content-skills" {...attrs(2)}>
           <div className="skills-heading">
-            <span className="eyebrow">02 / THE TOOLS BEHIND THE THOUGHT</span>
             <h2>
-              Different tools.
+              Technologies &
               <br />
-              <em>One connected system.</em>
+              <em>Technical Expertise.</em>
             </h2>
+            <p>A comprehensive technical toolkit covering programming languages, frontend frameworks, backend development, databases, and development tools.</p>
           </div>
           <div className="skill-category" aria-label="Filter technologies">
             {categories.map((c) => (
@@ -458,7 +459,7 @@ export default function App() {
                 onClick={() => {
                   setCategory(c);
                   const n = skills.findIndex(
-                    (s) => s.icon && (c === "All" || s.category === c),
+                    (s) => (c === "All" || s.category === c),
                   );
                   if (n >= 0) setSkill(n);
                 }}
@@ -467,15 +468,16 @@ export default function App() {
               </button>
             ))}
           </div>
-          <div
+          <motion.div
+            ref={toolkitField}
             className="technology-field"
             role="group"
             aria-label="Explore technical skills"
           >
-            {skills.map(
+            <AnimatePresence mode="popLayout">{skills.map(
               (s, i) =>
-                s.icon && (
-                  <button
+                (category === "All" || s.category === category) && (
+                  <motion.button layout="position" initial={{opacity:0, z:-130, scale:.7}} animate={{opacity:1,z:0,scale:1}} exit={{opacity:0,scale:.6,z:-100}} transition={{duration:mode?0:.35}}
                     key={s.name}
                     className={`technology ${skill === i ? "selected" : ""}`}
                     style={
@@ -484,24 +486,18 @@ export default function App() {
                         "--tilt": `${((i % 3) - 1) * 5}deg`,
                       } as React.CSSProperties
                     }
-                    hidden={category !== "All" && s.category !== category}
                     onClick={() => setSkill(i)}
                     onFocus={() => setSkill(i)}
                     aria-pressed={skill === i}
-                    aria-label={`${s.name}${s.study ? ", completed study" : ""}`}
+                    aria-label={s.name}
                   >
-                    <img
-                      src={`/assets/brands/${s.icon}.svg`}
-                      alt=""
-                      loading="lazy"
-                    />
+                    {s.icon ? <img src={`/assets/brands/${s.icon}.svg`} alt="" loading="lazy" /> : <b className="concept-mark" aria-hidden="true">{s.name === "REST APIs" ? "{ }" : "JWT"}</b>}
                     <span>{s.name}</span>
-                    {s.study && <small aria-hidden="true">STUDY</small>}
-                  </button>
+                  </motion.button>
                 ),
-            )}
-          </div>
-          <div className="skill-inspector" aria-live="polite">
+            )}</AnimatePresence>
+          </motion.div>
+          <div className="skill-inspector" style={{"--skill-rows": Math.ceil(skills.filter(s => category === "All" || s.category === category).length / 6)} as React.CSSProperties} aria-live="polite">
             <span className="eyebrow">
               {skills[skill].category} /{" "}
               {skills[skill].study
@@ -517,143 +513,35 @@ export default function App() {
             </details>
           </div>
         </section>
-        {projects.map((project, i) => (
-          <section
-            id={`content-${waypoints[i + 3].id}`}
-            {...attrs(i + 3)}
-            key={project.id}
-          >
-            <div className="scene-copy project-copy">
-              <span className="eyebrow">03 / SELECTED WORK / 0{i + 1}</span>
-              <h2>
-                {i === 0 ? (
-                  <>
-                    Ideas, delivered.
-                    <br />
-                    <em>Connections, made.</em>
-                  </>
-                ) : i === 1 ? (
-                  <>
-                    Technology.
-                    <br />
-                    <em>With purpose.</em>
-                  </>
-                ) : (
-                  <>
-                    A little logic.
-                    <br />
-                    <em>A little play.</em>
-                  </>
-                )}
-              </h2>
-              <h3>{project.name}</h3>
-              <p className="lead">{project.description}</p>
-              <p className="artwork-note">
-                Original project identity / abstract visual study
-              </p>
-              {project.url ? (
-                <a
-                  className="text-link"
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visit project ↗
-                </a>
-              ) : (
-                <span className="project-status">
-                  Public project link unavailable
-                </span>
-              )}
-              <div className="project-pagination" aria-label="Choose project">
-                {projects.map((pr, j) => (
-                  <button
-                    key={pr.id}
-                    onClick={() => go(waypoints[j + 3].id)}
-                    aria-label={`Show ${pr.name}`}
-                    aria-pressed={i === j}
-                  >
-                    0{j + 1}
-                    <span>{pr.name}</span>
-                  </button>
-                ))}
-              </div>
-              <button
-                className="text-link"
-                onClick={() => go(waypoints[i + 4].id)}
-              >
-                {i === 2 ? "Continue to the collection" : "Next project"} ↗
-              </button>
-            </div>
-            <div className={`project-art project-art-${i}`}>
-              <span className="project-giant" aria-hidden="true">
-                {["CONNECT", "PURPOSE", "PLAY"][i]}
-              </span>
-              <img
-                src={
-                  [
-                    "/assets/optimized/rcs.webp",
-                    "/assets/optimized/goldadan.webp",
-                    "/assets/optimized/bhabhi.webp",
-                  ][i]
-                }
-                alt={`${project.name} original project artwork`}
-                loading="lazy"
-              />
-              {i === 0 ? (
-                <div className="route-lines" aria-hidden="true">
-                  <i />
-                  <i />
-                  <i />
-                  <b>KHANEWAL</b>
-                  <b>CONNECTED POSSIBILITIES</b>
-                </div>
-              ) : i === 1 ? (
-                <div className="architecture-lines" aria-hidden="true">
-                  <i />
-                  <i />
-                  <i />
-                </div>
-              ) : (
-                <div className="playing-marks" aria-hidden="true">
-                  <span>♠</span>
-                  <span>♥</span>
-                  <span>♣</span>
-                </div>
-              )}
-              <span className="art-caption">
-                0{i + 1} —{" "}
-                {
-                  [
-                    "ROUTES / SYSTEMS / MOVEMENT",
-                    "SECURITY / SOFTWARE / ENTERPRISE",
-                    "RULES / INTERACTION / PLAY",
-                  ][i]
-                }
-              </span>
-            </div>
-          </section>
-        ))}
+        <div className="project-runway"><section id="content-work" ref={projectStage} className="scene-panel project-stage" inert={!mode && (active < 3 || active > 5)} aria-hidden={!mode && (active < 3 || active > 5) ? true : undefined}>
+          <div className="project-stage-heading"><span className="eyebrow">SELECTED PROJECTS</span></div>
+          <div className="project-space">
+            {projects.map((project,i) => <div key={project.id} ref={el => {projectCards.current[i] = el;}} className={`project-composition composition-${i}`} inert={!mode && active !== i+3} aria-hidden={!mode && active !== i+3 ? true : undefined} style={mode ? undefined : {opacity:i===0?1:0, transform:`translate3d(${i*68}%,0,${-i*420}px)`}}>
+              <div className="project-identity"><span className="eyebrow">{["LOGISTICS / CONNECTION","ENTERPRISE / TECHNOLOGY","INTERACTION / PLAY"][i]}</span><h2>{project.name}</h2><p>{project.description}</p><p className="project-evidence">Original project identity</p>{project.url ? <a className="text-link" href={project.url} target="_blank" rel="noopener noreferrer">Visit project ↗</a> : <span className="project-status">Public project link unavailable</span>}</div>
+              <div className="project-object"><img src={["/assets/optimized/rcs.webp","/assets/optimized/goldadan.webp","/assets/optimized/bhabhi.webp"][i]} alt={`${project.name} original project artwork`} loading="lazy"/></div>
+            </div>)}
+          </div>
+          <nav className="project-navigation" aria-label="Choose project">{projects.map((project,i) => <button key={project.id} onClick={() => go(waypoints[i+3].id)} aria-label={`Show ${project.name}`} aria-pressed={Math.min(2,Math.max(0,active-3))===i}>{project.name}<b aria-hidden="true">↗</b></button>)}</nav>
+        </section>
+        </div>
         <section id="content-credentials" {...attrs(6)}>
+          <div className="certificate-section-stage">
           <div className="scene-copy credential-copy">
-            <span className="eyebrow">04 / A RECORD OF CURIOSITY</span>
             <h2>
-              Always
+              Professional Certifications
               <br />
-              <em>in pursuit.</em>
+              <em>& Specializations.</em>
             </h2>
             <p>
-              Three professional programs. Four specializations.
-              <br />
-              Two Duke University guided projects.
+              Verified professional certificates, specializations, and guided projects from recognized institutions, including Microsoft, Duke University, the University of London, and Packt.
             </p>
-            <div className="active-credential" aria-live="polite">
+            <motion.div key={selected.id} initial={{opacity:mode?1:0,y:mode?0:8}} animate={{opacity:1,y:0}} transition={{duration:mode?0:.35}} className="active-credential" aria-live="polite">
               <span className="eyebrow">
                 {selected.issuer} / {selected.type}
               </span>
               <h3>{selected.title}</h3>
               <time>{selected.date}</time>
-            </div>
+            </motion.div>
             <div className="carousel-controls">
               <button
                 onClick={() => pick(credential - 1)}
@@ -685,8 +573,13 @@ export default function App() {
               Explore all {inventoryStats.count} credentials <span>↗</span>
             </button>
           </div>
+          <div className="certificate-wheel-rail">
+          <div className="certificate-wheel-stage">
           <div
             className="certificate-stack"
+            tabIndex={0}
+            role="group"
+            onKeyDown={e => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") {e.preventDefault(); pick(credential + (e.key === "ArrowRight" ? 1 : -1));}}}
             onClickCapture={(e) => {
               if (e.detail > 0 && e.currentTarget.dataset.dragged === "true") {
                 e.preventDefault();
@@ -699,6 +592,7 @@ export default function App() {
               e.currentTarget.dataset.y = String(e.clientY);
               e.currentTarget.dataset.dragged = "false";
               e.currentTarget.dataset.dragging = "true";
+              e.currentTarget.dataset.certificateIndex = (e.target as Element).closest<HTMLElement>("[data-certificate-index]")?.dataset.certificateIndex ?? "";
               e.currentTarget.dataset.inspect = String(
                 (e.target as Element).closest(".sheet-front") !== null,
               );
@@ -735,25 +629,13 @@ export default function App() {
                 e.currentTarget.dataset.inspect === "true"
               )
                 setPreview(selected);
+              else if (Math.hypot(dx, dy) < 12 && e.currentTarget.dataset.certificateIndex !== "")
+                pick(Number(e.currentTarget.dataset.certificateIndex));
               if (e.currentTarget.hasPointerCapture(e.pointerId))
                 e.currentTarget.releasePointerCapture(e.pointerId);
             }}
           >
-            <div className="paper-sheet sheet-back" />
-            <div className="paper-sheet sheet-mid" />
-            <button
-              key={selected.id}
-              className="paper-sheet sheet-front"
-              onClick={() => setPreview(selected)}
-              aria-label={`Inspect ${selected.title} certificate`}
-            >
-              <img
-                src={selected.preview}
-                alt={`Original ${selected.issuer} certificate: ${selected.title}`}
-                loading="lazy"
-                draggable="false"
-              />
-            </button>
+            <CertificateSheets certificates={featured} active={credential} reduced={mode} inspect={setPreview} select={pick} />
             <span className="eyebrow">
               DRAG TO DISCOVER / {selected.issuer.toUpperCase()}
             </span>
@@ -766,21 +648,19 @@ export default function App() {
                 aria-pressed={credential === i}
                 aria-label={`Show ${c.title}, ${c.issuer}`}
               >
-                {c.issuer === "Duke University"
-                  ? "DUKE"
-                  : String(i + 1).padStart(2, "0")}
+                {credentialNumber(i)}
               </button>
             ))}
           </div>
+          </div>
+          </div>
+          </div>
         </section>
         <section id="content-contact" {...attrs(7)}>
-          <span className="eyebrow finale-eyebrow">
-            05 / EVERY ENDING, A NEW BEGINNING
-          </span>
           <h2 className="finale-heading">
-            Let’s make
+            Your next idea.
             <br />
-            <em>something matter.</em>
+            <em>Built to work.</em>
           </h2>
           <div className="finale-contact">
             <a className="email-link" href={`mailto:${profile.email}`}>
@@ -853,9 +733,6 @@ export default function App() {
         <div className="journey-line">
           <i />
         </div>
-        <span className="journey-label">
-          {String(active + 1).padStart(2, "0")} / {waypoints[active].name}
-        </span>
         <button
           className="next-scene"
           onClick={() => go(waypoints[Math.min(7, active + 1)].id)}

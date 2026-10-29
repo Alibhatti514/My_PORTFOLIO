@@ -1,0 +1,4 @@
+import {chromium} from 'playwright';import fs from 'node:fs/promises';
+await fs.mkdir('docs/continuous-world/qa',{recursive:true});const b=await chromium.launch({channel:'chrome',headless:true});const p=await b.newPage({viewport:{width:1440,height:1000}});p.on('pageerror',e=>console.log('ERROR',e.message));p.on('console',m=>{if(m.type()==='error')console.log('CONSOLE',m.text())});await p.goto('http://127.0.0.1:4173');await p.waitForTimeout(2500);
+for(let i=0;i<8;i++){await p.evaluate(i=>scrollTo({top:i*innerHeight*1.1,behavior:'instant'}),i);await p.waitForTimeout(900);await p.screenshot({path:`docs/continuous-world/qa/desktop-${i}.png`});}
+await p.setViewportSize({width:390,height:844});for(const i of [0,1,2,3,6,7]){await p.evaluate(i=>scrollTo({top:i*innerHeight*1.1,behavior:'instant'}),i);await p.waitForTimeout(900);await p.screenshot({path:`docs/continuous-world/qa/mobile-${i}.png`});}await b.close();

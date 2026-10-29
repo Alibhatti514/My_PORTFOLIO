@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "Premium",
+    "pages": [
+      {
+        "height": 1123,
+        "scrollHeight": 1123,
+        "offenders": []
+      },
+      {
+        "height": 1123,
+        "scrollHeight": 1123,
+        "offenders": []
+      }
+    ]
+  },
+  {
+    "mode": "ATS",
+    "pages": [
+      {
+        "height": 1123,
+        "scrollHeight": 1123,
+        "offenders": []
+      },
+      {
+        "height": 1123,
+        "scrollHeight": 1123,
+        "offenders": []
+      }
+    ]
+  }
+]

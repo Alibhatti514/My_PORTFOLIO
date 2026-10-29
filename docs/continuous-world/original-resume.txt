@@ -1,0 +1,52 @@
+MUHAMMAD ALI EJAZ
+Full Stack Web Developer with experience building scalable web
+applications using NestJS, Node.js, React.js, Next.js, TypeScript,
+PostgreSQL, and Prisma ORM. Skilled in developing REST APIs,
+responsive user interfaces, and secure backend systems using JWT
+Authentication. Passionate about writing clean, maintainable code,
+solving real-world problems, and continuously learning modern web
+technologies.
+
+
+Work Experience                                                             Contact
+Freelance Full Stack Web Developer, Upwork                                  Khanewal, Pakistan
+Lahore                                                                      +92317-2003786
+09/2025 – 06/2026                                                           dev._.ali@icloud.com
+     Developed responsive full-stack web applications using React.js,       GitHub
+     Next.js, HTML5, CSS3, JavaScript (ES6+), and TypeScript.
+     Built scalable backend services and RESTful APIs using NestJS and
+     Node.js.
+                                                                            Skills
+     Designed and integrated PostgreSQL databases using Prisma ORM          Frontend:
+     for secure and efficient data management.
+                                                                            • HTML5 • CSS3
+     Implemented JWT Authentication and role-based access control
+     while optimizing application performance.                              • JavaScript (ES6+)
+     Collaborated with clients to deliver high-quality solutions on time,   • TypeScript
+     following clean coding and best development practices.
+                                                                            • React.js • Next.js
+Freelance Full Stack Web Developer, Fiverr                                  Backend:
+Lahore                                                                      • Node.js • NestJS
+09/2025 – 06/2026
+                                                                            • REST APIs
+     Designed and developed custom full-stack web applications tailored
+     to diverse client requirements.                                        • JWT Authentication
+     Built interactive and responsive user interfaces using React.js,       Database:
+     Next.js, HTML5, CSS3, JavaScript (ES6+), and TypeScript.
+     Developed backend APIs, integrated third-party services, and
+                                                                            • PostgreSQL • Prisma ORM
+     managed business logic using NestJS and Node.js.                       Tools:
+     Managed PostgreSQL databases with Prisma ORM, ensuring secure,         • Git • GitHub • Postman
+     reliable, and optimized application performance.
+     Maintained effective client communication, incorporated feedback,
+     and delivered scalable, well-documented projects on schedule.          Programming
+                                                                            Languages
+Education                                                                   JavaScript (ES6+)
+Punjab University, Bachelor in Computer Science
+Lahore, Pakistan                                                            TypeScript
+2021 – 2025
+                                                                            Python
+Hawk College, Intermediate in Computer Science (ICS)
+Khanewal, Pakistan
+2018 – 2020
+

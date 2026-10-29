@@ -1,0 +1,30 @@
+4 Courses
+Svelte 5 & SvelteKit - The Complete
+Fundamentals Guide
+Build a Product Landing Page with Stripe
+Integration
+Build a Developer Portfolio with SvelteKit
+& Sanity CMS
+Full-Stack Web Development with
+SvelteKit & Supabase
+Oct 27, 2026
+Muhammad Ali Ejaz Bhatti
+has successfully completed the online Specialization
+Svelte 5 & SvelteKit For
+Hands-On Modern Web
+Development
+Congratulations on completing Svelte 5 & SvelteKit For Hands-On
+Modern Web Development! You’ve gained hands-on experience in
+building responsive and scalable web applications using the latest
+features in Svelte 5 and SvelteKit. From mastering reactive state and
+templating to integrating APIs, Stripe, and deploying to Vercel,
+you’ve built real-world projects that demonstrate your full-stack
+capabilities. With advanced skills in component design, data
+fetching, and user authentication, you are now equipped to
+confidently tackle modern web development challenges.
+This certificate attests to the learner’s completion of an online program delivered via Coursera. It does not constitute
+formal enrollment at any university or entity and does not itself grant academic credit, grades, or a degree. Institutions
+or organizations may, at their discretion, recognize this learning toward their own programs or credentials.
+Verify this certificate at:
+https://coursera.org/verify/specializ
+ation/XS0B6VRNGV7U

@@ -1,0 +1,25 @@
+3 Courses
+Foundations of Node.js Development
+Building Robust Node.js Applications
+Node.js in Action: Real-World
+Development
+Oct 23, 2026
+Muhammad Ali Ejaz Bhatti
+has successfully completed the online Specialization
+Mastering Node.js Web
+Development
+Congratulations on completing the Mastering Node.js Web
+Development specialization. Learners have developed a
+comprehensive understanding of Node.js, from foundational
+concepts to advanced application development. They applied their
+skills by building robust web applications, working with databases,
+and creating RESTful services. By completing a fully deployable
+SportsStore project, learners demonstrated the ability to integrate
+dynamic, secure features and deploy full-stack applications using
+Node.js in real-world scenarios.
+This certificate attests to the learner’s completion of an online program delivered via Coursera. It does not constitute
+formal enrollment at any university or entity and does not itself grant academic credit, grades, or a degree. Institutions
+or organizations may, at their discretion, recognize this learning toward their own programs or credentials.
+Verify this certificate at:
+https://coursera.org/verify/specializ
+ation/G1FBMPY7J30J

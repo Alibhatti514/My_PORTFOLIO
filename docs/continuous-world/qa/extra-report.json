@@ -1,0 +1,8 @@
+{
+  "touchSwipe": true,
+  "mobileMenu": true,
+  "scrollRotatesCredentials": true,
+  "frameMedianMs": 16.699999999999818,
+  "frameP95Ms": 16.700000000000728,
+  "initialNoWebGLFallback": true
+}

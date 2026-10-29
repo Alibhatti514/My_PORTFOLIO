@@ -1,0 +1,65 @@
+ALI  BHATTI  / SOFTWARE DEVELOPMENT
+MUHAMMAD ALI EJAZ
+Full Stack Web Developer
+Khanewal, Pakistan · +92 317 2003786 · dev._.ali@icloud.com
+github.com/Alibhatti514 · LinkedIn: Muhammad Ali Ejaz Bhatti
+Full Stack Web Developer building responsive React and Next.js interfaces, Node.js and NestJS services,
+and PostgreSQL databases with Prisma ORM. Experienced with REST APIs, JWT authentication, client
+collaboration, and maintainable code.
+PROFESSIONAL EXPERIENCE
+Freelance Full Stack Web Developer Sep 2025 – Jun 2026
+Upwork · Lahore, Pakistan
+Developed responsive web applications with React.js, Next.js, HTML5, CSS3, JavaScript, and TypeScript.
+Built Node.js and NestJS REST APIs and integrated PostgreSQL databases with Prisma ORM.
+Implemented JWT authentication and role-based access control; collaborated with clients on maintainable
+solutions.
+Freelance Full Stack Web Developer Sep 2025 – Jun 2026
+Fiverr · Lahore, Pakistan
+Built custom full stack applications and responsive interfaces around client requirements.
+Developed backend APIs, integrated third-party services, and managed business logic with NestJS and
+Node.js.
+Managed PostgreSQL data with Prisma ORM, incorporated feedback, and maintained client communication
+and project documentation.
+TECHNICAL SKILLS
+Languages: JavaScript (ES6+), TypeScript, Python
+Frontend: HTML5, CSS3, React.js, Next.js
+Backend: Node.js, NestJS, REST APIs, JWT
+Authentication
+Data & tools: PostgreSQL, Prisma ORM, Git, GitHub,
+Postman
+Completed study: C# 12, .NET 8, ASP.NET Core, Blazor,
+Svelte 5, SvelteKit
+EDUCATION
+Bachelor in Computer Science 2021 – 2025
+Punjab University · Lahore, Pakistan
+Intermediate in Computer Science
+(ICS)
+2018 – 2020
+Hawk College · Khanewal, Pakistan
+MUHAMMAD ALI EJAZ · ALI BHATTI EXPERIENCE & FOUNDATIONS / 01
+ALI  BHATTI  / SOFTWARE DEVELOPMENT
+MUHAMMAD ALI EJAZ 02
+SELECTED PROJECTS
+RCS CARGO
+Logistics web project with an authentic brand identity and a focus on connected routes and movement.
+GOLDADAN
+Company website presenting security, software, hardware, and enterprise technology services.
+BHABHI THULLA
+Card-game project with a playful visual identity and interactive presentation.
+PROFESSIONAL CERTIFICATIONS
+Completed programs · Coursera · October 2026
+Microsoft Back-End Developer
+Microsoft · Professional Certificate · Oct 24, 2026
+Microsoft Front-End Developer
+Microsoft · Professional Certificate · Oct 28, 2026
+Microsoft Full-Stack Developer
+Microsoft · Professional Certificate · Oct 26, 2026
+C# 12 and .NET 8 Cross-Platform Development Fundamentals
+Packt · Specialization · Oct 27, 2026
+Full-Stack Web Development
+University of London · Specialization · Oct 28, 2026
+Mastering Node.js Web Development
+Packt · Specialization · Oct 23, 2026
+Svelte 5 & SvelteKit For Hands-On Modern Web Development
+Packt · Specialization · Oct 27, 2026
+dev._.ali@icloud.com PROJECTS & CREDENTIALS / 02

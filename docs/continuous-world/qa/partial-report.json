@@ -1,0 +1,71 @@
+{
+  "cameraPositions": [
+    "0.000,0.300,12.500",
+    "1.700,0.500,10.700",
+    "-0.700,1.000,13.800",
+    "1.200,0.700,11.700",
+    "-1.000,0.400,11.300",
+    "0.800,0.800,11.800",
+    "0.000,2.000,13.000",
+    "0.000,0.300,12.500"
+  ],
+  "continuity": [
+    {
+      "boundary": 0,
+      "cameraDelta": 0.11143608033307674
+    },
+    {
+      "boundary": 1,
+      "cameraDelta": 0.17830591689565345
+    },
+    {
+      "boundary": 2,
+      "cameraDelta": 0.12824195881223813
+    },
+    {
+      "boundary": 3,
+      "cameraDelta": 0.10159232254457039
+    },
+    {
+      "boundary": 4,
+      "cameraDelta": 0.08610458756651697
+    },
+    {
+      "boundary": 5,
+      "cameraDelta": 0.08442748367682178
+    },
+    {
+      "boundary": 6,
+      "cameraDelta": 0.07940403012442124
+    }
+  ],
+  "reverseCamera": true,
+  "certificateDownloads": 40,
+  "resumeDownloads": true,
+  "accessibility": [
+    {
+      "scene": 0,
+      "violations": []
+    },
+    {
+      "scene": 1,
+      "violations": []
+    },
+    {
+      "scene": 2,
+      "violations": []
+    },
+    {
+      "scene": 3,
+      "violations": []
+    },
+    {
+      "scene": 6,
+      "violations": []
+    },
+    {
+      "scene": 7,
+      "violations": []
+    }
+  ]
+}

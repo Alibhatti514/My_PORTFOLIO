@@ -1,0 +1,34 @@
+6 Courses
+Foundations of Coding Front-
+End
+Introduction to Programming
+With C#
+Introduction to Web
+Development
+Blazor for Front-End
+Development
+UI/UX Design Principles
+Web Application Security
+Microsoft
+Oct 28, 2026
+Muhammad Ali Ejaz Bhatti
+has successfully completed the online Professional Certificate
+Microsoft Front-End
+Developer
+Those who have earned this professional certificate have
+demonstrated their job readiness through hands-on experience and
+practical application. They possess a strong foundation in front-end
+development, including building responsive, user-friendly websites,
+implementing advanced UI/UX design principles, and ensuring web
+accessibility. They are proficient in modern web technologies such as
+HTML, CSS, JavaScript, C#, and Blazor and have applied these skills to
+create dynamic web applications. They have also leveraged Microsoft
+Copilot for coding, debugging, and optimizing their projects. This
+certification proves their ability to develop secure, efficient, and
+interactive front-end applications.
+This certificate attests to the learner’s completion of an online program delivered via Coursera. It does not constitute
+formal enrollment at any university or entity and does not itself grant academic credit, grades, or a degree. Institutions
+or organizations may, at their discretion, recognize this learning toward their own programs or credentials.
+Verify this certificate at:
+https://coursera.org/verify/professio
+nal-cert/ZXAEPXOO1ON9

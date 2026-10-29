@@ -1,0 +1,211 @@
+/* V7 — folded atrium. Real document travel, with a single optional 3D installation. */
+.cinematic-mode .page-material {background:var(--cream)}
+.cinematic-mode .journey-world {position:fixed;inset:0;z-index:1;opacity:1;pointer-events:none}
+.cinematic-mode .story-content {z-index:3}
+.cinematic-mode .hero-profession {z-index:2}
+.cinematic-mode .scene-copy:before,.cinematic-mode .skill-inspector:before {display:none}
+.cinematic-mode .hero-left {width:31%;top:66%;bottom:auto}
+.cinematic-mode .hero-left h2 {font-size:clamp(18px,1.65vw,28px);line-height:1.2;letter-spacing:-.65px}
+.cinematic-mode .hero-left p {font-size:11px;line-height:1.8;max-width:350px}
+.cinematic-mode .hero-left .social-links {display:flex;margin-top:14px}
+.cinematic-mode .hero-right {right:8%;bottom:21%}
+.cinematic-mode .hero-right .tiny-star {display:none}
+.cinematic-mode .hero-name {top:18%;font-size:clamp(70px,8.3vw,145px)}
+.cinematic-mode .hero-topline {top:14%}
+.cinematic-mode .hero-profession {padding-top:39vh}
+.cinematic-mode .hero-bottom {bottom:6%}
+.cinematic-mode .about-copy {left:46%;width:45%;top:24%;max-height:none;overflow:visible}
+.cinematic-mode .about-copy h2 {font-size:clamp(36px,3.7vw,64px);line-height:1.08;margin:0 0 28px}
+.cinematic-mode .about-copy>.lead {font-size:16px;max-width:530px}
+.cinematic-mode .about-copy>p {max-width:520px;font-size:13px}
+.cinematic-mode .about-copy details {max-width:520px;background:#f7f0e6e8}
+.cinematic-mode .about-copy .text-link {margin-top:12px}
+.cinematic-mode .skills-heading {top:16%;left:8%;right:8%;display:flex;align-items:flex-end;justify-content:space-between;gap:8%}
+.cinematic-mode .skills-heading h2 {font-size:clamp(36px,3.8vw,64px);margin:0;line-height:1.08;flex:0 0 55%}
+.skills-heading>p {font-size:12px;max-width:360px;padding-bottom:7px}
+.cinematic-mode .skill-category {left:8%;right:8%;top:37%;gap:32px}
+.cinematic-mode .technology-field {left:8%;top:47%;width:58%;gap:12px 10px;max-height:none}
+.cinematic-mode .technology {flex:0 0 calc(16.6667% - 10px);min-height:70px;border-radius:0;background:#f7f0e677;box-shadow:inset 0 -1px #581c3220;transform:none}
+.cinematic-mode .technology img {width:29px;height:29px}
+.cinematic-mode .technology span {font-size:9px;line-height:1.4}
+.cinematic-mode .technology.selected {background:#e9dccbcc;box-shadow:inset 0 -2px var(--wine)}
+.cinematic-mode .skill-inspector {left:71%;right:8%;top:47%;padding:0 0 0 22px;border:none;border-left:1px solid var(--line);background:none;max-height:none;overflow:visible}
+.cinematic-mode .skill-inspector h3 {font-size:clamp(23px,2.4vw,38px)}
+.cinematic-mode .skill-inspector p {font-size:12px;line-height:1.8}
+.cinematic-mode .skill-inspector .eyebrow {font-size:7px;letter-spacing:1px}
+.cinematic-mode .project-stage {overflow:clip}
+.cinematic-mode .project-stage-heading {top:16%;left:8%;right:8%;justify-content:flex-start}
+.cinematic-mode .project-space {inset:25% 8% 22%;perspective:1400px;overflow:visible}
+.cinematic-mode .project-composition {grid-template-columns:1fr 1.1fr;gap:8%;transform-origin:50% 60%}
+.cinematic-mode .project-identity h2 {font-size:clamp(45px,5.9vw,100px);letter-spacing:-.045em;margin:22px 0}
+.cinematic-mode .project-identity p {font-size:14px;line-height:1.9}
+.cinematic-mode .project-identity .project-evidence {font-size:8px;margin-top:25px}
+.cinematic-mode .project-status {font-size:10px;color:var(--muted)}
+.cinematic-mode .project-object {transform:translateZ(65px) rotateY(-8deg);height:100%}
+.cinematic-mode .project-object img {width:100%;height:80%;filter:drop-shadow(20px 35px 18px #581c3225)}
+.cinematic-mode .composition-1 img {filter:url(#identity-ink) drop-shadow(20px 35px 18px #581c3225)}
+.cinematic-mode .composition-2 img {max-width:330px;max-height:330px}
+.cinematic-mode .project-navigation {left:8%;right:8%;bottom:12%;gap:35px}
+.cinematic-mode .project-navigation button {font-size:11px;opacity:1;color:var(--muted)}
+.cinematic-mode .project-navigation button[aria-pressed=true] {color:var(--wine)}
+.cinematic-mode .credential-copy {left:8%;top:20%;width:39%;max-height:none;overflow:visible}
+.cinematic-mode .credential-copy h2 {font-size:clamp(35px,3.25vw,58px);line-height:1.08;letter-spacing:-1.5px;margin:0 0 22px}
+.cinematic-mode .credential-copy>p {font-size:12px;line-height:1.85;max-width:440px}
+.cinematic-mode .active-credential {min-height:115px;border-color:var(--line)}
+.cinematic-mode .active-credential .eyebrow {color:var(--muted);font-size:8px}
+.cinematic-mode .active-credential h3 {font-size:18px}
+.cinematic-mode .active-credential time {color:var(--muted)}
+.cinematic-mode .certificate-stack {left:54%;width:37%;top:29%;height:37%}
+.cinematic-mode .certificate-stack>.eyebrow {color:var(--muted);bottom:-55px}
+.cinematic-mode .featured-index {left:53%;right:8%;bottom:19%;gap:6px}
+.cinematic-mode .featured-index button {font-size:10px;min-width:34px;min-height:38px;opacity:1;color:var(--muted);position:relative;border:0}
+.featured-index button:after {content:'';position:absolute;bottom:0;left:20%;width:60%;height:2px;background:currentColor;transform:scaleX(0);transition:transform .3s}
+.cinematic-mode .featured-index button[aria-pressed=true] {color:var(--wine)}
+.featured-index button[aria-pressed=true]:after {transform:scaleX(1)}
+.cinematic-mode .finale-heading {top:24%;left:8%;font-size:clamp(65px,8.5vw,145px)}
+.cinematic-mode .finale-contact {left:8%;top:61%}
+.cinematic-mode .finale-socials {left:68%;right:8%;top:59%}
+.cinematic-mode .finale-bottom {left:8%;right:8%;bottom:11%}
+@media(min-width:760px) and (max-height:780px){
+.cinematic-mode .hero-left {top:65%}.cinematic-mode .hero-left h2{font-size:19px}.cinematic-mode .hero-left p{font-size:10px}.cinematic-mode .hero-left .social-links{margin-top:8px}
+.cinematic-mode .about-copy {top:21%}.cinematic-mode .about-copy h2{font-size:37px;margin-bottom:18px}.cinematic-mode .about-copy>p{font-size:12px;margin-bottom:15px}
+.cinematic-mode .credential-copy {top:20%}.cinematic-mode .credential-copy h2{font-size:36px;margin-bottom:13px}.cinematic-mode .credential-copy>p{font-size:11px;margin-bottom:10px}.cinematic-mode .active-credential{min-height:90px}.cinematic-mode .active-credential h3{font-size:15px}.cinematic-mode .library-link{margin-top:8px}
+.cinematic-mode .technology{min-height:58px}.cinematic-mode .technology-field{gap:8px 10px}
+}
+@media(max-width:759px){
+.cinematic-mode .hero-topline {top:14%;font-size:7px}
+.cinematic-mode .hero-name {top:19%;font-size:17vw}
+.cinematic-mode .hero-left {top:auto;bottom:12%;width:78%;left:6%}
+.cinematic-mode .hero-left:before {background:linear-gradient(transparent,#f7f0e6f2 20%);inset:-22px -10px -12px}
+.cinematic-mode .hero-left h2 {font-size:20px;letter-spacing:-.6px;max-width:310px;line-height:1.14;margin:0 0 10px}
+.cinematic-mode .hero-left p {font-size:10px;line-height:1.6;max-width:300px}
+.cinematic-mode .hero-left .social-links {margin-top:10px}
+.cinematic-mode .hero-right {display:none}
+.cinematic-mode .hero-bottom {bottom:4%;padding-top:13px}
+.cinematic-mode .hero-bottom>.eyebrow {display:none}
+.cinematic-mode .hero-profession {padding-top:35vh}
+.cinematic-mode .about-copy {left:7%;top:44%;width:86%;padding:12px 0 0;background:linear-gradient(#f7f0e6dd,#f7f0e6);max-height:none}
+.cinematic-mode .about-copy h2 {font-size:31px;letter-spacing:-1.1px;line-height:1.07;margin:0 0 16px}
+.cinematic-mode .about-copy>.lead {font-size:12px;line-height:1.7;margin-bottom:12px}
+.cinematic-mode .about-copy>p {font-size:11px;line-height:1.7;margin-bottom:13px}
+.cinematic-mode .about-copy .text-link {font-size:10px;margin-top:8px}
+.cinematic-mode .about-copy details summary {font-size:11px;padding:10px 0}
+.cinematic-mode .about-copy:has(details[open]) {z-index:6}
+.cinematic-mode .about-history {background:var(--cream);padding:12px;position:relative;box-shadow:0 20px 30px #581c3215}
+.cinematic-mode .skills-heading {top:14%;left:7%;right:7%;display:block}
+.cinematic-mode .skills-heading h2 {font-size:31px;letter-spacing:-1px}
+.skills-heading>p {font-size:10px;line-height:1.7;margin-top:12px;padding:0}
+.cinematic-mode .skill-category {left:7%;right:7%;top:35%;gap:0;justify-content:space-between}
+.cinematic-mode .skill-category button {font-size:10px;padding:10px 0}
+.cinematic-mode .technology-field {left:7%;top:44%;width:86%;gap:8px 6px;align-content:start}
+.cinematic-mode .technology {flex:0 0 calc(20% - 6px);min-height:59px;padding:5px 1px;gap:5px}
+.cinematic-mode .technology img {width:24px;height:24px}
+.cinematic-mode .technology span {font-size:8px;line-height:1.3}
+.cinematic-mode .skill-inspector {top:calc(44% + var(--skill-rows)*67px + 16px);left:7%;right:7%;padding:10px 0 0;border:0;border-top:1px solid var(--line);background:#f7f0e6e8;transition:top .35s}
+.cinematic-mode .skill-inspector h3 {font-size:23px;margin:5px 0}
+.cinematic-mode .skill-inspector p {font-size:10px;line-height:1.6}
+.cinematic-mode .skill-inspector .eyebrow {font-size:6px}
+.cinematic-mode .project-stage-heading {display:flex;top:15%;left:7%;right:7%;padding-bottom:13px}
+.cinematic-mode .project-space {inset:23% 7% 21%}
+.cinematic-mode .project-composition {grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:14px}
+.cinematic-mode .project-identity h2 {font-size:clamp(35px,10vw,60px);margin:14px 0;letter-spacing:-1.5px}
+.cinematic-mode .project-identity p {font-size:12px;line-height:1.8}
+.cinematic-mode .project-identity .project-evidence {font-size:7px;margin-top:13px}
+.cinematic-mode .project-status {font-size:9px}
+.cinematic-mode .project-object {min-height:100px;transform:translateZ(25px) rotateY(-8deg)}
+.cinematic-mode .project-object img {max-height:175px;width:80%;height:90%}
+.cinematic-mode .composition-2 img {max-width:165px;max-height:165px}
+.cinematic-mode .project-navigation {left:7%;right:7%;bottom:10%;gap:14px}
+.cinematic-mode .project-navigation button {font-size:8px;line-height:1.7;min-height:44px}
+.cinematic-mode .credential-copy {top:47%;left:7%;width:86%;max-height:none}
+.cinematic-mode .credential-copy h2 {font-size:28px;letter-spacing:-1px;margin:0 0 12px}
+.cinematic-mode .credential-copy>p {font-size:10px;line-height:1.6;margin-bottom:8px}
+.cinematic-mode .active-credential {padding:10px 0;min-height:82px}
+.cinematic-mode .active-credential h3 {font-size:14px}
+.cinematic-mode .active-credential .eyebrow {font-size:6px}
+.cinematic-mode .active-credential time {font-size:8px}
+.cinematic-mode .carousel-controls {margin:9px 0;gap:24px}
+.cinematic-mode .carousel-controls button {height:32px;width:32px}
+.cinematic-mode .credential-actions {font-size:10px}
+.cinematic-mode .library-link {margin-top:3px;padding:10px 0;font-size:11px}
+.cinematic-mode .certificate-stack {top:16%;left:18%;width:64%;height:23%}
+.cinematic-mode .certificate-stack>.eyebrow {display:none}
+.cinematic-mode .featured-index {top:40%;bottom:auto;left:7%;right:7%;gap:0;justify-content:space-between}
+.cinematic-mode .featured-index button {min-width:30px;min-height:36px;font-size:9px}
+.cinematic-mode .finale-heading {left:7%;top:24%;font-size:15vw;letter-spacing:-2px}
+.cinematic-mode .finale-contact {top:51%;left:7%;right:7%}
+.cinematic-mode .finale-socials {top:73%;left:7%;right:7%}
+.cinematic-mode .finale-bottom {left:7%;right:7%;bottom:10%}
+}
+@media(max-width:759px) and (max-height:740px){
+.cinematic-mode .hero-left {bottom:12%}.cinematic-mode .hero-left h2{font-size:18px}.cinematic-mode .hero-left p{font-size:9px}.cinematic-mode .hero-left .social-links{margin-top:7px}
+.cinematic-mode .about-copy{top:41%}.cinematic-mode .about-copy h2{font-size:27px;margin-bottom:12px}.cinematic-mode .about-copy>p{font-size:10px;line-height:1.6}.cinematic-mode .about-copy>.lead{font-size:11px}
+.cinematic-mode .skills-heading{top:14%}.cinematic-mode .skills-heading h2{font-size:27px}.skills-heading>p{font-size:9px;margin-top:9px}.cinematic-mode .skill-category{top:36%}.cinematic-mode .technology-field{top:45%;gap:5px 6px}.cinematic-mode .technology{min-height:48px}.cinematic-mode .technology img{width:20px;height:20px}.cinematic-mode .technology span{font-size:7px}.cinematic-mode .skill-inspector{top:calc(45% + var(--skill-rows)*53px + 12px)}
+.cinematic-mode .project-identity h2{font-size:35px;margin:10px 0}.cinematic-mode .project-identity p{font-size:11px}.cinematic-mode .project-object img{max-height:130px}.cinematic-mode .composition-2 img{max-width:120px}
+.cinematic-mode .credential-copy{top:46%}.cinematic-mode .credential-copy h2{font-size:25px;margin-bottom:8px}.cinematic-mode .credential-copy>p{font-size:9px}.cinematic-mode .active-credential{min-height:70px;padding:7px 0}.cinematic-mode .active-credential h3{font-size:12px}.cinematic-mode .carousel-controls{margin:7px 0}.cinematic-mode .library-link{padding:7px 0;font-size:10px}
+}
+/* Legible editorial planes sit in front of the installation's darker returns. */
+.cinematic-mode .hero-left,.cinematic-mode .project-identity {position:relative;isolation:isolate}
+.cinematic-mode .hero-left {position:absolute}
+.cinematic-mode .hero-left:after,.cinematic-mode .project-identity:before {content:'';position:absolute;inset:-20px -25px;z-index:-1;background:linear-gradient(90deg,#f7f0e6f5 65%,#f7f0e6b8 85%,transparent);pointer-events:none}
+.cinematic-mode .hero-bottom {bottom:9%}
+@media(max-width:759px){
+.cinematic-mode .hero-left .social-links.compact {position:static;display:flex;flex-direction:row;gap:14px;margin-top:12px}
+.cinematic-mode .hero-left:after {display:none}
+.cinematic-mode .hero-left {width:86%;bottom:12%}
+.cinematic-mode .hero-bottom {bottom:8%}
+.cinematic-mode .featured-index {flex-direction:row;align-items:center;height:36px}
+.cinematic-mode .featured-index button {flex:0 0 auto;width:30px;padding:0}
+.cinematic-mode .technology-field {top:41%}
+.cinematic-mode .technology {flex-basis:calc(16.6667% - 6px);min-height:59px}
+.cinematic-mode .technology img {width:22px;height:22px}
+.cinematic-mode .technology span {font-size:7.5px}
+.cinematic-mode .skill-category {top:33%}
+.cinematic-mode .skill-inspector {top:calc(41% + var(--skill-rows)*67px + 12px)}
+.cinematic-mode .project-identity:before {inset:-14px;background:linear-gradient(90deg,#f7f0e6e8, #f7f0e6bb 85%,transparent)}
+}
+@media(max-width:759px) and (max-height:740px){
+.cinematic-mode .technology-field {top:42%}
+.cinematic-mode .technology {min-height:47px}
+.cinematic-mode .technology img {width:20px;height:20px}
+.cinematic-mode .skill-category {top:34%}
+.cinematic-mode .skill-inspector {top:calc(42% + var(--skill-rows)*52px + 10px)}
+.cinematic-mode .hero-left h2 {font-size:17px}
+.cinematic-mode .hero-left .social-links.compact {margin-top:7px}
+}
+.cinematic-mode .hero-topline {left:12%;right:12%}
+.cinematic-mode .hero-bottom {left:12%;right:12%}
+.cinematic-mode .hero-right {right:12%}
+@media(max-width:759px){
+.cinematic-mode .hero-topline {left:6%;right:6%}
+.cinematic-mode .hero-bottom {left:7%;right:7%}
+.cinematic-mode .credential-copy {background:linear-gradient(90deg,#f7f0e6ed,#f7f0e6ed 85%,transparent)}
+}
+.reading-mode .active-credential time,.reading-mode .certificate-stack>.eyebrow {color:var(--muted)}
+.cinematic-mode .hero-left:after,.cinematic-mode .project-identity:before {filter:blur(14px)}
+.cinematic-mode .credential-copy,.cinematic-mode .skills-heading h2 {isolation:isolate}
+.cinematic-mode .credential-copy:before,.cinematic-mode .skills-heading h2:before {display:block;content:'';position:absolute;inset:-22px;z-index:-1;background:linear-gradient(90deg,#f7f0e6f2 70%,#f7f0e699 90%,transparent);filter:blur(12px);pointer-events:none}
+.cinematic-mode .skills-heading h2 {position:relative}
+@media(max-width:759px){
+.cinematic-mode .skill-inspector {top:calc(41% + var(--toolkit-height,335px) + 12px)}
+}
+@media(max-width:759px) and (max-height:740px){
+.cinematic-mode .skill-category {top:32%}
+.cinematic-mode .technology-field {top:40%;gap:5px 6px}
+.cinematic-mode .technology {min-height:43px;padding:2px 1px;gap:3px}
+.cinematic-mode .technology img {width:18px;height:18px}
+.cinematic-mode .technology .concept-mark {height:18px}
+.cinematic-mode .technology span {font-size:7.5px;line-height:1.2}
+.cinematic-mode .skill-inspector {top:calc(40% + var(--toolkit-height,240px) + 10px)}
+.cinematic-mode .skill-inspector h3 {font-size:21px;line-height:1.2}
+}
+@media(max-width:759px){
+.about-copy h2 em,.credential-copy h2 em {display:block}
+.cinematic-mode .about-copy h2 {font-size:28px}
+.cinematic-mode .finale-heading {right:7%;font-size:13vw;letter-spacing:-1.7px}
+.cinematic-mode .hero-left:before {filter:blur(12px)}
+.cinematic-mode .about-copy {background:none;isolation:isolate}
+.cinematic-mode .about-copy:before {display:block;content:'';position:absolute;inset:-15px;z-index:-1;background:linear-gradient(transparent,#f7f0e6f5 15%,#f7f0e6f5);filter:blur(10px);pointer-events:none}
+}
+@media(max-width:759px) and (max-height:740px){.cinematic-mode .about-copy h2 {font-size:27px}}
+.skills-heading>p {position:relative;z-index:1}

@@ -1,0 +1,114 @@
+import { chromium } from "playwright";
+import fs from "node:fs/promises";
+import assert from "node:assert/strict";
+const out = "docs/burgundy-cream/qa",
+  url = process.env.QA_URL || "http://127.0.0.1:4174";
+const b = await chromium.launch({ channel: "chrome" });
+for (const [name, width, height] of [
+  ["desktop", 1440, 900],
+  ["mobile", 390, 844],
+]) {
+  const ctx = await b.newContext({
+      viewport: { width, height },
+      hasTouch: name === "mobile",
+      recordVideo: { dir: `${out}/record-tmp`, size: { width, height } },
+    }),
+    p = await ctx.newPage();
+  await p.goto(url);
+  await p.locator(".world-ready").waitFor();
+  await p.evaluate(() => document.fonts.ready);
+  await p.waitForTimeout(1100);
+  const move = async (destination, duration = 2600) => {
+    await p.evaluate(
+      async ({ destination, duration }) => {
+        const from = scrollY,
+          to = destination * innerHeight * 1.2,
+          t = performance.now();
+        await new Promise((resolve) => {
+          function tick(now) {
+            const x = Math.min(1, (now - t) / duration),
+              ease = x * x * (3 - 2 * x);
+            scrollTo({ top: from + (to - from) * ease, behavior: "instant" });
+            if (x < 1) requestAnimationFrame(tick);
+            else resolve();
+          }
+          requestAnimationFrame(tick);
+        });
+      },
+      { destination, duration },
+    );
+    await p.waitForTimeout(400);
+  };
+  for (let i = 1; i < 8; i++) {
+    await move(i);
+    await p.waitForTimeout(600);
+    if (i === 2) {
+      const python = p.getByRole("button", { name: "Python", exact: true });
+      if (name === "mobile") await python.tap();
+      else await python.hover();
+      await python.focus();
+      await p.waitForTimeout(700);
+      await p
+        .getByRole("button", { name: "Completed study", exact: true })
+        .click();
+      await p.waitForTimeout(600);
+      await p.getByRole("button", { name: "All", exact: true }).click();
+    }
+    if (i === 6) {
+      const box = await p.locator(".certificate-stack").boundingBox(),
+        from = box.x + box.width * 0.8,
+        to = box.x + box.width * 0.2,
+        y = box.y + box.height * 0.5;
+      const before = await p.locator(".active-credential h3").innerText();
+      if (name === "mobile") {
+        const cdp = await ctx.newCDPSession(p);
+        await cdp.send("Input.dispatchTouchEvent", {
+          type: "touchStart",
+          touchPoints: [{ x: from, y }],
+        });
+        for (let j = 1; j <= 18; j++) {
+          await cdp.send("Input.dispatchTouchEvent", {
+            type: "touchMove",
+            touchPoints: [{ x: from + ((to - from) * j) / 18, y }],
+          });
+          await p.waitForTimeout(20);
+        }
+        await cdp.send("Input.dispatchTouchEvent", {
+          type: "touchEnd",
+          touchPoints: [],
+        });
+        await cdp.detach();
+      } else {
+        await p.mouse.move(from, y);
+        await p.mouse.down();
+        await p.mouse.move(to, y, { steps: 25 });
+        await p.mouse.up();
+      }
+      assert.notEqual(
+        await p.locator(".active-credential h3").innerText(),
+        before,
+      );
+      await p.waitForTimeout(800);
+      await p
+        .getByRole("button", {
+          name: "Show Object-Oriented Programming in Python, Duke University",
+          exact: true,
+        })
+        .click();
+      await p.waitForTimeout(1100);
+      await p
+        .getByRole("button", { name: "Next credential", exact: true })
+        .click();
+      await p.waitForTimeout(1100);
+    }
+  }
+  await p.waitForTimeout(1000);
+  await move(0, 9000);
+  await p.waitForTimeout(700);
+  const video = p.video();
+  await ctx.close();
+  await video.saveAs(`${out}/journey-${name}.webm`);
+  console.log(`${name}: continuous journey, interaction and reverse recording`);
+}
+await b.close();
+await fs.rm(`${out}/record-tmp`, { recursive: true, force: true });

@@ -1,0 +1,37 @@
+8 Courses
+Foundations of Coding Back-
+End
+Introduction to Programming
+With C#
+Back-End Development with
+.NET
+Database Integration and
+Management
+Security and Authentication
+Performance Optimization and
+Scalability
+Data Structures and Algorithms
+Deployment and DevOps
+Microsoft
+Oct 24, 2026
+Muhammad Ali Ejaz Bhatti
+has successfully completed the online Professional Certificate
+Microsoft Back-End
+Developer
+Those who have earned this professional certificate have
+demonstrated their job readiness through hands-on experience and
+practical application. They possess a strong foundation in back-end
+development, including designing and optimizing web APIs,
+managing relational databases, implementing security and
+authentication measures, and optimizing application performance
+for scalability. They are proficient in modern frameworks like .NET,
+have applied advanced C# techniques, and leveraged Microsoft
+Copilot for coding and debugging. This certification proves their
+ability to build and deploy secure, efficient, and scalable back-end
+systems.
+This certificate attests to the learner’s completion of an online program delivered via Coursera. It does not constitute
+formal enrollment at any university or entity and does not itself grant academic credit, grades, or a degree. Institutions
+or organizations may, at their discretion, recognize this learning toward their own programs or credentials.
+Verify this certificate at:
+https://coursera.org/verify/professio
+nal-cert/74AS1URCHT9U

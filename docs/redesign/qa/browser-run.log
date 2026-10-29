@@ -1,0 +1,155 @@
+npm notice run ali-bhatti-the-internet-built-by-me@1.0.0 test:browser
+npm notice run node scripts/redesign-qa.mjs
+PASS one semantic h1 
+PASS decorative WebGL mounted 
+PASS seven program credentials featured 
+PASS all forty certificates in archive 
+PASS search matches both Python guided projects 
+PASS combined issuer/type filter 
+PASS empty state 
+PASS reset restores complete archive 
+PASS preview is native modal 
+PASS preview receives keyboard focus 
+PASS Escape closes preview 
+PASS preview restores trigger focus 
+PASS browser certificate download has pdf name 
+PASS certificate credential-01 HTTP/hash 
+PASS certificate credential-02 HTTP/hash 
+PASS certificate credential-03 HTTP/hash 
+PASS certificate credential-04 HTTP/hash 
+PASS certificate credential-05 HTTP/hash 
+PASS certificate credential-06 HTTP/hash 
+PASS certificate credential-07 HTTP/hash 
+PASS certificate credential-08 HTTP/hash 
+PASS certificate credential-09 HTTP/hash 
+PASS certificate credential-10 HTTP/hash 
+PASS certificate credential-11 HTTP/hash 
+PASS certificate credential-12 HTTP/hash 
+PASS certificate credential-13 HTTP/hash 
+PASS certificate credential-14 HTTP/hash 
+PASS certificate credential-15 HTTP/hash 
+PASS certificate credential-16 HTTP/hash 
+PASS certificate credential-17 HTTP/hash 
+PASS certificate credential-18 HTTP/hash 
+PASS certificate credential-19 HTTP/hash 
+PASS certificate credential-20 HTTP/hash 
+PASS certificate credential-21 HTTP/hash 
+PASS certificate credential-22 HTTP/hash 
+PASS certificate credential-23 HTTP/hash 
+PASS certificate credential-24 HTTP/hash 
+PASS certificate credential-25 HTTP/hash 
+PASS certificate credential-26 HTTP/hash 
+PASS certificate credential-27 HTTP/hash 
+PASS certificate credential-28 HTTP/hash 
+PASS certificate credential-29 HTTP/hash 
+PASS certificate credential-30 HTTP/hash 
+PASS certificate credential-31 HTTP/hash 
+PASS certificate credential-32 HTTP/hash 
+PASS certificate credential-33 HTTP/hash 
+PASS certificate credential-34 HTTP/hash 
+PASS certificate credential-35 HTTP/hash 
+PASS certificate credential-36 HTTP/hash 
+PASS certificate credential-37 HTTP/hash 
+PASS certificate credential-38 HTTP/hash 
+PASS certificate credential-39 HTTP/hash 
+PASS certificate credential-40 HTTP/hash 
+PASS resume Premium production PDF 
+PASS resume ATS production PDF 
+PASS project 1 opens details 
+PASS project 2 opens details 
+PASS project 3 opens details 
+PASS five safe external social destinations 
+PASS all internal anchors resolve 
+PASS no horizontal overflow at 1920 
+PASS 1920 work fits viewport 
+PASS 1920 about fits viewport 
+PASS 1920 skills fits viewport 
+PASS 1920 experience fits viewport 
+PASS 1920 credentials fits viewport 
+PASS 1920 archive fits viewport 
+PASS 1920 resume fits viewport 
+PASS 1920 contact fits viewport 
+PASS no horizontal overflow at 1440 
+PASS 1440 work fits viewport 
+PASS 1440 about fits viewport 
+PASS 1440 skills fits viewport 
+PASS 1440 experience fits viewport 
+PASS 1440 credentials fits viewport 
+PASS 1440 archive fits viewport 
+PASS 1440 resume fits viewport 
+PASS 1440 contact fits viewport 
+PASS no horizontal overflow at 1280 
+PASS 1280 work fits viewport 
+PASS 1280 about fits viewport 
+PASS 1280 skills fits viewport 
+PASS 1280 experience fits viewport 
+PASS 1280 credentials fits viewport 
+PASS 1280 archive fits viewport 
+PASS 1280 resume fits viewport 
+PASS 1280 contact fits viewport 
+PASS no horizontal overflow at 1024 
+PASS 1024 work fits viewport 
+PASS 1024 about fits viewport 
+PASS 1024 skills fits viewport 
+PASS 1024 experience fits viewport 
+PASS 1024 credentials fits viewport 
+PASS 1024 archive fits viewport 
+PASS 1024 resume fits viewport 
+PASS 1024 contact fits viewport 
+PASS no horizontal overflow at 768 
+PASS 768 work fits viewport 
+PASS 768 about fits viewport 
+PASS 768 skills fits viewport 
+PASS 768 experience fits viewport 
+PASS 768 credentials fits viewport 
+PASS 768 archive fits viewport 
+PASS 768 resume fits viewport 
+PASS 768 contact fits viewport 
+PASS no horizontal overflow at 430 
+PASS 430 work fits viewport 
+PASS 430 about fits viewport 
+PASS 430 skills fits viewport 
+PASS 430 experience fits viewport 
+PASS 430 credentials fits viewport 
+PASS 430 archive fits viewport 
+PASS 430 resume fits viewport 
+PASS 430 contact fits viewport 
+PASS no horizontal overflow at 390 
+PASS 390 work fits viewport 
+PASS 390 about fits viewport 
+PASS 390 skills fits viewport 
+PASS 390 experience fits viewport 
+PASS 390 credentials fits viewport 
+PASS 390 archive fits viewport 
+PASS 390 resume fits viewport 
+PASS 390 contact fits viewport 
+PASS no horizontal overflow at 375 
+PASS 375 work fits viewport 
+PASS 375 about fits viewport 
+PASS 375 skills fits viewport 
+PASS 375 experience fits viewport 
+PASS 375 credentials fits viewport 
+PASS 375 archive fits viewport 
+PASS 375 resume fits viewport 
+PASS 375 contact fits viewport 
+PASS no horizontal overflow at 320 
+PASS 320 work fits viewport 
+PASS 320 about fits viewport 
+PASS 320 skills fits viewport 
+PASS 320 experience fits viewport 
+PASS 320 credentials fits viewport 
+PASS 320 archive fits viewport 
+PASS 320 resume fits viewport 
+PASS 320 contact fits viewport 
+PASS mobile menu modal opens 
+PASS mobile navigation closes and reaches section 
+PASS mobile starts with lightweight 3D poster 
+PASS mobile 3D opt-in works 
+PASS reduced-motion avoids WebGL 
+PASS reduced-motion keeps archive 
+PASS WebGL disabled fallback 
+PASS WebGL loss reveals fallback 
+PASS axe WCAG AA at 1440 
+PASS axe WCAG AA at 390 
+PASS no browser runtime/console errors 
+PASS no failed HTTP requests []

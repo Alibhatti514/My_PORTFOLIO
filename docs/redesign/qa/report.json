@@ -1,0 +1,737 @@
+{
+  "base": "http://127.0.0.1:4174",
+  "checks": [
+    {
+      "name": "one semantic h1",
+      "pass": true
+    },
+    {
+      "name": "decorative WebGL mounted",
+      "pass": true
+    },
+    {
+      "name": "seven program credentials featured",
+      "pass": true
+    },
+    {
+      "name": "all forty certificates in archive",
+      "pass": true
+    },
+    {
+      "name": "search matches both Python guided projects",
+      "pass": true
+    },
+    {
+      "name": "combined issuer/type filter",
+      "pass": true
+    },
+    {
+      "name": "empty state",
+      "pass": true
+    },
+    {
+      "name": "reset restores complete archive",
+      "pass": true
+    },
+    {
+      "name": "preview is native modal",
+      "pass": true
+    },
+    {
+      "name": "preview receives keyboard focus",
+      "pass": true
+    },
+    {
+      "name": "Escape closes preview",
+      "pass": true
+    },
+    {
+      "name": "preview restores trigger focus",
+      "pass": true
+    },
+    {
+      "name": "browser certificate download has pdf name",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-01 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-02 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-03 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-04 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-05 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-06 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-07 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-08 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-09 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-10 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-11 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-12 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-13 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-14 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-15 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-16 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-17 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-18 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-19 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-20 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-21 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-22 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-23 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-24 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-25 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-26 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-27 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-28 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-29 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-30 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-31 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-32 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-33 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-34 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-35 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-36 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-37 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-38 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-39 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "certificate credential-40 HTTP/hash",
+      "pass": true
+    },
+    {
+      "name": "resume Premium production PDF",
+      "pass": true
+    },
+    {
+      "name": "resume ATS production PDF",
+      "pass": true
+    },
+    {
+      "name": "project 1 opens details",
+      "pass": true
+    },
+    {
+      "name": "project 2 opens details",
+      "pass": true
+    },
+    {
+      "name": "project 3 opens details",
+      "pass": true
+    },
+    {
+      "name": "five safe external social destinations",
+      "pass": true
+    },
+    {
+      "name": "all internal anchors resolve",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow at 1920",
+      "pass": true
+    },
+    {
+      "name": "1920 work fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1920 about fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1920 skills fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1920 experience fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1920 credentials fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1920 archive fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1920 resume fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1920 contact fits viewport",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow at 1440",
+      "pass": true
+    },
+    {
+      "name": "1440 work fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1440 about fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1440 skills fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1440 experience fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1440 credentials fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1440 archive fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1440 resume fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1440 contact fits viewport",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow at 1280",
+      "pass": true
+    },
+    {
+      "name": "1280 work fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1280 about fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1280 skills fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1280 experience fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1280 credentials fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1280 archive fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1280 resume fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1280 contact fits viewport",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow at 1024",
+      "pass": true
+    },
+    {
+      "name": "1024 work fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1024 about fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1024 skills fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1024 experience fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1024 credentials fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1024 archive fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1024 resume fits viewport",
+      "pass": true
+    },
+    {
+      "name": "1024 contact fits viewport",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow at 768",
+      "pass": true
+    },
+    {
+      "name": "768 work fits viewport",
+      "pass": true
+    },
+    {
+      "name": "768 about fits viewport",
+      "pass": true
+    },
+    {
+      "name": "768 skills fits viewport",
+      "pass": true
+    },
+    {
+      "name": "768 experience fits viewport",
+      "pass": true
+    },
+    {
+      "name": "768 credentials fits viewport",
+      "pass": true
+    },
+    {
+      "name": "768 archive fits viewport",
+      "pass": true
+    },
+    {
+      "name": "768 resume fits viewport",
+      "pass": true
+    },
+    {
+      "name": "768 contact fits viewport",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow at 430",
+      "pass": true
+    },
+    {
+      "name": "430 work fits viewport",
+      "pass": true
+    },
+    {
+      "name": "430 about fits viewport",
+      "pass": true
+    },
+    {
+      "name": "430 skills fits viewport",
+      "pass": true
+    },
+    {
+      "name": "430 experience fits viewport",
+      "pass": true
+    },
+    {
+      "name": "430 credentials fits viewport",
+      "pass": true
+    },
+    {
+      "name": "430 archive fits viewport",
+      "pass": true
+    },
+    {
+      "name": "430 resume fits viewport",
+      "pass": true
+    },
+    {
+      "name": "430 contact fits viewport",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow at 390",
+      "pass": true
+    },
+    {
+      "name": "390 work fits viewport",
+      "pass": true
+    },
+    {
+      "name": "390 about fits viewport",
+      "pass": true
+    },
+    {
+      "name": "390 skills fits viewport",
+      "pass": true
+    },
+    {
+      "name": "390 experience fits viewport",
+      "pass": true
+    },
+    {
+      "name": "390 credentials fits viewport",
+      "pass": true
+    },
+    {
+      "name": "390 archive fits viewport",
+      "pass": true
+    },
+    {
+      "name": "390 resume fits viewport",
+      "pass": true
+    },
+    {
+      "name": "390 contact fits viewport",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow at 375",
+      "pass": true
+    },
+    {
+      "name": "375 work fits viewport",
+      "pass": true
+    },
+    {
+      "name": "375 about fits viewport",
+      "pass": true
+    },
+    {
+      "name": "375 skills fits viewport",
+      "pass": true
+    },
+    {
+      "name": "375 experience fits viewport",
+      "pass": true
+    },
+    {
+      "name": "375 credentials fits viewport",
+      "pass": true
+    },
+    {
+      "name": "375 archive fits viewport",
+      "pass": true
+    },
+    {
+      "name": "375 resume fits viewport",
+      "pass": true
+    },
+    {
+      "name": "375 contact fits viewport",
+      "pass": true
+    },
+    {
+      "name": "no horizontal overflow at 320",
+      "pass": true
+    },
+    {
+      "name": "320 work fits viewport",
+      "pass": true
+    },
+    {
+      "name": "320 about fits viewport",
+      "pass": true
+    },
+    {
+      "name": "320 skills fits viewport",
+      "pass": true
+    },
+    {
+      "name": "320 experience fits viewport",
+      "pass": true
+    },
+    {
+      "name": "320 credentials fits viewport",
+      "pass": true
+    },
+    {
+      "name": "320 archive fits viewport",
+      "pass": true
+    },
+    {
+      "name": "320 resume fits viewport",
+      "pass": true
+    },
+    {
+      "name": "320 contact fits viewport",
+      "pass": true
+    },
+    {
+      "name": "mobile menu modal opens",
+      "pass": true
+    },
+    {
+      "name": "mobile navigation closes and reaches section",
+      "pass": true
+    },
+    {
+      "name": "mobile starts with lightweight 3D poster",
+      "pass": true
+    },
+    {
+      "name": "mobile 3D opt-in works",
+      "pass": true
+    },
+    {
+      "name": "reduced-motion avoids WebGL",
+      "pass": true
+    },
+    {
+      "name": "reduced-motion keeps archive",
+      "pass": true
+    },
+    {
+      "name": "WebGL disabled fallback",
+      "pass": true
+    },
+    {
+      "name": "WebGL loss reveals fallback",
+      "pass": true
+    },
+    {
+      "name": "axe WCAG AA at 1440",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "axe WCAG AA at 390",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no browser runtime/console errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no failed HTTP requests",
+      "pass": true,
+      "detail": "[]"
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "viewports": [
+    {
+      "width": 1920,
+      "scroll": 1920
+    },
+    {
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "width": 1280,
+      "scroll": 1280
+    },
+    {
+      "width": 1024,
+      "scroll": 1024
+    },
+    {
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "width": 430,
+      "scroll": 430
+    },
+    {
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "width": 375,
+      "scroll": 375
+    },
+    {
+      "width": 320,
+      "scroll": 320
+    }
+  ],
+  "screenshots": [
+    "desktop-hero",
+    "desktop-work",
+    "desktop-about",
+    "desktop-skills",
+    "desktop-experience",
+    "desktop-credentials",
+    "desktop-archive",
+    "desktop-resume",
+    "desktop-contact",
+    "archive-empty",
+    "certificate-preview",
+    "project-dialog-1",
+    "project-dialog-2",
+    "project-dialog-3",
+    "responsive-1920-hero",
+    "responsive-1440-hero",
+    "responsive-1440-work",
+    "responsive-1440-about",
+    "responsive-1440-skills",
+    "responsive-1440-experience",
+    "responsive-1440-credentials",
+    "responsive-1440-archive",
+    "responsive-1440-resume",
+    "responsive-1440-contact",
+    "responsive-1280-hero",
+    "responsive-1024-hero",
+    "responsive-768-hero",
+    "responsive-768-work",
+    "responsive-768-about",
+    "responsive-768-skills",
+    "responsive-768-experience",
+    "responsive-768-credentials",
+    "responsive-768-archive",
+    "responsive-768-resume",
+    "responsive-768-contact",
+    "responsive-430-hero",
+    "responsive-390-hero",
+    "responsive-390-work",
+    "responsive-390-about",
+    "responsive-390-skills",
+    "responsive-390-experience",
+    "responsive-390-credentials",
+    "responsive-390-archive",
+    "responsive-390-resume",
+    "responsive-390-contact",
+    "responsive-375-hero",
+    "responsive-320-hero",
+    "responsive-320-work",
+    "responsive-320-about",
+    "responsive-320-skills",
+    "responsive-320-experience",
+    "responsive-320-credentials",
+    "responsive-320-archive",
+    "responsive-320-resume",
+    "responsive-320-contact",
+    "mobile-menu",
+    "mobile-interactive-3d",
+    "reduced-motion",
+    "webgl-fallback"
+  ],
+  "accessibility": [
+    {
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "violations": []
+    }
+  ],
+  "performance": {
+    "domContentLoadedMs": 19.5,
+    "loadMs": 19.599999994039536,
+    "resources": 33
+  }
+}

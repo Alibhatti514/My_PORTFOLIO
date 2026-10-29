@@ -1,0 +1,122 @@
+LET’S CONNECT
+dev._.ali@icloud.com
++92 317 2003786
+Khanewal, Pakistan
+github.com/Alibhatti514
+LinkedIn / Muhammad Ali Ejaz Bhatti
+TECHNICAL SKILLS
+LANGUAGES
+JavaScript (ES6+) · TypeScript ·
+Python
+FRONTEND
+HTML5 · CSS3 · React.js · Next.js
+BACKEND
+Node.js · NestJS · REST APIs · JWT
+Authentication
+DATA
+PostgreSQL · Prisma ORM
+TOOLS
+Git · GitHub · Postman
+COMPLETED STUDY
+C# 12 / .NET 8
+ASP.NET Core / Blazor
+Svelte 5 / SvelteKit
+Express / Supabase
+Sanity CMS / Stripe
+Course-backed learning, separate from
+résumé experience. Program details on page
+02.
+Full Stack Web Developer building responsive React and Next.js interfaces, Node.js and NestJS
+services, and PostgreSQL databases with Prisma ORM. Experienced with REST APIs, JWT
+authentication, client collaboration, and maintainable code.
+01 PROFESSIONAL EXPERIENCE
+Freelance Full Stack
+Web Developer
+Sep 2025 - Jun 2026
+Upwork / Lahore, Pakistan
+Developed responsive full stack web applications using React.js, Next.js, HTML5, CSS3,
+JavaScript (ES6+), and TypeScript.
+Built Node.js and NestJS services and REST APIs; integrated PostgreSQL databases using
+Prisma ORM.
+Implemented JWT authentication and role-based access control, with attention to application
+performance.
+Collaborated with clients on maintainable solutions and clear, timely delivery.
+Freelance Full Stack
+Web Developer
+Sep 2025 - Jun 2026
+Fiverr / Lahore, Pakistan
+Built custom full stack applications and responsive interfaces around client requirements.
+Developed backend APIs, integrated third-party services, and managed business logic with
+NestJS and Node.js.
+Managed PostgreSQL data with Prisma ORM for secure, reliable application performance.
+Incorporated client feedback and maintained project documentation and communication.
+02 EDUCATION
+Bachelor in Computer Science
+Punjab University / Lahore, Pakistan
+2021 - 2025
+Intermediate in Computer Science (ICS)
+Hawk College / Khanewal, Pakistan
+2018 - 2020
+ALI  BHATTI  / SOFTWARE DEVELOPMENT
+Full Stack Web Developer
+CURIOSITY. CODE. CONNECTED SYSTEMS.
+MUHAMMAD ALI EJAZ / ALI BHATTI EXPERIENCE & FOUNDATIONS / 01
+MUHAMMADALI EJAZ
+ALI  BHATTI  / CONTI NUOUS LEARNI NG
+Systems built.
+Curiosity, continued.
+03 THE CONNECTED STACK APPLIED TECHNOLOGIES / RÉSUMÉ
+04 PROFESSIONAL PROGRAMS OCTOBER 2026 / COURSERA
+Three professional certificates and four specializations. Select a title to open its verification record.
+05 SELECTED PROJECTS LOGISTICS / ENTERPRISE / PLAY
+01 / SELECTED WORK
+RCS CARGO
+Logistics web project with an authentic brand
+identity and a focus on connected routes and
+movement.
+02 / SELECTED WORK
+GOLDADAN
+Company website presenting security, software,
+hardware, and enterprise technology services.
+03 / SELECTED WORK
+BHABHI THULLA
+Card-game project with an authentic, playful visual
+identity.
+Additional completed coursework: object-oriented programming, web scraping, data structures and algorithms, deployment and DevOps, web application
+security, and UI/UX accessibility.
+0 2
+Interface / React.js / Next.js
+JavaScript, TypeScript, HTML5, CSS3
+Services / Node.js / NestJS
+REST APIs, JWT authentication
+Data / PostgreSQL / Prisma
+Relational databases, ORM integration
+Microsoft
+Microsoft Back-End Developer
+Professional Certificate / Oct 24, 2026
+VERIFY CREDENTIAL
+Microsoft
+Microsoft Front-End Developer
+Professional Certificate / Oct 28, 2026
+VERIFY CREDENTIAL
+Microsoft
+Microsoft Full-Stack Developer
+Professional Certificate / Oct 26, 2026
+VERIFY CREDENTIAL
+Packt
+C# 12 and .NET 8 Cross-Platform Development Fundamentals
+Specialization / Oct 27, 2026
+VERIFY CREDENTIAL
+University of London
+Full-Stack Web Development
+Specialization / Oct 28, 2026
+VERIFY CREDENTIAL
+Packt
+Mastering Node.js Web Development
+Specialization / Oct 23, 2026
+VERIFY CREDENTIAL
+Packt
+Svelte 5 & SvelteKit For Hands-On Modern Web Development
+Specialization / Oct 27, 2026
+VERIFY CREDENTIAL
+MUHAMMAD ALI EJAZ / ALI BHATTI PROJECTS & CREDENTIALS / 02

@@ -1,0 +1,45 @@
+/* The eight equally spaced previews create the radial outline; no decorative ring. */
+.certificate-stack {transform-style:preserve-3d;perspective:1400px}
+.radial-certificates {position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none}
+.certificate-stack .circular-sheet {
+  position:absolute;inset:auto;left:50%;top:50%;width:var(--wheel-paper-width);height:auto;aspect-ratio:1.48;
+  background:transparent;border:0;padding:0;margin:0;box-shadow:none;
+  transform-origin:50% 50%;transition:none;animation:none;rotate:none;translate:none;overflow:visible;will-change:transform;
+}
+/* A stationary transparent hit area prevents edge flicker as the paper straightens. */
+.certificate-stack .sheet-orbit:before {content:'';position:absolute;inset:-42% -12%;pointer-events:auto}
+.certificate-stack .certificate-paper {
+  display:block;width:100%;height:100%;background:#fff;border:1px solid #fff;padding:6px;
+  border-radius:1px;overflow:hidden;pointer-events:none;transform-origin:50% 50%;will-change:transform;
+}
+.certificate-stack .circular-sheet img {width:100%;height:100%;object-fit:contain;background:#fff;pointer-events:none;display:block}
+.certificate-stack .sheet-orbit {pointer-events:auto;cursor:pointer}
+.certificate-stack .circular-sheet.sheet-front {
+  pointer-events:auto;
+  translate:calc(var(--drag,0)*28px) 0;cursor:grab;
+}
+.certificate-stack .sheet-front .certificate-paper {box-shadow:0 1px 0 #dedbd5,0 5px 9px #581c321c,0 20px 36px #581c3226}
+.certificate-stack[data-dragging=true] .sheet-front {cursor:grabbing}
+.certificate-stack .circular-sheet:focus-visible {outline:2px solid var(--wine);outline-offset:5px}
+.certificate-stack:focus-visible {outline:2px solid var(--wine);outline-offset:5px}
+.cinematic-mode .certificate-stack {left:52%;width:43%;top:13%;height:62%;aspect-ratio:auto}
+.cinematic-mode .certificate-stack>.eyebrow {top:var(--certificate-caption-y,calc(100% + 10px));bottom:auto}
+.reading-mode .certificate-stack {height:auto;aspect-ratio:1.15}
+@media(min-width:760px) and (max-width:1100px) {
+  .cinematic-mode .certificate-stack {left:51%;width:44%;top:24%;height:40%}
+}
+@media(max-width:759px) {
+  .cinematic-mode .certificate-stack {left:13%;width:74%;top:10.5%;height:27%}
+  .certificate-stack .certificate-paper {padding:4px}
+}
+@media(max-width:759px) and (max-height:740px) {
+  .cinematic-mode .certificate-stack {left:16%;width:68%;top:12%;height:26%}
+}
+@media(prefers-reduced-motion:reduce) {
+  .certificate-stack .circular-sheet {will-change:auto;left:0;top:0;width:100%;height:100%}
+  .certificate-stack .certificate-paper {transform:none!important;will-change:auto}
+  .certificate-stack .sheet-orbit {visibility:hidden}
+  .certificate-stack .circular-sheet.sheet-front {translate:none}
+}
+
+@media(min-width:1101px) {.cinematic-mode .featured-index {bottom:10%}}

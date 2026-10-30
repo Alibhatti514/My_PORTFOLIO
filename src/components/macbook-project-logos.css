@@ -1,0 +1,14 @@
+/* Project identities belong to their own showcase, below the section divider. */
+.cinematic-mode .project-composition .project-object{position:absolute;top:0;left:0;right:auto;width:180px;height:126px;min-height:0;z-index:2;display:flex;align-items:center;justify-content:flex-start;transform:none}
+.cinematic-mode .project-composition .project-object img,.cinematic-mode .project-composition.composition-1 .project-object img,.cinematic-mode .project-composition.composition-2 .project-object img{width:180px;height:126px;max-width:180px;max-height:126px;object-fit:contain;filter:none;mix-blend-mode:normal}
+.cinematic-mode .project-composition .project-identity{padding-top:138px}
+.project-object img{mix-blend-mode:normal}
+@media(max-width:999px) and (orientation:portrait){
+ .cinematic-mode .project-composition .project-object{left:auto;right:-8px;top:24px;width:124px;height:106px}
+ .cinematic-mode .project-composition .project-object img,.cinematic-mode .project-composition.composition-1 .project-object img,.cinematic-mode .project-composition.composition-2 .project-object img{width:124px;height:106px;max-width:124px;max-height:106px}
+ .cinematic-mode .project-composition .project-identity{padding-top:0}
+ .cinematic-mode .project-stage{translate:0 var(--macbook-intro-offset,0px)}
+ .cinematic-mode .project-stage .project-navigation{translate:0 calc(-1 * var(--macbook-intro-offset,0px))}
+ .cinematic-mode .project-composition .project-identity h2{padding-right:120px;min-height:100px}
+}
+@media(max-width:389px){.cinematic-mode .project-composition .project-object{width:108px;height:98px}.cinematic-mode .project-composition .project-object img{max-width:108px}.cinematic-mode .project-composition .project-identity h2{padding-right:116px}}

@@ -1,0 +1,57 @@
+/* V13 - The Digital Atelier. Palette values are installed from atelierTokens.ts. */
+:root {
+ --cream:var(--atelier-obsidian);--champagne:var(--atelier-graphite);--sand:var(--atelier-glass);
+ --wine:var(--atelier-porcelain);--oxblood:var(--atelier-obsidian);--rose:var(--atelier-copper);
+ --ink:var(--atelier-porcelain);--muted:var(--atelier-teal);
+ --line:color-mix(in srgb,var(--atelier-titanium) 55%,transparent);
+ color:var(--atelier-porcelain);background:var(--atelier-obsidian,#101419);color-scheme:dark;
+ --atelier-scrim:linear-gradient(90deg,var(--atelier-obsidian) 50%,color-mix(in srgb,var(--atelier-obsidian) 92%,transparent) 78%,transparent);
+}
+body,.portfolio {background:var(--atelier-obsidian);color:var(--atelier-porcelain)}
+::selection {color:var(--atelier-obsidian);background:var(--atelier-teal)}
+a:hover,button:hover {color:var(--atelier-teal)}
+.site-header {background:color-mix(in srgb,var(--atelier-obsidian) 92%,transparent);color:var(--atelier-porcelain);border-color:var(--line);backdrop-filter:blur(18px)}
+.monogram {color:var(--atelier-copper)}
+.wordmark small,.hero-topline,.hero-bottom,.eyebrow,.mono {color:var(--atelier-teal)}
+.site-header nav a {text-underline-offset:8px;text-decoration-color:var(--atelier-copper)}
+.site-header nav a:hover {text-decoration-line:underline}
+.menu-panel,.mobile-nav {background:var(--atelier-graphite);color:var(--atelier-porcelain)}
+.hero-name {color:var(--atelier-porcelain)}
+.hero-profession {color:var(--atelier-porcelain)}
+.hero-profession em,.scene-copy h2 em,.skills-heading h2 em,.credential-copy h2 em,.finale-heading em {color:var(--atelier-copper)}
+.hero-right,.scene-copy,.about-copy,.skill-inspector,.project-identity,.credential-copy {color:var(--atelier-porcelain)}
+.cinematic-mode .page-material,.page-material,.world-surfaces {background:var(--atelier-obsidian)}
+.cinematic-mode .hero-left:before,.cinematic-mode .hero-left:after,
+.cinematic-mode .project-identity:before,.cinematic-mode .credential-copy:before,
+.cinematic-mode .skills-heading h2:before,.cinematic-mode .about-copy:before {background:var(--atelier-scrim)}
+.scene-copy:before,.skill-inspector:before {background:var(--atelier-scrim)}
+.cinematic-mode .about-copy details,.cinematic-mode .about-history,.cinematic-mode .skill-inspector {background:color-mix(in srgb,var(--atelier-obsidian) 93%,transparent)}
+.cinematic-mode .credential-copy {background:transparent}
+.cinematic-mode .technology,.technology {background:color-mix(in srgb,var(--atelier-graphite) 92%,transparent);box-shadow:inset 0 -1px var(--line);color:var(--atelier-porcelain)}
+.cinematic-mode .technology img,.technology img {background:var(--atelier-porcelain);border-radius:5px;box-shadow:0 0 0 3px var(--atelier-porcelain)}
+.cinematic-mode .technology.selected,.technology.selected {background:var(--atelier-glass);box-shadow:inset 0 -2px var(--atelier-copper)}
+.skill-category button[aria-pressed=true],.project-navigation button[aria-pressed=true],.featured-index button[aria-pressed=true] {color:var(--atelier-copper)}
+.skill-category button,.project-status,.project-evidence,.project-navigation button,.active-credential time,.active-credential .eyebrow {color:var(--atelier-teal)}
+.project-stage-heading,.project-navigation {border-color:var(--line)}
+.project-navigation:before {background:var(--atelier-copper)}
+.button,.resume-options .button {background:var(--atelier-copper);color:var(--atelier-obsidian);box-shadow:inset 0 0 0 1px var(--atelier-copper)}
+.button:hover,.resume-options .button:hover {background:var(--atelier-porcelain);color:var(--atelier-obsidian)}
+.text-link,.credential-actions a,.credential-actions button,.library-link {color:var(--atelier-porcelain);border-color:var(--atelier-copper)}
+.carousel-controls button,.next-scene,.resume-link,.mode-button {color:var(--atelier-porcelain);border-color:var(--line)}
+.carousel-controls button:hover,.next-scene:hover,.resume-link:hover {background:var(--atelier-glass);color:var(--atelier-copper)}
+.journey-controls {background:color-mix(in srgb,var(--atelier-obsidian) 96%,transparent);border-color:var(--line);color:var(--atelier-porcelain)}
+.journey-line {background:var(--atelier-glass)}
+.journey-line i,.journey-line:after {background:var(--atelier-copper)}
+.social-links img {background:var(--atelier-porcelain);border-radius:50%}
+.finale-contact,.finale-socials,.finale-bottom {color:var(--atelier-porcelain)}
+.finale-contact p,.finale-bottom span {color:var(--atelier-teal)}
+.reading-mode .scene-panel,.reading-mode .panel-2,.reading-mode .wine-scene {background:var(--atelier-obsidian);color:var(--atelier-porcelain);border-color:var(--line)}
+.reading-mode .scene-panel:nth-child(even) {background:var(--atelier-graphite)}
+.reading-mode .skill-inspector,.reading-mode .technology {background:var(--atelier-glass)}
+dialog,.library-dialog,.preview-dialog,.archive-loading {background:var(--atelier-graphite);color:var(--atelier-porcelain);border-color:var(--atelier-copper);box-shadow:0 30px 100px var(--atelier-obsidian)}
+dialog::backdrop {background:color-mix(in srgb,var(--atelier-obsidian) 85%,transparent)}
+.library-filters input,.library-filters select {background:var(--atelier-obsidian);color:var(--atelier-porcelain);border-color:var(--line)}
+.skip-link {background:var(--atelier-copper);color:var(--atelier-obsidian)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible {outline-color:var(--atelier-teal)}
+/* Certificate paper, protected portrait, laptop materials and authentic brand artwork stay untouched. */
+#mobile-menu {background:var(--atelier-graphite);border-color:var(--atelier-titanium);box-shadow:0 24px 40px var(--atelier-obsidian)}

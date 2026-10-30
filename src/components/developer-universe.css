@@ -1,0 +1,22 @@
+/* V12.1: scoped to the project runway; portrait, site type and reading layout are untouched. */
+.cinematic-mode .project-runway {height:400vh}
+.cinematic-mode .project-stage-heading,.cinematic-mode .project-navigation {opacity:calc(1 - clamp(0,(var(--travel,0) - 1.22)*6.66667,1))}
+.cinematic-mode .project-space {inset:22% 8% 20%}
+.cinematic-mode .project-composition {grid-template-columns:44% 1fr;gap:8%;align-items:start}
+.cinematic-mode .project-identity {align-self:start;padding-top:3vh}
+.cinematic-mode .project-object {position:relative;top:-80px;height:96px;min-height:0;align-items:flex-start;justify-content:flex-end;transform:none}
+.cinematic-mode .project-object img {width:clamp(100px,12vw,180px);height:96px;max-height:96px;object-fit:contain;filter:drop-shadow(0 6px 8px #2b0d1d16)}
+.cinematic-mode .composition-1 img {filter:url(#identity-ink) drop-shadow(0 6px 8px #2b0d1d16)}
+.cinematic-mode .composition-2 img {max-width:96px;max-height:96px}
+@media(max-width:999px) and (orientation:portrait) {
+ .cinematic-mode .project-space {inset:23% 7% 20%}
+ .cinematic-mode .project-composition {display:block}
+ .cinematic-mode .project-identity {padding-top:0}
+ .cinematic-mode .project-object {position:absolute;right:0;top:-44px;width:90px;height:52px}
+ .cinematic-mode .project-object img {width:90px;height:52px;max-height:52px}
+ .cinematic-mode .composition-2 img {max-width:52px;max-height:52px}
+}
+/* Keep editorial copy out of the unchanged portrait silhouette on portrait tablets. */
+@media(min-width:760px) and (max-width:999px) and (orientation:portrait) {
+ .cinematic-mode .hero-left {top:53%;width:17%}
+}

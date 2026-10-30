@@ -1,0 +1,13 @@
+/* V13.5 editorial layer. Layout, colors and protected scene surfaces remain unchanged. */
+.signature-mask{display:inline-block;vertical-align:baseline;overflow:clip;overflow-clip-margin:.22em}
+.signature-word{display:inline-block;vertical-align:baseline}
+.site-header nav a{position:relative;text-decoration:none!important}
+.site-header nav a:after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:1px;background:var(--atelier-copper);transform:scaleX(0);transform-origin:left;transition:transform 220ms cubic-bezier(.22,1,.36,1)}
+.site-header nav a[aria-current="location"]:after,.site-header nav a:hover:after,.site-header nav a:focus-visible:after{transform:scaleX(1)}
+.button,.circle-button,.next-scene,.resume-link,.text-link,.mode-button,.skill-category button,.project-navigation button{transition:color 180ms ease,background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease}
+.button:hover{box-shadow:inset 0 0 0 1px var(--atelier-porcelain),0 3px 18px color-mix(in srgb,var(--atelier-copper) 12%,transparent)}
+.technology{transition:background-color 180ms ease,box-shadow 180ms ease}
+.technology:focus-visible,.technology:hover{box-shadow:inset 0 -2px var(--atelier-copper),inset 0 0 0 1px var(--line)}
+@media(prefers-reduced-motion:reduce){.signature-word{transform:none!important;filter:none!important;opacity:1!important}.site-header nav a:after,.button,.circle-button,.next-scene,.resume-link,.text-link,.mode-button,.technology,.skill-category button,.project-navigation button{transition:none}}
+/* Active project copy must remain selectable; inactive 3D project layers keep their hit-test fence. */
+.project-composition:not([inert]) .project-identity{pointer-events:auto;user-select:text}

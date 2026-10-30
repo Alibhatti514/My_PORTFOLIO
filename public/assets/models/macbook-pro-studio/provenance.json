@@ -1,0 +1,311 @@
+{
+  "source": "https://raw.githubusercontent.com/adrianhajdin/gsap_macbook_landing/5312059f07a5311503927158f87c984962b40f44/public/models/macbook-16.glb",
+  "sourceCommit": "5312059f07a5311503927158f87c984962b40f44",
+  "sourceSha256": "6f4b01027858cbc5fd7a8320bbf48b66d553c67b39feabe19007eb91eafe96a1",
+  "preparedSha256": "c4022b3cda81a082896cfff7e22b3c5d85afe37eeaa6213bc6ca67d0d3a11f03",
+  "sourceBytes": 639284,
+  "preparedBytes": 1258912,
+  "triangles": 112625,
+  "preparedTriangles": 112625,
+  "scale": 0.14090659301948738,
+  "sourceHinge": [
+    0,
+    0.3,
+    -12.55
+  ],
+  "nativeLidAngleDegrees": 20,
+  "meshes": [
+    {
+      "name": "Object_10_lid",
+      "triangles": 4168,
+      "material": 19
+    },
+    {
+      "name": "MacBook_Apple_Logo",
+      "triangles": 188,
+      "material": 20
+    },
+    {
+      "name": "Object_10_base",
+      "triangles": 36358,
+      "material": 16
+    },
+    {
+      "name": "Object_10_lid",
+      "triangles": 340,
+      "material": 16
+    },
+    {
+      "name": "Object_16_base",
+      "triangles": 1222,
+      "material": 0
+    },
+    {
+      "name": "Object_20_lid",
+      "triangles": 384,
+      "material": 17
+    },
+    {
+      "name": "Object_20_base",
+      "triangles": 7060,
+      "material": 17
+    },
+    {
+      "name": "Object_22_lid",
+      "triangles": 2342,
+      "material": 1
+    },
+    {
+      "name": "Object_22_base",
+      "triangles": 3598,
+      "material": 1
+    },
+    {
+      "name": "Object_30_base",
+      "triangles": 5040,
+      "material": 2
+    },
+    {
+      "name": "Object_32_base",
+      "triangles": 186,
+      "material": 3
+    },
+    {
+      "name": "Object_34_base",
+      "triangles": 3700,
+      "material": 4
+    },
+    {
+      "name": "Object_38_base",
+      "triangles": 384,
+      "material": 5
+    },
+    {
+      "name": "Object_42_base",
+      "triangles": 8972,
+      "material": 6
+    },
+    {
+      "name": "Object_48_base",
+      "triangles": 270,
+      "material": 7
+    },
+    {
+      "name": "Object_54_base",
+      "triangles": 2988,
+      "material": 8
+    },
+    {
+      "name": "Object_58_base",
+      "triangles": 28436,
+      "material": 9
+    },
+    {
+      "name": "Object_66_base",
+      "triangles": 4,
+      "material": 10
+    },
+    {
+      "name": "Object_74_base",
+      "triangles": 5088,
+      "material": 11
+    },
+    {
+      "name": "Object_82_base",
+      "triangles": 1487,
+      "material": 12
+    },
+    {
+      "name": "Object_96_base",
+      "triangles": 132,
+      "material": 18
+    },
+    {
+      "name": "Object_107_lid",
+      "triangles": 176,
+      "material": 13
+    },
+    {
+      "name": "Object_123_lid",
+      "triangles": 94,
+      "material": 14
+    },
+    {
+      "name": "Object_127_base",
+      "triangles": 8,
+      "material": 15
+    }
+  ],
+  "asset": {
+    "generator": "glTF-Transform v4.1.0",
+    "version": "2.0",
+    "extras": {
+      "author": "jackbaeten (https://sketchfab.com/jackbaeten)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/macbook-pro-m3-16-inch-2024-8e34fc2b303144f78490007d91ff57c4",
+      "title": "macbook pro M3 16 inch 2024"
+    }
+  },
+  "authorMetadata": {
+    "animationCount": 0,
+    "categories": [
+      {
+        "uid": "d7cebaeca8604ebab1480e413404b679",
+        "name": "Electronics & Gadgets",
+        "slug": "electronics-gadgets",
+        "uri": "https://api.sketchfab.com/v3/categories/d7cebaeca8604ebab1480e413404b679",
+        "icon": "https://static.sketchfab.com/static/builds/web/dist/static/assets/images/icons/categories/336c224334b7e53e277d236a8355e90a-v2.svg",
+        "thumbnails": [
+          {
+            "width": "512",
+            "height": "288",
+            "url": "https://static.sketchfab.com/categories/d7cebaeca8604ebab1480e413404b679/512x288.png"
+          },
+          {
+            "width": "800",
+            "height": "450",
+            "url": "https://static.sketchfab.com/categories/d7cebaeca8604ebab1480e413404b679/800x450.png"
+          }
+        ]
+      }
+    ],
+    "commentCount": 29,
+    "createdAt": "2024-02-08T14:50:35.414646",
+    "embedUrl": "https://sketchfab.com/models/8e34fc2b303144f78490007d91ff57c4/embed",
+    "faceCount": 112658,
+    "isAgeRestricted": false,
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "likeCount": 154,
+    "name": "macbook pro M3 16 inch 2024",
+    "publishedAt": "2024-02-08T15:13:53.198060",
+    "soundCount": 0,
+    "staffpickedAt": null,
+    "tags": [
+      {
+        "name": "apple",
+        "slug": "apple",
+        "uri": "https://api.sketchfab.com/v3/tags/apple"
+      },
+      {
+        "name": "laptop",
+        "slug": "laptop",
+        "uri": "https://api.sketchfab.com/v3/tags/laptop"
+      },
+      {
+        "name": "m3",
+        "slug": "m3",
+        "uri": "https://api.sketchfab.com/v3/tags/m3"
+      },
+      {
+        "name": "MacBook",
+        "slug": "macbook",
+        "uri": "https://api.sketchfab.com/v3/tags/macbook"
+      }
+    ],
+    "thumbnails": {
+      "images": [
+        {
+          "uid": "3c0867c8cd4a424b99ce11c24c3f0f4e",
+          "width": 1920,
+          "height": 1080,
+          "size": 374890,
+          "url": "https://media.sketchfab.com/models/8e34fc2b303144f78490007d91ff57c4/thumbnails/f70482bdfbda45ea9f356d9341f95e8c/7a4e098d17414fdf80bb88e00d2ad2e5.jpeg"
+        },
+        {
+          "uid": "788a82c27fc2470c82ec6f2e2cfbea29",
+          "width": 1024,
+          "height": 576,
+          "size": 45036,
+          "url": "https://media.sketchfab.com/models/8e34fc2b303144f78490007d91ff57c4/thumbnails/f70482bdfbda45ea9f356d9341f95e8c/c26ef1f8797845fa885191494b3cce50.jpeg"
+        },
+        {
+          "uid": "b20930857c5143989c4d9346293b3330",
+          "width": 720,
+          "height": 405,
+          "size": 25153,
+          "url": "https://media.sketchfab.com/models/8e34fc2b303144f78490007d91ff57c4/thumbnails/f70482bdfbda45ea9f356d9341f95e8c/13665e61106a48d6b7ecbfdf4c6132fe.jpeg"
+        },
+        {
+          "uid": "2f0f23040b63409984f42d61dc67ea88",
+          "width": 256,
+          "height": 144,
+          "size": 5621,
+          "url": "https://media.sketchfab.com/models/8e34fc2b303144f78490007d91ff57c4/thumbnails/f70482bdfbda45ea9f356d9341f95e8c/2e929a9b0a904a7284245d3233998c66.jpeg"
+        },
+        {
+          "uid": "9a528c95028f4124a78241b7bd0d5a8f",
+          "width": 64,
+          "height": 36,
+          "size": 1309,
+          "url": "https://media.sketchfab.com/models/8e34fc2b303144f78490007d91ff57c4/thumbnails/f70482bdfbda45ea9f356d9341f95e8c/4e2b5b4035424f08b7b5fe9ec678cc8c.jpeg"
+        }
+      ]
+    },
+    "uid": "8e34fc2b303144f78490007d91ff57c4",
+    "uri": "https://api.sketchfab.com/v3/models/8e34fc2b303144f78490007d91ff57c4",
+    "user": {
+      "uid": "095e37a1c45f434f8119aebce6112a6c",
+      "username": "jackbaeten",
+      "displayName": "jackbaeten",
+      "account": "basic",
+      "profileUrl": "https://sketchfab.com/jackbaeten",
+      "avatar": {
+        "uid": "6ee50d5194fc4a16b19ac32660e27a13",
+        "uri": "https://api.sketchfab.com/v3/avatars/6ee50d5194fc4a16b19ac32660e27a13",
+        "images": [
+          {
+            "width": 100,
+            "height": 100,
+            "size": 3030,
+            "url": "https://media.sketchfab.com/avatars/6ee50d5194fc4a16b19ac32660e27a13/3e6c6d8637c14f58bd5f9ef0d4186275.jpeg"
+          },
+          {
+            "width": 90,
+            "height": 90,
+            "size": 2613,
+            "url": "https://media.sketchfab.com/avatars/6ee50d5194fc4a16b19ac32660e27a13/271710dbdb994937b0fe2ae1a4e9dd2f.jpeg"
+          },
+          {
+            "width": 48,
+            "height": 48,
+            "size": 1093,
+            "url": "https://media.sketchfab.com/avatars/6ee50d5194fc4a16b19ac32660e27a13/ee36d7bad2dc477a93876e65b86b9c66.jpeg"
+          },
+          {
+            "width": 32,
+            "height": 32,
+            "size": 737,
+            "url": "https://media.sketchfab.com/avatars/6ee50d5194fc4a16b19ac32660e27a13/43aad97e22474360afb00a2aa8bfd6a0.jpeg"
+          }
+        ]
+      },
+      "uri": "https://api.sketchfab.com/v3/users/095e37a1c45f434f8119aebce6112a6c"
+    },
+    "vertexCount": 78199,
+    "viewCount": 49088,
+    "viewerUrl": "https://sketchfab.com/3d-models/macbook-pro-m3-16-inch-2024-8e34fc2b303144f78490007d91ff57c4",
+    "isDownloadable": true,
+    "isProtected": false,
+    "description": "macbook pro M3 16 inch 2024",
+    "price": null,
+    "downloadCount": 20230,
+    "editorUrl": "https://sketchfab.com/models/8e34fc2b303144f78490007d91ff57c4/edit",
+    "status": {
+      "warning": {},
+      "processing": "SUCCEEDED"
+    },
+    "source": "blender-exporter",
+    "hasCommentsDisabled": false,
+    "updatedAt": "2024-02-21T10:49:11.337173",
+    "pbrType": "metalness",
+    "textureCount": 26,
+    "materialCount": 40
+  }
+}
